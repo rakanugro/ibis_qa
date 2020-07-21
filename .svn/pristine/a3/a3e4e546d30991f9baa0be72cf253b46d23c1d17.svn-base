@@ -1,0 +1,206 @@
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.theme.css" />
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingCustom.js"></script>
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingEuro.js"></script>
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<!-- global scripts -->
+<script src="<?=JSQ?>jquery-ui.min.js"></script>
+
+<style type="text/css">
+
+.divdemo{
+	padding: 15px;
+  	border: 1px solid #666;
+  	background: #fff;
+	display: none;
+}
+
+#rectangle {
+  
+  width: 250px;
+  border: 1px solid ;
+  padding: 50px;
+  margin: 20px;
+}
+
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+<script>
+
+	$(document).ready(function() {
+	    $('#customer').DataTable();
+	    $('#internal').DataTable();
+	    $('#role').DataTable();
+	});
+
+
+
+</script>
+							
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="main-box">
+										<header class="main-box-header clearfix">
+											<h2>Create New</h2>
+                                            <i>(Please click create to make a new extension delivery request)</i>
+										</header>
+										
+										<div class="main-box-body clearfix">
+											<form class="form-inline" role="form" action="<?=ROOT?>eservice/user_config/add_user_config">
+												<button type="submit" id="submit_form" onclick="" class="btn btn-success">Create</button>
+											</form>
+											</form>
+										</div>
+									</div>
+								</div>	
+							</div>
+
+							<!-- List Account Customer -->
+
+							<div class="row" id="tabledata">
+								<div class="col-lg-12">
+									<div class="main-box">
+										<header class="main-box-header clearfix">
+											<h2>List Account Customer</h2>
+										</header>
+
+										<div class="main-box clearfix">
+											<div class="modal-body">
+									          	<table id="customer" class="table table-striped table-bordered" style="width:100%">
+											        <thead>
+											            <tr>
+											                <th>No</th>
+											                <th>Customer Name</th>
+											                <th>Customer ID</th>
+											                <th>Username</th>
+											                <th>E-mail</th>
+											                <th>Status</th>
+											                <th>Activation</th>
+											                <th>Action</th>
+											            </tr>
+											        </thead>
+											        <tbody>
+											            <tr>
+											                <td>1</td>
+											                <td>Pelayaran Tempuran TBK</td>
+											                <td>112770</td>
+											                <td>Oviliahusein</td>
+											                <td>ovilia@temasline.com</td>
+											                <td>Non Active</td>
+											                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"> Active</td>
+											                <td>
+											                	<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+											                	<button class="btn btn-danger btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><span class="glyphicon glyphicon-eye-open"></span></button>
+											                </td>
+											            </tr>
+											        </tbody>
+											   	</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- List Account Internal -->
+
+							<div class="row" id="tabledata">
+								<div class="col-lg-12">
+									<div class="main-box">
+										<header class="main-box-header clearfix">
+											<h2>List Account Internal</h2>
+										</header>
+
+										<div class="main-box clearfix">
+											<div class="modal-body">
+									          	<table id="internal" class="table table-striped table-bordered" style="width:100%">
+											        <thead>
+											            <tr>
+											                <th>No</th>
+											                <th>Customer Name</th>
+											                <th>Customer ID</th>
+											                <th>Username</th>
+											                <th>Role</th>
+											                <th>Status</th>
+											                <th>Action</th>
+											            </tr>
+											        </thead>
+											        <tbody>
+											            <tr>
+											                <td>1</td>
+											                <td>Banten</td>
+											                <td>112770</td>
+											                <td>Oviliahusein</td>
+											                <td>Rendal</td>
+											                <td>Active</td>
+											                <td>
+											                	<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+											                	<button class="btn btn-danger btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><span class="glyphicon glyphicon-eye-open"></span></button>
+											                </td>
+											            </tr>
+											        </tbody>
+											   	</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Role Configuration -->
+
+							<div class="row" id="tabledata">
+								<div class="col-lg-12">
+									<div class="main-box">
+										<header class="main-box-header clearfix">
+											<h2>Role Configuration</h2>
+										</header>
+
+										<div class="main-box clearfix">
+											<div class="modal-body">
+									          	<table id="role" class="table table-striped table-bordered" style="width:100%">
+											        <thead>
+											            <tr>
+											                <th>No</th>
+											                <th>ID Role</th>
+											                <th>Role Name</th>
+											                <th>Status</th>
+											                <th>Action</th>
+											            </tr>
+											        </thead>
+											        <tbody>
+											            <tr>
+											                <td>1</td>
+											                <td>19282</td>
+											                <td>Rendal</td>
+											                <td>Active</td>
+											                <td>
+											                	<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
+											                	<button class="btn btn-danger btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><span class="glyphicon glyphicon-eye-open"></span></button>
+											                	<button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button>
+											                </td>
+											            </tr>
+											        </tbody>
+											   	</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>

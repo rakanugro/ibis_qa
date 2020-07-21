@@ -1,0 +1,885 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+DEBUG - 2016-10-15 15:51:17 --> Config Class Initialized
+DEBUG - 2016-10-15 15:51:17 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:51:17 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:51:17 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:51:17 --> URI Class Initialized
+DEBUG - 2016-10-15 15:51:17 --> Router Class Initialized
+DEBUG - 2016-10-15 15:51:18 --> No URI present. Default controller set.
+DEBUG - 2016-10-15 15:51:18 --> Output Class Initialized
+DEBUG - 2016-10-15 15:51:18 --> Security Class Initialized
+DEBUG - 2016-10-15 15:51:18 --> Input Class Initialized
+DEBUG - 2016-10-15 15:51:18 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:51:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:51:18 --> Language Class Initialized
+DEBUG - 2016-10-15 15:51:18 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-10-15 15:51:18 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:51:18 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:51:18 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:51:19 --> Session Class Initialized
+DEBUG - 2016-10-15 15:51:19 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:51:19 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:51:19 --> A session cookie was not found.
+DEBUG - 2016-10-15 15:51:19 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-10-15 15:51:19 --> Session routines successfully run
+DEBUG - 2016-10-15 15:51:19 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:51:19 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:51:19 --> Model Class Initialized
+DEBUG - 2016-10-15 15:51:19 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:51:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:51:20 --> Helper loaded: captcha_helper
+DEBUG - 2016-10-15 15:51:20 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-10-15 15:51:20 --> 60b2abb73cea890e5aaf8839e4865715++main_index++ 
+ERROR - 2016-10-15 15:51:29 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-10-15 15:51:29 --> >>> saveCaptcha
+DEBUG - 2016-10-15 15:51:29 --> Helper loaded: file_helper
+ERROR - 2016-10-15 15:51:30 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-10-15 15:51:30 --> >>> isUserLogin: 60b2abb73cea890e5aaf8839e4865715
+DEBUG - 2016-10-15 15:51:30 --> >>> row: 0
+DEBUG - 2016-10-15 15:51:30 --> >>> Go to Homepage
+DEBUG - 2016-10-15 15:51:30 --> File loaded: application/views/homepage/index.php
+DEBUG - 2016-10-15 15:51:30 --> Final output sent to browser
+DEBUG - 2016-10-15 15:51:30 --> Total execution time: 12.7964
+DEBUG - 2016-10-15 15:51:51 --> Config Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:51:51 --> URI Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Router Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Output Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Security Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Input Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:51:51 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:51:51 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:51:51 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:51:51 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:51:51 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:51:51 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:51:51 --> CSRF token verified
+DEBUG - 2016-10-15 15:51:51 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:51:51 --> Language Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-10-15 15:51:51 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:51:51 --> Session Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:51:51 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> >>> Session update
+DEBUG - 2016-10-15 15:51:51 --> Session routines successfully run
+DEBUG - 2016-10-15 15:51:51 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:51:51 --> Model Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:51:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:51:51 --> Helper loaded: captcha_helper
+DEBUG - 2016-10-15 15:51:51 --> ----------------------------main.php/do_log------------------------------------
+DEBUG - 2016-10-15 15:51:51 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2016-10-15 15:51:51 --> >>> isMatchCaptcha
+DEBUG - 2016-10-15 15:51:51 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 15:52:07 --> << check_user: dendys15
+DEBUG - 2016-10-15 15:52:08 --> >>> isUserActive
+DEBUG - 2016-10-15 15:52:08 --> << dendys15 has been actived, will destroy!
+DEBUG - 2016-10-15 15:52:08 --> >>> kick_account
+DEBUG - 2016-10-15 15:52:09 --> >>> kicked dendys15
+DEBUG - 2016-10-15 15:52:09 --> << previos session user dendys15 destroyed!
+DEBUG - 2016-10-15 15:52:09 --> >>> LOCK_ACCOUNT
+DEBUG - 2016-10-15 15:52:09 --> < User dendys15 is active!
+DEBUG - 2016-10-15 15:52:09 --> >>> delete_count_account
+INFO  - 2016-10-15 15:52:09 --> < Succes login!
+ERROR - 2016-10-15 15:52:09 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ibis_qa\application\controllers\main.php:166) C:\xampp\htdocs\ibis_qa\system\core\Output.php 392
+ERROR - 2016-10-15 15:52:09 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ibis_qa\application\controllers\main.php:166) C:\xampp\htdocs\ibis_qa\system\core\Output.php 392
+DEBUG - 2016-10-15 15:52:09 --> Final output sent to browser
+DEBUG - 2016-10-15 15:52:09 --> Total execution time: 18.7291
+DEBUG - 2016-10-15 15:52:10 --> Config Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:52:10 --> URI Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Router Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Output Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Security Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Input Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:52:10 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:52:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:52:10 --> Language Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-10-15 15:52:10 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:52:10 --> Session Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:52:10 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> >>> Session update
+DEBUG - 2016-10-15 15:52:10 --> Session routines successfully run
+DEBUG - 2016-10-15 15:52:10 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:52:10 --> Model Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:52:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:10 --> Helper loaded: captcha_helper
+DEBUG - 2016-10-15 15:52:10 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-10-15 15:52:10 --> 60b2abb73cea890e5aaf8839e4865715++main_index++ Dendy Wibowo
+ERROR - 2016-10-15 15:52:11 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-10-15 15:52:11 --> >>> saveCaptcha
+DEBUG - 2016-10-15 15:52:11 --> Helper loaded: file_helper
+ERROR - 2016-10-15 15:52:12 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-10-15 15:52:12 --> >>> isUserLogin: 60b2abb73cea890e5aaf8839e4865715
+DEBUG - 2016-10-15 15:52:12 --> >>> row: 1
+DEBUG - 2016-10-15 15:52:12 --> >>> Go to Mainpage
+DEBUG - 2016-10-15 15:52:13 --> Config Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:52:13 --> URI Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Router Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Output Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Security Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Input Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:52:13 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:52:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:52:13 --> Language Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:52:13 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:52:13 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Session Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:52:13 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> >>> Session update
+DEBUG - 2016-10-15 15:52:13 --> Session routines successfully run
+DEBUG - 2016-10-15 15:52:13 --> Model Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:52:13 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:14 --> Table Class Initialized
+DEBUG - 2016-10-15 15:52:14 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:52:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:14 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 15:52:15 --> >>> 1---mainpage---
+DEBUG - 2016-10-15 15:52:16 --> >>> 07
+DEBUG - 2016-10-15 15:52:16 --> File loaded: application/views/templates/header.php
+DEBUG - 2016-10-15 15:52:16 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2016-10-15 15:52:16 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2016-10-15 15:52:16 --> ----------------------------main.php------------------------------------
+DEBUG - 2016-10-15 15:52:17 --> File loaded: application/views/pages/main.php
+DEBUG - 2016-10-15 15:52:17 --> File loaded: application/views/templates/footer.php
+DEBUG - 2016-10-15 15:52:17 --> Final output sent to browser
+DEBUG - 2016-10-15 15:52:17 --> Total execution time: 4.0326
+DEBUG - 2016-10-15 15:52:18 --> Config Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:52:18 --> URI Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Router Class Initialized
+ERROR - 2016-10-15 15:52:18 --> 404 Page Not Found --> favicon.png
+DEBUG - 2016-10-15 15:52:18 --> Config Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Config Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:52:18 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:52:18 --> URI Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> URI Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Router Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Router Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Output Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Output Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Security Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Input Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Security Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:52:18 --> Input Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:52:18 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:52:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:52:18 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:52:18 --> Language Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:52:18 --> CSRF token verified
+DEBUG - 2016-10-15 15:52:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:52:18 --> Language Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:52:18 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:52:18 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:52:18 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:52:18 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:52:19 --> Upload Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Session Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:52:19 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: my_options_helper
+DEBUG - 2016-10-15 15:52:19 --> >>> Session update
+DEBUG - 2016-10-15 15:52:19 --> Session routines successfully run
+DEBUG - 2016-10-15 15:52:19 --> Model Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: cookie_helper
+DEBUG - 2016-10-15 15:52:19 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:19 --> Session Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:52:19 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> >>> Session update
+DEBUG - 2016-10-15 15:52:19 --> Session routines successfully run
+DEBUG - 2016-10-15 15:52:19 --> Table Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Model Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:19 --> Table Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:19 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 15:52:19 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 15:52:19 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 15:52:19 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 15:52:23 --> Final output sent to browser
+DEBUG - 2016-10-15 15:52:23 --> Final output sent to browser
+DEBUG - 2016-10-15 15:52:23 --> Total execution time: 5.1358
+DEBUG - 2016-10-15 15:52:23 --> Total execution time: 5.1386
+DEBUG - 2016-10-15 15:52:28 --> Config Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:52:28 --> URI Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Router Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Output Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Security Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Input Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:52:28 --> Config Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:52:28 --> URI Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Router Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Output Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Security Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Input Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:52:28 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:52:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:52:28 --> Language Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:52:28 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:52:28 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Session Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:52:28 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:52:28 --> >>> Session update
+DEBUG - 2016-10-15 15:52:28 --> Session routines successfully run
+DEBUG - 2016-10-15 15:52:28 --> Model Class Initialized
+DEBUG - 2016-10-15 15:52:29 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:52:29 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:52:29 --> Table Class Initialized
+DEBUG - 2016-10-15 15:52:29 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:52:29 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 15:52:29 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 15:52:29 --> Helper loaded: file_helper
+ERROR - 2016-10-15 15:52:30 --> Severity: Notice  --> Undefined property: Pkk::$container_model C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 708
+DEBUG - 2016-10-15 15:53:05 --> Config Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:53:05 --> URI Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Router Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Output Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Security Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Input Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:53:05 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:53:05 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:53:05 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:53:05 --> Language Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:53:05 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:53:05 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Session Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:53:05 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> >>> Session update
+DEBUG - 2016-10-15 15:53:05 --> Session routines successfully run
+DEBUG - 2016-10-15 15:53:05 --> Model Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:53:05 --> Table Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:53:05 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 15:53:05 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 15:53:05 --> Helper loaded: file_helper
+ERROR - 2016-10-15 15:53:06 --> Severity: Notice  --> Undefined property: Pkk::$container_model C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 708
+DEBUG - 2016-10-15 15:54:33 --> Config Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:54:33 --> URI Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Router Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Output Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Security Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Input Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:54:33 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:54:33 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:54:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:54:33 --> Language Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:54:33 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:54:33 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Session Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:54:33 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> >>> Session update
+DEBUG - 2016-10-15 15:54:33 --> Session routines successfully run
+DEBUG - 2016-10-15 15:54:33 --> Model Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:54:33 --> Table Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:54:33 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 15:54:33 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 15:54:33 --> Helper loaded: file_helper
+ERROR - 2016-10-15 15:54:35 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 703
+ERROR - 2016-10-15 15:54:35 --> Severity: Notice  --> Undefined property: Pkk::$container_model C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 707
+DEBUG - 2016-10-15 15:58:08 --> Config Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:58:08 --> URI Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Router Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Output Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Security Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Input Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:58:08 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:58:08 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:58:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:58:08 --> Language Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:58:08 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:58:08 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Session Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:58:08 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> >>> Session update
+DEBUG - 2016-10-15 15:58:08 --> Session routines successfully run
+DEBUG - 2016-10-15 15:58:08 --> Model Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:58:08 --> Table Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:58:08 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 15:58:08 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 15:58:08 --> Helper loaded: file_helper
+ERROR - 2016-10-15 15:58:10 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 704
+ERROR - 2016-10-15 15:58:10 --> Severity: Notice  --> Undefined property: Pkk::$container_model C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 715
+DEBUG - 2016-10-15 15:58:57 --> Config Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Hooks Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 15:58:57 --> URI Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Router Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Output Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Security Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Input Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:58:57 --> XSS Filtering completed
+DEBUG - 2016-10-15 15:58:57 --> CRSF cookie Set
+DEBUG - 2016-10-15 15:58:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 15:58:57 --> Language Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Loader Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Controller Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 15:58:57 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 15:58:57 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Session Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 15:58:57 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> >>> Session update
+DEBUG - 2016-10-15 15:58:57 --> Session routines successfully run
+DEBUG - 2016-10-15 15:58:57 --> Model Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:58:57 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 15:58:57 --> Table Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 15:58:57 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 15:58:57 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 15:58:57 --> Helper loaded: file_helper
+ERROR - 2016-10-15 15:59:07 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 705
+ERROR - 2016-10-15 15:59:07 --> Severity: Notice  --> Undefined index: PORT C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 717
+ERROR - 2016-10-15 15:59:07 --> Severity: Notice  --> Undefined index: TERMINAL C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 718
+ERROR - 2016-10-15 15:59:07 --> Severity: Warning  --> implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 721
+ERROR - 2016-10-15 15:59:07 --> Severity: Warning  --> implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 722
+DEBUG - 2016-10-15 16:05:39 --> Config Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:05:39 --> URI Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Router Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Output Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Security Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Input Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:05:39 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:05:39 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:05:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:05:39 --> Language Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:05:39 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:05:39 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Session Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:05:39 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> >>> Session update
+DEBUG - 2016-10-15 16:05:39 --> Session routines successfully run
+DEBUG - 2016-10-15 16:05:39 --> Model Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:05:39 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:05:39 --> Table Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:05:39 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:05:39 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:05:39 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:06:08 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 705
+ERROR - 2016-10-15 16:06:08 --> Severity: Notice  --> Undefined index: PORT C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 718
+ERROR - 2016-10-15 16:06:08 --> Severity: Notice  --> Undefined index: TERMINAL C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 719
+DEBUG - 2016-10-15 16:08:11 --> Config Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:08:11 --> URI Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Router Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Output Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Security Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Input Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:08:11 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:08:11 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:08:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:08:11 --> Language Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:08:11 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:08:11 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Session Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:08:11 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> >>> Session update
+DEBUG - 2016-10-15 16:08:11 --> Session routines successfully run
+DEBUG - 2016-10-15 16:08:11 --> Model Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:08:11 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:08:11 --> Table Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:08:11 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:08:11 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:08:11 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:08:41 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 704
+ERROR - 2016-10-15 16:08:41 --> Severity: Notice  --> Undefined index: PORT C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 717
+ERROR - 2016-10-15 16:08:41 --> Severity: Notice  --> Undefined index: TERMINAL C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 717
+ERROR - 2016-10-15 16:08:41 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 724
+DEBUG - 2016-10-15 16:11:02 --> Config Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:11:02 --> URI Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Router Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Output Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Security Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Input Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:11:02 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:11:02 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:11:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:11:02 --> Language Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:11:02 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:11:02 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Session Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:11:02 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> >>> Session update
+DEBUG - 2016-10-15 16:11:02 --> Session routines successfully run
+DEBUG - 2016-10-15 16:11:02 --> Model Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:11:02 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:11:02 --> Table Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:11:02 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:11:02 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:11:02 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:11:04 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 704
+ERROR - 2016-10-15 16:11:04 --> Severity: Notice  --> Undefined index: PORT C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 717
+ERROR - 2016-10-15 16:11:04 --> Severity: Notice  --> Undefined index: TERMINAL C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 717
+DEBUG - 2016-10-15 16:15:07 --> Config Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:15:07 --> URI Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Router Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Output Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Security Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Input Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:15:07 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:15:07 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:15:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:15:07 --> Language Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:15:07 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:15:07 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Session Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:15:07 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> >>> Session update
+DEBUG - 2016-10-15 16:15:07 --> Session routines successfully run
+DEBUG - 2016-10-15 16:15:07 --> Model Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:15:07 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:15:07 --> Table Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:15:07 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:15:07 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:15:07 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:15:09 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 704
+ERROR - 2016-10-15 16:15:09 --> Severity: Notice  --> Undefined index: PORT C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 716
+DEBUG - 2016-10-15 16:15:38 --> Config Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:15:38 --> URI Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Router Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Output Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Security Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Input Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:15:38 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:15:38 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:15:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:15:38 --> Language Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:15:38 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:15:38 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Session Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:15:38 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> >>> Session update
+DEBUG - 2016-10-15 16:15:38 --> Session routines successfully run
+DEBUG - 2016-10-15 16:15:38 --> Model Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:15:38 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:15:38 --> Table Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:15:38 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:15:38 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:15:38 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 16:17:35 --> Config Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:17:35 --> URI Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Router Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Output Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Security Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Input Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:17:35 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:17:35 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:17:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:17:35 --> Language Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:17:35 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:17:35 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Session Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:17:35 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> >>> Session update
+DEBUG - 2016-10-15 16:17:35 --> Session routines successfully run
+DEBUG - 2016-10-15 16:17:35 --> Model Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:17:35 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:17:35 --> Table Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:17:35 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:17:35 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:17:35 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:17:41 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 704
+DEBUG - 2016-10-15 16:18:33 --> Config Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:18:33 --> URI Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Router Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Output Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Security Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Input Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:18:33 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:18:33 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:18:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:18:33 --> Language Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:18:33 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:18:33 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Session Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:18:33 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> >>> Session update
+DEBUG - 2016-10-15 16:18:33 --> Session routines successfully run
+DEBUG - 2016-10-15 16:18:33 --> Model Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:18:33 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:18:33 --> Table Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:18:33 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:18:33 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:18:33 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:18:35 --> Severity: Notice  --> Undefined variable: termss C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 704
+DEBUG - 2016-10-15 16:18:55 --> Config Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:18:55 --> URI Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Router Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Output Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Security Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Input Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:18:55 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:18:55 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:18:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:18:55 --> Language Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:18:55 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:18:55 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Session Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:18:55 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> >>> Session update
+DEBUG - 2016-10-15 16:18:55 --> Session routines successfully run
+DEBUG - 2016-10-15 16:18:55 --> Model Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:18:55 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:18:55 --> Table Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:18:55 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:18:55 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:18:55 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 16:19:33 --> Config Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:19:33 --> URI Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Router Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Output Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Security Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Input Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:19:33 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:19:33 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:19:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:19:33 --> Language Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:19:33 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:19:33 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Session Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:19:33 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> >>> Session update
+DEBUG - 2016-10-15 16:19:33 --> Session routines successfully run
+DEBUG - 2016-10-15 16:19:33 --> Model Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:19:33 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:19:33 --> Table Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:19:33 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:19:33 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:19:33 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:19:37 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 724
+ERROR - 2016-10-15 16:19:37 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 724
+ERROR - 2016-10-15 16:19:37 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 724
+ERROR - 2016-10-15 16:19:37 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 724
+DEBUG - 2016-10-15 16:19:48 --> Config Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:19:48 --> URI Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Router Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Output Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Security Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Input Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:19:48 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:19:48 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:19:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:19:48 --> Language Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:19:48 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:19:48 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Session Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:19:48 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> >>> Session update
+DEBUG - 2016-10-15 16:19:48 --> Session routines successfully run
+DEBUG - 2016-10-15 16:19:48 --> Model Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:19:48 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:19:48 --> Table Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:19:48 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:19:48 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:19:48 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 16:20:12 --> Config Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:20:12 --> URI Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Router Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Output Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Security Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Input Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:20:12 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:20:12 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:20:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:20:12 --> Language Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:20:12 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:20:12 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Session Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:20:12 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> >>> Session update
+DEBUG - 2016-10-15 16:20:12 --> Session routines successfully run
+DEBUG - 2016-10-15 16:20:12 --> Model Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:20:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:20:12 --> Table Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:20:12 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:20:12 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:20:12 --> Helper loaded: file_helper
+ERROR - 2016-10-15 16:20:14 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 723
+ERROR - 2016-10-15 16:20:14 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 723
+ERROR - 2016-10-15 16:20:14 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 723
+ERROR - 2016-10-15 16:20:14 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\ibis_qa\application\controllers\pkk.php 723
+DEBUG - 2016-10-15 16:20:50 --> Config Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:20:50 --> URI Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Router Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Output Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Security Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Input Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:20:50 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:20:50 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:20:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:20:50 --> Language Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:20:50 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:20:50 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Session Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:20:50 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> >>> Session update
+DEBUG - 2016-10-15 16:20:50 --> Session routines successfully run
+DEBUG - 2016-10-15 16:20:50 --> Model Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:20:50 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:20:50 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:20:51 --> Table Class Initialized
+DEBUG - 2016-10-15 16:20:51 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:20:51 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:20:51 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:20:51 --> Helper loaded: file_helper
+DEBUG - 2016-10-15 16:21:25 --> Config Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Hooks Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Utf8 Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> UTF-8 Support Enabled
+DEBUG - 2016-10-15 16:21:25 --> URI Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Router Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Output Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Security Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Input Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:21:25 --> XSS Filtering completed
+DEBUG - 2016-10-15 16:21:25 --> CRSF cookie Set
+DEBUG - 2016-10-15 16:21:25 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-10-15 16:21:25 --> Language Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Loader Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Controller Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Helper loaded: url_helper
+DEBUG - 2016-10-15 16:21:25 --> Helper loaded: form_helper
+DEBUG - 2016-10-15 16:21:25 --> Form Validation Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Session Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Helper loaded: string_helper
+DEBUG - 2016-10-15 16:21:25 --> Encrypt Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> >>> Session update
+DEBUG - 2016-10-15 16:21:25 --> Session routines successfully run
+DEBUG - 2016-10-15 16:21:25 --> Model Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Database Driver Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:21:25 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-10-15 16:21:25 --> Table Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Helper loaded: my_language_helper
+DEBUG - 2016-10-15 16:21:25 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-10-15 16:21:25 --> Breadcrumbs Class Initialized
+DEBUG - 2016-10-15 16:21:25 --> Helper loaded: file_helper

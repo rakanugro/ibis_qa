@@ -1,0 +1,56 @@
+<style>
+.tablebase
+{
+	font-size: 13px;
+}
+.tablebased
+{
+	font-size: 11px;
+	border-color:#e84e40;
+	text-align:center;
+}
+
+.headtb
+{
+	background-color:#e84e40;
+	color : white;
+	text-align:center;
+}
+</style>
+<table class="tablebase">
+<tr>
+	<td>Booking Number</td>
+	<td>: <?=$no_request;?></td>
+</tr>
+
+<tr>
+	<td>Request Date</td>
+	<td>: <?=$bl_number;?></td>
+</tr>
+
+<tr>
+	<td>No BL</td>
+	<td>: <?=$bl_number;?></td>
+</tr>
+
+<tr>
+	<td>Contract Number</td>
+	<td>: <?=$vessel;?></td>
+</tr>
+
+<tr>
+	<td>Company Name</td>
+	<td>: <?=$voy_in;?></td>
+</tr>
+
+<tr>
+	<td>Tipe Penumpukan</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>Tanggal Pelaksanaan</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+</table>

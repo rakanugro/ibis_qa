@@ -1,0 +1,242 @@
+<style>
+    div.DTTT.btn-group{
+        display:none !important;        
+    }
+	.label {
+		display: inline-block;
+	}
+</style>
+<script>
+$(document).ready(function() {
+	//sql injection protection
+	$(":input").keyup(function(event) {
+		// $(this).val($(this).val().replace(/[@\*\-#=,;:'"()\[\]/\\]/gi, ''));
+		$(this).val($(this).val().replace(/[\*\-#=,;:'"()?%~`$^&+{}|<>\[\]/\\]/gi, ''));
+	});
+});
+
+	$( document ).ready(function() {
+		
+		$( "#table-request a" ).on( "mouseup", function() {
+			$( "#table-request a" ).attr('disabled','disabled');
+		});	
+	});
+	
+	function clickDialog1(a)
+	{
+		$('#dialogViewReq').load("<?=ROOT?>/eservice/request_delivery/view_request/"+a)
+		.dialog({modal:false, height:500,width:650,title: 'View Content',close: function( event, ui ) {$('a').removeAttr('disabled');}});
+	}
+	function clickConfirm(a)
+	{
+		var r = confirm("Are you sure to confirm?");
+		if (r == true) {
+			var url = "<?=ROOT?>eservice/request_delivery/confirm_request";
+			$.blockUI();
+			$.post(url, {'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',REQUEST:a}, function(data){
+				$.unblockUI();
+				alert(data);
+				if(data=="Success")
+					location.reload(); 
+			});
+		}
+		$('a').removeAttr('disabled');
+	}
+</script>
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.theme.css" />
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingCustom.js"></script>
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingEuro.js"></script>
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<!-- global scripts -->
+<script src="<?=JSQ?>jquery-ui.min.js"></script>					
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="main-box">
+										<header class="main-box-header clearfix">
+											<h2>Create New</h2>
+                                            <i>(Please click create to make a new delivery request)</i>
+										</header>
+										
+										<div class="main-box-body clearfix">
+											<form class="form-inline" role="form" action="<?=ROOT?>eservice/request_delivery/create_request_delivery">
+												<button type="submit" id="submit_form" onclick="" class="btn btn-success">Create</button>
+											</form>
+										</div>
+									</div>
+								</div>	
+							</div>
+
+						</div>
+					</div>
+					<div class="row">
+							<div class="col-lg-12">
+								<div class="main-box">
+									<div class="main-box clearfix">
+										<header class="main-box-header clearfix">
+											<h2 class="pull-left">Search</h2>
+										</header>
+										<div class="main-box-body clearfix">
+										<div class="form-group example-twitter-oss">
+											<label for="exampleAutocomplete">Booking Search</label>
+											<input type="text" class="form-control" id="search_input" name="search_input" value="" placeholder="" style="width:50%;" />
+										</div>										
+										<div class="form-group example-twitter-oss">
+											<input type="button" onclick="load_table()" value="Search" id="search_reqs" name="search_reqs" class="btn btn-success"/>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+					
+					<div class="row" id="tabledata">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">Delivery Booking List</h2>
+									
+									<div id="reportrange" class="pull-right daterange-filter">
+										<i class="icon-calendar"></i>
+										<span></span> <b class="caret"></b>
+									</div>
+								</header>
+								
+								<div class="main-box-body clearfix">
+									<div class="table-responsive">
+										<table class="table table-striped table-hover" id="example1">
+											<thead>
+												<tr>
+													<th >NO</th>
+													<th >ID</th>
+													<th >BOOKING NUMBER</th>
+													<th >BOOKING DATE</th>
+													<th >OPERATION</th>
+													<th >CUSTOMER NAME</th>
+													<th >BRANCH NAME</th>
+													<th >TERMINAL NAME</th>
+													<th >VESSEL</th>
+													<th >DATE OUT</th>
+													<th >STATUS</th>
+													<th >ACTION</th>
+												</tr>	
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="dialogViewReq"></div>
+					
+		<script>
+		function load_table()
+			{
+				$.blockUI();
+				var url = "<?=ROOT?>eservice/request_delivery/search_main_delivery";
+				var limit = $("#pagelimit").val();
+				var search_input = $("#search_input").val();
+				$("#tabledata").load(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',
+											search:search_input,
+											page:1,limit:limit},function() {
+										  $.unblockUI();
+										});
+			}
+			var table2 = $('#table-request').dataTable({
+				'info': false,
+				'sDom': 'lTfr<"clearfix">tip',
+				'columnDefs': [
+					{ type: 'date-dd-mmm-yyyy', targets: 2 },
+					{ type: 'date-dd-mmm-yyyy', targets: 6 }
+				],
+				'oTableTools': {
+					'aButtons': [
+						{
+							'sExtends':    'collection',
+							'sButtonText': '<i class="fa fa-cloud-download"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i>',
+							'aButtons':    [ 'csv', 'xls', 'pdf', 'copy', 'print' ]
+						}
+					]
+				},
+				"lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+			});
+
+
+		$(document).ready(function() {
+		var table = $("#example1 tbody");
+		var booking_type = 'delivery';
+	 
+	    $.ajax({
+		    type: "GET",
+		   	url: "<?=ROOT?>eservice/request_delivery/getListBookingDelivery?",
+	    	data: {booking_type : booking_type},  // <== change is here
+		    success: function(msg){
+					var obj = JSON.parse(msg);
+		    	var arr =[];
+	        var jmlresponse = obj.length;
+					var no = 0;
+				for(i=0;i<jmlresponse;i++)
+				{
+					var no = 1;
+					var h_deliv_id 				=obj[i]['_c']['h_deliv_id']['_v'];
+					var h_deliv_no	  			=obj[i]['_c']['h_deliv_no']['_v'];
+					var h_deliv_date    			=obj[i]['_c']['h_deliv_date']['_v'];
+					var operation_name	  	=obj[i]['_c']['operation_name']['_v'];
+					var customer_name    	=obj[i]['_c']['customer_name']['_v'];
+					var branch_name       	=obj[i]['_c']['branch_name']['_v'];
+					var terminal_name       =obj[i]['_c']['terminal_name']['_v'];
+					var vessel_name 			=obj[i]['_c']['vessel_name']['_v'];
+					var date_out =obj[i]['_c']['date_out']['_v'];
+					var actual_departure    =obj[i]['_c']['actual_departure']['_v'];
+					var actual_arrived      =obj[i]['_c']['actual_arrived']['_v'];
+					var status_text       	=obj[i]['_c']['status_text']['_v'];
+				}
+				var ptk = "'";
+				obj.forEach(function(abc) {
+				var isi 	 = abc._c.h_deliv_id._v;
+			    table.append(
+			       '<tr>' +
+						 '<td>'+ no++ +'</td>' +
+						'<td>'+ abc._c.h_deliv_id._v +'</td>' +
+						'<td>'+ abc._c.h_deliv_no._v +'</td>' +
+						'<td>'+ abc._c.h_deliv_date._v +'</td>' +
+						'<td>'+ abc._c.operation_name._v +'</td>' +
+						'<td>'+ abc._c.customer_name._v +'</td>'+
+						'<td>'+ abc._c.branch_name ._v +'</td>' +
+						'<td>'+ abc._c.terminal_name._v +'</td>' +
+						'<td>'+ abc._c.vessel_name._v +'</td>' +
+						'<td>'+ abc._c.date_out._v +'</td>' +
+						'<td>'+ abc._c.status_text._v +'</td>' +
+						'<td>'+
+							'<a class=\'btn btn-primary\'  href="<?=ROOT?>eservice/request_delivery/edit_delivery"><i class=\'fa fa-pencil\'></i></a>'+
+							'<a class=\'btn btn-primary\'  href=""><i class=\'fa fa-send\'></i></a>'+
+						'</td>'+
+					'</tr>'
+		            );
+
+		       });
+		 
+		           $("#example1").DataTable();
+			}
+		});
+
+
+
+	});
+							
+		</script>

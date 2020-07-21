@@ -1,0 +1,1114 @@
+
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+
+<style type="text/css">
+.upload_info {
+	font-size: small;
+	font-style: italic;
+	float: right;
+}
+.hidden_content {
+	display: none;
+}
+
+.ui-autocomplete-loading { background:url(http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/images/ui-anim_basic_16x16.gif) no-repeat right center
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+</style>
+
+<script>
+
+
+
+	$(document).ready(function() {
+		$("#shipper").hide();
+		//sql injection protection
+		$(":input").keyup(function(event) {
+			// $(this).val($(this).val().replace(/[@\*\-#=,;:'"()\[\]/\\]/gi, ''));
+			$(this).val($(this).val().replace(/[\*\-#=,;:'"()?%~`$^&+{}|<>\[\]/\\]/gi, ''));
+		});
+	});
+
+function submitheader()
+{	
+	var terminal = $("#port").val();
+	var vessel=$( "#vessel_autocomplete" ).val();
+	var id_vsb_voyage=$( "#id_vsb_voyage" ).val();
+	var vessel_code=$( "#vessel_code" ).val();
+	var call_sign=$( "#call_sign" ).val();
+	var voyage_in=$( "#voyage_in" ).val();
+	var voyage_out=$( "#voyage_out" ).val();
+	var delivery_type=$( "#delivery_type" ).val();
+	var delivery_date=$( "#delivery_date" ).val();
+	var no_bl=$( "#no_bl" ).val();
+	var no_do=$( "#no_do" ).val();
+	var file_do=$( "#do_upload" ).val();
+	var do_date=$( "#do_date" ).val();
+	var sppbtype=$( "#sppbtype" ).val();
+	var no_sppb=$( "#no_sppb" ).val();
+	var sppb_date=$( "#sppb_date" ).val();
+	var file_sppb=$( "#sppb_upload" ).val();
+	var no_sp_custom=$( "#no_sp_custom" ).val();
+	var sp_custom_date=$( "#sp_custom_date" ).val();
+	var file_sp_custom=$( "#sp_custom_upload" ).val();
+	var date_discharge = $( "#date_discharge" ).val();
+	var no_book = $( "#nobook" ).val();
+	var ship_line = $( "#ship_line_data " ).val();
+	
+	var arrtdd = delivery_date.split("-");
+	var arrtdo = do_date.split("-");
+	
+	var martdo =arrtdo[2]+arrtdo[1]+arrtdo[0];
+	var martpd =arrtdd[2]+arrtdd[1]+arrtdd[0];
+
+	var cek_international = terminal.slice(-1);
+	var delivery_via = $("#delivery_via").val();
+
+	if( terminal=='')
+	{
+		alert('Terminal tidak boleh kosong');
+		return false;
+	}
+
+	if(delivery_type=="LAP")
+	{
+		if(date_discharge=='')
+		{
+			alert('Container dalam kapal belum ada yg dibongkar, mohon konfirmasi ke Control Tower');
+			return false;
+		}
+	}
+
+	if( vessel=='' || voyage_in=='' || voyage_out=='')
+	{
+		alert('Kapal tidak valid');
+		return false;
+	}
+
+	if (delivery_type=='')
+	{
+		alert('Tipe Delivery tidak boleh kosong');
+		return false;
+	}
+
+	if(delivery_date=='')
+	{
+		alert('Tanggal Delivery tidak boleh kosong');
+		return false;
+	}
+
+	if(no_do == '' || do_date == ''){
+		alert('Informasi No DO dan Tanggal Do harus diisi');
+		return false;
+	}
+	
+	if(martpd>martdo){
+		alert('Tanggal Delivery Tidak Boleh Melebihi Tanggal DO');
+		return false;
+	}
+
+	if(file_do == ''){
+		alert('File DO harus di Upload');
+		return false;
+	}
+
+	if(file_do.length > 100){
+		alert('File Name length has to below 100 Character');
+		return false;
+	}
+
+	if(cek_international == 'I'){
+			/*if(no_sppb == '' || sppb_date == ''){
+				if(no_sp_custom == '' || sp_custom_date == ''){
+					alert("Informasi SPPB atau SP Custom Harus Diisi");
+					return false;
+				}
+			}*/
+
+	if(sppbtype == ''){
+		alert("SPPB Type harus diisi");
+		return false;
+	}		
+			
+			if(no_sppb == '' && no_sp_custom == ''){
+				alert("No SPPB atau SP Custom Harus diisi");
+				return false;
+			}
+
+			if(sppb_date == '' && sp_custom_date == ''){
+				alert("SPPB Date atau SP Custom Date Harus Diisi");
+				return false;
+			}
+
+			if($("#sppb_upload").val() == '' && $("#sp_custom_upload").val() == ''){
+					alert("Dokumen SPPB atau SP Custom Harus Diupload");
+					return false;
+			}
+
+	}
+	
+	if (no_bl == ''){
+		alert('No BL tidak boleh kosong');
+		return false;		
+	}
+
+	var url="<?=ROOT?>container/create_request_delivery";
+	$.blockUI();
+	$.post(url,{TERMINAL:terminal,ID_VSB_VOYAGE:id_vsb_voyage,VESSEL:vessel,VESSEL_CODE:vessel_code,CALL_SIGN:call_sign,VOYAGE_IN:voyage_in,VOYAGE_OUT:voyage_out, DELIVERY_TYPE:delivery_type, DELIVERY_DATE:delivery_date, NO_BL:no_bl, NO_DO:no_do, DO_DATE:do_date, SPPB_TYPE:sppbtype, NO_SPPB:no_sppb, DATE_SPPB:sppb_date, NO_SP_CUSTOM:no_sp_custom, DATE_SP_CUSTOM: sp_custom_date, FILE_SPPB:file_sppb, FILE_SP_CUSTOM:file_sp_custom, FILE_DO:file_do, DATE_DISCHARGE:date_discharge,NO_BOOKING:no_book,DELIVERY_VIA:delivery_via,ship_line:ship_line,'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'},
+
+	function(data) {
+		//$.unblockUI();
+		alert(data);return false;
+		if(data == 'salah') {
+			alert('Masih terdapat kesalahan input, silakan periksa kembali inputan anda.');
+			return false;
+		}
+
+		$(':button').attr('disabled','disabled');
+
+		var obj = jQuery.parseJSON( data );
+
+		if(obj.rc=="F") {
+			alert("Request Gagal. Hubungi sistem administrator: "+obj.rcmsg);
+			$(':button').removeAttr('disabled');
+		}
+		else if(obj.data.info==null) {
+			alert("Request Gagal. Hubungi sistem administrator: "+obj.rcmsg);
+			$(':button').removeAttr('disabled');
+		}
+		else
+		{
+			var row_data = obj.data.info;
+			var explode = row_data.split(',');
+			var v_msg = explode[0];
+			var v_req = explode[1];
+
+			if(v_msg!="OK")
+			{
+				alert(v_req);
+			}
+			else
+			{
+				submitFileOK(v_req);
+				if (port != "IDJKT-T009D") {
+					submitFileSPPB(v_req);
+					submitFileSPCUSTOM(v_req);
+				}
+				document.getElementById('submit_header').style.display = "none";
+				alert("Simpan request berhasil");
+
+				$( "#no_request" ).val(v_req);
+				document.getElementById("port").disabled = true;
+				document.getElementById("vessel_autocomplete").readOnly = true;
+				document.getElementById("voyage_in").readOnly = true;
+				document.getElementById("voyage_out").readOnly = true;
+				document.getElementById("delivery_type").disabled =true;
+				document.getElementById("delivery_date").readOnly =true;
+				document.getElementById("no_bl").readOnly = true;
+				document.getElementById("no_do").readOnly = true;
+				document.getElementById("do_date").readOnly = true;
+				document.getElementById("do_upload").readOnly = true;
+				document.getElementById("sppb_date").readOnly =true;
+				document.getElementById("no_sppb").readOnly = true;
+				document.getElementById("sppb_upload").readOnly = true;
+				document.getElementById("no_sp_custom").readOnly = true;
+				document.getElementById("sp_custom_upload").readOnly = true;
+				document.getElementById("sp_custom_date").readOnly =true;
+				$("#container_data").attr('class', 'row');
+				$("#container_excel").attr('class', 'row');
+				$("#detail_container").attr('class', 'row');
+				$('#req_excel').val(v_req);
+				$('#terminal_excel').val(terminal);
+				$('#vessel_excel').val(vessel);
+				$('#id_vsb_voyage_excel').val(id_vsb_voyage);
+				$('#vessel_code_excel').val(vessel_code);
+				$('#call_sign_excel').val(call_sign);
+				$('#voyage_in_excel').val(voyage_in);
+				$('#voyage_out_excel').val(voyage_out);
+				$('#date_delivery_excel').val(delivery_date);
+				$('#date_discharge_excel').val(date_discharge);
+				$('#delivery_type_excel').val(delivery_type);
+
+				var notification = new NotificationFx({
+					message : '<p>Anda mendapatkan no request </p>('+v_req+')',
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'success' // notice, warning, error or success
+
+				});
+
+				// show the notification
+				notification.show();
+			}
+			$(':button').removeAttr('disabled');
+		}
+	});
+}
+
+function delete_container(no_container){
+	var terminal = $("#port").val();
+	var no_request = $("#no_request").val();
+	var vessel_code=$( "#vessel_code" ).val();
+	var voyage=$( "#voyage" ).val();
+
+	var url="<?=ROOT?>container/del_cont_req_delivery";
+	$.post(url,{NO_CONTAINER:no_container, NO_REQUEST:no_request, TERMINAL:terminal, VESSEL_CODE:vessel_code, VOYAGE:voyage,'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'},
+		function(data){
+			var row_data = data;
+			var explode = row_data.split(',');
+			var v_msg = explode[0];
+			var v_req = explode[1];
+			if (v_msg!='OK')
+			{
+				alert('Delete gagal : '+v_msg+'.'+v_req);
+			}
+			else
+			{
+				$("#detail_container").load("<?=ROOT?>container/get_detail_delivery/add/"+no_request+"/"+terminal);
+				alert(v_msg+'.'+no_container+" deleted");
+			}
+		});
+	$('a').removeAttr('disabled');
+}
+
+$(document).ready(function() {
+
+
+	$('#trade_type').on('change', function(){
+		var trade_type = $(this).val().slice(-1);
+		console.log(trade_type);
+		if (trade_type == 'L'){
+			$('#international_content').removeClass('hidden_content');
+		} else {
+			$('#international_content').addClass('hidden_content');
+		}
+		
+	});
+
+	$('#booking_date').datetimepicker({
+		format: 'd-m-Y H:i'
+	});
+});
+
+function cekTipeYd()
+{
+	var termn=$('#port').val();
+	//alert('tes');
+	$("#delivery_type option[value='TL']").removeAttr("disabled");
+	$("#delivery_type").removeAttr("disabled");
+	$("#delivery_type option[value='TL']").show();
+	$("#frm_delivery_via").addClass('hidden_content');
+	// for (var i = 1; i < 32; i++) {
+		$("#sppbtype option[value='31']").show();	
+	// }
+	if(termn=='IDJKT-T3I' || termn=='IDJKT-L2D' || termn=='IDJKT-L2I' ||termn=='IDPNJ-PNJI'|| termn=='IDPNJ-PNJD'){
+		$("#delivery_type").val('LAP');
+		$('#delivery_type').attr('disabled',true);
+		$("#sppbtype option[value='31']").hide();
+		//$("#sppbtype").val("");
+	} else if (termn=='IDJKT-T009D')
+	{
+		if ($("#delivery_type").val() == "TL"){
+					$("#delivery_type").val("");
+		}
+		$("#delivery_type option[value='TL']").prop('disabled',true);
+	} else if (termn == 'IDDJB-DJBD' || termn == 'IDDJB-DJBI' || termn == 'IDTLB-TLBD' || termn == 'IDTLB-TLBI')
+	{
+		$('#delivery_type').val('LAP');
+		$("#delivery_type option[value='TL']").attr("disabled", "disabled");
+		$("#delivery_type option[value='TL']").hide();
+		$("#frm_delivery_via").removeClass('hidden_content');
+		$('.custom-hidden').hide();
+	}
+	
+	if(termn=='IDJKT-L2D' || termn=='IDJKT-L2I'){
+		$('.custom-hidden').hide();
+	}
+}
+</script>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Booking Data </h2>
+								</header>
+
+									<div class="main-box-body clearfix">
+										<div class="form-group col-xs-6">
+											<label>Booking Type</label>
+											<select id="booking_type" name="booking_type" class="form-control" onchange="cekTipeYd()">
+												<option> -- Please Choose Booking Type -- </option>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Terminal</label>
+											<select id="port" name="port" class="form-control" onchange="cekTipeYd()">
+												<option> -- Please Choose Terminal -- </option>
+												<?php
+												foreach($terminal as $term)
+												{
+												?>
+													<option value="<?=$term["PORT"]?>-<?=$term["TERMINAL"]?>-<?=$term["ID_PORT"]?>"><?=$term["TERMINAL_NAME"]?></option>
+												<?php
+												}
+												?>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label for="exampleTooltip">Booking Number</label>
+											<input name="no_request" id="no_request" type="text" class="form-control" placeholder="-" data-toggle="tooltip" data-placement="bottom" title="Nomor Permintaan" size="20" readonly>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>PBM</label>
+											<select id="pbm" name="pbm" class="form-control" onchange="cekTipeYd()">
+												<option> -- Please Choose PBM  -- </option>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label for="datepickerDate">Booking Date</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="booking_date" name="booking_date" type="text" class="form-control" id="datepickerDate">
+											</div>
+											<span class="help-block">format dd-mm-yyyy</span>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Shipping Agent</label>
+											<select id="agen_pelayaran" name="agen_pelayaran" class="form-control" onchange="cekTipeYd()">
+												<option> -- Please Choose Shipping Agent  -- </option>
+											</select>
+										</div>
+										
+										<div class="form-group col-xs-6">
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Trade Type</label>
+											<select id="trade_type" name="trade_type" class="form-control">
+												<option> -- Please Choose Trade Type  -- </option>
+												<option value="L">Internasional</option>
+												<option value="D">Domestik</option>
+											</select>
+										</div>
+										<div class="form-group example-twitter-oss">	
+											<label for="exampleAutocomplete">Vessel</label>
+                      						<div class="form-wrapper cf">
+										      	<input type="text" id="vessel_autocomplete" name="vessel_autocomplete" placeholder="Search here..." title="Masukkan data kapal" required>
+                          						<button type="submit" onclick="search_vessel()">Search</button>
+                     						</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Voyage In</label>
+												<input type="text" class="form-control" id="voyage_in" name="voyage_in" placeholder="Voyage In" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Voyage Out</label>
+												<input type="text" class="form-control" id="voyage_out" name="voyage_out" placeholder="Voyage Out" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ETA</label>
+												<input type="text" class="form-control" id="eta" name="eta" placeholder="ETA" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ETD</label>
+												<input type="text" class="form-control" id="etd" name="etd" placeholder="ETD" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="datepickerDate">Actual Departure</label>
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+													<input id="actual_departure" name="actual_departure" type="text" class="form-control" id="datepickerDate" readonly>
+												</div>
+												<span class="help-block">format dd-mm-yyyy</span>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="datepickerDate">Actual Arrive</label>
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+													<input id="actual_arrive" name="actual_arrive" type="text" class="form-control" id="datepickerDate" readonly>
+												</div>
+												<span class="help-block">format dd-mm-yyyy</span>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Kade</label>
+												<input type="text" class="form-control" id="kade" name="kade" placeholder="Kade" title="Masukkan data kade" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ETB</label>
+												<input type="text" class="form-control" id="etb" name="etb" placeholder="ETB" title="Masukkan data ETB" size="8" readonly> 
+											</div>
+										</div>
+										<div class="form-group example-twitter-oss">
+	                                        <label for="exampleAutocomplete" id="shipper">Shipper</label>
+	                                        <input type="hidden" id="idpod" name="idpod"/>
+											<div id="ship_line"></div>
+										</div>
+										<div class="form-group col-xs-4">
+											<!-- kondisi ketika upload do -->
+											<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+											<label for="exampleTooltip">Delivery Order Upload</label>
+											<input type="file" accept=".pdf" name="do_upload" id="do_upload" data-toggle="tooltip" data-placement="bottom" title="Upload Delivery Order" size="100">
+											<table style="padding: 0 !important; margin-top: 30px !important" class="table table-striped table-hover" id="order-list"></table>
+										</div>
+										<div class="form-group col-xs-4">
+											<br/>
+											<input type="button" class="btn btn-success " id="add_file" value="+" />
+										</div>
+									</div>
+							</div>
+						</div>
+						<div class="col-lg-6 hidden_content"  id='international_content'>
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>*International</h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="form-group">
+										<label for="exampleAutocomplete">Tanggal PEB</label>
+                      					<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+											<input id="tgl_peb" name="tgl_peb" type="text" class="form-control" id="datepickerDate">
+										</div>
+										<span class="help-block">format dd-mm-yyyy</span>
+									</div>
+									<div class="form-group">
+										<label for="exampleAutocomplete">No PEB/PJBS</label>
+                      					<div class="form-wrapper cf">
+										    <input type="text" id="no_peb" name="no_peb" placeholder="Search here..." title="Masukkan No PEB" required>
+                          					<button type="submit" onclick="search_no_peb()">Search</button>
+                     					</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">No NPE/SPPB</label>
+										<input id="no_npe" name="no_npe" type="text" class="form-control" id="exampleTooltip" data-toggle="tooltip" data-placement="bottom" title="Nomor NPE" maxlength="40" readonly="">
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">Booking Ship</label>
+										<input id="booking_ship" name="booking_ship" type="text" class="form-control" id="exampleTooltip" data-toggle="tooltip" data-placement="bottom" title="booking_ship" maxlength="40">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="ModalVessel" role="dialog">
+						<div class="modal-dialog">
+						  	<!-- Modal content-->
+						  	<div class="modal-content">
+						    	<div class="modal-header">
+						      		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						      		<h4 class="modal-title">List Vessel</h4>
+						    	</div>
+						    	<div class="modal-body">
+							    	<div class="main-box-body clearfix">
+								 		<div class="table-responsive">
+								  			<table class="table table-striped table-hover" id="example1">
+									  			<thead>
+									    			<tr>
+											      		<th scope="col">VASSEL</th>
+											      		<th scope="col">VOYAGE IN</th>
+											      		<th scope="col">VOYAGE OUT</th>
+											      		<th scope="col">ETA</th>
+											      		<th scope="col">ETD</th>
+											      		<th scope="col">PILIH</th>
+											    	</tr>
+											  	</thead>
+											  	<tbody></tbody>
+											</table>
+										</div>	
+									</div>
+						    	</div>
+						    	<div class="modal-footer">
+						      		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						    	</div>
+						  </div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Create New Detail</h2>
+								</header>
+										
+								<div class="main-box-body clearfix">
+									<button type="submit" id="mybtn_add" class="btn btn-success">Create</button>
+								</div>
+							</div>
+						</div>	
+					</div>
+
+					<div class="row" id="container_data" name="container_data">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">Detail Discharge/Loading</h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="table-responsive">
+
+										<table id="example" class="table table-striped table-hover" style="width:100%">
+									        <thead>
+									            <tr>
+									                <th>No</th>
+									                <th>No BL</th>
+									                <th>Truck Losing</th>
+									                <th>Kemasan</th>
+									                <th>Barang</th>
+									                <th>Satuan</th>
+									                <th>Character Comodity</th>
+									                <th>Character Comodity Percent</th>
+									                <th>Ukuran</th>
+									                <th>Kondisi</th>
+									                <th>Total</th>
+									                <th>Action</th>
+									            </tr>
+									        </thead>
+									        <tbody>
+									            <tr>
+									                <td>1</td>
+									                <td>BIL-0000001238</td>
+									                <td>TL</td>
+									                <td>CURAH KERRING</td>
+									                <td>BERAS</td>
+									                <td>1 TON / M3</td>
+									                <td>-</td>
+									                <td>-</td>
+									                <td>-</td>
+									                <td>-</td>
+									                <td>1000</td>
+									                <td>
+									                	<a class="btn btn-primary" href=""><i class="fa fa-trash-o"></i></a>
+									                	<a class="btn btn-primary" id="mybtn_edit"><i class="fa fa-pencil"></i></a>
+									                </td>
+									            </tr>
+									        </tbody>
+									    </table>
+										<div class="form-group col-xs-12">
+											<button id="submit_header" onclick="submitheader()" class="btn btn-success">Save</button>
+											<button class="btn btn-danger">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="mymodal_edit" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      	<div class="modal-content">
+					        	<div class="modal-header">
+					          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+					          		<h4 class="modal-title">Add Detail Discharge/Loading</h4>
+					        	</div>
+					        	<div class="modal-body">
+					          		<div class="form-group">
+										<label for="exampleTooltip">BOOKING TYPE</label>
+										<input name="booking_type" id="booking_type" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">BL NUMBER</label>
+										<input name="bl_number" id="bl_number" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>TRUCK LOSING</label>
+										<select id="truck_losing" name="truck_losing" class="form-control">
+											<option>TL</option>
+											<option>NO TL</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>PACKAGING</label>
+										<select id="packaging2" name="packaging2" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="1">PETIKEMAS</option>
+											<option value="2">CURAH CAIR</option>
+											<option value="3">CURAH KERING</option>
+											<option value="4">UNITIZED</option>
+											<option value="5">BREAK BULT</option>
+											<option value="6">CURAH KERING BIASA</option>
+											<option value="7">CURAH KERING EMS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_comodity2">
+										<label>COMODITY</label>
+										<select id="comodity2" name="comodity2" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="c">KONTAINER C</option>
+											<option value="b">KONTAINER B</option>
+											<option value="a">KONTAINER A</option>
+											<option value="d">BERAS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_unit2">
+										<label>UNIT</label>
+										<select id="unit2" name="unit2" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="1">1 TEUS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_quantity2">
+										<label>QUANTITY</label>
+										<div class="input-group">
+											<input id="quantity2" name="quantity2" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="form-group" id="div_size2">
+										<label>SIZE</label>
+										<select id="size2" name="size2" class="form-control">
+											<option>20</option>
+											<option>20</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_condition2">
+										<label>CONDITION</label>
+										<select id="condition2" name="condition2" class="form-control">
+											<option>EMPTY</option>
+											<option>FULL</option>
+										</select>
+									</div>
+									<div class="form-group" id="como_character2">
+										<label>COMODITY CHARACTER</label><br>
+										<input type="radio" name="distub" value="distub"> DISTURB<br>
+										<input type="radio" name="hazard" value="hazard"> HAZARD<br>
+										<input type="radio" name="hazard_non" value="hazard_non"> HAZARD NON LABEL 
+									</div>
+					        	</div>
+					        	<div class="modal-footer">
+					          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					          		<button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+					        	</div>
+					      </div>
+					    </div>
+					</div>
+
+					<div class="modal fade" id="mymodal_add" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      	<div class="modal-content">
+					        	<div class="modal-header">
+					          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+					          		<h4 class="modal-title">Add Detail Discharge/Loading</h4>
+					        	</div>
+					        	<div class="modal-body">
+					          		<div class="form-group">
+										<label for="exampleTooltip">BOOKING TYPE</label>
+										<input name="booking_type" id="booking_type" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">BL NUMBER</label>
+										<input name="bl_number" id="bl_number" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>TRUCK LOSING</label>
+										<select id="truck_losing" name="truck_losing" class="form-control">
+											<option>TL</option>
+											<option>NO TL</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>PACKAGING</label>
+										<select id="packaging" name="packaging" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="1">PETIKEMAS</option>
+											<option value="2">CURAH CAIR</option>
+											<option value="3">CURAH KERING</option>
+											<option value="4">UNITIZED</option>
+											<option value="5">BREAK BULT</option>
+											<option value="6">CURAH KERING BIASA</option>
+											<option value="7">CURAH KERING EMS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_comodity">
+										<label>COMODITY</label>
+										<select id="comodity" name="comodity" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="c">KONTAINER C</option>
+											<option value="b">KONTAINER B</option>
+											<option value="a">KONTAINER A</option>
+											<option value="d">BERAS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_unit">
+										<label>UNIT</label>
+										<select id="unit" name="unit" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="1">1 TEUS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_quantity">
+										<label>QUANTITY</label>
+										<div class="input-group">
+											<input id="quantity" name="quantity" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="form-group" id="div_size">
+										<label>SIZE</label>
+										<select id="size" name="size" class="form-control">
+											<option>20</option>
+											<option>20</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_condition">
+										<label>CONDITION</label>
+										<select id="condition" name="condition" class="form-control">
+											<option>EMPTY</option>
+											<option>FULL</option>
+										</select>
+									</div>
+									<div class="form-group" id="como_character">
+										<label>COMODITY CHARACTER</label><br>
+										<input type="radio" name="distub" value="distub"> DISTURB<br>
+										<input type="radio" name="hazard" value="hazard"> HAZARD<br>
+										<input type="radio" name="hazard_non" value="hazard_non"> HAZARD NON LABEL 
+									</div>
+					        	</div>
+					        	<div class="modal-footer">
+					          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					          		<button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+					        	</div>
+					      </div>
+					    </div>
+					</div>
+  
+
+
+<script>
+	$('#div_comodity').hide();
+	$('#div_unit').hide();
+	$('#div_quantity').hide();
+	$('#div_comodity').hide();
+	$('#div_size').hide();
+	$('#div_condition').hide();
+	$('#como_character').hide();
+	$('#packaging').on('change', function(){
+		if ($('#packaging').val() == '0'){
+			$('#div_comodity').hide();
+			$('#div_size').hide();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#div_condition').hide();
+			$('#como_character').hide();
+
+		}else if($('#packaging').val() == '1'){
+
+			$('#div_comodity').show();
+			$('#div_size').show();
+			$('#div_condition').show();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#como_character').hide();
+
+		}else if($('#packaging').val() == '2' || $('#packaging').val() == '3' || $('#packaging').val() == '4' || $('#packaging').val() == '5' || $('#packaging').val() == '6' || $('#packaging').val() == '7'){
+			$('#div_comodity').show();
+			$('#div_size').hide();
+			$('#div_condition').hide();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#div_size').hide();
+			$('#como_character').hide();	
+		}
+	});
+
+	$('#comodity').on('change', function(){
+		if ($('#comodity').val() == '0'){
+			$('#div_size').hide();
+			$('#div_condition').hide();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#div_size').hide();
+			$('#como_character').hide();	
+
+		}else if($('#comodity').val() == 'a' || $('#comodity').val() == 'b' || $('#comodity').val() == 'c'){
+			$('#div_unit').show();
+			$('#div_quantity').show();
+			$('#div_size').show();
+			$('#div_condition').show();
+			$('#como_character').hide();
+
+		}else if($('#comodity').val() == 'd'){
+			$('#div_unit').show();
+			$('#div_quantity').show();
+			$('#como_character').show();
+			$('#div_size').hide();
+			$('#div_condition').hide();
+
+
+		}
+	});
+
+	$('#div_comodity2').hide();
+	$('#div_unit2').hide();
+	$('#div_quantity2').hide();
+	$('#div_comodity2').hide();
+	$('#div_size2').hide();
+	$('#div_condition2').hide();
+	$('#como_character2').hide();
+	$('#packaging2').on('change', function(){
+		if ($('#packaging2').val() == '0'){
+			$('#div_comodity2').hide();
+			$('#div_size2').hide();
+			$('#div_unit2').hide();
+			$('#div_quantity2').hide();
+			$('#div_condition2').hide();
+			$('#como_character2').hide();
+
+		}else if($('#packaging2').val() == '1'){
+
+			$('#div_comodity2').show();
+			$('#div_size2').show();
+			$('#div_condition2').show();
+			$('#div_unit2').hide();
+			$('#div_quantity2').hide();
+			$('#como_character2').hide();
+
+		}else if($('#packaging2').val() == '2' || $('#packaging2').val() == '3' || $('#packaging2').val() == '4' || $('#packaging2').val() == '5' || $('#packaging2').val() == '6' || $('#packaging2').val() == '7'){
+			$('#div_comodity2').show();
+			$('#div_size2').hide();
+			$('#div_condition2').hide();
+			$('#div_unit2').hide();
+			$('#div_quantity2').hide();
+			$('#div_size2').hide();
+			$('#como_character2').hide();	
+		}
+	});
+
+	$('#comodity2').on('change', function(){
+		if ($('#comodity2').val() == '0'){
+			$('#div_size2').hide();
+			$('#div_condition2').hide();
+			$('#div_unit2').hide();
+			$('#div_quantity2').hide();
+			$('#div_size2').hide();
+			$('#como_character2').hide();	
+
+		}else if($('#comodity2').val() == 'a' || $('#comodity2').val() == 'b' || $('#comodity2').val() == 'c'){
+			$('#div_unit2').show();
+			$('#div_quantity2').show();
+			$('#div_size2').show();
+			$('#div_condition2').show();
+			$('#como_character2').hide();
+
+		}else if($('#comodity2').val() == 'd'){
+			$('#div_unit2').show();
+			$('#div_quantity2').show();
+			$('#como_character2').show();
+			$('#div_size2').hide();
+			$('#div_condition2').hide();
+
+
+		}
+	});
+
+	$(document).ready(function(){
+  		$("#mybtn_add").click(function(){
+    	$("#mymodal_add").modal();
+  		});
+	});
+
+	$(document).ready(function(){
+  		$("#mybtn_edit").click(function(){
+    	$("#mymodal_edit").modal();
+  		});
+	});
+	$(document).ready(function() {
+    	$('#example').DataTable();
+	} );
+
+	$('#tgl_peb').datepicker({
+		format: 'dd-mm-yyyy'
+	});
+
+   var counter = 0;
+   $("#add_file").on("click", function () {
+   		//alert('cek');
+        var newRow = $("<tr style='padding:0 !important;background-color:white !important; border:none !important'>");
+        var cols = "";
+        cols += '<td style="padding:0 !important;"><input type="file" accept=".pdf" name="do_upload" id="do_upload" data-toggle="tooltip" data-placement="bottom" title="Upload Delivery Order"></td>';
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete" id="ibtnDel"></td>';
+
+        newRow.append(cols);
+        $("#order-list").append(newRow);
+        counter++;
+    });
+   
+  	$("#order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();       
+        counter -= 1
+    });
+   
+   function search_no_peb(){
+	  
+	  $.blockUI();
+	  var tgl     = $('#tgl_peb').val();
+	  var tglexp  = tgl.split('-');
+	  var tgl_peb = tglexp[0]+tglexp[1]+tglexp[2];
+	  var no_peb  = $('#no_peb').val();
+	  var npwp    = $('#npwp').val();
+	  $.get("<?=ROOT?>eservice/request_bm/auto_no_peb?",{tgl_peb: tgl_peb,no_peb: no_peb,npwp: npwp}, function(data){
+	      //document.getElementById('no_npe').value=data;
+	      if(data != ''){
+	      	$("#no_npe").val(data);
+	      }else{
+	      	alert('Data Tidak Ditemukan')
+	      }
+	      $.unblockUI();
+	  });
+
+   }
+
+    function complete(isi){
+  		var data 		= isi.split('#');
+  		var voyageIn 	= data[0];
+  		var voyageOut 	= data[1];
+  		var eta 		= data[2];
+  		var etd 		= data[3];
+  		var closingTime = data[4];
+  		var startWork 	= data[5];
+  		var etaa 		= data[6];
+  		var idVsbVoyage = data[7];
+  		
+        //$('#ModalVessel').modal('show');
+		$( "#voyage_in" ).val(voyageIn);
+		$( "#voyage_out" ).val(voyageOut);
+		$( "#eta" ).val(eta);
+		$( "#etd" ).val(etd);
+		$( "#actual_departure" ).val(closingTime);
+		$( "#actual_arrive" ).val(startWork);
+		$( "#kade" ).val(etaa);
+		$( "#etb" ).val(idVsbVoyage);
+		//var arr.length = 0;
+      //$('#modalplaceholder').attr('display','none');
+	}
+	
+
+  function search_vessel(){
+
+      var vesselname = $("#vessel_autocomplete").val();
+      var port_split = $('#port').val();
+      var split      = port_split.split("-");
+      var port       = split[2];
+      //alert(port);
+      $.blockUI();
+      // if(vesselname == ''){
+      //     $("#vessel_autocomplete").focus();
+      //     alert('Mohon diisi kolomnya');
+      // }
+      // else{
+
+        $.get("<?=ROOT?>eservice/request_bm/auto_vessel?",{vessel : vesselname, port: port}, function(data){
+              	//alert(data)
+              	$('#example1 tbody').html('');
+              	var arr =[];
+              	var obj = JSON.parse(data);
+              	//alert(obj);
+              	var jmlresponse = obj.length;
+				for(i=0;i<jmlresponse;i++)
+				{
+					var callSign 	  =obj[i]['_c']['callSign']['_v'];
+					var closingTime   =obj[i]['_c']['closingTime']['_v'];
+					var closingTimeDoc=obj[i]['_c']['closingTimeDoc']['_v'];
+					var eta 		  =obj[i]['_c']['eta']['_v'];
+					var etaa 		  =obj[i]['_c']['etaa']['_v'];
+					var etd 		  =obj[i]['_c']['etd']['_v'];
+					var idVsbVoyage   =obj[i]['_c']['idVsbVoyage']['_v'];
+					var openStack 	  =obj[i]['_c']['openStack']['_v'];
+					var startWork 	  =obj[i]['_c']['startWork']['_v'];
+					var vessel  	  =obj[i]['_c']['vessel']['_v'];
+					var vesselCode 	  =obj[i]['_c']['vesselCode']['_v'];
+					var voyage 		  =obj[i]['_c']['voyage']['_v'];
+					var voyageIn 	  =obj[i]['_c']['voyageIn']['_v'];
+					var voyageOut 	  =obj[i]['_c']['voyageOut']['_v'];
+					// var isi 		  =voyageIn+'^'+voyageOut+'^'+eta+'^xxxxx'+obj[i]['_c']['etd']['_v']+'^'+closingTime+'^'+startWork+'^'+etaa+'^'+idVsbVoyage;
+				}
+					var ptk = "'";
+					//alert(isi);
+
+				obj.forEach(function(abc) {
+
+					var isi = abc._c.voyageIn._v+"#"+ abc._c.voyageOut._v+"#"+ abc._c.eta._v+"#"+ abc._c.etd._v+"#"+ abc._c.closingTime._v+"#"+ abc._c.startWork._v+"#"+ abc._c.etaa._v+"#"+ abc._c.idVsbVoyage._v;
+				
+				arr.push(
+					'<tr>' +
+					     '<td>'+ abc._c.vessel._v +'</td>' +
+					     '<td>'+ abc._c.voyageIn._v +'</td>' +
+					     '<td>'+ abc._c.voyageOut._v +'</td>' +
+					     '<td>'+ abc._c.eta._v +'</td>' +
+					     '<td>'+ abc._c.etd._v +'</td>' +
+					     '<td><a data-dismiss="modal" style="cursor:pointer" class="table-link click_detail bank_detail" onclick="complete('+ptk+isi+ptk+')"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-edit fa-stack-1x fa-inverse"></i></span></a></td>' +
+					   '</tr>');
+
+				});
+				$('#example1 tbody').append(arr);
+							  
+			  console.log(arr);
+			  arr.length = 0;
+
+              $.unblockUI();
+              $('#ModalVessel').modal('show');
+			
+          });
+
+  }
+
+
+
+	//datepicker
+	var picker = $('#start_shift').datepicker({
+		format: 'dd-mm-yyyy 00:00',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+
+	var picker = $('#peb_dt').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+	//.val(moment().format("D-M-YYYY 00:00"));
+
+	</script>
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

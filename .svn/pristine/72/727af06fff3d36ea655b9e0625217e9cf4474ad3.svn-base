@@ -1,0 +1,190 @@
+
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+
+
+<style type="text/css">
+
+.divdemo{
+	padding: 15px;
+  	border: 1px solid #666;
+  	background: #fff;
+	display: none;
+}
+
+#rectangle {
+  
+  width: 250px;
+  border: 1px solid ;
+  padding: 50px;
+  margin: 20px;
+}
+
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+<script>
+
+	$(document).ready(function() {
+	    $('#listbarang').DataTable();
+	    $('#listmaster').DataTable();
+	    $('#listvessel').DataTable();
+	});
+
+
+	$(document).ready(function() {
+     $("#hidediv").click(function () {
+     $(".divdemo").hide();
+    });
+
+     $(".showdiv").click(function () {
+     $(".divdemo").show();
+    });
+
+   });
+
+</script>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Create User</h2>
+								</header>
+
+									<div class="main-box-body clearfix">
+									<!--<form role="form">-->
+
+                                        <div class="form-group col-xs-12">
+                                        	<label for="exampleAutocomplete"><b style="font-decoration:italics">Username</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Choose Select Username -- </option>
+											</select>
+                                        </div>
+
+										<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Role</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Choose Select Code -- </option>
+											</select>
+										</div>
+
+										<div class="form-group col-xs-12">
+											<table id="" class="table table-striped table-bordered" style="width:100%">
+										        <thead>
+										            <tr>
+										                <th>Menu</th>
+										                <th>View</th>
+										                <th>Edit</th>
+										                <th>Delete</th>
+										            </tr>
+										        </thead>
+										        <tbody>
+										            <tr>
+										                <td>All Access</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>Truck Management</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										             <tr>
+										                <td>- Sub Menu Truck Registration</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>- TCA</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										             <tr>
+										                <td>User Management</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>- User Profile</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										             <tr>
+										                <td>- Konfigurasi User Account</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>Booking</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>- Request B/M</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>- Request Receiving</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>- Request Delivery</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										            <tr>
+										                <td>- Request Stacking Extention</td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										                <td><input type="checkbox" class="form-check-input" id="materialUnchecked"></td>
+										            </tr>
+										        </tbody>
+										   	</table>
+										   	<div class="input-group">
+	                                    		<button type="button" class="btn btn-secondary">Submit</button>
+	                                    		<button type="button" class="btn btn-secondary">Cancel</button>
+                                    		</div>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

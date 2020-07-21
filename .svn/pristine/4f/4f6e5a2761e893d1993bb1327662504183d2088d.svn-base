@@ -1,0 +1,82 @@
+<?php 
+	class receiving_delivery extends CI_Controller
+	{
+		
+		public function __construct()
+		{
+			parent::__construct();
+			$this->load->helper('url');
+			$this->load->helper('form');
+			$this->load->library('form_validation');
+			$this->load->library('upload');
+			$this->load->model('user_model');
+			$this->load->model('container_model');
+			$this->load->library("Nusoap_lib");
+			$this->load->library("sendcurl_lib");
+			$this->load->library('table');
+			$this->load->library('breadcrumbs');
+			$this->load->helper('MY_language_helper');
+			$this->load->library('session');
+			$this->load->model('auth_model','auth_model');
+			
+			require_once(APPPATH.'libraries/mime_type_lib.php');
+	        require_once(APPPATH.'libraries/htmLawed.php')
+		}
+
+		public function common_loader($data,$views) 
+		{
+			$this->load->view('templates/header', $data);
+			$this->load->view('templates/top_bar', $data);
+			$this->load->view('templates/menu_side', $data);
+			$this->load->view('templates/top-1-breadcrumb', $data);
+			$this->load->view('templates/top-2-title-nosearch', $data);
+			$this->load->view($views, $data);
+			$this->load->view('templates/footer', $data);
+		}
+
+		public function redirect()
+		{
+			if (!$this->session->userdata('uname_phd'))
+			{
+				redirect(ROOT.'main', 'refresh');
+			}
+		}
+
+
+		public function index()
+		{
+			$this->redirect();
+
+			$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+			$this->breadcrumbs->push("Booking Receiving / Delivery", '/');
+			$this->breadcrumbs->unshift('Home', '/');
+			$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+			$data['title']= "Booking Receiving / Delivery";
+
+			$this->common_loader($data,'eservice/booking/receiving_delivery');
+		}
+
+		public function add_receiving_delivery()
+		{
+
+			$this->redirect();
+			
+			/*$data['is_shipping'] = $this->master_model->cek_shippingline();
+			$data['terminal'] = $this->user_model->get_terminalList($this->session->userdata('sub_group_phd'));
+			$data['max_size'] = $this->commonlib->file_upload_max_size_mb();
+	*/
+			$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+			$this->breadcrumbs->push("Extension Delivery", '/container/main_delivery_ext');
+			$this->breadcrumbs->push("Add Booking", '/');
+			$this->breadcrumbs->unshift('Home', '/');
+			$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+			$data['title']= "Create Booking Receiving / Delivery";
+
+			$this->common_loader($data,'eservice/booking/add_receiving_delivery');
+		}
+}
+ ?>

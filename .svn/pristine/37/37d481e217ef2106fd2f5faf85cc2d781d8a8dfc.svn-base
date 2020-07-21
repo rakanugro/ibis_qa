@@ -1,0 +1,185 @@
+<?php 
+	class track_and_trace extends CI_Controller
+	{
+		
+		public function __construct()
+		{
+			parent::__construct();
+			$this->load->helper('url');
+			$this->load->helper('form');
+			$this->load->library('form_validation');
+			$this->load->library('upload');
+			$this->load->model('user_model');
+			$this->load->model('container_model');
+			$this->load->library("Nusoap_lib");
+			$this->load->library("sendcurl_lib");
+			$this->load->library('table');
+			$this->load->library('breadcrumbs');
+			$this->load->helper('MY_language_helper');
+			$this->load->library('session');
+			$this->load->model('auth_model','auth_model');
+			
+			require_once(APPPATH.'libraries/mime_type_lib.php');
+	        require_once(APPPATH.'libraries/htmLawed.php');
+		}
+
+		public function common_loader($data,$views) 
+		{
+			$this->load->view('templates/header', $data);
+			$this->load->view('templates/top_bar', $data);
+			$this->load->view('templates/menu_side', $data);
+			$this->load->view('templates/top-1-breadcrumb', $data);
+			$this->load->view('templates/top-2-title-nosearch', $data);
+			$this->load->view($views, $data);
+			$this->load->view('templates/footer', $data);
+		}
+
+		public function redirect()
+		{
+			if (!$this->session->userdata('uname_phd'))
+			{
+				redirect(ROOT.'main', 'refresh');
+			}
+		}
+
+		public function index(){
+			$this->redirect();
+
+			//search container
+			//input
+			$bl_number="";
+			$container_point="";
+			$billing=null;
+			if(isset($_GET['port'])){
+				$port			= explode("-",$_GET["port"]);
+			}
+			
+			if(isset($_GET['bl_number'])) $bl_number = $_GET['bl_number'];
+
+			//create table
+				$this->table->set_heading("No", "No Pol Truck","TID","Point","Gate In Time","Gate Out Time",'Weight','Quantity','Status');
+		        $this->table->set_heading("No", "No Pol Truck","TID","Point","Gate In Time","Gate Out Time",'Weight','Quantity','Status');
+
+				$data['terminal'] = $this->user_model->get_terminalList($this->session->userdata('sub_group_phd'));
+
+				//output
+				$data['no_container'] = "";
+				$data['vessel'] =  "";
+				$data['voyage_in'] =  "";
+				$data['voyage_out'] =  "";
+				$data['status'] =  "";
+				$data['location'] =  "";
+				$data['size'] =  "";
+				$data['type'] =  "";
+				$data['status'] =  "";
+				$data['hazard'] =  "";
+				$data['imo_class'] =  "";
+				$data['un_number'] =  "";
+				$data['iso_code'] =  "";
+				$data['height'] =  "";
+				$data['pol'] =  "";
+				$data['pod'] =  "";
+				$data['weight'] =  "";
+				$data['e_i'] =  "";
+				$data['hold_status'] =  "";
+				$data['activity'] =  "";
+				$data['cont_location'] =  "";
+				$data['reefer_temp'] =  "";
+				$data['weight'] =  "";
+				$data['hold_status'] =  "";
+				$data['paidthru'] =  "";
+				$data['point'] =  "";
+				$data['maxpoint'] =  "";
+				if($bl_number!="")
+				{
+					$in_data="<root>
+						<sc_type>1</sc_type>
+						<sc_code>123456</sc_code>
+						<data>
+							<bl_number>$bl_number</bl_number>
+							<port_code>".$port[0]."</port_code>
+							<terminal_code>".$port[1]."</terminal_code>
+						</data>
+					</root>";
+					//echo $in_data;die;
+					if(!$this->nusoap_lib->call_wsdl(ORDER_MGT,"getDetailCargo",array("in_data" => "$in_data"),$result))
+					{
+						echo $result;
+						die;
+					}
+					else
+					{
+						//echo $result;die;
+										
+
+						$obj = json_decode($result);
+						//echo $obj->data->info->weight;
+						//die();
+
+						if($obj->data->info)
+						{
+							$data['vessel'] =  $obj->data->info->vessel;
+							$data['voyage'] =  $obj->data->info->voyage;
+							$data['bl_number'] =  $obj->data->info->bl_number;
+							$data['cargo_name'] =  $obj->data->info->cargo_name;
+							$data['package_name'] =  $obj->data->info->package_name;
+							$data['weight'] =  $obj->data->info->weight;
+							$data['quantity'] =  $obj->data->info->quantity;
+							$data['volume'] =  $obj->data->info->volume;
+							$data['hs_code'] =  $obj->data->info->hs_code;
+							$data['weight_realization'] =  $obj->data->info->weight_realization;
+							$data['quantity_realization'] =  $obj->data->info->quantity_realization;
+							$data['volume_realization'] =  $obj->data->info->volume_realization;
+							$data['trade'] =  $obj->data->info->trade;
+							$data['e_i'] =  $obj->data->info->e_i;
+							$data['tl'] =  $obj->data->info->tl;
+							$data['cust_name'] =  $obj->data->info->cust_name;
+							$data['cust_addr'] =  $obj->data->info->cust_addr;
+						
+					
+
+					
+					for($i=0;$i<count($obj->data->handling);$i++)
+					{
+						$this->table->add_row(
+							$i+1,
+							$obj->data->handling[$i]->nopol,
+							$obj->data->handling[$i]->tid,
+							$obj->data->handling[$i]->point,
+							$obj->data->handling[$i]->trin_date,
+							$obj->data->handling[$i]->trout_date,
+							$obj->data->handling[$i]->weight,
+							$obj->data->handling[$i]->quantity,
+							$obj->data->handling[$i]->description
+						);
+
+					}
+							
+		  			for($i=0;$i<count($obj->data->billing);$i++)
+					{
+						$billing[$i]['no']=$i+1;
+						$billing[$i]['id_req']=$obj->data->billing[$i]->id_req;
+						$billing[$i]['bl_number']=$obj->data->billing[$i]->bl_number;
+						$billing[$i]['bl_date']=$obj->data->billing[$i]->bl_date;
+						$billing[$i]['tl_flag']=$obj->data->billing[$i]->tl_flag;
+						$billing[$i]['oi']=$obj->data->billing[$i]->oi;
+						$billing[$i]['status']=$obj->data->billing[$i]->status;
+						$billing[$i]['type_payment']=$obj->data->billing[$i]->type_payment; 
+					} 
+				}
+			}
+		}			
+			$data['billing']=$billing;
+				
+			$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+			$this->breadcrumbs->push("Track & Trace Cargo", '/');
+			$this->breadcrumbs->unshift('Home', '/');
+			$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+			$data['title']= "Track & Trace Cargo";
+
+			$this->common_loader($data,'eservice/track_and_trace/track_and_trace');
+	}
+}
+ ?>

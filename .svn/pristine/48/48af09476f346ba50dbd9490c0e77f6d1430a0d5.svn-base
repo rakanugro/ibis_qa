@@ -1,0 +1,856 @@
+
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+
+<style type="text/css">
+.upload_info {
+	font-size: small;
+	font-style: italic;
+	float: right;
+}
+.hidden_content {
+	display: none;
+}
+
+.ui-autocomplete-loading { background:url(http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/images/ui-anim_basic_16x16.gif) no-repeat right center
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+</style>
+
+<script>
+
+function removeOptions(selectbox){
+	var i;
+	for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
+	{
+		selectbox.remove(i);
+	}
+}
+
+$(document).ready(function() {
+
+	$('#trade_type').on('change', function(){
+		var trade_type = $(this).val().slice(-1);
+		console.log(trade_type);
+		if (trade_type == 'L'){
+			$('#international_content').removeClass('hidden_content');
+		} else {
+			$('#international_content').addClass('hidden_content');
+		}
+		
+	});
+
+	$("#packaging").on("change", function(){
+		var packagingId = $(this).val();
+		var baseUrl = "<?=ROOT?>eservice/request_bm/getcomodity?";
+		removeOptions(document.getElementById("comodity"));
+		$.ajax({
+			type: "GET",
+			url: baseUrl,
+			data: {packagingId : packagingId},
+			success: function(data){
+				$('#comodity').html('');
+				data = $.parseJSON(data);
+					$('#comodity').append('<option value="">--Pilih--</option>');
+				$.each(data, function(k, v) {
+					$('#comodity').append('<option value="' + k + '">' + v + '</option>');
+				});
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+				alert("Ups Ada sedikit kesalahan.. Segera Hubungi Administrator ");
+			}
+		});
+	});
+
+	$("#comodity").on("change", function(){
+		var packagingId = $(this).val();
+		var comodityId = $(this).val();
+		var baseUrl = "<?=ROOT?>eservice/request_bm/getunit?";
+		removeOptions(document.getElementById("unit"));
+		$.ajax({
+			type: "GET",
+			url: baseUrl,
+			data: {packagingId : packagingId, comodityId: comodityId},
+			success: function(data){
+				$('#unit').html('');
+				data = $.parseJSON(data);
+					$('#unit').append('<option value="">--Pilih--</option>');
+				$.each(data, function(k, v) {
+					$('#unit').append('<option value="' + k + '">' + v + '</option>');
+				});
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+				alert("Ups Ada sedikit kesalahan.. Segera Hubungi Administrator ");
+			}
+		});
+	});
+
+	$('#booking_date').datetimepicker({
+		format: 'd-m-Y H:i'
+	});
+
+	$('#div_comodity').hide();
+	//$('#div_unit').hide();
+	//$('#div_quantity').hide();
+	$('#div_comodity').hide();
+	$('#div_size').hide();
+	$('#div_condition').hide();
+	$('#como_character').hide();
+	$('#packaging').on('change', function(){
+		if ($('#packaging').val() == '7'){
+			$('#div_size').show();	
+			$('#div_condition').show();
+			$('#como_character').hide();	
+		}else if ($('#packaging').val() == '5'){
+			$('#div_size').hide();	
+			$('#div_condition').hide();
+		}
+	});
+
+	$('#comodity').on('change', function(){
+		if ($('#comodity').val() == '11'){
+			$('#como_character').show();		
+		}	
+	});
+
+});
+
+
+	$(document).ready(function(){
+  		$("#mybtn_add").click(function(){
+    	$("#mymodal_add").modal();
+  		});
+	});
+
+	$(document).ready(function(){
+  		$("#mybtn_edit").click(function(){
+    	$("#mymodal_edit").modal();
+  		});
+	});
+	$(document).ready(function() {
+    	$('#example').DataTable();
+	});
+
+	$(document).ready(function() {
+
+		$('#tgl_peb').datepicker({
+			format: 'dd-mm-yyyy'
+		});
+
+	   var counter = 0;
+	   $("#add_file").on("click", function () {
+	   		//alert('cek');
+	        var newRow = $("<tr style='padding:0 !important;background-color:white !important; border:none !important'>");
+	        var cols = "";
+	        cols += '<td style="padding:0 !important;"><input type="file" accept=".pdf" name="do_upload" id="do_upload" data-toggle="tooltip" data-placement="bottom" title="Upload Delivery Order"></td>';
+	        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete" id="ibtnDel"></td>';
+
+	        newRow.append(cols);
+	        $("#order-list").append(newRow);
+	        counter++;
+	    });
+	   
+	  	$("#order-list").on("click", ".ibtnDel", function (event) {
+	        $(this).closest("tr").remove();       
+	        counter -= 1
+	    });
+
+		$("#btn-create-detail").click(function(){
+			$("#modal-create-detail").modal();
+		});
+
+	var picker = $('#start_shift').datepicker({
+		format: 'dd-mm-yyyy 00:00',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+
+	var picker = $('#peb_dt').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+
+	$("#create-rental").on("click", function () {
+		var newRow = $("<tr>");
+		var cols = "";
+
+		cols = '<td>' +
+					'<select id="equipment-rental" name="equipment_rental" class="form-control">' +
+						'<option> -- Please Choose Equipment Name  -- </option>' +
+						'<option value="L">HEAD TRUCK</option>' +
+						'<option value="D">CRANE</option>' +
+					'</select>' +
+				'</td>' +
+				'<td>' +
+					'<select id="unit-rental" name="unit_rental" class="form-control">' +
+						'<option> -- Please Choose Unit  -- </option>' +
+						'<option value="L">1 TEUS</option>' +
+						'<option value="D">2 TEUS</option>' +
+					'</select>' +
+				'</td>' +
+				'<td><input type="text" id="jml" class="form-control"></input></td>';
+
+		cols += '<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-rental"></td>';
+		newRow.append(cols);
+
+		$("#rental-list").append(newRow);
+	});
+
+	$("table#rental-list").on("click", "#btn-delete-rental", function (event) {
+	        $(this).closest("tr").remove();       
+	});
+
+	$("#create-retribution").on("click", function () {
+		var newRow = $("<tr>");
+		var cols = "";
+
+		cols = '<td>' +
+					'<select id="trade_type" name="trade_type" class="form-control">' +
+						'<option> -- Please Choose Equipment Name  -- </option>' +
+						'<option value="L">Internasional</option>' +
+						'<option value="D">Domestik</option>' +
+					'</select>' +
+				'</td>' +
+				'<td>' +
+					'<select id="trade_type" name="trade_type" class="form-control">' +
+						'<option> -- Please Choose Unit  -- </option>' +
+						'<option value="L">Internasional</option>' +
+						'<option value="D">Domestik</option>' +
+					'</select>' +
+				'</td>' +
+				'<td><input type="text" id="jml" class="form-control"></input></td>';
+
+		cols += '<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-retribution"></td>';
+		newRow.append(cols);
+
+		$("#retribution-list").append(newRow);
+	});
+
+	$("table#retribution-list").on("click", "#btn-delete-retribution", function (event) {
+	        $(this).closest("tr").remove();
+	});
+});
+
+
+
+
+
+</script>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Booking Data </h2>
+								</header>
+
+									<div class="main-box-body clearfix">
+										<div class="form-group col-xs-6">
+											<label>Booking Type</label>
+											<select id="booking_type" name="booking_type" class="form-control">
+												<option> -- Please Choose Booking Type -- </option>
+												<?php foreach($booking_type as $term){ ?>
+													<option value="<?=$term["0"]?>"><?=$term["1"]?></option>
+												<?php } ?>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Terminal</label>
+											<select id="port" name="port" class="form-control">
+												<option> -- Please Choose Terminal -- </option>
+												<?php foreach($terminal as $term){ ?>
+													<option value="<?=$term["0"]?>-<?=$term["1"]?>"><?=$term["2"]?></option>
+												<?php } ?>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label for="exampleTooltip">Booking Number</label>
+											<input name="no_request" id="no_request" type="text" class="form-control" placeholder="-" data-toggle="tooltip" data-placement="bottom" title="Nomor Permintaan" size="20" readonly>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>PBM</label>
+											<select id="pbm" name="pbm" class="form-control">
+												<option> -- Please Choose PBM -- </option>
+												<?php foreach($pbm as $term){ ?>
+													<option value="<?=$term["0"]?>-<?=$term["1"]?>"><?=$term["2"]?></option>
+												<?php } ?>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label for="datepickerDate">Booking Date</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="booking_date" name="booking_date" type="text" class="form-control" id="datepickerDate">
+											</div>
+											<span class="help-block">format dd-mm-yyyy</span>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Shipping Agent</label>
+											<select id="shipping_agent" name="shipping_agent" class="form-control">
+											<option> -- Please Choose Shipping Agent -- </option>
+												<?php foreach($shipping_agent as $term){ ?>
+													<option value="<?=$term["0"]?>-<?=$term["1"]?>"><?=$term["2"]?></option>
+												<?php } ?>
+											</select>
+										</div>
+										
+										<div class="form-group col-xs-6">
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Trade Type</label>
+											<select id="trade_type" name="trade_type" class="form-control">
+												<option> -- Please Choose Trade Type  -- </option>
+												<option value="L">Internasional</option>
+												<option value="D">Domestik</option>
+											</select>
+										</div>
+										<div class="form-group example-twitter-oss">	
+											<label for="exampleAutocomplete">Vessel</label>
+                      						<div class="form-wrapper cf">
+										      	<input type="text" id="vessel_autocomplete" name="vessel_autocomplete" placeholder="Search here..." title="Masukkan data kapal" required>
+                          						<button type="submit" onclick="search_vessel()">Search</button>
+                     						</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Voyage In</label>
+												<input type="text" class="form-control" id="voyage_in" name="voyage_in" placeholder="Voyage In" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Voyage Out</label>
+												<input type="text" class="form-control" id="voyage_out" name="voyage_out" placeholder="Voyage Out" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ETA</label>
+												<input type="text" class="form-control" id="eta" name="eta" placeholder="ETA" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ETD</label>
+												<input type="text" class="form-control" id="etd" name="etd" placeholder="ETD" title="Masukkan data kapal" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="datepickerDate">Actual Departure</label>
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+													<input id="actual_departure" name="actual_departure" type="text" class="form-control" id="datepickerDate" readonly>
+												</div>
+												<span class="help-block">format dd-mm-yyyy</span>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="datepickerDate">Actual Arrive</label>
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+													<input id="actual_arrive" name="actual_arrive" type="text" class="form-control" id="datepickerDate" readonly>
+												</div>
+												<span class="help-block">format dd-mm-yyyy</span>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Kade</label>
+												<input type="text" class="form-control" id="kade" name="kade" placeholder="Kade" title="Masukkan data kade" size="8" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ETB</label>
+												<input type="text" class="form-control" id="etb" name="etb" placeholder="ETB" title="Masukkan data ETB" size="8" readonly> 
+											</div>
+										</div>
+										<div class="form-group example-twitter-oss">
+	                                        <label for="exampleAutocomplete" id="shipper">Shipper</label>
+	                                        <input type="hidden" id="idpod" name="idpod"/>
+											<div id="ship_line"></div>
+										</div>
+										<div class="form-group col-xs-4">
+											<!-- kondisi ketika upload do -->
+											<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+											<label for="exampleTooltip">Delivery Order Upload</label>
+											<input type="file" accept=".pdf" name="do_upload" id="do_upload" data-toggle="tooltip" data-placement="bottom" title="Upload Delivery Order" size="100">
+											<table style="padding: 0 !important; margin-top: 30px !important" class="table table-striped table-hover" id="order-list"></table>
+										</div>
+										<div class="form-group col-xs-4">
+											<br/>
+											<input type="button" class="btn btn-success " id="add_file" value="+" />
+										</div>
+									</div>
+							</div>
+						</div>
+						<div class="col-lg-6 hidden_content"  id='international_content'>
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>*International</h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="form-group">
+											<label for="exampleTooltip">NPWP</label>
+											<input name="npwp" id="npwp" type="text" class="form-control" placeholder="-" value="018696153055000" data-toggle="tooltip" data-placement="bottom" size="20">
+										</div>
+									<div class="form-group">
+										<label for="exampleAutocomplete">Tanggal PEB</label>
+                      					<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+											<input id="tgl_peb" name="tgl_peb" type="text" class="form-control" id="datepickerDate">
+										</div>
+										<span class="help-block">format dd-mm-yyyy</span>
+									</div>
+									<div class="form-group">
+										<label for="exampleAutocomplete">No PEB/PJBS</label>
+                      					<div class="form-wrapper cf">
+										    <input type="text" id="no_peb" name="no_peb" placeholder="Search here..." title="Masukkan No PEB" required>
+                          					<button type="submit" onclick="search_no_peb()">Search</button>
+                     					</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">No NPE/SPPB</label>
+										<input id="no_npe" name="no_npe" type="text" class="form-control" id="exampleTooltip" data-toggle="tooltip" data-placement="bottom" title="Nomor NPE" maxlength="40" readonly="">
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">Booking Ship</label>
+										<input id="booking_ship" name="booking_ship" type="text" class="form-control" id="exampleTooltip" data-toggle="tooltip" data-placement="bottom" title="booking_ship" maxlength="40">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="ModalVessel" role="dialog">
+						<div class="modal-dialog">
+						  	<!-- Modal content-->
+						  	<div class="modal-content">
+						    	<div class="modal-header">
+						      		<button type="button" class="close" data-dismiss="modal">&times;</button>
+						      		<h4 class="modal-title">List Vessel</h4>
+						    	</div>
+						    	<div class="modal-body">
+							    	<div class="main-box-body clearfix">
+								 		<div class="table-responsive">
+								  			<table class="table table-striped table-hover" id="example1">
+									  			<thead>
+									    			<tr>
+											      		<th scope="col">VASSEL</th>
+											      		<th scope="col">VOYAGE IN</th>
+											      		<th scope="col">VOYAGE OUT</th>
+											      		<th scope="col">ETA</th>
+											      		<th scope="col">ETD</th>
+											      		<th scope="col">PILIH</th>
+											    	</tr>
+											  	</thead>
+											  	<tbody></tbody>
+											</table>
+										</div>	
+									</div>
+						    	</div>
+						    	<div class="modal-footer">
+						      		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						    	</div>
+						  </div>
+						</div>
+					</div>
+
+					<div class="row" id="container_data" name="container_data">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Create Detail</h2>
+								</header>
+										
+								<div class="main-box-body clearfix">
+									<button class="btn btn-danger btn-choose" type="button" id="btn-create-detail">Create Detail</button>
+								</div>
+							    <div class="main-box-body clearfix">
+								 	<div class="table-responsive">
+								  		<table class="table table-striped table-hover" id="detail-list">
+									  		<thead>
+											    <tr>
+											      	<th>BOOKING TYPE</th>
+											      	<th>BL NUMBER</th>
+											      	<th>TRUCK LOSING</th>
+											      	<th>PACKAGING</th>
+											      	<th>COMODITY</th>
+											      	<th>UNIT</th>
+									                <th>QUANTITY</th>
+									                <th>SIZE</th>
+									                <th>CONDITION</th>
+									                <th>COMODITY CHARACTER</th>
+									                <th>ACTION</th>
+											    </tr>
+										  </thead>
+										  <tbody>
+										  </tbody>
+										</table>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" id="rental-data">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Rent Equipment</h2>
+								</header>
+										
+								<div class="main-box-body clearfix">
+									<button class="btn btn-danger btn-choose" type="button" id="create-rental">Create Equipment Rental</button>
+								</div>
+							    <div class="main-box-body clearfix">
+								 	<div class="table-responsive">
+								  		<table class="table table-striped table-hover" id="rental-list">
+									  	  <thead>
+											    <tr>
+											      	<th style="text-align: center;">EQUIPMENT NAME</th>
+											      	<th style="text-align: center;">UNIT</th>
+											      	<th style="text-align: center;">QUANTITY</th>
+											    </tr>
+										  </thead>
+										  <tbody>
+										    	<tr>
+													<td>
+														<select id="equipment-rental" name="equipment_rental" class="form-control">
+															<option> -- Please Choose Equipment Name  -- </option>
+															<option value="L">HEAD TRUCK</option>
+															<option value="D">CRANE</option>
+														</select>
+													</td>
+													<td>
+														<select id="unit-rental" name="unit_rental" class="form-control">
+															<option> -- Please Choose Unit  -- </option>
+															<option value="L">1 TEUS</option>
+															<option value="D">2 TEUS</option>
+														</select>
+													</td>
+													<td><input type="text" id="jml" class="form-control"></input></td>
+													<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-rental"></td>
+										    	</tr>
+										  </tbody>
+										</table>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" id="retribution-data">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Rentribution Equipment</h2>
+								</header>
+										
+								<div class="main-box-body clearfix">
+									<button class="btn btn-danger btn-choose" type="button" id="create-retribution">Create Equipment Retribution</button>
+								</div>
+							    <div class="main-box-body clearfix">
+								 	<div class="table-responsive">
+								  		<table class="table table-striped table-hover" id="retribution-list">
+									  		<thead>
+											    <tr>
+											      	<th style="text-align: center;">EQUIPMENT NAME</th>
+											      	<th style="text-align: center;">UNIT</th>
+											      	<th style="text-align: center;">QUANTITY</th>
+											    </tr>
+										  </thead>
+										  <tbody>
+										  		<tr>
+													<td>
+														<select id="equipment-retribution" name="equipment_retribution" class="form-control">
+															<option> -- Please Choose Equipment Name  -- </option>
+															<option value="L">HEAD TRUCK</option>
+															<option value="D">CRANE</option>
+														</select>
+													</td>
+													<td>
+														<select id="unit-retribution" name="unit_retribution" class="form-control">
+															<option> -- Please Choose Unit  -- </option>
+															<option value="L">1 TEUS</option>
+															<option value="D">2 TEUS</option>
+														</select>
+													</td>
+													<td><input type="text" id="jml" class="form-control"></input></td>
+													<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-retribution"></td>													
+										    	</tr>
+										  </tbody>
+										</table>
+									</div>	
+								</div>
+								<div class="main-box-footer clearfix">
+									<button id="submit_header" class="btn btn-success btn-footer" onclick="submitheader()">Save</button>
+									<button id="reset" class="btn btn-danger btn-footer">Reset</button>									
+								</div>	
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="modal-create-detail" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      	<div class="modal-content">
+					        	<div class="modal-header">
+					          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+					          		<h4 class="modal-title">Add Detail Disload</h4>
+					        	</div>
+					        	<div class="modal-body">
+									<div class="form-group">
+										<label>BOOKING TYPE</label>
+										<input id="booking_type" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>BL NUMBER</label>
+										<input id="bl_number" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>TRUCK LOSING</label>
+										<select id="truck_losing" name="truck_losing" class="form-control">
+											<option selected="selected">--Pilih--</option>
+											<option value="1">TL</option>
+											<option value="2">NON TL</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>PACKAGING</label>
+									<?php
+										$atribut_packaging = 'id="packaging" class="form-control packaging"';
+										echo form_dropdown('packaging', $packaging, '', $atribut_packaging);
+									?>
+									</div>
+									<div class="form-group">
+										<label>COMODITY</label>
+									<?php
+										$atribut_comodity = 'id="comodity" class="form-control comodity"';
+										echo form_dropdown('comodity', $comodity, '', $atribut_comodity);
+									?>
+									</div>
+									<div class="form-group">
+										<label>UNIT</label>
+									<?php
+										$atribut_unit = 'id="unit" class="form-control unit"';
+										echo form_dropdown('unit', $unit, '', $atribut_unit);
+									?>
+									</div>
+									<div class="form-group" id="div_quantity">
+										<label>QUANTITY</label>
+										<input id="quantity" type="text" class="form-control">
+									</div>
+									<div class="form-group" id="div_size">
+										<label>SIZE</label>
+									<?php
+										$atribut_size = 'id="size" class="form-control size"';
+										echo form_dropdown('size', $size, '', $atribut_size);
+									?>
+									</div>
+									<div class="form-group" id="div_condition">
+										<label>CONDITION</label>
+									<?php
+										$atribut_condition = 'id="condition" class="form-control condition"';
+										echo form_dropdown('condition', $condition, '', $atribut_condition);
+									?>
+									</div>
+									<div class="form-group" id="como_character">
+										<label>LABEL</label><br>
+										<input type="radio" id="como_char" name="como_char" value="disturb"> DISTURB<br>
+										<input type="radio" id="como_char" name="como_char" value="hazard"> HAZARD<br>
+										<input type="radio" id="como_char" name="como_char" value="hazard_non"> HAZARD NON LABEL 
+									</div>
+					        	</div>
+					        	<div class="modal-footer">
+					          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					          		<button type="button" class="btn btn-success" data-dismiss="modal" onclick="save_detail()">Save</button>
+					        	</div>
+					      </div>
+					    </div>
+					</div>
+  
+
+
+<script>  
+
+	function save_detail() {
+		var booking_type	= $('#booking_type').val();
+		var bl_number		= $('#bl_number').val();
+		var truck_losing	= $('#truck_losing').val();
+		var packaging		= $('#packaging').val();
+		var comodity		= $('#comodity').val();
+		var unit			= $('#unit').val();
+		var quantity		= $('#quantity').val();
+		var size			= $('#size').val();
+		var condition		= $('#condition').val();
+		var como_char		= $('input[name=como_char]:checked').val();
+
+		var packaging_name 	= $('.packaging option:selected').text();
+		var comodity_name 	= $('.comodity option:selected').text();
+		var unit_name 		= $('.unit option:selected').text();
+		var size_name 		= $('.size option:selected').text();
+		var condition_name 	= $('.condition option:selected').text();
+
+		console.log(booking_type+'---'+bl_number+'---'+truck_losing+'---'+packaging_name+'---'+comodity_name+'---'+unit_name+'---'+quantity+'---'+size_name+'---'+condition_name+'---'+como_char);
+		
+		$('#detail-list tbody').append(
+			'<tr>' +
+				'<td>'+ booking_type +'</td>' +
+				'<td>'+ bl_number +'</td>' +
+				'<td>'+ truck_losing +'</td>' +
+				'<td>'+ packaging_name +'</td>' +
+				'<td>'+ comodity_name +'</td>' +
+				'<td>'+ unit_name +'</td>' +
+				'<td>'+ quantity +'</td>' +
+				'<td>'+ size_name +'</td>' +
+				'<td>'+ condition_name +'</td>' +
+				'<td>'+ como_char +'</td>' +
+				'<td>' +
+					'<a class="btn btn-primary btn-edit-detail"><i class="fa fa-pencil"></i></a>&nbsp;' +
+					'<a class="btn btn-primary btn-delete-detail"><i class="fa fa-trash-o"></i></a>' +
+				'</td>' +
+			'</tr>'
+		);
+	}
+	 
+   function search_no_peb(){
+	  
+	  $.blockUI();
+	  var tgl     = $('#tgl_peb').val();
+	  var tglexp  = tgl.split('-');
+	  var tgl_peb = tglexp[0]+tglexp[1]+tglexp[2];
+	  var no_peb  = $('#no_peb').val();
+	  var npwp    = $('#npwp').val();
+	  $.get("<?=ROOT?>eservice/request_bm/auto_no_peb?",{tgl_peb: tgl_peb,no_peb: no_peb,npwp: npwp}, function(data){
+	      if(data != ''){
+	      	$("#no_npe").val(data);
+	      }else{
+	      	alert('Data Tidak Ditemukan')
+	      }
+	      $.unblockUI();
+	  });
+
+   }
+
+    function complete(isi){
+  		var data 		= isi.split('#');
+  		var voyageIn 	= data[0];
+  		var voyageOut 	= data[1];
+  		var eta 		= data[2];
+  		var etd 		= data[3];
+  		var closingTime = data[4];
+  		var startWork 	= data[5];
+  		var etaa 		= data[6];
+  		var idVsbVoyage = data[7];
+  		
+        //$('#ModalVessel').modal('show');
+		$( "#voyage_in" ).val(voyageIn);
+		$( "#voyage_out" ).val(voyageOut);
+		$( "#eta" ).val(eta);
+		$( "#etd" ).val(etd);
+		$( "#actual_departure" ).val(closingTime);
+		$( "#actual_arrive" ).val(startWork);
+		$( "#kade" ).val(etaa);
+		$( "#etb" ).val(idVsbVoyage);
+		//var arr.length = 0;
+      //$('#modalplaceholder').attr('display','none');
+	}
+	
+
+  function search_vessel(){
+
+      var vesselname = $("#vessel_autocomplete").val();
+      var port_split = $('#port').val();
+      var split      = port_split.split("-");
+      var port       = split[0];
+      $.blockUI();
+      // if(vesselname == ''){
+      //     $("#vessel_autocomplete").focus();
+      //     alert('Mohon diisi kolomnya');
+      // }
+      // else{
+
+        $.get("<?=ROOT?>eservice/request_bm/auto_vessel?",{vessel : vesselname, port: port}, function(data){
+              	//alert(data)
+              	$('#example1 tbody').html('');
+              	var arr =[];
+              	var obj = JSON.parse(data);
+              	//alert(obj);
+              	var jmlresponse = obj.length;
+				for(i=0;i<jmlresponse;i++)
+				{
+					var callSign 	  =obj[i]['_c']['callSign']['_v'];
+					var closingTime   =obj[i]['_c']['closingTime']['_v'];
+					var closingTimeDoc=obj[i]['_c']['closingTimeDoc']['_v'];
+					var eta 		  =obj[i]['_c']['eta']['_v'];
+					var etaa 		  =obj[i]['_c']['etaa']['_v'];
+					var etd 		  =obj[i]['_c']['etd']['_v'];
+					var idVsbVoyage   =obj[i]['_c']['idVsbVoyage']['_v'];
+					var openStack 	  =obj[i]['_c']['openStack']['_v'];
+					var startWork 	  =obj[i]['_c']['startWork']['_v'];
+					var vessel  	  =obj[i]['_c']['vessel']['_v'];
+					var vesselCode 	  =obj[i]['_c']['vesselCode']['_v'];
+					var voyage 		  =obj[i]['_c']['voyage']['_v'];
+					var voyageIn 	  =obj[i]['_c']['voyageIn']['_v'];
+					var voyageOut 	  =obj[i]['_c']['voyageOut']['_v'];
+					// var isi 		  =voyageIn+'^'+voyageOut+'^'+eta+'^xxxxx'+obj[i]['_c']['etd']['_v']+'^'+closingTime+'^'+startWork+'^'+etaa+'^'+idVsbVoyage;
+				}
+					var ptk = "'";
+					//alert(isi);
+
+				obj.forEach(function(abc) {
+
+					var isi = abc._c.voyageIn._v+"#"+ abc._c.voyageOut._v+"#"+ abc._c.eta._v+"#"+ abc._c.etd._v+"#"+ abc._c.closingTime._v+"#"+ abc._c.startWork._v+"#"+ abc._c.etaa._v+"#"+ abc._c.idVsbVoyage._v;
+				
+				arr.push(
+					'<tr>' +
+					     '<td>'+ abc._c.vessel._v +'</td>' +
+					     '<td>'+ abc._c.voyageIn._v +'</td>' +
+					     '<td>'+ abc._c.voyageOut._v +'</td>' +
+					     '<td>'+ abc._c.eta._v +'</td>' +
+					     '<td>'+ abc._c.etd._v +'</td>' +
+					     '<td><a data-dismiss="modal" style="cursor:pointer" class="table-link click_detail bank_detail" onclick="complete('+ptk+isi+ptk+')"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-edit fa-stack-1x fa-inverse"></i></span></a></td>' +
+					   '</tr>');
+
+				});
+				$('#example1 tbody').append(arr);
+							  
+			  console.log(arr);
+			  arr.length = 0;
+
+              $.unblockUI();
+              $('#ModalVessel').modal('show');
+			
+          });
+
+  }
+
+	</script>
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

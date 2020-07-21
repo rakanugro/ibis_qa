@@ -1,0 +1,155 @@
+
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+
+
+<style type="text/css">
+
+.divdemo{
+	padding: 15px;
+  	border: 1px solid #666;
+  	background: #fff;
+	display: none;
+}
+
+#rectangle {
+  
+  width: 250px;
+  border: 1px solid ;
+  padding: 50px;
+  margin: 20px;
+}
+
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+<script>
+
+	$(document).ready(function() {
+	    $('#listbarang').DataTable();
+	    $('#listmaster').DataTable();
+	    $('#listvessel').DataTable();
+	});
+
+
+	$(document).ready(function() {
+     $("#hidediv").click(function () {
+     $(".divdemo").hide();
+    });
+
+     $(".showdiv").click(function () {
+     $(".divdemo").show();
+    });
+
+   });
+
+</script>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2></h2>
+								</header>
+
+									<div class="main-box-body clearfix">
+									<!--<form role="form">-->
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Ticket Number</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="100"/>
+											</div>
+										</div>
+
+                                       	<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Ticket Data</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="100"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Ticket Status</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Select Status -- </option>
+											</select>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Customer ID</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="100"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Customer Name</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="100"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Service Type</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Select Type -- </option>
+											</select>
+										</div>
+
+										<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Subject</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="160"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Body</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="160"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Assign To</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Select Helpdesk -- </option>
+											</select>
+										</div>
+
+										<div class="main-box-body clearfix">
+											<button type="submit" id="submit_form" class="btn btn-success">Create</button>
+											<button type="submit" id="submit_form" class="btn btn-success">Cancel</button>
+										</div>
+
+									<!--</form>-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

@@ -1,0 +1,196 @@
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.theme.css" />
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingCustom.js"></script>
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingEuro.js"></script>
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<!-- global scripts -->
+<script src="<?=JSQ?>jquery-ui.min.js"></script>
+
+<style type="text/css">
+
+.divdemo{
+	padding: 15px;
+  	border: 1px  #666;
+  	background: #fff;
+	display: none;
+}
+
+
+
+#rectangle {
+  
+  width: 250px;
+  border: 1px solid ;
+  padding: 50px;
+  margin: 20px;
+}
+
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+<script>
+
+	$(document).ready(function() {
+	    $('#listbarang').DataTable();
+	    $('#listmaster').DataTable();
+	    $('#listvessel').DataTable();
+	});
+
+
+	$(document).ready(function() {
+     $("#hidediv").click(function () {
+     $(".divdemo").hide();
+    });
+
+     $("#showdiv").click(function () {
+     $(".divdemo").show();
+    });
+
+   });
+
+
+</script>
+
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="main-box">
+									<div class="main-box clearfix">
+										<header class="main-box-header clearfix">
+											<h2 class="pull-left">Kalkulator Harga</h2>
+										</header>
+
+										<div class="main-box-body clearfix">
+											<div class="form-group col-xs-12">
+												<label for="exampleAutocomplete"><b style="font-decoration:italics">Jenis Layanan</b> </label>
+												<select id="" name="" class="form-control" >
+													<option value=''> -- Please Choose Jenis Layanan -- </option>
+												</select>
+											</div>
+
+											<div class="form-group col-xs-12">
+												<label for="exampleAutocomplete"><b style="font-decoration:italics">Jenis Curah</b> </label>
+												<select id="" name="" class="form-control">
+													<option value=''> -- Please Choose Jenis Curah -- </option>
+												</select>
+											</div>
+
+											<div class="form-group col-xs-12">
+												<label for="exampleAutocomplete"><b style="font-decoration:italics">Jenis Barang</b> </label>
+												<select id="" name="" class="form-control">
+													<option value=''> -- Please Choose Jenis Barang -- </option>
+												</select>
+											</div>
+
+		                                    <div class="form-group col-xs-12">
+												<label for="exampleAutocomplete"><b style="font-decoration:italics">Jumlah</b> </label>
+												<div class="input-group">
+													<input type="text" id="" name="" class="form-control" size="500"/>
+													</div>
+												</div>
+
+		                                      	<div class="form-group col-xs-12">
+													<label for="exampleAutocomplete"><b style="font-decoration:italics">Satuan</b> </label>
+													<div class="input-group">
+														<input type="text" id="" name="" class="form-control" size="500"/>
+													</div>
+												</div>
+
+												<div class="form-group col-xs-12">
+													<label for="exampleAutocomplete"><b style="font-decoration:italics">Alat</b> </label>
+													<select id="" name="" class="form-control">
+														<option value=''> -- Please Choose Barang -- </option>
+													</select>
+												</div>
+
+												<div class="form-group col-xs-6 clearfix"></div>
+												<div class="form-group col-xs-6" >
+													<form class="form-inline pull-right""  role="form" action="<?=ROOT?>eservice/receiving_delivery/add_receiving_delivery">
+														<button class="btn btn-primary btn-xs" data-title="Print" data-toggle="modal" data-target="#Print" ><span class="glyphicon glyphicon-plus"></span>Add Detail</button>
+													</form>
+												</div>
+
+
+												<div class="form-group col-xs-12">
+													<div class="input-group">
+		                                    			<button type="button" class="btn btn-success" style="width: 650px" id="showdiv">Hitung</button>
+		                                    		</div>
+		                                    	</div>
+
+
+		                                    	<div class="divdemo">
+													<div class="form-group row">
+														<label for="inputPassword" class="col-sm-2 col-form-label"><b style="font-decoration:italics">Stevedoring</b></label>
+														<label for="inputPassword" class="col-sm-2 col-form-label">:</label>
+														<div class="col-sm-6">
+															<span>10.000.000</span>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label for="inputPassword" class="col-sm-2 col-form-label"><b style="font-decoration:italics">PFS</b></label>
+														<label for="inputPassword" class="col-sm-2 col-form-label">:</label>
+														<div class="col-sm-6">
+															<span>5.000</span>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label for="inputPassword" class="col-sm-2 col-form-label"><b style="font-decoration:italics">Sewa Alat</b></label>
+														<label for="inputPassword" class="col-sm-2 col-form-label">:</label>
+														<div class="col-sm-6">
+															<span>15.000.000</span>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label for="inputPassword" class="col-sm-2 col-form-label"><b style="font-decoration:italics">Total</b></label>
+														<label for="inputPassword" class="col-sm-2 col-form-label">:</label>
+														<div class="col-sm-6">
+															<span>25.005.000</span>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label for="inputPassword" class="col-sm-2 col-form-label"><b style="font-decoration:italics">PPN 10%</b></label>
+														<label for="inputPassword" class="col-sm-2 col-form-label">:</label>
+														<div class="col-sm-6">
+															<span>25.005.500</span>
+														</div>
+													</div>
+													<hr>
+													<div class="form-group row">
+														<label for="inputPassword" class="col-sm-2 col-form-label"><b style="font-decoration:italics">Total Tagihan</b></label>
+														<label for="inputPassword" class="col-sm-2 col-form-label">:</label>
+														<div class="col-sm-6">
+															<span>27.505.500</span>
+														</div>
+													</div>
+													<div class="form-group col-xs-12">
+													<div class="input-group">
+		                                    			<button type="button" class="btn btn-success" style="width: 100px" id="hidediv">Cancel</button>
+		                                    		</div>
+		                                    	</div>
+		                                    	</div>
+		                                    	
+										</div>
+									
+
+									</div>
+								</div>
+							</div>
+						</div>
+

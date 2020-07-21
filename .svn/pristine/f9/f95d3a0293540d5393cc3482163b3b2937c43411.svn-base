@@ -1,0 +1,354 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+//session_start();
+class truck_registration extends CI_Controller {
+
+    public function __construct(){
+        parent::__construct();
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->load->library('upload');
+        $this->load->library('session');
+        $this->load->model('user_model');
+        $this->load->model('master_model');
+        $this->load->model('container_model');
+        $this->load->library("Nusoap_lib");
+        $this->load->library("sendcurl_lib");
+        $this->load->library("table");
+        $this->load->library('commonlib');
+        $this->load->library('ciqrcode');
+        $this->load->helper('MY_language_helper');
+
+        $this->load->library('breadcrumbs');
+        require_once(APPPATH.'libraries/mime_type_lib.php');
+        require_once(APPPATH.'libraries/htmLawed.php');
+
+        //if(!$this->user_model->check_user_access($this->session->userdata('group_phd'), $this->uri->segment(1), $this->uri->segment(2))) show_error(YOU_DONT_HAVE_ACCESS);
+
+        if(!$this->user_model->check_user_access($this->session->userdata('group_phd'), $this->uri->segment(1), $this->uri->segment(2)))
+            redirect(ROOT.'mainpage', 'refresh');
+    }
+
+    public function common_loader($data,$views) {
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/top_bar', $data);
+        $this->load->view('templates/menu_side', $data);
+        $this->load->view('templates/top-1-breadcrumb', $data);
+        $this->load->view('templates/top-2-title-nosearch', $data);
+        $this->load->view($views, $data);
+        $this->load->view('templates/footer', $data);
+    }
+
+    public function redirect(){
+        if (!$this->session->userdata('uname_phd'))
+        {
+            redirect(ROOT.'main', 'refresh');
+        }
+    }
+
+
+    public function create_truck_registration() {
+       // print_r($this->session->userdata('customerid_phd'));
+        //print_r($this->session->userdata('branchid_phd'));die();
+        //print_r($this->session->userdata('npwp_phd'));die();
+
+        $data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+        $data['terminal'] = $this->user_model->get_terminalListCargo($this->session->userdata('sub_group_phd'));
+        $data['max_size'] = $this->commonlib->file_upload_max_size_mb();
+
+        $data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+        $this->breadcrumbs->push("Truck Service", '/container/main_delivery');
+        $this->breadcrumbs->push("Input Truck ID", '/');
+        $this->breadcrumbs->unshift('Home', '/');
+        $data['breadcrumbs'] = $this->breadcrumbs->show();
+
+        $data['title']= "Truck ID Registration";    
+
+        $this->common_loader($data,'eservice/truck_management/create_truck_reg');
+      
+    }
+
+    public function load_truck_registration() {
+        $idcust  = $this->security->xss_clean(htmlentities(strtoupper($_GET["idcust"])));
+        $idterm  = $this->security->xss_clean(htmlentities($_GET["idterm"]));
+
+          $xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+               <soapenv:Header/>
+               <soapenv:Body>
+                  <ipc:getList>
+                     <getListInterfaceRequest>
+                        <esbHeader>
+                           <!--Optional:-->
+                           <internalId>?</internalId>
+                           <!--Optional:-->
+                           <externalId>?</externalId>
+                           <!--Optional:-->
+                           <timestamp>?</timestamp>
+                           <!--Optional:-->
+                           <responseTimestamp>?</responseTimestamp>
+                           <!--Optional:-->
+                           <responseCode>?</responseCode>
+                           <!--Optional:-->
+                           <responseMessage>?</responseMessage>
+                        </esbHeader>
+                        <esbBody>
+                           <idTerminal>'.$idterm.'</idTerminal>
+                           <idCustomer>'.$idcust.'</idCustomer>
+                        </esbBody>
+                     </getListInterfaceRequest>
+                  </ipc:getList>
+               </soapenv:Body>
+            </soapenv:Envelope>';
+
+
+            //$url   = "http://10.88.48.57:5555/ws/ipc.npk.billing.provider.soap.provider:npkBilling";   
+            $url = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port"; 
+
+            $result = $this->sendcurl_lib->SendCurl($xml, $url, 'getList', 'npk_billing', 'npk_billing');
+            if(!$result)
+            {
+                echo $result;
+                die;
+            }
+            else
+            {
+                $response = $this->xml2array->xml2ary($result['response']);
+                $response = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:getListResponse']['_c']['getListInterfaceResponse']['_c']['esbBody']['_c']['results'];
+                $aa = json_encode($response);
+                echo $aa;
+                
+            }
+    }
+
+    public function save_truck_registration() {
+        $terminal      = $this->security->xss_clean(htmlentities($_GET["terminal"]));
+        $vechile_type  = $this->security->xss_clean(htmlentities($_GET["vechile_type"]));
+        $customer_name = $this->security->xss_clean(htmlentities($_GET["customer_name"]));
+        $tid           = $this->security->xss_clean(htmlentities($_GET["tid"]));
+        $plat_number   = $this->security->xss_clean(htmlentities($_GET["plat_number"]));
+        $expired_date  = $this->security->xss_clean(htmlentities($_GET["expired_date"]));
+        $stnk_number   = $this->security->xss_clean(htmlentities($_GET["stnk_number"]));
+        $stnk_expired  = $this->security->xss_clean(htmlentities($_GET["stnk_expired"]));
+        $rfid_code     = $this->security->xss_clean(htmlentities($_GET["rfid_code"]));
+        //$status        = $this->security->xss_clean(htmlentities($_GET["status"]));
+
+        $xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+               <soapenv:Header/>
+               <soapenv:Body>
+                  <ipc:truckRegistration>
+                     <truckRegistrationInterfaceRequest>
+                        <EsbHeader>
+                           <!--Optional:-->
+                           <internalId>?</internalId>
+                           <!--Optional:-->
+                           <externalId>?</externalId>
+                           <!--Optional:-->
+                           <timestamp>?</timestamp>
+                           <!--Optional:-->
+                           <responseTimestamp>?</responseTimestamp>
+                           <!--Optional:-->
+                           <responseCode>?</responseCode>
+                           <!--Optional:-->
+                           <responseMessage>?</responseMessage>
+                        </EsbHeader>
+                        <esbBody>
+                           <vTruckId>'.$tid.'</vTruckId>
+                           <vTruckNumber>'.$plat_number.'</vTruckNumber>
+                           <vRFIDCode>'.$rfid_code.'</vRFIDCode>
+                           <vCustomerName>'.$customer_name.'</vCustomerName>
+                           <vAddress>?</vAddress>
+                           <vCustomerId>1234</vCustomerId>
+                           <vKend>'.$vechile_type.'</vKend>
+                           <vTgl>'.$expired_date.'</vTgl>
+                           <vTerminalCode>'.$terminal.'</vTerminalCode>
+                        </esbBody>
+                     </truckRegistrationInterfaceRequest>
+                  </ipc:truckRegistration>
+               </soapenv:Body>
+            </soapenv:Envelope>';
+
+        $url   = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";    
+
+        $result = $this->sendcurl_lib->SendCurl($xml, $url, 'truckRegistration', 'npk_billing', 'npk_billing');
+        if(!$result)
+        {
+            echo $result;
+            die;
+        }
+        else
+        {
+            $resp     = $this->xml2array->xml2ary($result['response']);
+            $response = $resp['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:truckRegistrationResponse']['_c']['truckRegistrationInterfaceResponse']['_c']['esbBody']['_c'];
+            $res      = $response['vMsg']['_v'];
+            print_r($res);
+        }
+
+    }    
+
+    public function edit_truck_registration() {
+        $terminal      = $this->security->xss_clean(htmlentities($_GET["terminal"]));
+        $vechile_type  = $this->security->xss_clean(htmlentities($_GET["vechile_type"]));
+        $customer_name = $this->security->xss_clean(htmlentities($_GET["customer_name"]));
+        $tid           = $this->security->xss_clean(htmlentities($_GET["tid"]));
+        $plat_number   = $this->security->xss_clean(htmlentities($_GET["plat_number"]));
+        $expired_date  = $this->security->xss_clean(htmlentities($_GET["expired_date"]));
+        $rfid_code     = $this->security->xss_clean(htmlentities($_GET["rfid_code"]));
+        //$status        = $this->security->xss_clean(htmlentities($_GET["status"]));
+
+        $xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+               <soapenv:Header/>
+               <soapenv:Body>
+                  <ipc:updateTid>
+                     <updateTidInterfaceRequest>
+                        <esbHeader>
+                           <!--Optional:-->
+                           <internalId>?</internalId>
+                           <!--Optional:-->
+                           <externalId>?</externalId>
+                           <!--Optional:-->
+                           <timestamp>?</timestamp>
+                           <!--Optional:-->
+                           <responseTimestamp>?</responseTimestamp>
+                           <!--Optional:-->
+                           <responseCode>?</responseCode>
+                           <!--Optional:-->
+                           <responseMessage>?</responseMessage>
+                        </esbHeader>
+                        <esbBody>
+                           <truckId>'.$tid.'</truckId>
+                           <truckNumber>'.$plat_number.'</truckNumber>
+                           <rfidCode>'.$rfid_code.'</rfidCode>
+                           <customerName>'.$customer_name.'</customerName>
+                           <address>?</address>
+                           <customerId>?</customerId>
+                           <kend>'.$vechile_type.'</kend>
+                           <tgl>'.$expired_date.'</tgl>
+                           <idTerminal>'.$terminal.'</idTerminal>
+                        </esbBody>
+                     </updateTidInterfaceRequest>
+                  </ipc:updateTid>
+               </soapenv:Body>
+            </soapenv:Envelope>';
+
+        $url   = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";    
+
+        $result = $this->sendcurl_lib->SendCurl($xml, $url, 'truckRegistration', 'npk_billing', 'npk_billing');
+        if(!$result)
+        {
+            echo $result;
+            die;
+        }
+        else
+        {
+            $resp     = $this->xml2array->xml2ary($result['response']);
+            $response = $resp['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:truckRegistrationResponse']['_c']['truckRegistrationInterfaceResponse']['_c']['esbBody']['_c'];
+            $res      = $response['vMsg']['_v'];
+            print_r($res);
+        }
+
+    }    
+
+    public function view_truck_registration() {
+     $tid  = $this->security->xss_clean(htmlentities(strtoupper($_GET["tid"])));
+
+          $xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+                   <soapenv:Header/>
+                   <soapenv:Body>
+                      <ipc:getTid>
+                         <getTidInterfaceRequest>
+                            <esbHeader>
+                               <!--Optional:-->
+                               <internalId>?</internalId>
+                               <!--Optional:-->
+                               <externalId>?</externalId>
+                               <!--Optional:-->
+                               <timestamp>?</timestamp>
+                               <!--Optional:-->
+                               <responseTimestamp>?</responseTimestamp>
+                               <!--Optional:-->
+                               <responseCode>?</responseCode>
+                               <!--Optional:-->
+                               <responseMessage>?</responseMessage>
+                            </esbHeader>
+                            <esbBody>
+                               <TID>'.$tid.'</TID>
+                            </esbBody>
+                         </getTidInterfaceRequest>
+                      </ipc:getTid>
+                   </soapenv:Body>
+                </soapenv:Envelope>';
+
+
+            $url   = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";    
+
+            $result = $this->sendcurl_lib->SendCurl($xml, $url, 'getTid', 'npk_billing', 'npk_billing');
+            if(!$result)
+            {
+                echo $result;
+                die;
+            }
+            else
+            {
+                $response = $this->xml2array->xml2ary($result['response']);
+                $response = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:getTidResponse']['_c']['getTidInterfaceResponse']['_c']['esbBody']['_c']['results'];
+                $resp = json_encode($response);
+                print_r($resp);
+                
+            }
+
+    }
+
+    public function delete_truck_registration() {
+        $idterm  = $this->security->xss_clean(htmlentities(strtoupper($_GET["idterm"])));
+        $tid     = $this->security->xss_clean(htmlentities(strtoupper($_GET["tid"])));
+
+        $xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+               <soapenv:Header/>
+               <soapenv:Body>
+                  <ipc:deleteTid>
+                     <deleteTidInterfaceRequest>
+                        <esbHeader>
+                           <!--Optional:-->
+                           <internalId>?</internalId>
+                           <!--Optional:-->
+                           <externalId>?</externalId>
+                           <!--Optional:-->
+                           <timestamp>?</timestamp>
+                           <!--Optional:-->
+                           <responseTimestamp>?</responseTimestamp>
+                           <!--Optional:-->
+                           <responseCode>?</responseCode>
+                           <!--Optional:-->
+                           <responseMessage>?</responseMessage>
+                        </esbHeader>
+                        <esbBody>
+                           <vTruckId>1001</vTruckId>
+                           <vIdTerminal>802</vIdTerminal>
+                        </esbBody>
+                     </deleteTidInterfaceRequest>
+                  </ipc:deleteTid>
+               </soapenv:Body>
+            </soapenv:Envelope>';
+
+        $url   = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";    
+
+        $result = $this->sendcurl_lib->SendCurl($xml, $url, 'truckRegistration', 'npk_billing', 'npk_billing');
+        if(!$result)
+        {
+            echo $result;
+            die;
+        }
+        else
+        {
+            $resp     = $this->xml2array->xml2ary($result['response']);
+            $response = $resp['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:truckRegistrationResponse']['_c']['truckRegistrationInterfaceResponse']['_c']['esbBody']['_c'];
+            $res      = $response['vMsg']['_v'];
+            print_r($res);
+        }    
+
+    }
+
+}
+

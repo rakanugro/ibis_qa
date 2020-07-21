@@ -1,0 +1,212 @@
+
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+
+
+<style type="text/css">
+
+.divdemo{
+	padding: 15px;
+  	border: 1px solid #666;
+  	background: #fff;
+	display: none;
+}
+
+#rectangle {
+  
+  width: 250px;
+  border: 1px solid ;
+  padding: 50px;
+  margin: 20px;
+}
+
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2></h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<form role="form">
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Customer Name</b> </label>
+											<div class="input-group">
+												<input type="text" id="customer_name" name="customer_name" class="form-control" size="73" placeholder="Pelayaran Tempuran TBK" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Customer ID</b> </label>
+											<div class="input-group">
+												<input type="text" id="customer_id" name="customer_id" class="form-control" size="73" placeholder="112770" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Username</b> </label>
+											<div class="input-group">
+												<input type="text" id="username" name="username" class="form-control" size="73" placeholder="Oviliahusein" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Terminal</b> </label>
+											<div class="input-group">
+												<input type="text" id="terminal" name="terminal" class="form-control" size="73" placeholder="Terminal Tanjung Priok" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Customer Address</b> </label>
+											<div class="input-group">
+												<input type="text" id="customer_address" name="customer_address" class="form-control" size="73" placeholder="Jalan Kumbang No.48" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">NPWP</b> </label>
+											<div class="input-group">
+												<input type="text" id="npwp" name="npwp" class="form-control" size="73" placeholder="01.321.865.6-054.000" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Customer E-mail</b> </label>
+											<div class="input-group">
+												<input type="text" id="customer_email" name="customer_email" class="form-control" size="73" placeholder="ovilia@temasline.com" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Customer Phone</b> </label>
+											<div class="input-group">
+												<input type="text" id="customer_phone" name="customer_phone" class="form-control" size="73" placeholder="021-869605" />
+											</div>
+
+										</div>
+									</form>
+								</div>								
+							</div>
+						</div>	
+						<div class="col-lg-6">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2></h2>
+								</header>
+								
+								<div class="main-box-body clearfix">
+									<form>
+										<div class="form-group">
+											<input type="button" value="Change Password" data-toggle="modal" data-target="#change_password" class="btn btn-success"/>
+										</div>
+										<div class="form-group">
+											<input type="button" value="Update Username" data-toggle="modal" data-target="#update_username" class="btn btn-success"/>
+										</div>
+									</form>
+								</div>		
+							</div>
+						</div>	
+					</div>
+
+					<!-- Modal Vessel -->
+
+					<div class="modal fade" id="change_password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Change Password</h4>
+								</div>
+								<div class="modal-body">
+									
+									<form role="form" name="user_changepassword" id="user_changepassword">
+									
+										<? //print_r($detail);?>
+										<div class="form-group">
+										<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+										</div>
+										<div class="form-group">
+											<label for="user_id">Current Password</label>
+											<input type="input" class="form-control" id="curren_password" name="curren_password" placeholder="Enter Current Password" value="" autocomplete="off" readonly>
+										</div>
+										<div class="form-group">
+											<label for="real_name">New Password</label>
+											<input type="password" class="form-control" id="new_password" name="new_password" placeholder="Enter new password" value="" autocomplete="off">
+										</div>
+										<div class="form-group">
+											<label for="real_name">Retype New Password</label>
+											<input type="password" class="form-control" id="retype_new_password" name="retype_new_password" placeholder="Retype new password" value="" autocomplete="off">
+										</div>
+									</form>
+									
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" id="userSaveButton" disabled >Save changes</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="update_username" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title">Update Username</h4>
+								</div>
+								<div class="modal-body">
+									
+									<form role="form" name="user_changepassword" id="user_changepassword">
+									
+										<? //print_r($detail);?>
+										<div class="form-group">
+										<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+										</div>
+										<div class="form-group">
+											<label for="user_id">Username</label>
+											<input type="input" class="form-control" id="username" name="username" placeholder="Enter Username" value="" autocomplete="off" readonly>
+										</div>
+									</form>
+									
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" id="userSaveButton" disabled >Save changes</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="modalplaceholder"></div>
+
+
+
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />
+

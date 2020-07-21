@@ -1,0 +1,156 @@
+<style>
+.tablebase
+{
+	font-size: 13px;
+}
+.tablebased
+{
+	font-size: 11px;
+	border-color:#e84e40;
+	text-align:center;
+}
+
+.headtb
+{
+	background-color:#e84e40;
+	color : white;
+	text-align:center;
+}
+</style>
+<table class="tablebase">
+<tr>
+	<td>Booking Number</td>
+	<td>: <?=$no_request;?></td>
+</tr>
+
+<tr>
+	<td>B/M Booking Number</td>
+	<td>: <?=$bl_number;?></td>
+</tr>
+
+<tr>
+	<td>BL Number</td>
+	<td>: <?=$bl_number;?></td>
+</tr>
+
+<tr>
+	<td>Terminal</td>
+	<td>: <?=$bl_number;?></td>
+</tr>
+
+<tr>
+	<td>Vessel</td>
+	<td>: <?=$vessel;?></td>
+</tr>
+
+<tr>
+	<td>Voyage In - Out</td>
+	<td>: <?=$voy_in;?>/<?=$voy_out;?></td>
+</tr>
+
+<tr>
+	<td>ETA</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>ETD</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>Open Stack</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>Date In</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>Date Out</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>Tipe Perdagangan</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>PEB</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>NEP</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>Booking Ship</td>
+	<td>: <?=$cust_name;?></td>
+</tr>
+
+<tr>
+	<td>Layanan</td>
+	<td>: <input type="radio" disabled=""> Jasa Penumpukan</input></td>
+</tr>
+
+<tr>
+	<td></td>
+	<td>&nbsp; <input type="radio" disabled=""> Jasa PFS</input></td>
+</tr>
+
+<tr>
+	<td></td>
+	<td>&nbsp; <input type="radio" disabled=""> Jasa Retribusi Alat</input></td>
+</tr>
+
+</table>
+<BR>
+<p class="tablebase"><b>Detail</b></p>
+<table border=1 class="tablebased">
+<tr>
+	<td class="headtb" width="5">No.</td>
+	<td class="headtb" width="150">Jenis Barang</td>
+	<td class="headtb" width="150">Kemasan</td>
+	<td class="headtb" width="80">Jumlah</td>
+	<td class="headtb" width="80">Satuan</td>
+	<td class="headtb" width="80">Status</td>
+	<td class="headtb" width="80">Bahaya</td>
+	<td class="headtb" width="80">Mengganggu</td>
+	<td class="headtb" width="80">Bahaya Non Label</td>
+</tr>
+<? 
+$i=1;
+foreach($row_detail as $rowd){?>
+<tr>
+	<td class="tablebased"><?=$i;?></td>
+	<td class="tablebased"><?=$rowd['cargo_name'];?></td>
+	<td class="tablebased"><?=$rowd['pkg_name'];?></td>
+	<td class="tablebased"><?=$rowd['qty'];?></td>
+	<td class="tablebased"><?=$rowd['unit'];?></td>
+	<td class="tablebased"><?=$rowd['ton'];?></td>
+	<td class="tablebased"><?=$rowd['cubic'];?></td>
+	<td class="tablebased"><?=$rowd['hz'];?></td>
+	<td class="tablebased"><?=$rowd['ds'];?></td>
+</tr>
+<?
+$i++;
+}?>
+</table>
+<br/>
+<table class="tablebase">
+<tr>
+	<td>History:</td>
+</tr>
+<?
+foreach($row_history as $rowd){?>
+<tr>
+	<td><?=$rowd['HISTORY'];?></td>
+</tr>
+<?
+}?>
+</table>

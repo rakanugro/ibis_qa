@@ -1,0 +1,43 @@
+DEBUG - 2016-09-14 13:29:55 --> Config Class Initialized
+DEBUG - 2016-09-14 13:29:55 --> Hooks Class Initialized
+DEBUG - 2016-09-14 13:29:55 --> Utf8 Class Initialized
+DEBUG - 2016-09-14 13:29:55 --> UTF-8 Support Enabled
+DEBUG - 2016-09-14 13:29:55 --> URI Class Initialized
+DEBUG - 2016-09-14 13:29:55 --> Router Class Initialized
+ERROR - 2016-09-14 13:29:55 --> 404 Page Not Found --> get_billing_summary
+DEBUG - 2016-09-14 13:30:05 --> Config Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Hooks Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Utf8 Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Config Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> UTF-8 Support Enabled
+DEBUG - 2016-09-14 13:30:05 --> Hooks Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Config Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Utf8 Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> URI Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Hooks Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Router Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> UTF-8 Support Enabled
+DEBUG - 2016-09-14 13:30:05 --> Utf8 Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> UTF-8 Support Enabled
+DEBUG - 2016-09-14 13:30:05 --> Output Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> URI Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> URI Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Security Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Router Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Router Class Initialized
+ERROR - 2016-09-14 13:30:05 --> 404 Page Not Found --> get_billing_summary
+DEBUG - 2016-09-14 13:30:05 --> Input Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> Output Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> XSS Filtering completed
+DEBUG - 2016-09-14 13:30:05 --> Security Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> XSS Filtering completed
+DEBUG - 2016-09-14 13:30:05 --> Input Class Initialized
+DEBUG - 2016-09-14 13:30:05 --> XSS Filtering completed
+DEBUG - 2016-09-14 13:30:05 --> XSS Filtering completed
+DEBUG - 2016-09-14 13:30:14 --> Config Class Initialized
+DEBUG - 2016-09-14 13:30:14 --> Hooks Class Initialized
+DEBUG - 2016-09-14 13:30:14 --> Utf8 Class Initialized
+DEBUG - 2016-09-14 13:30:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-14 13:30:15 --> URI Class Initialized
+DEBUG - 2016-09-14 13:30:15 --> Router Class Initialized
+ERROR - 2016-09-14 13:30:15 --> 404 Page Not Found --> get_billing_summary

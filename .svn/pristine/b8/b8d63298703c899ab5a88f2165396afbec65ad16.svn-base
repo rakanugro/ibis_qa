@@ -1,0 +1,444 @@
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.theme.css" />
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+    
+    
+
+<!-- global scripts -->
+<script src="<?=JSQ?>jquery-ui.min.js"></script>
+<style>
+    div.DTTT.btn-group{
+        display:none !important;        
+    }
+	.label {
+		display: inline-block;
+	}
+	.bigModal{
+    width:700px;
+    margin-left:-200px;
+	}
+</style>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	//sql injection protection
+	$(":input").keyup(function(event) {
+		// $(this).val($(this).val().replace(/[@\*\-#=,;:'"()\[\]/\\]/gi, ''));
+		$(this).val($(this).val().replace(/[\*\-#=,;:'"()?%~`$^&+{}|<>\[\]/\\]/gi, ''));
+	});
+});
+
+	$( document ).ready(function() {
+		
+		$( "#table-request a" ).on( "mouseup", function() {
+			$( "#table-request a" ).attr('disabled','disabled');
+		});	
+	});
+	
+	function clickDialog1(a)
+	{
+		$('#dialogViewReq').load("<?=ROOT?>/container/view_request/"+a)
+		.dialog({modal:false, height:500,width:650,title: 'View Content',close: function( event, ui ) {$('a').removeAttr('disabled');}});
+	}
+	function clickConfirm(a)
+	{
+		var r = confirm("Are you sure to confirm?");
+		if (r == true) {
+			var url = "<?=ROOT?>container/confirm_request";
+			$.blockUI();
+			$.post(url, {'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',REQUEST:a}, function(data){
+				$.unblockUI();
+				alert(data);
+				if(data=="Success")
+					location.reload(); 
+			});
+		}
+		$('a').removeAttr('disabled');
+	}
+</script>
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="<?=JSQ?>jquery-ui.theme.css" />
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingCustom.js"></script>
+<script src="<?=CUBE_?>js/jquery.dataTables.shortingEuro.js"></script>
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<!-- global scripts -->
+<script src="<?=JSQ?>jquery-ui.min.js"></script>					
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="main-box">
+										<header class="main-box-header clearfix">
+											<h2>Create TCA</h2>
+                                            <i>(Please click TCA with BL Number)</i>
+										</header>
+										
+										<div class="main-box-body clearfix">
+											<form class="form-inline" role="form" action="<?=ROOT?>eservice/tca/add_req_tca">
+												<button type="submit" id="submit_form" onclick="" class="btn btn-success">Create</button>
+											</form>
+										</div>
+									</div>
+								</div>	
+							</div>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<div class="main-box clearfix">
+									<header class="main-box-header clearfix">
+										<h2 class="pull-left">Search BL</h2>
+									</header>
+									<div class="main-box-body clearfix">
+										<div class="form-group example-twitter-oss">
+											<label for="exampleAutocomplete">No BL / Vessel></label>
+											<input type="text" class="form-control" id="search_input" name="search_input" value="" placeholder="" style="width:50%;" />
+										</div>										
+										<div class="form-group example-twitter-oss">
+											<input type="button" onclick="load_table()" value="Search" id="search_reqs" name="search_reqs" class="btn btn-success"/>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					<div class="row" id="tabledata">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">BL List</h2>
+									
+									<div id="reportrange" class="pull-right daterange-filter">
+										<i class="icon-calendar"></i>
+										<span></span> <b class="caret"></b>
+									</div>
+								</header>
+								
+								<div class="main-box-body clearfix">
+									<div class="table-responsive">
+										<table class="table table-striped table-hover" id="example1">
+											<thead>
+												<tr>
+												 	<th width='50px'>NO BL</th>
+												  	<th width='50px'>VESSEL</th>
+												  	<th width='50px'>VOY IN / VOY OUT</th>
+												  	<th width='50px'>BL DATE</th>
+												  	<th width='50px'>QTY</th>
+												  	<th width='50px'>TON</th>
+												  	<th width='50px'>JUMLAH TRUCK</th>
+												  	<th width='50px'>TRUCK COMPANY</th>
+												  	<th width='50px'>EDIT</th>
+												</tr>	
+											</thead>
+											<tbody>
+												
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="modalEditTCA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content bigModal">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title">EDIT TCA</h4>
+								</div>
+								<div class="modal-body ">
+									
+									<form role="form">
+										<div class="main-box-body clearfix">
+											<div class="form-group">
+												<label>Terminal</label>
+													<select id="port" name="port" class="form-control">
+														<option id="port"> -- Please Choose Terminal -- </option>
+														<?php
+														foreach($terminal as $term)
+														{?>
+															<option value="<?=$term["ID_PORT"]?>"><?=$term["TERMINAL_NAME"]?></option>
+														<?php
+														}
+														?>
+													</select>
+												</div>
+												<div class="form-group example-twitter-oss">
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">ID Customer</label>
+														<input type="text" class="form-control" id="customer_id" name="customer_id" size="8" readonly >
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">Customer Name</label>
+														<input type="text" class="form-control" id="customer_name" name="customer_name" size="8" readonly >
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">Entry No Request / BL</label>
+														<input type="text" class="form-control" id="no_req" name="no_req" placeholder="autocomplete" size="20" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">VESSEL</label>
+														<input type="text" class="form-control" id="vessel" name="vessel" size="8" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">VOYAGE</label>
+														<input type="text" class="form-control" id="voyage" name="voyage" size="8" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">PKG NAME</label>
+														<input type="text" class="form-control" id="pkg_name" name="pkg_name" size="8" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">QTY</label>
+														<input type="text" class="form-control" id="qty" name="qty" size="8" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">TON</label>
+														<input type="text" class="form-control" id="ton" name="ton" size="8"  readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">NO BL</label>
+														<input type="text" class="form-control" id="bl_number" name="bl_number" size="8" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">BL DATE</label>
+														<input type="text" class="form-control" id="bl_date" name="bl_date" size="8" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">HS CODE</label>
+														<input type="text" class="form-control" id="hs_code" name="hs_code" size="8" readonly>
+													</div>
+													<div class="form-group col-xs-6">
+														<label for="exampleAutocomplete">Service Type</label>
+														<input type="text" class="form-control" id="service_type" name="service_type" size="8" readonly>
+													</div>
+													<input type="hidden" id="voyage_in" name="voyage_in" >
+													<input type="hidden" id="voyage_out" name="voyage_out">
+													<input type="hidden" id="id_servicetype" name="id_servicetype" >
+														<input type="hidden" id="id_vvd" name="id_vvd" ">
+													<input type="hidden" id="e_i" name="e_i" >
+												</div>
+											</div>
+
+											<div class="table-responsive">
+												<table class="table table-striped table-hover">
+													<thead>
+														<tr>
+														 	<th width='30px'>NO REQUEST</th>
+														 	<th width='50px'>TCA TRUCK ID</th>
+														  	<th width='50px'>TCA TRUCK NUMBER</th>
+														  	<th width='50px'>TCA TRUCK COMPANY</th>
+														  	<th width='50px'>PROXIMITY</th>
+														  	<th width='50px'>DELETE</th>
+														</tr>	
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary" id="userSaveButton" disabled >Save changes</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+<script>
+
+function load_table()
+{
+	$.blockUI();
+	var port = '201';
+    var id_customer = '525250';
+	var search_input = $("#search_input").val();
+	$.post("<?=ROOT?>eservice/tca/search_main_tca",{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',search:search_input, port: port, id_customer: id_customer},function(data){
+		var obj = JSON.parse(data);
+        var arr =[];
+        var jmlresponse = obj.length;
+        $('#example1 tbody').html("");
+
+        	var ptk = "'";
+			obj.forEach(function(abc) {
+				var isi 	 = abc.noRequest	;
+			arr.push(
+				'<tr>' +
+					'<td width="50px">'+ abc.noBL +'</td>' +
+					'<td width="50px">'+ abc.vessel +'</td>' +
+					'<td width="50px">'+ abc.voyage +'</td>' +
+					'<td width="50px">'+ abc.blDate +'</td>' +
+					'<td width="50px">'+ abc.qty +'</td>'+
+					'<td width="50px">'+ abc.ton +'</td>' +
+					'<td width="50px">'+ abc.truckComp+'</td>' +
+					'<td width="50px">'+ abc.jml+'</td>' +
+					'<td><a class="btn btn-danger" aria-label="Edit" onclick="editTCA('+ptk+isi+ptk+')"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></a></td>'+
+				'</tr>'
+			);
+
+		});
+		$('#example1 tbody').append(arr);
+		$.unblockUI();
+    });
+}
+
+$(document).ready(function() {
+	var table = $("#example1 tbody");
+	var port = '201';
+    var id_customer = '525250';
+    //var terminal = $this->session->userdata('sub_group_phd');
+    
+ 
+    $.ajax({
+	    type: "GET",
+	    url: "<?=ROOT?>eservice/tca/getHeaderTCA?",
+	    data: {port : port, id_customer: id_customer},   // <== change is here
+	    success: function(msg){
+
+	    	var arr =[];
+	    	var obj = JSON.parse(msg);
+            var jmlresponse = obj.length;
+
+			for(i=0;i<jmlresponse;i++)
+			{
+				var noRequest =obj[i]['_c']['noRequest']['_v'];
+				var noBL	  =obj[i]['_c']['noBL']['_v'];
+				var vessel    =obj[i]['_c']['vessel']['_v'];
+				var voyage	  =obj[i]['_c']['voyage']['_v'];
+				var blDate    =obj[i]['_c']['blDate']['_v'];
+				var ton       =obj[i]['_c']['ton']['_v'];
+				var qty       =obj[i]['_c']['qty']['_v'];
+				var truckComp =obj[i]['_c']['truckComp']['_v'];
+				var jml       =obj[i]['_c']['jml']['_v'];
+			}
+
+			var ptk = "'";
+			obj.forEach(function(abc) {
+				var isi 	 = abc._c.noRequest._v;
+		       	table.append(
+		       				'<tr>' +
+						     '<td width="50px">'+ abc._c.noBL._v +'</td>' +
+						     '<td width="50px">'+ abc._c.vessel._v +'</td>' +
+						     '<td width="50px">'+ abc._c.voyage._v +'</td>' +
+						     '<td width="50px">'+ abc._c.blDate._v +'</td>' +
+						     '<td width="50px">'+ abc._c.qty._v +'</td>'+
+						     '<td width="50px">'+ abc._c.ton._v +'</td>' +
+						     '<td width="50px">'+ abc._c.truckComp._v +'</td>' +
+						     '<td width="50px">'+ abc._c.jml._v +'</td>' +
+						     '<td><a class="btn btn-danger" aria-label="Edit" onclick="editTCA('+ptk+isi+ptk+')"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></a></td>'+
+						  '</tr>'
+	            );
+	       });
+	 
+	            $("#example1").DataTable();
+	            $.unblockUI();
+		}
+	});
+
+});
+
+function editTCA(isi){
+		var noRequest = '2010118000033';
+		$.blockUI();
+		
+		$.get("<?=ROOT?>eservice/tca/view_tca?",{noRequest : isi}, function(data){
+
+				 var obj = JSON.parse(data);
+					var noRequest           =obj['_c']['noRequest']['_v'];
+					var noBL	            =obj['_c']['noBL']['_v'];
+					var vessel	  			=obj['_c']['vessel']['_v'];
+					var voyIn	 			=obj['_c']['voyIn']['_v'];
+					var voyOut 				=obj['_c']['voyOut']['_v'];
+					var blDate	  			=obj['_c']['blDate']['_v'];
+					var ton	  				=obj['_c']['ton']['_v'];
+					var qty	  				=obj['_c']['qty']['_v'];
+					var idCustomer 			=obj['_c']['idCustomer']['_v'];
+					var customerName	  	=obj['_c']['customerName']['_v'];
+					var pkgName	  			=obj['_c']['pkgName']['_v'];
+					var hsCode	  			=obj['_c']['hsCode']['_v'];
+					var idServiceType	  	=obj['_c']['idServiceType']['_v'];
+					var serviceType	  		=obj['_c']['serviceType']['_v'];
+					var ei	  				=obj['_c']['ei']['_v'];
+					var idVvd 				=obj['_c']['idVvd']['_v'];
+					var idTerminal	  		=obj['_c']['terminalName']['_v'];
+
+					var idTerminal = $("#port option:selected").text(idTerminal);
+					$('#customer_id').val(idCustomer);
+					$('#customer_name').val(customerName);
+					$('#no_req').val(noRequest);
+					$('#vessel').val(vessel);
+					$('#voyage').val();
+					$('#pkg_name').val(pkgName);
+					$('#qty').val(qty);
+					$('#ton').val(ton);
+					$('#bl_number').val(noBL);
+					$('#bl_date').val(blDate);
+					$('#hs_code').val(hsCode);
+					$('#service_type').val(serviceType);
+					$('#voyage_in').val(voyIn);
+					$('#voyage_out').val(voyOut);
+					$('#id_servicetype').val(idServiceType);
+					$('#id_vvd').val(idVvd);
+					$('#e_i').val(ei);
+
+		});
+		
+		$('#modalEditTCA').modal('show');
+		$.unblockUI();
+
+
+		$.get("<?=ROOT?>eservice/tca/getDetailTCA?",{noRequest : noRequest}, function(data){
+        var obj = JSON.parse(data);
+        var arr =[];
+              	var jmlresponse = obj.length;
+              	$('#modalEditTCA tbody').html("");
+				obj.forEach(function(abc) {
+				
+					arr.push(
+						'<tr>' +
+						     '<td width="50px">'+ abc._c.noRequest._v +'</td>' +
+						     '<td width="50px">'+ abc._c.tcaTruckId._v +'</td>' +
+						     '<td width="50px">'+ abc._c.tcaTruckId._v +'</td>' +
+						     '<td width="50px">'+ abc._c.tcaTruckCompany._v +'</td>' +
+						     '<td width="50px">'+ abc._c.proximity._v +'</td>' +
+					     	 '<td><a class="btn btn-danger" aria-label="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>'+
+						  '</tr>'
+					);
+
+				});
+
+				console.log(arr);
+				$('#modalEditTCA tbody').append(arr);
+          });
+	}
+			
+		</script>

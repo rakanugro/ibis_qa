@@ -1,0 +1,477 @@
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />
+
+<style type="text/css">
+.upload_info {
+	font-size: small;
+	font-style: italic;
+	float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main-box">
+						<header class="main-box-header clearfix">
+							<h2>Craete New Truck</h2>
+						</header>
+							<div class="main-box-body clearfix">
+								<div class="form-group col-xs-6">
+										<label>Terminal</label>
+										<select id="terminal" name="terminal" class="form-control" onchange="cekTipeYd()">
+											<option> -- Please Choose Terminal -- </option>
+											<?php
+											foreach($terminal as $term)
+											{
+											?>
+												<option value="<?=$term["ID_PORT"]?>"><?=$term["TERMINAL_NAME"]?></option>
+											<?php
+											}
+											?>
+										</select>
+								</div>
+								<div class="form-group col-xs-6">
+										<label>Vechile Type</label>
+										<select id="vechile_type" name="vechile_type" class="form-control">
+											<option>Select Type</option>
+											<option value="KP">Kendaraan Pribadi</option>
+											<option value="KU">Kendaraan Umum</option>
+										</select>
+								</div>
+
+									<div class="form-group col-xs-6">
+										<label for="exampleAutocomplete">Trucking Company Name</label>
+										<input type="text" class="form-control" id="customer_name" name="customer_name" size="8">
+										<input type="hidden" id="customer_address" name="customer_address">
+										<input type="hidden" id="customer_address" name="customer_address" value="<?php echo $this->session->userdata('npwp_phd') ?>">
+									</div>
+									<div class="form-group col-xs-6">
+										<label for="exampleAutocomplete">TID</label>
+										<input type="text" class="form-control" id="tid" name="tid" size="8" >
+									</div>
+									<div class="form-group col-xs-6">
+										<label for="exampleAutocomplete">Plat Number</label>
+										<input type="text" class="form-control" id="plat_number" name="plat_number"size="8" >
+									</div>
+									<div class="form-group col-xs-6">
+										<label for="exampleAutocomplete">Expired Date</label>
+										<input type="text" class="form-control" id="expired_date" name="expired_date" size="8" >
+									</div>
+									<div class="form-group col-xs-6">
+										<label for="exampleAutocomplete">STNK Number</label>
+										<input type="text" class="form-control" id="stnk_number" name="stnk_number" size="8" >
+									</div>
+									<div class="form-group col-xs-6">
+										<label for="exampleAutocomplete">STNK Expired</label>
+										<input type="text" class="form-control" id="stnk_expired" name="stnk_expired" size="10" >
+									</div>
+									<div class="form-group col-xs-6">
+										<label for="exampleAutocomplete">RFID Code</label>
+										<input type="text" class="form-control" id="rfid_code" name="rfid_code" size="10" >
+									</div>
+									<div class="form-group col-xs-6">
+										<label>Status</label>
+										<select id="status" name="status" class="form-control">
+											<option value="">Select Status</option>
+										</select>
+									</div>
+									<div class="form-group col-xs-6">
+									<label for="exampleAutocomplete"></label>
+									<br>
+										<button id="submit_header" onclick="submitregistration()" class="btn btn-success">Save</button>
+										<button id="cancel_header" onclick="cancelheader()" class="btn btn-danger">Cancel</button>
+									</div>
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<div id="modalplaceholder"></div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main-box">
+						<header class="main-box-header clearfix">
+							<h2>Import Data Truck</h2>
+						</header>
+							<div class="main-box-body clearfix">
+								<form method="post" enctype="multipart/form-data" action="<?=ROOT?>om/truck/upload_excel_truck">
+									<div class="form-group">
+										<label for="exampleTooltip">Upload</label>
+										<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+										<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+										<input type="hidden" id="port_excel" name="port_excel" value="">
+										<input type="hidden" id="id_req_excel" name="id_req_excel" value="">
+										<input type="hidden" id="bl_number_excel" name="bl_number_excel" value="">
+										<input type="hidden" id="id_vvd_excel" name="id_vvd_excel" value="">
+										<input type="hidden" id="e_i_excel" name="e_i_excel" value="">
+										<input type="hidden" id="id_servicetype_excel" name="id_servicetype_excel" value="">
+										<input type="hidden" id="servicetype_excel" name="servicetype_excel" value="">
+										<input type="file" accept=".xls" id="userfile" name="userfile" data-toggle="tooltip" data-placement="bottom" title="Upload file Excel">
+									</div>
+									<!-- <button type="submit" class="btn btn-success">Upload</button>
+									<a href="<?=APP_ROOT?>templateupload/Template_Upload_Truck_Association.xls">Download Template</a> -->
+								</form>
+							</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="main-box-body clearfix">
+				<div class="row" id="tabledata">
+					<div class="col-lg-12">
+							
+						<div class="main-box clearfix">
+							<header class="main-box-header clearfix">
+								<h2 class="pull-left">View Detail Document</h2>
+									
+								<div id="reportrange" class="pull-right daterange-filter">
+									<i class="icon-calendar"></i>
+									<span></span> <b class="caret"></b>
+								</div>
+							</header>
+								
+							<div class="main-box-body clearfix">
+								<div class="table-responsive">
+									<table class="table table-striped table-hover" id="example1">
+										<thead>
+								            <tr>
+										        <th>Terminal Trucking Company</th> <!-- companyName -->
+										        <th>TID</th> <!-- tid -->
+										        <th>Expired Date</th> <!-- tanggal -->
+										        <th>STNK Number</th> <!-- truckNumber --> 
+										        <th>RFID Code</th>  <!-- proximity --> 
+										        <th>Action</th>
+								            </tr>
+								        </thead>
+								        <tbody>
+								        </tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+
+	<div class="modal fade" id="ModalViewRegistration" role="dialog">
+		<div class="modal-dialog">
+		  <!-- Modal content-->
+		  <div class="modal-content">
+		    <div class="modal-header">
+		      <button type="button" class="close" data-dismiss="modal">&times;</button>
+		      <h4 class="modal-title">View Truck Registration</h4>
+		    </div>
+		    <div class="modal-body">
+			    <div class="main-box-body clearfix">
+				 <div class="table-responsive">
+				 	 <table class="table table-striped table-hover" id="ViewRegistration">
+					    <tr>
+					      <td align="left" width="35%">Terminal Cabang</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"><label id="vterminalName"></label></td>
+					    </tr>
+					    <tr>
+					      <td align="left" width="35%">Tipe Kendaraan</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"><label id="vkendaraanType"></label></td>
+					    </tr>
+					    <tr>
+					      <td align="left" width="35%">Tracking Company Name</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"><label id="vcompanyName"></label></td>
+					    </tr>
+					    <tr>
+					      <td align="left" width="35%">ID Custommer</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"></td>
+					    </tr>
+					    <tr>
+					      <td align="left" width="35%">TID</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"><label id="vtid"></label></td>
+					    </tr>
+					    <tr>
+					      <td align="left" width="35%">Plat Number</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"><label id="vtruckNumber"></label></td>
+					    </tr>
+					    <tr>
+					      <td align="left" width="35%">Expired Date</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"><label id="vexpiredDate"></label></td>
+					    </tr>
+					    <tr>
+					      <td align="left" width="35%">RFID Code</td>
+					      <td align="left" width="5%">:</td>
+					      <td align="left" width="60%"><label id="vproximity"></label></td>
+					    </tr>
+					</table>
+				 </div>	
+				</div>
+		    </div>
+		    <div class="modal-footer">
+		      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    </div>
+		  </div>
+		</div>
+		</div>
+
+
+		<div class="modal fade" id="ModalEditRegistration" role="dialog">
+			<div class="modal-dialog">
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<header class="main-box-header clearfix">
+					<h2>Edit Truck</h2>
+				</header>
+				<div class="main-box-body clearfix">
+					<div class="form-group col-xs-6">
+							<label>Terminal</label>
+							<select id="edt_terminalName" name="edt_terminalName" class="form-control" >
+								<option id="edt_terminalName1"> -- Please Choose Terminal -- </option>
+								<?php
+								foreach($terminal as $term)
+								{
+								?>
+									<option value="<?=$term["ID_PORT"]?>"><?=$term["TERMINAL_NAME"]?></option>
+								<?php
+								}
+								?>
+							</select>
+					</div>
+					<div class="form-group col-xs-6">
+							<label>Vechile Type</label>
+							<select id="edt_kendaraanType" name="edt_kendaraanType" class="form-control">
+								<option id="edt_kendaraanType1">Select Type</option>
+								<option value="KP">Kendaraan Pribadi</option>
+								<option value="KU">Kendaraan Umum</option>
+							</select>
+					</div>
+
+					<div class="form-group col-xs-6">
+						<label for="exampleAutocomplete">Trucking Company Name</label>
+						<input type="text" class="form-control" id="edt_companyName" name="edt_companyName" size="8">
+						<input type="hidden" id="edt_customer_address" name="edt_customer_address">
+						<input type="hidden" id="edt_customer_npwp" name="edt_customer_npwp" value="<?php echo $this->session->userdata('npwp_phd') ?>">
+					</div>
+					<div class="form-group col-xs-6">
+						<label for="exampleAutocomplete">TID</label>
+						<input type="text" class="form-control" id="edt_tid" name="edt_tid" size="8" >
+					</div>
+					<div class="form-group col-xs-6">
+						<label for="exampleAutocomplete">Plat Number</label>
+						<input type="text" class="form-control" id="edt_truckNumber" name="edt_truckNumber"size="8" >
+					</div>
+					<div class="form-group col-xs-6">
+						<label for="exampleAutocomplete">Expired Date</label>
+						<input type="text" class="form-control" id="edt_expiredDate" name="edt_expiredDate" size="8" >
+					</div>
+					<div class="form-group col-xs-6">
+						<label for="exampleAutocomplete">RFID Code</label>
+						<input type="text" class="form-control" id="edt_proximity" name="edt_proximity" size="10" >
+					</div>
+					<div class="form-group col-xs-12">
+						<div class="modal-footer">
+						   <button id="submit_header" onclick="submiteditregistration()" class="btn btn-success">Save</button>
+					      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					    </div>
+				    </div>
+			  </div>
+			</div>
+		</div>
+	
+<script>
+
+$(document).ready(function() {
+      var idterm = '201';
+      var idcust = '1234';
+      
+
+        $.get("<?=ROOT?>eservice/truck_registration/load_truck_registration?",{idterm : idterm, idcust: idcust}, function(data){
+              	
+              	var arr =[];
+              	var obj = JSON.parse(data);
+              	//alert(jmlresponse);
+              	var jmlresponse = obj.length;
+				for(i=0;i<jmlresponse;i++)
+				{
+					var companyName  =obj[i]['_c']['companyName']['_v'];
+					var tid          =obj[i]['_c']['tid']['_v'];
+					var tanggal      =obj[i]['_c']['tanggal']['_v'];
+					var truckNumber  =obj[i]['_c']['truckNumber']['_v'];
+					var proximity 	 =obj[i]['_c']['proximity']['_v'];
+					var kendaraanType=obj[i]['_c']['kendaraanType']['_v'];
+					var tidCheck     =obj[i]['_c']['tidCheck']['_v'];
+					
+				}
+					var ptk = "'";
+				obj.forEach(function(abc) {
+					var isi 	 = abc._c.tid._v;
+					var terminal = idterm;
+				
+				arr.push(
+					'<tr>' +
+					     '<td>'+ abc._c.companyName._v +'</td>' +
+					     '<td>'+ abc._c.tid._v +'</td>' +
+					     '<td>'+ abc._c.tanggal._v +'</td>' +
+					     '<td>'+ abc._c.truckNumber._v +'</td>' +
+					     '<td>'+ abc._c.proximity._v +'</td>' +
+					     '<td><a data-dismiss="modal" style="cursor:pointer" class="table-link click_detail bank_detail" onclick="editregistration('+ptk+isi+ptk+')" title="Edit"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-edit fa-stack-1x fa-inverse"></i></span></a>'+
+					     	'<a data-dismiss="modal" style="cursor:pointer" class="table-link click_detail bank_detail" onclick="viewregistration('+ptk+isi+ptk+')" title="View"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-eye fa-stack-1x fa-inverse"></i></span></a>'+
+					     	'<a data-dismiss="modal" style="cursor:pointer" class="table-link click_detail bank_detail" onclick="deleteregistration('+ptk+isi+ptk+')" title="Delete"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse"></i></span></a></td>' +
+					   '</tr>');
+
+				});
+				$('#example1 tbody').append(arr);
+			  //	console.log(arr);
+
+          });
+          
+});
+	
+	function submitregistration(){
+		var terminal 	  = $('#terminal').val();
+		var vechile_type  = $('#vechile_type').val();
+		var customer_name = $('#customer_name').val();
+		var tid 		  = $('#tid').val();
+		var plat_number   = $('#plat_number').val();
+		var expired_date  = $('#expired_date').val();
+		var stnk_number   = $('#stnk_number').val();
+		var stnk_expired  = $('#stnk_expired').val();
+		var rfid_code     = $('#rfid_code').val();
+		var status  	  = $('#status').val();
+
+		//$.blockUI();
+		$.get("<?=ROOT?>eservice/truck_registration/save_truck_registration?",{terminal : terminal, vechile_type: vechile_type, customer_name:customer_name, tid:tid, plat_number:plat_number, expired_date:expired_date, stnk_number:stnk_number, stnk_expired:stnk_expired, rfid_code:rfid_code, status:status}, function(data){
+				alert(data);
+		})
+	}
+
+	function viewregistration(isi){
+		$.blockUI();
+		
+		$.get("<?=ROOT?>eservice/truck_registration/view_truck_registration?",{tid : isi}, function(data){
+				var obj = JSON.parse(data);
+
+				var terminalName  =obj['_c']['terminalName']['_v'];
+				var kendaraanType =obj['_c']['kendaraanType']['_v'];
+				var companyName   =obj['_c']['companyName']['_v'];
+				var tid  		  =obj['_c']['tid']['_v'];
+				var truckNumber   =obj['_c']['truckNumber']['_v'];
+				var expiredDate   =obj['_c']['expiredDate']['_v'];
+				var proximity     =obj['_c']['proximity']['_v'];
+				
+				document.getElementById('vterminalName').innerHTML  = terminalName;
+				document.getElementById('vkendaraanType').innerHTML = kendaraanType;
+				document.getElementById('vcompanyName').innerHTML = companyName;
+				document.getElementById('vtid').innerHTML 		 = tid;
+				document.getElementById('vtruckNumber').innerHTML = truckNumber;
+				document.getElementById('vexpiredDate').innerHTML = expiredDate;
+				document.getElementById('vproximity').innerHTML   = proximity;
+		})
+		
+		$('#ModalViewRegistration').modal('show');
+		$.unblockUI();
+	}
+
+
+
+	function editregistration(isi){
+		$.blockUI();
+		
+		$.get("<?=ROOT?>eservice/truck_registration/view_truck_registration?",{tid : isi}, function(data){
+				var obj = JSON.parse(data);
+				var terminalName  =obj['_c']['terminalName']['_v'];
+				var kendaraanType =obj['_c']['kendaraanType']['_v'];
+				var companyName   =obj['_c']['companyName']['_v'];
+				var tid  		  =obj['_c']['tid']['_v'];
+				var truckNumber   =obj['_c']['truckNumber']['_v'];
+				var expiredDate   =obj['_c']['expiredDate']['_v'];
+				var proximity     =obj['_c']['proximity']['_v'];
+				//alert(terminalName);
+				//$('#edt_terminalName').val(terminalName);  
+				$('#edt_kendaraanType').val(kendaraanType);
+				$("#edt_terminalName option:selected").text(terminalName);
+				//document.getElementById('edt_terminalName1').innerHTML  = terminalName;
+				document.getElementById('edt_kendaraanType1').innerHTML = kendaraanType;
+				$('#edt_companyName').val(companyName);
+				$('#edt_tid').val(tid);
+				$('#edt_truckNumber').val(truckNumber);
+				$('#edt_expiredDate').val(expiredDate);
+				$('#edt_proximity').val(proximity);
+		})
+		
+		$('#ModalEditRegistration').modal('show');
+		$.unblockUI();
+	}
+	function submiteditregistration(isi){
+		var terminal 	  = $('#edt_terminalName').val();
+		var vechile_type  = $('#edt_kendaraanType').val();
+		var customer_name = $('#edt_companyName').val();
+		var tid 		  = $('#edt_tid').val();
+		var plat_number   = $('#edt_truckNumber').val();
+		var expired_date  = $('#edt_expiredDate').val();
+		var rfid_code     = $('#edt_proximity').val();
+
+		//$.blockUI();
+		$.get("<?=ROOT?>eservice/truck_registration/edit_truck_registration?",{terminal : terminal, vechile_type: vechile_type, customer_name:customer_name, tid:tid, plat_number:plat_number, expired_date:expired_date,rfid_code:rfid_code}, function(data){
+				alert(data);
+		})
+	}
+
+	function deleteregistration(isi){
+		var idterm = '201';
+		var tid    = isi;
+		var x = confirm("Yakin Hapus Data?");
+		if (x){
+	      	$.get("<?=ROOT?>eservice/truck_registration/delete_truck_registration?",{idterm : idterm, tid: tid}, function(data){
+				alert(data);
+			})
+		}
+	}
+
+	//datepicker
+	$('#expired_date').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+
+	$('#stnk_expired').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+
+</script>
+

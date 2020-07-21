@@ -1,0 +1,2117 @@
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+
+<style type="text/css">
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+#component_type {
+	float: left;
+}
+#component_reefer {
+	float: left;
+	margin-left: 10px;
+}
+.main-box-footer {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.btn-footer{
+	width: 100px;
+}
+</style>
+
+<script>
+$(document).ready(function() {
+    $('#detail-list').DataTable();
+	
+	$('#tgl_peb').datepicker({
+		format: 'dd-mm-yyyy'
+	});
+
+	$('#date_out').datepicker({
+		format: 'dd-mm-yyyy'
+	});
+
+	$("#create-rental").on("click", function () {
+		var newRow = $("<tr>");
+		var cols = "";
+
+		cols = '<td>' +
+					'<select id="trade_type" name="trade_type" class="form-control">' +
+						'<option> -- Please Choose Equipment Name  -- </option>' +
+						'<option value="L">Internasional</option>' +
+						'<option value="D">Domestik</option>' +
+					'</select>' +
+				'</td>' +
+				'<td>' +
+					'<select id="trade_type" name="trade_type" class="form-control">' +
+						'<option> -- Please Choose Unit  -- </option>' +
+						'<option value="L">Internasional</option>' +
+						'<option value="D">Domestik</option>' +
+					'</select>' +
+				'</td>' +
+				'<td><input type="text" id="jml" class="form-control"></input></td>';
+
+		cols += '<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-rental"></td>';
+		newRow.append(cols);
+
+		$("#rental-list").append(newRow);
+	});
+
+	$("table#rental-list").on("click", "#btn-delete-rental", function (event) {
+	        $(this).closest("tr").remove();       
+	});
+
+	$("#create-retribution").on("click", function () {
+		var newRow = $("<tr>");
+		var cols = "";
+
+		cols = '<td>' +
+					'<select id="trade_type" name="trade_type" class="form-control">' +
+						'<option> -- Please Choose Equipment Name  -- </option>' +
+						'<option value="L">Internasional</option>' +
+						'<option value="D">Domestik</option>' +
+					'</select>' +
+				'</td>' +
+				'<td>' +
+					'<select id="trade_type" name="trade_type" class="form-control">' +
+						'<option> -- Please Choose Unit  -- </option>' +
+						'<option value="L">Internasional</option>' +
+						'<option value="D">Domestik</option>' +
+					'</select>' +
+				'</td>' +
+				'<td><input type="text" id="jml" class="form-control"></input></td>';
+
+		cols += '<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-retribution"></td>';
+		newRow.append(cols);
+
+		$("#retribution-list").append(newRow);
+	});
+
+	$("table#retribution-list").on("click", "#btn-delete-retribution", function (event) {
+	        $(this).closest("tr").remove();
+	});
+
+	$("#btn-create-detail").click(function(){
+		$("#modal-create-detail").modal();
+	});
+
+	$('#div_comodity').hide();
+	$('#div_unit').hide();
+	$('#div_quantity').hide();
+	$('#div_comodity').hide();
+	$('#div_size').hide();
+	$('#div_condition').hide();
+	$('#como_character').hide();
+	$('#packaging').on('change', function(){
+		if ($('#packaging').val() == '0'){
+			$('#div_comodity').hide();
+			$('#div_size').hide();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#div_condition').hide();
+			$('#como_character').hide();
+
+		}else if($('#packaging').val() == '1'){
+
+			$('#div_comodity').show();
+			$('#div_size').show();
+			$('#div_condition').show();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#como_character').hide();
+
+		}else if($('#packaging').val() == '2' || $('#packaging').val() == '3' || $('#packaging').val() == '4' || $('#packaging').val() == '5' || $('#packaging').val() == '6' || $('#packaging').val() == '7'){
+			$('#div_comodity').show();
+			$('#div_size').hide();
+			$('#div_condition').hide();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#div_size').hide();
+			$('#como_character').hide();	
+		}
+	});
+
+	$('#comodity').on('change', function(){
+		if ($('#comodity').val() == '0'){
+			$('#div_size').hide();
+			$('#div_condition').hide();
+			$('#div_unit').hide();
+			$('#div_quantity').hide();
+			$('#div_size').hide();
+			$('#como_character').hide();	
+
+		}else if($('#comodity').val() == 'a' || $('#comodity').val() == 'b' || $('#comodity').val() == 'c'){
+			$('#div_unit').show();
+			$('#div_quantity').show();
+			$('#div_size').show();
+			$('#div_condition').show();
+			$('#como_character').hide();
+
+		}else if($('#comodity').val() == 'd'){
+			$('#div_unit').show();
+			$('#div_quantity').show();
+			$('#como_character').show();
+			$('#div_size').hide();
+			$('#div_condition').hide();
+		}
+	});
+
+	$("table#detail-list").on("click", ".btn-delete-detail", function (event) {
+			$(this).closest("tr").remove();       
+	});
+
+	// --------------- //
+
+	var counter = 1;
+	$(":input").keyup(function(event) {
+		// $(this).val($(this).val().replace(/[@\*\-#=,;:'"()\[\]/\\]/gi, ''));
+		$(this).val($(this).val().replace(/[\*\-#=,;:'"()?%~`$^&+{}|<>\[\]/\\]/gi, ''));
+	});
+	$("#add_alat").on("click", function () {
+	        var newRow = $("<tr>");
+	        var cols = "";
+
+	        cols += '';
+	        cols += '<td class="col-xs-6""><select id="alat" name="alat" class="form-control" ><option></option></select>';
+
+	        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+	        newRow.append(cols);
+
+	        $(".list_alat").append(newRow);
+	      
+	        counter++;
+	});
+
+	$("table.list_alat").on("click", ".ibtnDel", function (event) {
+	        $(this).closest("tr").remove();       
+	        counter -= 1
+	});
+
+	var counter = 1;
+	$(":input").keyup(function(event) {
+		// $(this).val($(this).val().replace(/[@\*\-#=,;:'"()\[\]/\\]/gi, ''));
+		$(this).val($(this).val().replace(/[\*\-#=,;:'"()?%~`$^&+{}|<>\[\]/\\]/gi, ''));
+	});
+	$("#add_file").on("click", function () {
+	        var newRow = $("<tr>");
+	        var cols = "";
+
+	        cols += '';
+	        cols += '<td class="col-xs-6""><input type="file" accept=".pdf" name="do_upload" id="do_upload" data-toggle="tooltip" data-placement="bottom" title="Upload Delivery Order" size="100">';
+
+	        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+	        newRow.append(cols);
+
+	        $(".list_file").append(newRow);
+	      
+	        counter++;
+	});
+
+	$("table.list_file").on("click", ".ibtnDel", function (event) {
+	        $(this).closest("tr").remove();       
+	        counter -= 1
+	});
+
+
+	$("#shipper").hide();
+	//sql injection protection
+	$(":input").keyup(function(event) {
+		// $(this).val($(this).val().replace(/[@\*\-#=,;:'"()\[\]/\\]/gi, ''));
+		$(this).val($(this).val().replace(/[\*\#=,;:'"()?%~`$^&+{}|<>\[\]/\\]/gi, ''));
+	});
+  var currentDate = new Date();
+  var day = currentDate.getDate();
+  var month = currentDate.getMonth() + 1;
+  var year = currentDate.getFullYear();
+  var hour = currentDate.getHours();
+  var minute = currentDate.getMinutes() + 1;
+  /* $("#start_shift").on('click', function(){
+      $("#start_shift").val(day+'-'+month+'-'+year+' '+hour+':'+minute);
+  }); */
+  
+		$('#start_shift').datetimepicker({
+		format: 'd-m-Y H:i'
+	});
+	
+			$('#end_shift').datetimepicker({
+		format: 'd-m-Y H:i'
+	});
+
+		$('#booking_date').datetimepicker({
+		format: 'd-m-Y H:i'
+	});
+
+  $("#is_vgmterminal").on('click',function(){
+			//alert('test');
+			if(document.getElementById("is_vgmterminal").checked){
+				$("#container_vgm").attr('style','display:none');
+			}
+			else {
+				$("#container_vgm").removeAttr('style','display:none');
+			}
+	});
+
+});
+
+	$(document).ready(function(){
+		$("#container_type option[value='OVD']").hide();
+		$('#trade_type').on('change', function(){
+			var termn=$('#trade_type').val();
+			var kode_perdagangan = $(this).val().slice(-1);
+
+			if (kode_perdagangan == 'L'){
+				$('#international_content').removeClass('hidden_content');
+				$("#trading_type").val("L");
+				$("#trading_type2").val("International");
+			} else {
+				$('#international_content').addClass('hidden_content');
+				$("#trading_type").val("D");
+				$("#trading_type2").val("Domestik");
+				$('#field_vgm_weight').attr('style','display:none');
+			}
+
+			$("#receiving_type option[value='TL']").removeAttr("disabled");
+			$("#frm_receiving_via").addClass('hidden_content');
+			$("#frm_npe").addClass('hidden_content');
+			$("#receiving_type option[value='TL']").show();
+			$('#pjg_domestik_content').removeClass('hidden_content');
+			$('#tlbd_tlbi_content').addClass('hidden_content');
+
+			var terminal = ( $(this).val().split('-') )[1];
+			// receiving_via
+
+			if (terminal == 'T009D'){
+				if ($("#receiving_type").val() == "TL"){
+					$("#receiving_type").val("");
+				}
+				$("#receiving_type option[value='TL']").prop('disabled',true);
+				$('#nolnol9_content').removeClass('hidden_content');
+				$('#pjg_domestik_content').addClass('hidden_content');
+			} else if (terminal == 'PNJD'){
+				$('#pjg_domestik_content').removeClass('hidden_content');
+				$('#nolnol9_content').addClass('hidden_content');
+				
+				
+			} else if (terminal == 'DJBD' || terminal == 'DJBI' || terminal == 'TLBD' || terminal == 'TLBI'){
+				if(terminal=='TLBD' || terminal=='TLBI'){
+					$("#container_type option[value='OVD']").show();
+				}else{
+					$("#container_type option[value='OVD']").hide();
+				}
+				$('#receiving_type').val('LAP');
+				$("#receiving_type option[value='TL']").attr("disabled", "disabled");
+				$("#receiving_type option[value='TL']").hide();
+				$("#start_shift").removeAttr("disabled");
+				$("#frm_receiving_via").removeClass('hidden_content');
+				$("#frm_npe").removeClass('hidden_content');
+				// console.log("ganti");
+				if(terminal == 'DJBD' || terminal == 'TLBD'){
+					// alert('a');
+					$('#pjg_domestik_content').addClass('hidden_content');
+					$('#nolnol9_content').addClass('hidden_content');	
+					$('#tlbd_tlbi_content').removeClass('hidden_content');
+				} else{
+					$('#pjg_domestik_content').addClass('hidden_content');
+					$('#nolnol9_content').addClass('hidden_content');	
+					$('#tlbd_tlbi_content').addClass('hidden_content');
+				}
+
+			} else if (terminal == 'PLMD' || terminal == 'PLMI' || terminal == 'PNKD' || terminal == 'PNKI'){
+				// alert(terminal);
+				$('#receiving_type').val('LAP');
+				$("#receiving_type option[value='TL']").attr("disabled", "disabled");
+				$("#receiving_type option[value='TL']").hide();
+				$("#start_shift").removeAttr("disabled");
+				$("#frm_receiving_via").removeClass('hidden_content');
+				$("#frm_npe").removeClass('hidden_content');
+				// console.log("ganti");
+				if(terminal == 'PLMD' || terminal == 'PNKD'){
+					// alert('a');
+					$('#pjg_domestik_content').addClass('hidden_content');
+					$('#nolnol9_content').addClass('hidden_content');	
+					$('#tlbd_tlbi_content').removeClass('hidden_content');
+				} else{
+					$('#pjg_domestik_content').addClass('hidden_content');
+					$('#nolnol9_content').addClass('hidden_content');	
+					$('#tlbd_tlbi_content').addClass('hidden_content');
+				}
+
+			} else {
+				$("#container_type option[value='OVD']").hide();
+				$('#pjg_domestik_content').addClass('hidden_content');
+				$('#nolnol9_content').addClass('hidden_content');
+				$("#receiving_type option[value='TL']").prop('disabled',false);
+				// $("")
+				// if(termn=="IDDJB-DJBD" || termn=="IDDJB-DJBI" || termn=="IDTLB-TLBI" || termn=="IDTLB-TLBD"){
+				// 	$('#receiving_type').attr('disabled',false);
+				// 	$('#receiving_type').find('[value="TONGKANG"]').remove();
+				// 	$('#receiving_type').find('[value="LAP"]').remove();
+				// 	$('#receiving_type').append('<option value="TONGKANG">Tongkang</option>');
+				// }else{
+				// 	$('#receiving_type').find('[value="TONGKANG"]').remove();
+				// 	$('#receiving_type').attr('disabled',false);
+				// 	$("#receiving_type option[value='TL']").prop('disabled',false);
+				// 	$('#pjg_domestik_content').addClass('hidden_content');
+				// 	$('#nolnol9_content').addClass('hidden_content');
+				// 	$("#receiving_type option[value='TL']").prop('disabled',false);
+				// }
+				
+			}
+
+			if (terminal == 'T3I' || terminal == 'PNJI' || terminal == 'PNJD'){
+				$('#receiving_type').val('LAP');
+				$("#receiving_type option[value='TL']").attr("disabled", "disabled");
+				$("#start_shift").removeAttr("disabled");
+			}else{
+
+			}
+
+			if (terminal == 'PNJI' || terminal == 'PNJD') {
+				$('#div_container_transit').removeClass('hidden_content');
+				$('#apply_all_commodity').removeClass('hidden_content');
+				document.getElementById('start_shift').removeAttribute('readonly');
+				document.getElementById('end_shift').removeAttribute('readonly');
+				//
+			} else {
+				//alert('haha');
+				$('#div_container_transit').addClass('hidden_content');
+				$('#apply_all_commodity').addClass('hidden_content');
+				$('#start_shift').attr('readonly', true);
+				$('#end_shift').attr('readonly', true);
+				//$("#start_shift").attr('disabled','disabled');
+			}
+			
+			$("#vessel_autocomplete").val("");
+			$("#voyage_in").val("");
+			$("#voyage_out").val("");
+			$("#ukk").val("");
+			$("#vessel_code").val("");
+			$("#voyage").val("");
+			$("#call_sign").val("");
+			$("#eta").val("");
+			$("#etd").val("");
+			$("#end_shift").val("");
+		});
+
+		// Validasi Container
+		$("#container_autocomplete").keyup(function(event) {
+			var inp = String.fromCharCode(event.keyCode);
+			var val = $(this).val();
+			if (/[a-zA-Z]/.test(inp)){
+				$(this).val(val.toUpperCase());
+			} else if (/ /.test(inp)){
+				$(this).val( val.replace(' ', '') );
+			}
+
+			if (val.length == 11){
+				var validate_status = validate_container(val, false);
+				// show message/feedback
+				if (validate_status){
+					$('#cont_status_icon')
+						.addClass('glyphicon-ok').removeClass('glyphicon-remove');
+					$(this).parent()
+						.removeClass('has-error');
+					$('#error_text').parent().hide();
+          $('#invalid_container').val("false");
+				} else {
+					$('#cont_status_icon')
+						.addClass('glyphicon-remove').removeClass('glyphicon-ok');
+					$(this).parent()
+						.addClass('has-error');
+					$('#error_text').html('Invalid Container').parent().show();
+				}
+			}
+      $('#invalid_container').val("true");
+		}).on('focusout', function(){
+			var val = $(this).val();
+			if (val.length < 11){
+				// show message/feedback
+				$('#cont_status_icon')
+					.addClass('glyphicon-remove').removeClass('glyphicon-ok');
+				$(this).parent()
+					.addClass('has-error');
+				$('#error_text').html('Container number length less than 11 letters and digits').parent().show();
+			}
+		});
+
+    $("#container_size").on('change', function(){
+			if($('#container_size').val() == '21') {
+				$('#container_height').val('9.6');
+				$("#container_type").val('DRY');
+				document.getElementById("container_height").disabled=true;
+				document.getElementById("container_type").disabled=true;
+			} else {
+				$('#container_height').val('8.6');
+				document.getElementById("container_height").disabled=false;
+				document.getElementById("container_type").disabled=false;
+			}
+			
+			getIsoCode($("#container_size").val(),$("#container_type").val(),$("#container_height").val(),$("#port").val());
+		});
+		// Validasi tipe
+		$("#container_type").on('change', function(){
+			if ($(this).val() == 'RFR'){
+				$('#container_temperature').prop('disabled', false);
+				$('#component_reefer').removeClass('hidden_content');
+			}
+			else {
+				$('#container_temperature').prop('disabled', true);
+				$('#component_reefer').addClass('hidden_content');
+			}
+			
+			if ($(this).val() == 'HQ'){
+				$('#container_height').val('9.6');
+			}
+			else {
+				$('#container_height').val('8.6');
+			}
+      getIsoCode($("#container_size").val(),$("#container_type").val(),$("#container_height").val(),$("#port").val());
+		});
+
+		$("#reefer_nor").on('change', function(){
+			if ($(this).val() == 'Y'){
+				$('#container_temperature').prop('disabled', true);
+			} else if ($(this).val() == 'N'&&$("#container_type").val() == 'RFR') {
+				$('#container_temperature').prop('disabled', false);
+			}
+		});
+
+		$("#container_status").on('change', function(){
+			if ($(this).val() == 'F'){
+				$("#commodity").val("GENERAL CARGO            ");
+				$('#kd_commodity').val('C000000492');
+			} else {
+				$("#commodity").val("EMPTY");
+				$('#kd_commodity').val('C000001383');
+			}
+		});
+
+		$("#container_dangerous").on('change', function(){
+			if ($(this).val() == 'Y'){
+				$('#container_imo').prop('disabled', false);
+				$('#container_un').prop('disabled', false);
+			} else if ($(this).val() == 'N'){
+				$('#container_imo').prop('disabled', true);
+				$('#container_un').prop('disabled', true);
+			}
+		});
+
+		$("#container_height").on('change', function(){
+			if ($(this).val() == 'OOG'){
+        //alert('test');
+				$('#container_excess_width').prop('disabled', false);
+				$('#container_excess_height').prop('disabled', false);
+				$('#container_excess_length').prop('disabled', false);
+			} else {
+				$('#container_excess_width').prop('disabled', true);
+				$('#container_excess_height').prop('disabled', true);
+				$('#container_excess_length').prop('disabled', true);
+			}
+      getIsoCode($("#container_size").val(),$("#container_type").val(),$("#container_height").val(),$("#port").val());
+		});
+
+		//validasi saat peb_upload upload
+		$('#peb_upload').change(function() {
+
+			var sSppb = 'application/pdf'; //mime type application/pdf saja yang diperbolehkan, selainnya muncul pesan kesalahan
+			var files = document.getElementById('peb_upload').files[0].type;
+
+			var namafile4,panjangfile4;
+			namafile4=document.getElementById('peb_upload').value;
+			panjangfile4=namafile4.length;
+
+			if(panjangfile4>255){
+				alert('panjang file tidak boleh lebih dari 255');
+				document.getElementById('peb_upload').value="";
+
+			}
+
+			if(files != sSppb) {
+				alert('Mime type file: '+files+ '.\nFile tidak valid.');
+				document.getElementById('peb_upload').value="";
+				return false;
+			}
+		});
+	//npe_upload
+		$('#npe_upload').change(function() {
+
+			var sSppb = 'application/pdf'; //mime type application/pdf saja yang diperbolehkan, selainnya muncul pesan kesalahan
+			var files = document.getElementById('npe_upload').files[0].type;
+
+			var namafile5,panjangfile5;
+			namafile5=document.getElementById('npe_upload').value;
+			panjangfile5=namafile5.length;
+
+			if(panjangfile5>255){
+				alert('panjang file tidak boleh lebih dari 255');
+				document.getElementById('npe_upload').value="";
+
+			}
+
+			if(files != sSppb) {
+				alert('Mime type file: '+files+ '.\nFile tidak valid.');
+				document.getElementById('npe_upload').value="";
+				return false;
+			}
+		});
+
+
+
+
+
+
+	//booking_ship_upload
+
+	$('#booking_ship_upload').change(function() {
+
+			var sSppb = 'application/pdf'; //mime type application/pdf saja yang diperbolehkan, selainnya muncul pesan kesalahan
+			var files = document.getElementById('booking_ship_upload').files[0].type;
+
+			var namafile6,panjangfile6;
+			namafile6=document.getElementById('booking_ship_upload').value;
+			panjangfile6=namafile6.length;
+
+			if(panjangfile6>255){
+				alert('panjang file tidak boleh lebih dari 255');
+				document.getElementById('booking_ship_upload').value="";
+
+			}
+
+			if(files != sSppb) {
+				alert('Mime type file: '+files+ '.\nFile tidak valid.');
+				document.getElementById('booking_ship_upload').value="";
+				return false;
+			}
+		});
+
+		$('#booking_ship_upload_dom').change(function() {
+
+			var sSppb = 'application/pdf'; //mime type application/pdf saja yang diperbolehkan, selainnya muncul pesan kesalahan
+			var files = document.getElementById('booking_ship_upload_dom').files[0].type;
+
+			var namafile6,panjangfile6;
+			namafile6=document.getElementById('booking_ship_upload_dom').value;
+			panjangfile6=namafile6.length;
+
+			if(panjangfile6>255){
+				alert('panjang file tidak boleh lebih dari 255');
+				document.getElementById('booking_ship_upload_dom').value="";
+
+			}
+
+			if(files != sSppb) {
+				alert('Mime type file: '+files+ '.\nFile tidak valid.');
+				document.getElementById('booking_ship_upload_dom').value="";
+				return false;
+			}
+		});
+
+		$('#booking_ship_upload_dom1').change(function() {
+
+			var sSppb = 'application/pdf'; //mime type application/pdf saja yang diperbolehkan, selainnya muncul pesan kesalahan
+			var files = document.getElementById('booking_ship_upload_dom1').files[0].type;
+
+			var namafile6,panjangfile6;
+			namafile6=document.getElementById('booking_ship_upload_dom1').value;
+			panjangfile6=namafile6.length;
+
+			if(panjangfile6>255){
+				alert('panjang file tidak boleh lebih dari 255');
+				document.getElementById('booking_ship_upload_dom1').value="";
+
+			}
+
+			if(files != sSppb) {
+				alert('Mime type file: '+files+ '.\nFile tidak valid.');
+				document.getElementById('booking_ship_upload_dom1').value="";
+				return false;
+			}
+		});
+
+
+});
+
+	function calculate(b) {
+		if (b.length > 9) {
+			var a = {};
+			a.A = 10; a.B = 12; a.C = 13; a.D = 14; a.E = 15; a.F = 16; a.G = 17; a.H = 18;
+			a.I = 19; a.J = 20; a.K = 21; a.L = 23; a.M = 24; a.N = 25; a.O = 26; a.P = 27;
+			a.Q = 28; a.R = 29; a.S = 30; a.T = 31; a.U = 32; a.V = 34; a.W = 35; a.X = 36;
+			a.Y = 37; a.Z = 38;
+			var c = [];
+			c[0] = 1; c[1] = 2; c[2] = 4; c[3] = 8; c[4] = 16;
+			c[5] = 32; c[6] = 64; c[7] = 128; c[8] = 256; c[9] = 512;
+			var d = [],
+				e = 0;
+			for (lcv = 0; lcv < 4; lcv++) d[lcv] = a[b.charAt(lcv)];
+			for (lcv = 4; lcv < 10; lcv++) d[lcv] = parseInt(b.charAt(lcv), 10);
+			for (lcv = 0; lcv < 10; lcv++) {
+				d[lcv] *= c[lcv];
+				e += d[lcv]
+			}
+			De = e % 11;
+			if (De == 10) De = 0;
+			return De
+		} else alert()
+	}
+
+	function validate_container(input, bypass_valid){
+		var output = false;
+		if (bypass_valid != true){
+			input = input.replace(/^\s*([\S\s]*?)\s*$/, "$1");
+			if (/^[A-Z]{4}\d{6,7}/.test(input)) {
+				var temp = {};
+				checkDigit = calculate(input.replace("-", ""));
+				output =
+					input.length > 10 && input.length < 13 ?
+						checkDigit == input.replace("-", "").charAt(10) ?
+							true :
+							false :
+						input.length == 10 ?
+							false : //'{' + input + ": " + checkDigit + "}" :
+						false;
+			} else {
+				// output =
+				// input.length == 0 ? "\n" : "\n" + input + " Bad";
+				output = false;
+			}
+			console.log(output);
+		} else {
+			output = true;
+		}
+		return output;
+	}
+
+
+    function submitheader() {
+
+        var port = $("#port").val();
+        var vessel_autocomplete = $("#vessel_autocomplete").val();
+        var ukk = $("#ukk").val();
+
+        var pod_name = $( "#comboPOD option:selected" ).text();
+        var fpod_name = $( "#comboFPOD option:selected" ).text();
+
+        var pod = $( "#comboPOD option:selected" ).val();
+        var fpod = $( "#comboFPOD option:selected" ).val();
+        //alert(pod_name+pod+fpod_name+fpod);
+        var trading_type = $("#trading_type").val();
+        var receiving_type = $("#receiving_type").val();
+		    var voyin=$("#voyage_in").val();
+		    var voyout=$("#voyage_out").val();
+        //optional
+        var peb = $("#peb_no").val();
+        var npe = $("#npe_no").val();
+        var booking_ship = $("#booking_ship_no").val();
+        var request_no = $("#request_no").val();
+		var nospp = $("#nospp").val();
+		var nosppdom = $("#nosppdom").val();
+        var nosuratjalan = $("#nosuratjalan").val();
+		var bookingship009 = $("#bookingship009").val();
+		var bookingshipdom = $("#bookingshipdom").val();
+		var end_shift=$("#end_shift").val();
+		var start_shift=$("#start_shift").val();
+		var peb_dt=$("#peb_dt").val();
+		var valid_eta=$("#valid_eta").val();
+		var receiving_via = $("#receiving_via").val();
+		var tgl_npe = $("#tgl_npe").val();
+		var ship_line = $( "#ship_line_data " ).val();
+
+        if(port=="")
+        {
+            alert("Terminal harus diisi");
+            $( "#port" ).focus();
+            return false;
+        }
+
+        if(vessel_autocomplete=="")
+        {
+            alert("Kapal harus diisi");
+            $( "#vessel_autocomplete" ).focus();
+            return false;
+        }
+		/*
+        if(valid_eta=="N")
+        {
+            alert("ETA Vessel yang anda pilih kurang Dari 9 Jam");
+            $( "#vessel_autocomplete" ).focus();
+            return false;
+        }
+		*/
+        if(ukk=="")
+        {
+            alert("ID VVD tidak boleh kosong");
+            $( "#ukk" ).focus();
+            return false;
+        }
+
+        if(trading_type=="")
+        {
+            alert("Jenis Perdagangan harus diisi");
+            $( "#trading_type" ).focus();
+            return false;
+        }
+
+        if(pod=="")
+        {
+            alert("POD tidak boleh kosong");
+            $( "#comboPOD" ).focus();
+            return false;
+        }
+
+        if(fpod=="")
+        {
+            alert("FPOD tidak boleh kosong");
+            $( "#comboFPOD" ).focus();
+            return false;
+        }
+
+        if(receiving_type=="")
+        {
+            alert("Jenis penerimaan harus diisi");
+            $( "#receiving_type" ).focus();
+            return false;
+		}
+
+		//sementara dikomen validasi utk jambi tunggu keputusan
+		if ((port == "IDJKT-T3I" && peb == "") || (port == "IDPNJ-PNJI" && peb == "") || (port == "IDPLM-PLMI" && peb == "") || (port == "IDPNK-PNKI" && peb == "") /*|| (port == "IDDJB-DJBI" && peb == "") || (port == "IDTLB-TLBI" && peb == "")*/)
+		{
+			alert("Nomor PEB harus diisi");
+            $( "#peb_no" ).focus();
+            return false;
+		}
+
+		//sementara dikomen validasi utk jambi tunggu keputusan
+		if ((port == "IDJKT-T3I" && peb_dt=="") || (port == "IDPNJ-PNJI" && peb_dt == "") || (port == "IDPLM-PLMI" && peb_dt == "") || (port == "IDPNK-PNKI" && peb_dt == "") /*|| (port == "IDDJB-DJBI" && peb_dt == "") || (port == "IDTLB-TLBI" && peb_dt == "")*/)
+        {
+            alert("PEB Date harus diisi");
+            $( "#peb_dt" ).focus();
+            return false;
+        }
+
+        //sementara dikomen validasi utk jambi tunggu keputusan
+		if ((port == "IDJKT-T3I" && npe == "") || (port == "IDPNJ-PNJI" && npe == "") || (port == "IDPLM-PLMI" && npe == "") || (port == "IDPNK-PNKI" && npe == "")/*|| (port == "IDDJB-DJBI" && npe == "") || (port == "IDTLB-TLBI" && npe == "")*/)
+		{
+			alert("Nomor NPE harus diisi");
+            $( "#npe_no" ).focus();
+            return false;
+		}
+
+		if ((port == "IDJKT-T3I" || port == "IDPNJ-PNJI" || port == "IDDJB-DJBI" || port=="IDTLB-TLBI") && booking_ship == "" || (port == "IDPLM-PLMI" && booking_ship == "") || (port == "IDPNK-PNKI" && booking_ship == ""))
+
+		{
+			alert("Nomor Booking Ship harus diisi");
+            $( "#booking_ship_no" ).focus();
+            return false;
+		}		
+		if (port == "IDPNJ-PNJD" && bookingshipdom == "")
+		{
+			alert("Nomor Booking Ship harus diisi");
+            $( "#bookingshipdom" ).focus();
+            return false;
+		}
+
+		//sementara dikomen validasi utk jambi tunggu keputusan
+		if ((port == "IDJKT-T3I" && $("#peb_upload").val() == "") || (port == "IDPNJ-PNJI" && $("#peb_upload").val() == "") || (port == "IDPLM-PLMI" && $("#peb_upload").val() == "") || (port == "IDPNK-PNKI" && $("#peb_upload").val() == "") /*|| (port == "IDDJB-DJBI" && $("#peb_upload").val() == "") || (port == "IDTLB-TLBI" && $("#peb_upload").val() == "")*/)
+		{
+			alert("Dokumen PEB Wajib Diupload");
+            $( "#peb_upload" ).focus();
+            return false;
+		}
+
+		if ((port == "IDJKT-T3I" && $("#npe_upload").val() == "") || (port == "IDPNJ-PNJI" && $("#npe_upload").val() == "") || (port == "IDPLM-PLMI" && $("#npe_upload").val() == "")  || (port == "IDPNK-PNKI" && $("#npe_upload").val() == "") )
+		{
+			alert("Dokumen NPE Wajib Diupload");
+            $( "#npe_upload" ).focus();
+            return false;
+		}
+		if ((port == "IDJKT-T3I" && $("#booking_ship_upload").val() == "") || (port == "IDPNJ-PNJI" && $("#booking_ship_upload").val() == "") || (port == "IDPLM-PLMI" && $("#booking_ship_upload").val() == "") || (port == "IDPNK-PNKI" && $("#booking_ship_upload").val() == ""))
+		{
+		  alert("Dokumen Booking Ship Wajib Diupload");
+				$( "#booking_ship_upload" ).focus();
+				return false;
+		}
+		
+		if (port == "IDPNJ-PNJD" && $("#booking_ship_upload_dom").val() == "")
+		{
+		  alert("Dokumen Booking Ship Wajib Diupload");
+				$( "#booking_ship_upload_dom" ).focus();
+				return false;
+		}
+		if ((port == "IDTLB-TLBD" || port == "IDDJB-DJBD" || port=="IDPNK-PNKD" || port=="IDPLM-PLMD") && $("#booking_ship_upload_dom1").val() == "")
+		{
+		 		alert("Dokumen Booking Ship/ Dokumen RO Wajib Diupload");
+				$( "#booking_ship_upload_dom1" ).focus();
+				return false;
+		}
+		if (port == "IDJKT-T009D" && $("#nospp").val() == "" && $("#nosuratjalan").val() == "")
+		{
+			alert("Nomor SPP atau Nomor Surat Jalan Harus Diisi");
+				return false;
+		}
+		
+		if (port == "IDPNJ-PNJD" && $("#nosppdom").val() == "")
+		{
+			alert("Nomor SPP Harus Diisi");
+				return false;
+		}
+		$(':button').attr('disabled','disabled');
+        var submit_header = '1';
+		var url = "<?=ROOT?>container_receiving/add_receiving";
+        $.blockUI();
+        $.post(url,{
+						'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',
+						submit_header:submit_header,
+						peb_no: peb,
+						npe_no: npe,
+						booking_ship_no: booking_ship,
+						port: port,
+						ukk: ukk,
+						pod: pod,
+						fpod: fpod,
+						pod_name: pod_name,
+						fpod_name: fpod_name,
+						trading_type: trading_type,
+						request_no: request_no,
+						receiving_type: receiving_type,
+						vessel:vessel_autocomplete,
+						voy_in:voyin,
+						voy_out:voyout,
+						nospp:nospp,
+						nosppdom:nosppdom,
+						nosuratjalan:nosuratjalan,
+						bookingship009:bookingship009,
+						bookingshipdom:bookingshipdom,
+						start_shift:start_shift,
+						end_shift:end_shift,
+						peb_dt:peb_dt,
+						receiving_via:receiving_via,
+						tgl_npe:tgl_npe,
+						ship_line:ship_line
+					},
+				function(data){
+			var obj = jQuery.parseJSON(data);
+      $.unblockUI();
+			if(obj.data.data==null){
+				alert("Request Gagal. Hubungi sistem administrator: "+obj.rcmsg);
+			} else {
+				var x = document.getElementById("container_size");
+
+				if(port=="IDJKT-T3I" || port=="IDPNJ-PNJI" || port=="IDPNJ-PNJD"){
+					var opt = document.createElement('option');
+					opt.value = '20';
+					opt.innerHTML = '20';
+					x.appendChild(opt);
+					var opt = document.createElement('option');
+					opt.value = '40';
+					opt.innerHTML = '40';
+					x.appendChild(opt);
+					var opt = document.createElement('option');
+					opt.value = '45';
+					opt.innerHTML = '45';
+					x.appendChild(opt);
+				}
+				else
+				{
+					var opt = document.createElement('option');
+					opt.value = '20';
+					opt.innerHTML = '20';
+					x.appendChild(opt);
+					var opt = document.createElement('option');
+					opt.value = '21';
+					opt.innerHTML = '21';
+					x.appendChild(opt);
+					var opt = document.createElement('option');
+					opt.value = '40';
+					opt.innerHTML = '40';
+					x.appendChild(opt);
+					var opt = document.createElement('option');
+					opt.value = '45';
+					opt.innerHTML = '45';
+					x.appendChild(opt);
+				}
+
+				if (port != "IDJKT-T009D") {
+					if (port == "IDPNJ-PNJD") {
+						submitFileBookingShipDOM(obj.data.data.request_no);
+					} else if (port == "IDTLB-TLBD" || port == "IDDJB-DJBD" || port == "IDPLM-PLMD"  || port == "IDPNK-PNKD") {
+						submitFileBookingShipDOM(obj.data.data.request_no);
+					} else if (port == "IDPNJ-PNJD") {
+						submitFileBookingShipDOM(obj.data.data.request_no);
+					} else {
+						submitFilePEB(obj.data.data.request_no);
+						submitFileNPE(obj.data.data.request_no);
+						submitFileBookingShip(obj.data.data.request_no);
+					}
+				}
+
+				document.getElementById('submit_header').style.display = "none";
+				alert("Simpan request berhasil");
+				$('#start_shift').attr('readonly', true);
+				$('#end_shift').attr('readonly', true);
+				//$("#container_data").attr('class', 'row');
+				$("#container_excel").attr('class', 'row');
+				$("#req_excel").val(obj.data.data.request_no);
+				$("#request_no").val(obj.data.data.request_no);
+				$("#port_excel").val($("#port").val());
+				$("#trading_type_excel").val($("#trading_type").val());
+
+				// set carrier
+				for(var idx=0;idx<obj.data.data.carrier_list.length;idx++){
+					$("#container_operator")
+						 .append($("<option></option>")
+						 .attr("value",obj.data.data.carrier_list[idx].code)
+						 .text(obj.data.data.carrier_list[idx].line_operator));
+				}
+
+				var notification = new NotificationFx({
+					message : '<p>Anda mendapatkan no request </p>('+obj.data.data.request_no+')',
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'success' // notice, warning, error or success
+
+				});
+
+				// show the notification
+				notification.show();
+        getIsoCode($("#container_size").val(),$("#container_type").val(),$("#container_height").val(),$("#port").val());
+			}
+			$(':button').removeAttr('disabled');
+        });
+    }
+
+	function submitFileNPE(reqNo)
+	{
+		var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/npe_upload";
+        var formData = new FormData($('.myForm2')[0]);
+
+        $.ajax({
+                url: formUrl,
+                type: 'POST',
+                data: formData,
+                mimeType: "multipart/form-data",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data, textSatus, jqXHR){
+					//alert('success');
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert(data);
+                }
+        });
+	}
+
+	function submitFilePEB(reqNo)
+	{
+		var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/peb_upload";
+        var formData = new FormData($('.myForm1')[0]);
+
+        $.ajax({
+                url: formUrl,
+                type: 'POST',
+                data: formData,
+                mimeType: "multipart/form-data",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data, textSatus, jqXHR){
+					//alert('success');
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert(data);
+                }
+        });
+	}
+
+	function submitFileBookingShip(reqNo)
+	{
+		var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/booking_ship_upload";
+        var formData = new FormData($('.myForm3')[0]);
+
+        $.ajax({
+                url: formUrl,
+                type: 'POST',
+                data: formData,
+                mimeType: "multipart/form-data",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data, textSatus, jqXHR){
+					//alert('success');
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert(data);
+                }
+        });
+	}
+	
+	function submitFileBookingShipDOM(reqNo)
+	{
+		var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/booking_ship_upload_dom";
+        var formData = new FormData($('.myForm4')[0]);
+		
+		//alert(formUrl);
+
+        $.ajax({
+                url: formUrl,
+                type: 'POST',
+                data: formData,
+                mimeType: "multipart/form-data",
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data, textSatus, jqXHR){
+					// alert('success');
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert(data);
+                }
+        });
+	}
+	function delete_cont(nocont,noreq,carrier_cont) {
+		$.blockUI();
+        var url = "<?=ROOT?>container_receiving/delete_container";
+        var str = $("#port").val();
+		var res = str.split("-");
+		var port = res[0];
+		var terminal = res[1];
+
+		var vessel_code = $( "#vessel_code" ).val();
+		var call_sign = $( "#call_sign" ).val();
+		var voyage = $( "#voyage" ).val();
+        $.post(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',NO_CONT:nocont,NO_REQ:noreq,PORT:port,TERMINAL:terminal,VESSEL_CODE:vessel_code,CALL_SIGN:call_sign,VOYAGE:voyage,CARRIERCONT:carrier_cont},function(data){
+			//alert( "Data Loaded: " + data );
+			var obj = jQuery.parseJSON(data);
+
+			if(obj.rc=="F")
+			{
+				var notification = new NotificationFx({
+					message : '<p>Delete Container Gagal </p><br/>'+obj.rcmsg,
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'error' // notice, warning, error or success
+
+				});
+			}
+			else if(obj.data.info=="OK")
+			{
+				var notification = new NotificationFx({
+					message : '<p>Delete Container Sukses</p>',
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'success' // notice, warning, error or success
+
+				});
+
+			}
+			else{
+				var notification = new NotificationFx({
+					message : '<p>Delete Container Gagal </p><br/>'+obj.data,
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'error' // notice, warning, error or success
+
+				});
+			}
+			$.unblockUI();
+			// show the notification
+			notification.show();
+
+            var url = "<?=ROOT?>container_receiving/getListContainer";
+			var request_no = $("#request_no").val();
+			$("#detailreq").load(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',request_no:request_no,port:str},function(data){ });
+
+        });
+
+    }
+
+	function submit_container() {
+
+        var request_no = $("#request_no").val();
+		var bookingshipdom = $("#bookingshipdom").val();
+		var booking_ship_no = $("#booking_ship_no").val();
+        var container_autocomplete = $("#container_autocomplete").val();
+        var container_size = $("#container_size").val();
+        var container_type = $("#container_type").val();
+        var container_status = $("#container_status").val();
+        var container_height = $("#container_height").val();
+        //optional
+        var container_weight = $("#container_weight").val();
+        var container_operator = $("#container_operator").val();
+        var container_dangerous = $("#container_dangerous").val();
+		var container_transit = $("#container_transit").val();
+        var container_imo = $("#container_imo").val();
+        var container_un = $("#container_un").val();
+        var container_temperature = $("#container_temperature").val();
+        var container_excess_width = $("#container_excess_width").val();
+        var container_excess_height = $("#container_excess_height").val();
+        var container_excess_length = $("#container_excess_length").val();
+        var trading_type = $("#trading_type").val();
+        var port = $("#port").val();
+        var carrier = $("#container_operator").val();
+        var commodity = $("#kd_commodity").val();
+		var tl_type = $("#receiving_type").val();
+		var nor = $("#reefer_nor").val();
+      var vgm = $("#container_vgm").val();
+      var kode_perdagangan = $("#port").val().slice(-1);
+	
+		var number_booking_ship = "";
+		if (port == 'IDPNJ-PNJI') {
+			number_booking_ship = booking_ship_no;
+		} else if (port == 'IDPNJ-PNJD') {
+			number_booking_ship = bookingshipdom;
+		}
+      if($('#invalid_container').val()=="true")
+      {
+        var r = confirm("Invalid Container.\nDo you want to Submit?");
+        if(!r)
+        {
+          return;
+        }
+      }
+
+        if(request_no=="")
+        {
+            alert("Simpan data permintaan dan dapatkan no request");
+            $( "#request_no" ).focus();
+            return false;
+        }
+        if(container_autocomplete=="")
+        {
+            alert("No Kontainer harus diisi");
+            $( "#container_autocomplete" ).focus();
+            return false;
+        }
+        if(container_size=="")
+        {
+            alert("Ukuran Container harus diisi");
+            $( "#container_size" ).focus();
+            return false;
+        }
+        if(container_type=="")
+        {
+            alert("Tipe Container harus diisi");
+            $( "#container_type" ).focus();
+            return false;
+        }
+        if(container_status=="")
+        {
+            alert("Status Container harus diisi");
+            $( "#container_status']" ).focus();
+            return false;
+        }
+        if(container_height=="")
+        {
+            alert("Tinggi Container harus diisi");
+            $( "select[name='container_high']" ).focus();
+            return false;
+        }
+
+        if(container_weight == ""){
+            alert("Weight NPE Harus Diisi");
+            $("#container_weight").focus();
+            return false;
+        }
+
+        var explode = port.split('-');
+        if(explode[0]!="IDDJB" || explode[0]!="IDTLB" || explode[0]!="IDPLM" || explode[0]!="IDPNK"){
+	        if(kode_perdagangan == 'I'){
+	      		if(!document.getElementById("is_vgmterminal").checked){
+      				if(vgm == ""){
+      					alert("Bila anda tidak menunjuk terminal sebagai penyedia vgm, kolom weight vgm wajib diisixx");
+      					$("#container_vgm").focus();
+      					return false;
+      				}
+	      		}
+	      	}
+	     }	
+
+        if(container_operator=="")
+        {
+            alert("Operator/Carrier Container harus diisi");
+            $( "select[name='container_operator']" ).focus();
+            return false;
+        }
+
+        //VALIDASI TIPE CONTAINER
+      	if(container_height=="OOG" && (container_excess_width=="" &&  container_excess_height=="" && container_excess_length==""))
+      	{
+      		alert("Over Width, Over Height, Over Length harus diisi");
+      		$( "#container_excess_width" ).focus();
+      		return false;
+      	}
+
+		if(container_type=="RFR" && container_temperature=="" && nor=="N")
+		{
+			alert("Temperature harus diisi");
+			$( "#container_temperature" ).focus();
+			return false;
+		}
+      $.blockUI();
+		$(':button').attr('disabled','disabled');
+		var url="<?=ROOT?>container_receiving/add_receiving";
+        $.post(url, {'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',submit_container:true, request_no:request_no, container_no:container_autocomplete,
+                                                         container_size:container_size, container_type:container_type, container_status:container_status,
+                                                         container_height:container_height, container_weight:container_weight, container_operator:container_operator,
+                                                         container_dangerous:container_dangerous, container_transit:container_transit, number_booking_ship:number_booking_ship, 
+														 container_imo:container_imo, container_un:container_un,
+                                                         container_temperature:container_temperature, container_excess_width:container_excess_width,
+                                                         container_excess_height:container_excess_height, container_excess_length:container_excess_length,
+                                                         trading_type:trading_type, carrier:carrier,port:port,commodity:commodity, tl_type:tl_type, nor: nor, vgm:vgm
+                                                        })
+            .done(function( data ) {
+              $.unblockUI();
+                var obj = jQuery.parseJSON(data);
+                //alert( "Data Loaded: " + obj.rc );
+
+				if(obj.rc=="F")
+				{
+                    var notification = new NotificationFx({
+                        message : '<p>Tambah Container Gagal </p><br/>'+obj.rcmsg,
+                        layout : 'growl',
+                        effect : 'jelly',
+                        type : 'error' // notice, warning, error or success
+
+                    });
+
+                    // show the notification
+                    notification.show();
+				}
+                else if(obj.data=="OK")
+                {
+                   // $('#table-container tr:last').after('<tr><td>'+container_autocomplete+'</td><td>'+container_size+'</td><td>'+container_type+'</td><td>'+container_status+'</td><td>'+container_height+'</td><td>'+container_dangerous+'</td><td>'+container_operator+'</td></tr>');
+                    // create the notification
+                    var notification = new NotificationFx({
+                        message : '<p>Tambah Container Sukses</p>',
+                        layout : 'growl',
+                        effect : 'jelly',
+                        type : 'success' // notice, warning, error or success
+
+                    });
+
+                    // show the notification
+                    notification.show();
+
+                    var url = "<?=ROOT?>container_receiving/getListContainer";
+                    var request_no = $("#request_no").val();
+                    $("#detailreq").load(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',request_no:request_no,port:port},function(data){ });
+                    $("#container_autocomplete").val("");
+                    $("#container_weight").val("");
+                    $("#container_imo").val("");
+                    $("#container_un").val("");
+                    $("#container_temperature").val("");
+                    $("#container_excess_width").val("");
+                    $("#container_excess_height").val("");
+                    $("#container_excess_length").val("");
+                }
+                else {
+					$('#submit_container').removeAttr('disabled');
+					var res = obj.data.split(".");
+					var remark = res[1];
+
+                    var notification = new NotificationFx({
+                        message : '<p>Tambah Container Gagal </p><br/>'+remark,
+                        layout : 'growl',
+                        effect : 'jelly',
+                        type : 'error' // notice, warning, error or success
+
+                    });
+
+                    // show the notification
+                    notification.show();
+                }
+				$(':button').removeAttr('disabled');
+        }).fail(function() {
+            alert("error, simpan container gagal");
+			$(':button').removeAttr('disabled');
+        });
+
+        return false;
+    }
+
+	function apply_comm_to_all_cont() {
+
+	var request_no = $("#request_no").val();
+	var all_commodity = $("#all_kd_commodity").val();
+	var port = $("#port").val();
+	
+	if(request_no=="")
+	{
+		alert("Simpan data permintaan dan dapatkan no request");
+		$( "#request_no" ).focus();
+		return false;
+	}
+	if(all_commodity=="")
+	{
+		alert("Commodity tidak valid");
+		$( "#all_commodity" ).focus();
+		return false;
+	}
+	
+	$(':button').attr('disabled','disabled');
+	$.blockUI();
+	$.post( "<?=ROOT?>container_receiving/update_commodity", {
+													 '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',
+													 request_no:request_no, all_commodity:all_commodity, port:port
+													})
+		.done(function( data ) {
+			//console.log( "Data Loaded: " + data );
+			var obj = jQuery.parseJSON(data);
+
+			if(obj.rc=="F")
+			{
+				$('#apply_comm_to_all_cont').removeAttr('disabled');
+				var notification = new NotificationFx({
+					message : '<p>Update Commodity Gagal </p><br/>'+obj.rcmsg,
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'error' // notice, warning, error or success
+
+				});
+
+				// show the notification
+				notification.show();
+			}
+			else if(obj.data=="OK")
+			{
+				$('#apply_comm_to_all_cont').removeAttr('disabled');
+				var notification = new NotificationFx({
+					message : '<p>Update Commodity Sukses</p>',
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'success' // notice, warning, error or success
+
+				});
+
+				// show the notification
+				notification.show();
+
+				var url = "<?=ROOT?>container_receiving/getListContainer";
+				var request_no = $("#request_no").val();
+				$("#detailreq").load(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',request_no:request_no,port:port},function(data){ });
+
+				$("#container_autocomplete").val("");
+				$("#container_weight").val("");
+				$("#container_vgm").val("");
+				$("#container_imo").val("");
+				$("#container_un").val("");
+				$("#container_temperature").val("");
+				$("#container_excess_width").val("");
+				$("#container_excess_height").val("");
+				$("#container_excess_length").val("");
+				//alert("ivan ganteng");
+			}
+			else{
+				var res = obj.data.split(".");
+				var remark = res[1];
+
+				var notification = new NotificationFx({
+					message : '<p>Update Commodity Gagal </p><br/>'+remark,
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'error' // notice, warning, error or success
+
+				});
+
+				// show the notification
+				notification.show();
+			}
+			$(':button').removeAttr('disabled');
+			$.unblockUI();
+	}).fail(function() {
+		alert("error, Update Commodity gagal");
+		$(':button').removeAttr('disabled');
+		$.unblockUI();
+	});
+
+	return false;
+}
+
+    function getIsoCode($size,$type,$height,$terminal){
+    		var url = "<?=ROOT?>container_receiving/get_isocode";
+    		$.post(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',SC:$size,TC:$type,HGC:$height,PORT:$terminal}, function(data){
+    				//alert(data);
+    				$("#isocodevalue").html(data);
+    		});
+    }
+
+    function updqty($type){
+        var request_no = $("#request_no").val();
+        $.post("<?=ROOT?>container_receiving/update_qty_cont",{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',request_no:request_no,type:$type},function(data){});
+    }
+
+	function search_no_peb(){
+	  
+	  $.blockUI();
+	  var tgl_peb = $('#tgl_peb').val();
+	  var no_peb  = $('#no_peb').val();
+	  var npwp    = $('#npwp').val();
+	  $.get("<?=ROOT?>eservice/request_bm/auto_no_peb?",{tgl_peb: tgl_peb,no_peb: no_peb,npwp: npwp}, function(data){
+	      //document.getElementById('no_npe').value=data;
+		  console.log(data);
+	      if(data != ''){
+	      	$("#no_npe").val(data);
+	      }else{
+	      	alert('Data Tidak Ditemukan')
+	      }
+	      $.unblockUI();
+	  });
+
+   }
+   
+</script>
+
+					<div class="row">
+						<div class="col-lg-6 ">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Booking Data</h2>
+								</header>
+
+									<div class="main-box-body clearfix">
+										<div class="form-group col-xs-6">
+											<label for="exampleTooltip">Booking Type</label>
+											<input name="booking_type" id="booking_type" type="text" class="form-control" value="Delivery" readonly>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Terminal</label>
+											<select id="port" name="port" class="form-control">
+												<option> -- Please Choose Terminal -- </option>
+												<?php foreach($terminal as $term){ ?>
+													<option value="<?=$term["1"]?>"><?=$term["3"]?></option>
+												<?php } ?>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete">Booking Number</label>
+											<input type="text" class="form-control" id="request_no" name="request_no" placeholder="" title="didapatkan setelah berhasil melakukan proses simpan" readonly>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Trade Type</label>
+											<select id="trade_type" name="trade_type" class="form-control">
+												<option> -- Please Choose Trade Type  -- </option>
+												<option value="L">Internasional</option>
+												<option value="D">Domestik</option>
+											</select>
+										</div>
+										<div class="form-group col-xs-6">
+											<label>Booking Date</label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input class="form-control" id="booking_date" name='booking_date' type="text">
+											</div>
+										</div>
+										<div class="form-group col-xs-6">
+										</div>
+										<div class="form-group col-xs-6">
+										</div>
+										<div class="form-group col-xs-6">
+										</div>
+										<div class="form-group col-xs-6">
+										</div>
+										<div class="form-group example-twitter-oss">
+											<label for="exampleAutocomplete">Vessel</label>
+                      						<div class="form-wrapper cf">
+										      	<input type="text" id="vessel_autocomplete" name="vessel_autocomplete" placeholder="Search here..." title="Masukkan data kapal" required>
+                          						<button type="submit" onclick="search_vessel()">Search</button>
+                      						</div>
+                    						<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Voyage In</label>
+												<input type="text" class="form-control" id="voyage_in" name="voyage_in" placeholder="Voyage In" title="Masukkan data kapal" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Voyage Out</label>
+												<input type="text" class="form-control" id="voyage_out" name="voyage_out" placeholder="Voyage Out" title="Masukkan data kapal" readonly>
+											</div>
+											<input type="hidden" class="form-control" id="ukk" name="ukk" placeholder="autocomplete" title="Masukkan data kapal" readonly>
+											<input type="hidden" id="vessel_code" name="vessel_code">
+											<input type="hidden" id="voyage" name="voyage">
+											<input type="hidden" id="call_sign" name="call_sign">
+										</div>
+										<div class="form-group example-twitter-oss">
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Estimate Time Arrival (ETA)</label>
+												<input type="text" class="form-control" id="eta" name="eta" placeholder="autocomplete" title="Masukkan data kapal" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Estimate Time Departure (ETD)</label>
+												<input type="text" class="form-control" id="etd" name="etd" placeholder="autocomplete" title="Masukkan data kapal" readonly>
+											</div>
+										</div>
+										<div class="form-group example-twitter-oss">
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Open Stack</label>
+												<input type="text" class="form-control" id="openStack" name="openStack"  readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label>Date Out</label>
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+													<input class="form-control" id="date_out" name='date_out' type="text">
+												</div>
+											</div>
+										</div>
+										<div class="form-group example-twitter-oss">
+										 	<table id="myTable" class=" table order-list list_file">
+										 		<tr>
+										 			
+										 		</tr>
+												<div class="form-group col-xs-6">
+													<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+													<label for="exampleTooltip">Upload Dokumen</label>
+													<input type="file" accept=".pdf" name="do_upload" id="do_upload" data-toggle="tooltip" data-placement="bottom" title="Upload Delivery Order" size="100">
+												</div>
+												<div class="form-group col-xs-6">
+													<br/>
+													<input type="button" class="btn btn-success " id="add_file" value="+" />
+												</div>
+											</table>
+										</div>	
+									</div>
+							</div>
+						</div>
+						<div class="col-lg-6 hidden_content"  id='international_content'>
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>*International</h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="form-group">
+										<label for="exampleTooltip">NPWP</label>
+										<input id="npwp" name="npwp" type="text" class="form-control" value="<?=$npwp?>" readonly>
+									</div>
+									<div class="form-group">
+										<label for="exampleAutocomplete">Tanggal PEB</label>
+                      					<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+											<input id="tgl_peb" name="tgl_peb" type="text" class="form-control" id="datepickerDate">
+										</div>
+										<span class="help-block">format dd-mm-yyyy</span>
+									</div>
+									<div class="form-group">
+										<label for="exampleAutocomplete">No PEB/PJBS</label>
+                      					<div class="form-wrapper cf">
+										    <input type="text" id="no_peb" name="no_peb" placeholder="Search here..." title="Masukkan No PEB" required>
+                          					<button type="submit" onclick="search_no_peb()">Search</button>
+                     					</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">No NPE/SPPB</label>
+										<input id="no_npe" name="no_npe" type="text" class="form-control" id="exampleTooltip" data-toggle="tooltip" data-placement="bottom" title="Nomor NPE" maxlength="40" readonly="">
+									</div>
+									<div class="form-group">
+										<label for="exampleTooltip">Booking Ship</label>
+										<input id="booking_ship" name="booking_ship" type="text" class="form-control" id="exampleTooltip" data-toggle="tooltip" data-placement="bottom" title="booking_ship" maxlength="40">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal fade" id="ModalVessel" role="dialog">
+							<div class="modal-dialog">
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">List Vessel</h4>
+									</div>
+									<div class="modal-body">
+										<div class="main-box-body clearfix">
+											<div class="table-responsive">
+												<table class="table table-striped table-hover" id="example1">
+													<thead>
+														<tr>
+															<th scope="col">VASSEL</th>
+															<th scope="col">VOYAGE IN</th>
+															<th scope="col">VOYAGE OUT</th>
+															<th scope="col">ETA</th>
+															<th scope="col">ETD</th>
+															<th scope="col">OPEN STACK</th>
+															<th scope="col">PILIH</th>															
+														</tr>
+													</thead>
+													<tbody></tbody>
+												</table>
+											</div>	
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+							</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" id="container_data" name="container_data">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">Create Detail</h2>
+									
+									<div class="pull-right">
+										<span class="input-group-btn">
+							        		<button class="btn btn-primary btn-choose" type="button" id="btn-create-detail">Create Detail</button>
+							    		</span>
+									</div>
+								</header>
+							    <div class="main-box-body clearfix">
+								 	<div class="table-responsive">
+								  		<table class="table table-striped table-hover" id="detail-list">
+									  		<thead>
+											    <tr>
+											      	<th>No. BL</th>
+											      	<th>Kemasan</th>
+											      	<th>Barang</th>
+											      	<th>Satuan</th>
+											      	<th>Character Comodity</th>
+									                <th>Character Comodity Percent</th>
+									                <th>Ukuran</th>
+									                <th>Kondisi</th>
+									                <th>Total</th>
+											    </tr>
+										  </thead>
+										  <tbody>
+										    	<tr>
+													<td>1</td>
+									                <td>BIL-0000001238</td>
+									                <td>TL</td>
+									                <td>CURAH KERRING</td>
+									                <td>BERAS</td>
+									                <td>1 TON / M3</td>
+													<td></td>
+													<td></td>
+													<td>
+														<a class="btn btn-primary btn-edit-detail"><i class="fa fa-pencil"></i></a>
+									                	<a class="btn btn-primary btn-delete-detail"><i class="fa fa-trash-o"></i></a>
+									                </td>
+										    	</tr>
+										  </tbody>
+										</table>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" id="rental-data">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">Rent Equipment</h2>
+									
+									<div class="pull-right">
+										<span class="input-group-btn">
+							        		<button class="btn btn-primary btn-choose" type="button" id="create-rental">Create Equipment Rental</button>
+							    		</span>
+									</div>
+								</header>
+							    <div class="main-box-body clearfix">
+								 	<div class="table-responsive">
+								  		<table class="table table-striped table-hover" id="rental-list">
+									  	  <thead>
+											    <tr>
+											      	<th style="text-align: center;">EQUIPMENT NAME</th>
+											      	<th style="text-align: center;">UNIT</th>
+											      	<th style="text-align: center;">QUANTITY</th>
+											    </tr>
+										  </thead>
+										  <tbody>
+										    	<tr>
+													<td>
+														<select id="equipment-rental" name="equipment_rental" class="form-control">
+															<option> -- Please Choose Equipment Name  -- </option>
+															<option value="L">HEAD TRUCK</option>
+															<option value="D">CRANE</option>
+														</select>
+													</td>
+													<td>
+														<select id="unit-rental" name="unit_rental" class="form-control">
+															<option> -- Please Choose Unit  -- </option>
+															<option value="L">1 TEUS</option>
+															<option value="D">2 TEUS</option>
+														</select>
+													</td>
+													<td><input type="text" id="jml" class="form-control"></input></td>
+													<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-rental"></td>
+										    	</tr>
+										  </tbody>
+										</table>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" id="retribution-data">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">Rentribution Equipment</h2>
+									
+									<div class="pull-right">
+										<span class="input-group-btn">
+							        		<button class="btn btn-primary btn-choose" type="button" id="create-retribution">Create Equipment Retribution</button>
+							    		</span>
+									</div>
+								</header>
+							    <div class="main-box-body clearfix">
+								 	<div class="table-responsive">
+								  		<table class="table table-striped table-hover" id="retribution-list">
+									  		<thead>
+											    <tr>
+											      	<th style="text-align: center;">EQUIPMENT NAME</th>
+											      	<th style="text-align: center;">UNIT</th>
+											      	<th style="text-align: center;">QUANTITY</th>
+											    </tr>
+										  </thead>
+										  <tbody>
+										  		<tr>
+													<td>
+														<select id="equipment-retribution" name="equipment_retribution" class="form-control">
+															<option> -- Please Choose Equipment Name  -- </option>
+															<option value="L">HEAD TRUCK</option>
+															<option value="D">CRANE</option>
+														</select>
+													</td>
+													<td>
+														<select id="unit-retribution" name="unit_retribution" class="form-control">
+															<option> -- Please Choose Unit  -- </option>
+															<option value="L">1 TEUS</option>
+															<option value="D">2 TEUS</option>
+														</select>
+													</td>
+													<td><input type="text" id="jml" class="form-control"></input></td>
+													<td><input type="button" class="btn btn-md btn-danger" value="Delete" id="btn-delete-retribution"></td>													
+										    	</tr>
+										  </tbody>
+										</table>
+									</div>	
+								</div>
+								<div class="main-box-footer clearfix">
+									<button id="submit_header" class="btn btn-success btn-footer" onclick="submitheader()">Save</button>
+									<button id="reset" class="btn btn-danger btn-footer">Reset</button>									
+								</div>	
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="modal-create-detail" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      	<div class="modal-content">
+					        	<div class="modal-header">
+					          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+					          		<h4 class="modal-title">Add Detail Delivery</h4>
+					        	</div>
+					        	<div class="modal-body">
+									<div class="form-group">
+										<label for="exampleTooltip">BL NUMBER</label>
+										<input name="bl_number" id="bl_number" type="text" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>PACKAGING</label>
+										<select id="packaging" name="packaging" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="1">PETIKEMAS</option>
+											<option value="2">CURAH CAIR</option>
+											<option value="3">CURAH KERING</option>
+											<option value="4">UNITIZED</option>
+											<option value="5">BREAK BULT</option>
+											<option value="6">CURAH KERING BIASA</option>
+											<option value="7">CURAH KERING EMS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_comodity">
+										<label>COMODITY</label>
+										<select id="comodity" name="comodity" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="c">KONTAINER C</option>
+											<option value="b">KONTAINER B</option>
+											<option value="a">KONTAINER A</option>
+											<option value="d">BERAS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_unit">
+										<label>UNIT</label>
+										<select id="unit" name="unit" class="form-control">
+											<option value="0">--Pilih--</option>
+											<option value="1">1 TEUS</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_quantity">
+										<label>QUANTITY</label>
+										<div class="input-group">
+											<input id="quantity" name="quantity" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="form-group" id="div_size">
+										<label>SIZE</label>
+										<select id="size" name="size" class="form-control">
+											<option>--Pilih--</option>
+											<option> > 20</option>
+											<option> < 20</option>
+										</select>
+									</div>
+									<div class="form-group" id="div_condition">
+										<label>CONDITION</label>
+										<select id="condition" name="condition" class="form-control">
+											<option>--Pilih--</option>
+											<option>EMPTY</option>
+											<option>FULL</option>
+										</select>
+									</div>
+									<div class="form-group" id="como_character">
+										<label>COMODITY CHARACTER</label><br>
+										<input type="radio" id="como_char" name="como_char" value="disturb"> DISTURB<br>
+										<input type="radio" id="como_char" name="como_char" value="hazard"> HAZARD<br>
+										<input type="radio" id="como_char" name="como_char" value="hazard_non"> HAZARD NON LABEL 
+									</div>
+					        	</div>
+					        	<div class="modal-footer">
+					          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					          		<button type="button" class="btn btn-success" data-dismiss="modal" onclick="save_detail()">Save</button>
+					        	</div>
+					      </div>
+					    </div>
+					</div>
+
+				<div id="detailreq"></div>
+          		<input type="hidden" id="valid_eta" />
+
+<script>
+
+	function save_detail() {
+		var bl_number	= $('#bl_number').val();
+		var packaging	= $('#packaging').val();
+		var comodity	= $('#comodity').val();
+		var unit		= $('#unit').val();
+		var quantity	= $('#quantity').val();
+		var size		= $('#size').val();
+		var condition	= $('#condition').val();
+		var como_char	= $('input[name=como_char]:checked').val();
+
+		console.log(bl_number+'---'+packaging+'---'+comodity+'---'+unit+'---'+quantity+'---'+size+'---'+condition+'---'+como_char);
+		
+		$('#detail-list tbody').append(
+			'<tr>' +
+				'<td>'+ bl_number +'</td>' +
+				'<td>'+ packaging +'</td>' +
+				'<td>'+ comodity +'</td>' +
+				'<td>'+ unit +'</td>' +
+				'<td>'+ quantity +'</td>' +
+				'<td>'+ size +'</td>' +
+				'<td>'+ condition +'</td>' +
+				'<td>'+ como_char +'</td>' +
+				'<td>' +
+					'<a class="btn btn-primary btn-edit-detail"><i class="fa fa-pencil"></i></a>&nbsp;' +
+					'<a class="btn btn-primary btn-delete-detail"><i class="fa fa-trash-o"></i></a>' +
+				'</td>' +
+			'</tr>'
+		);
+	}
+
+	function search_vessel(){
+		var vesselname = $("#vessel_autocomplete").val();
+		var port       = $('#port').val();
+		
+		$.blockUI();
+
+		$.get("<?=ROOT?>eservice/request_bm/auto_vessel?",{vessel : vesselname, port: port}, function(data){
+			//alert(data)
+			$('#example1 tbody').html('');
+			var arr =[];
+			var obj = JSON.parse(data);
+			//alert(obj);
+			var jmlresponse = obj.length;
+			for(i=0;i<jmlresponse;i++)
+			{
+				var callSign 	  =obj[i]['_c']['callSign']['_v'];
+				var closingTime   =obj[i]['_c']['closingTime']['_v'];
+				var closingTimeDoc=obj[i]['_c']['closingTimeDoc']['_v'];
+				var eta 		  =obj[i]['_c']['eta']['_v'];
+				var etaa 		  =obj[i]['_c']['etaa']['_v'];
+				var etd 		  =obj[i]['_c']['etd']['_v'];
+				var idVsbVoyage   =obj[i]['_c']['idVsbVoyage']['_v'];
+				var openStack 	  =obj[i]['_c']['openStack']['_v'];
+				var startWork 	  =obj[i]['_c']['startWork']['_v'];
+				var vessel  	  =obj[i]['_c']['vessel']['_v'];
+				var vesselCode 	  =obj[i]['_c']['vesselCode']['_v'];
+				var voyage 		  =obj[i]['_c']['voyage']['_v'];
+				var voyageIn 	  =obj[i]['_c']['voyageIn']['_v'];
+				var voyageOut 	  =obj[i]['_c']['voyageOut']['_v'];		
+				// var isi 		  =voyageIn+'^'+voyageOut+'^'+eta+'^xxxxx'+obj[i]['_c']['etd']['_v']+'^'+closingTime+'^'+startWork+'^'+etaa+'^'+idVsbVoyage;
+			}
+				var ptk = "'";
+				//alert(isi);
+
+			obj.forEach(function(abc) {
+
+				var isi = abc._c.voyageIn._v+"#"+ abc._c.voyageOut._v+"#"+ abc._c.eta._v+"#"+ abc._c.etd._v+"#"+ abc._c.closingTime._v+"#"+ 
+							abc._c.startWork._v+"#"+ abc._c.etaa._v+"#"+ abc._c.idVsbVoyage._v+"#"+ abc._c.openStack._v;
+			
+			arr.push(
+				'<tr>' +
+						'<td>'+ abc._c.vessel._v +'</td>' +
+						'<td>'+ abc._c.voyageIn._v +'</td>' +
+						'<td>'+ abc._c.voyageOut._v +'</td>' +
+						'<td>'+ abc._c.eta._v +'</td>' +
+						'<td>'+ abc._c.etd._v +'</td>' +
+						'<td>'+ abc._c.openStack._v +'</td>' +					
+						'<td><a data-dismiss="modal" style="cursor:pointer" class="table-link click_detail bank_detail" onclick="complete('+ptk+isi+ptk+')"><span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-edit fa-stack-1x fa-inverse"></i></span></a></td>' +
+					'</tr>');
+
+			});
+			$('#example1 tbody').append(arr);
+							
+			console.log(arr);
+			arr.length = 0;
+
+			$.unblockUI();
+			$('#ModalVessel').modal('show');
+		
+		});
+
+	}
+
+
+	function complete(isi){
+  		var data 		= isi.split('#');
+  		var voyageIn 	= data[0];
+  		var voyageOut 	= data[1];
+  		var eta 		= data[2];
+  		var etd 		= data[3];
+  		var closingTime = data[4];
+  		var startWork 	= data[5];
+  		var etaa 		= data[6];
+  		var idVsbVoyage = data[7];
+		var openStack	= data[8];
+		
+		$( "#voyage_in" ).val(voyageIn);
+		$( "#voyage_out" ).val(voyageOut);
+		$( "#eta" ).val(eta);
+		$( "#etd" ).val(etd);
+		$( "#actual_departure" ).val(closingTime);
+		$( "#actual_arrive" ).val(startWork);
+		$( "#kade" ).val(etaa);
+		$( "#etb" ).val(idVsbVoyage);
+		$( "#openStack" ).val(openStack);		
+	}
+
+	$(function() {
+		$("#container_data").attr('class', 'row ');
+
+        $( "#commodity" ).autocomplete({
+        minLength: 4,
+        source: function(request, response) {
+            $.getJSON("<?=ROOT?>container_receiving/auto_commodity?",{  term: $( "#commodity" ).val(),
+                                                                          port: $('#port').val()
+                                                                         }, response);
+            },
+        focus: function( event, ui )
+        {
+            $( "#commodity" ).val( ui.item.COMMODITY);
+            return false;
+        },
+        select: function( event, ui )
+        {
+            $( "#commodity" ).val( ui.item.COMMODITY);
+            $( "#kd_commodity" ).val( ui.item.KD_COMMODITY);
+
+            return false;
+        }
+        }).data( "uiAutocomplete" )._renderItem = function( ul, item )
+        {
+        return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( "<a align='center'>" + item.COMMODITY + "<br>" +item.KD_COMMODITY+"</a>")
+        .appendTo( ul );
+
+        };
+    });
+	
+	
+	$( "#all_commodity" ).autocomplete({
+		minLength: 3,
+		source: function(request, response) {
+			$.getJSON("<?=ROOT?>container_receiving/auto_commodity?",{  term: $( "#all_commodity" ).val(),
+																		  port: $('#port').val()
+																		 }, response);
+			},
+		focus: function( event, ui )
+		{
+			$( "#all_commodity" ).val( ui.item.COMMODITY);
+			return false;
+		},
+		select: function( event, ui )
+		{
+			$( "#all_commodity" ).val( ui.item.COMMODITY);
+			$( "#all_kd_commodity" ).val( ui.item.KD_COMMODITY);
+
+			return false;
+		}
+	}).data( "uiAutocomplete" )._renderItem = function( ul, item ){
+		//console.log('TEST');
+		//console.log(ul);
+		console.log(item);
+		return $( "<li></li>" )
+		.data( "item.autocomplete", item )
+		.append( "<a align='center'>" + item.COMMODITY + "<br>" +item.KD_COMMODITY+"</a>")
+		.appendTo( ul );
+
+	};
+
+	//datepicker
+	/*var picker = $('#start_shift').datepicker({
+		format: 'dd-mm-yyyy 00:00',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});*/
+
+	var picker = $('#peb_dt').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(0),
+		todayBtn: true,
+		todayHighlight: true
+	});
+	var picker1 = $('#tgl_npe').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(0),
+		todayBtn: true,
+		todayHighlight: true
+	});
+	//.val(moment().format("D-M-YYYY 00:00"));
+
+</script>
+
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/bootstrap-timepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

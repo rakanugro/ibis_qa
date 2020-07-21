@@ -1,0 +1,73 @@
+public function cancel_tid($tid) {
+        if (!$this->session->userdata('uname_phd'))
+        {
+            redirect(ROOT.'main', 'refresh');
+        }
+        log_message('debug','------------------------create_request_delivery-----------------------------');
+
+        //$port=explode("-",$_POST["TERMINAL"]);
+        //$truck_number=$_POST["TRUCK_NUMBER"];
+        //$truck_id=$_POST["TRUCK_ID"];
+        //$rfid_code=$_POST["RFID_CODE"];
+        $customer_id=$this->session->userdata('customerid_phd');
+        $customer_name=$this->session->userdata('customername_phd');
+        $address=$this->session->userdata('address_phd');
+
+
+            $this->form_validation->set_rules($config); //setting rules inputan pemesanan pengeluaran
+
+                // no error
+                // port code : IDJKT, IDPNK //bisa diisi kosong untuk ambil semua port
+                // terminal code :  T3I,T3D,T2D,T1D //bisa diisi kosong untuk ambil semua terminal
+                $address = base64_encode($address);
+                $in_data="<root>
+                    <sc_type>1</sc_type>
+                    <sc_code>123456</sc_code>
+                    <data>
+                        <truck_id>$tid</truck_id>
+                    </data>
+                </root>";
+                //echo($in_data);die;
+                log_message('debug', '>>> --1--'.$in_data);
+                injek($in_data);
+
+                if(!$this->nusoap_lib->call_wsdl(ORDER_MGT,"delRegisterTID",array("in_data" => "$in_data"),$result))
+                {
+                    log_message('debug',$result);
+                    echo $result;
+                    die;
+                }
+                else
+                {
+                    echo $result;
+                    die();
+                    log_message('debug', '--4--'.$result);
+
+                    $obj = json_decode($result);
+                    
+                    if($obj->rc!="S")
+                    {
+                        echo "<script type='text/javascript'>
+        alert('TCA sedang aktif, data tidak bisa dihapus');
+        location = '".ROOT."om/truck/create_truck_registration';
+      </script>";
+                    }
+                    else if($obj->data->info)
+                    {
+                        
+                        echo "<script type='text/javascript'>
+        alert('Penghapusan TID Berhasil');
+        location = '".ROOT."om/truck/create_truck_registration';
+      </script>";
+                    //header("Location: ".ROOT."om/truck/create_truck_registration");
+                    
+                    //die();
+                        //die();
+                        
+                    } else {
+                        echo "NO,GAGAL";
+                    }
+                    
+                }
+        
+    }

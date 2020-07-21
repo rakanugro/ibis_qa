@@ -1,0 +1,492 @@
+
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+
+
+<style type="text/css">
+
+.divdemo{
+	padding: 15px;
+  	border: 1px solid #666;
+  	background: #fff;
+	display: none;
+}
+
+#rectangle {
+  
+  width: 250px;
+  border: 1px solid ;
+  padding: 50px;
+  margin: 20px;
+}
+
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+<script>
+
+	$(document).ready(function() {
+	    $('#listbarang').DataTable();
+	    $('#listmaster').DataTable();
+	    $('#listvessel').DataTable();
+	});
+
+
+	$(document).ready(function() {
+     $("#hidediv").click(function () {
+     $(".divdemo").hide();
+    });
+
+     $(".showdiv").click(function () {
+     $(".divdemo").show();
+    });
+
+   });
+
+</script>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Booking Data</h2>
+								</header>
+
+									<div class="main-box-body clearfix">
+									<!--<form role="form">-->
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Booking Number</b> </label>
+                                            <input type="text" class="form-control" id="" name="" placeholder="" size="8" readonly>
+                                        </div>
+
+                                        <div class="form-group col-xs-6">
+                                        	<label for="exampleAutocomplete"><b style="font-decoration:italics">Type Perdagangan</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Choose Type Perdagangane -- </option>
+												<?php
+												/*foreach($terminal as $term)
+												{
+												?>
+													<option value="<?=$term["PORT"]?>-<?=$term["TERMINAL"]?>"><?=$term["TERMINAL_NAME"]?></option>
+												<?php
+												}*/
+												?>
+											</select>
+                                        </div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Booking Type</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Choose Booking Type -- </option>
+												<?php
+												/*foreach($terminal as $term)
+												{
+												?>
+													<option value="<?=$term["PORT"]?>-<?=$term["TERMINAL"]?>"><?=$term["TERMINAL_NAME"]?></option>
+												<?php
+												}*/
+												?>
+											</select>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">No. FEB / PIB</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="100"/>
+											</div>
+										</div>
+
+										
+
+                                       	<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Stocking Extension</b> </label>
+											<input type="text" class="form-control" id="" data-toggle="tooltip" data-placement="bottom" placeholder="" Readonly>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">No. NPE / SPPB</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="100"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Booking No References</b> </label>
+											<input type="text" class="form-control" id="old_request" data-toggle="tooltip" data-placement="bottom" placeholder="" Readonly>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Booking Ship</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="100"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Booking Date</b> </label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="" name="" type="text" class="form-control"> <!--  id="datepickerDate"-->
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Date In</b> </label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<input id="" name="" type="text" class="form-control"> <!--  id="datepickerDate"-->
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Terminal</b> </label>
+											<select id="" name="" class="form-control">
+												<option value=''> -- Please Choose Terminal -- </option>
+												<?php
+												/*foreach($terminal as $term)
+												{
+												?>
+													<option value="<?=$term["PORT"]?>-<?=$term["TERMINAL"]?>"><?=$term["TERMINAL_NAME"]?></option>
+												<?php
+												}*/
+												?>
+											</select>
+										</div>
+
+										<div class="form-group col-xs-6">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Date Out</b> </label>
+											<div class="input-group">
+												<input id="" name="" type="text" class="form-control" size="100"> <!--  id="datepickerDate"-->
+											</div>
+										</div>
+
+										<div class="form-row">
+		 									<div class="form-group col-md-6">	
+		      									<label for="booking_pbm">Vessel</label>
+												<div class="input-group input-file" name="Fichier1">
+		    										<input type="text" class="form-control" id="booking_vessel" placeholder='booking_vessel...' />
+													<span class="input-group-btn">
+		        										<button class="btn btn-primary btn-choose" type="button" data-toggle="modal" data-target="#ModalVessel">Browser</button>
+		    										</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-6">
+                                            <form action="POST" class="myForm1" enctype="multipart/form-data">
+												<input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                                                <label for="exampleTooltip">Upload Document</label>
+                                                <input type="file" accept=".pdf" id="" name="" data-toggle="tooltip" data-placement="bottom" title="Upload Delivery Order">
+                                                <span class='upload_info'>
+                                                </span>
+                                            </form>
+										</div>
+
+                                        <div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Voyoge In</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="73"/>
+											</div>
+										</div>
+
+                                      	<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Voyoge Out</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="73"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">ETA</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="73"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">ETD</b> </label>
+											<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="73"/>
+											</div>
+										</div>
+
+										<div class="form-group col-xs-12">
+											<label for="exampleAutocomplete"><b style="font-decoration:italics">Open Stack</b> </label>
+											<div class="input-group">
+												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												<div class="input-group">
+												<input type="text" id="" name="" class="form-control" size="68"/>
+											</div> <!--  id="datepickerDate"-->
+											</div>
+										</div>
+
+									<!--</form>-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--   form List Barang  -->
+
+					<div class="row" id="rowdetail">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">List Barang</h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="table-responsive">
+										<span class="input-group-btn" >
+				        					<button class="btn btn-primary btn-choose" type="button" style="text-align: left;" data-toggle="modal" data-target="#masterbarang">Browser</button>
+				    					</span>
+
+								<div class="modal-body">
+					          	<table id="listbarang" class="table table-striped table-bordered" style="width:100%">
+							        <thead>
+							            <tr>
+							                <th>Name</th>
+							                <th>Position</th>
+							                <th>Office</th>
+							                <th>Age</th>
+							                <th>Start date</th>
+							                <th>Salary</th>
+							            </tr>
+							        </thead>
+							        <tbody>
+							            <tr>
+							                <td>Tiger Nixon</td>
+							                <td>System Architect</td>
+							                <td>Edinburgh</td>
+							                <td>61</td>
+							                <td>2011/04/25</td>
+							                <td>$320,800</td>
+							            </tr>
+							            <tr>
+							                <td>Garrett Winters</td>
+							                <td>Accountant</td>
+							                <td>Tokyo</td>
+							                <td>63</td>
+							                <td>2011/07/25</td>
+							                <td>$170,750</td>
+							            </tr>
+							        </tbody>
+							   	</table>
+					        </div>
+										<div class="input-group">
+                                    		<button type="button" class="btn btn-success">Save</button>
+                                    		<button type="button" class="btn btn-danger">Cancel</button>
+                                    	</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Modal Vessel -->
+
+					<div class="modal fade" id="ModalVessel" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 class="modal-title">Modal Vessel</h4>
+					        </div>
+					        <div class="modal-body">
+					          	<table id="listvessel" class="table table-striped table-bordered" style="width:100%">
+							        <thead>
+							            <tr>
+							                <th>Name</th>
+							                <th>Position</th>
+							                <th>Office</th>
+							                <th>Age</th>
+							                <th>Start date</th>
+							                <th>Salary</th>
+							            </tr>
+							        </thead>
+							        <tbody>
+							            <tr>
+							                <td>Tiger Nixon</td>
+							                <td>System Architect</td>
+							                <td>Edinburgh</td>
+							                <td>61</td>
+							                <td>2011/04/25</td>
+							                <td>$320,800</td>
+							            </tr>
+							            <tr>
+							                <td>Garrett Winters</td>
+							                <td>Accountant</td>
+							                <td>Tokyo</td>
+							                <td>63</td>
+							                <td>2011/07/25</td>
+							                <td>$170,750</td>
+							            </tr>
+							        </tbody>
+							   	</table>
+					        </div>
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        </div>
+					      </div>
+					      
+					    </div>
+					</div>
+
+					<!-- modal list master Barang -->
+
+					<div class="modal fade" id="masterbarang" role="dialog">
+					    <div class="modal-dialog">
+					    	<div class="modal-content">
+					        	<div class="modal-header">
+					          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+					          		<h4 class="modal-title">Modal List Master Barang</h4>
+					        	</div>
+					        <div class="modal-body">
+   								<div class="divdemo">
+   									<div class="main-box">
+
+										<div class="main-box-body clearfix">
+											<form>
+												<div class="form-group row">
+												    <label for="inputPassword" class="col-sm-2 col-form-label">BL Number</label>
+												    <div class="col-sm-10">
+												    	<input type="text" class="form-control" id="" placeholder="">
+												    </div>
+												</div>
+												<div class="form-group row">
+												    <label for="inputPassword" class="col-sm-2 col-form-label">Nama Barang</label>
+												    <div class="col-sm-10">
+												    	<input type="text" class="form-control" id="" placeholder="">
+												    </div>
+												</div>
+												<div class="form-group row">
+												    <label for="inputPassword" class="col-sm-2 col-form-label">Jenis Barang</label>
+												    <div class="col-sm-10">
+												    	<input type="text" class="form-control" id="" placeholder="">
+												    </div>
+												</div>
+												<div class="form-group row">
+												    <label for="inputPassword" class="col-sm-2 col-form-label">Kemasan</label>
+												    <div class="col-sm-10">
+												    	<input type="text" class="form-control" id="" placeholder="">
+												    </div>
+												</div>
+												<div class="form-group row">
+												    <label for="inputPassword" class="col-sm-2 col-form-label">Satuan</label>
+												    <div class="col-sm-10">
+												    	<input type="text" class="form-control" id="" placeholder="">
+												    </div>
+												</div>
+												<div class="form-group row">
+												    <label for="inputPassword" class="col-sm-2 col-form-label">Jumlah</label>
+												    <div class="col-sm-10">
+												    	<input type="text" class="form-control" id="" placeholder="">
+												    </div>
+												</div>
+												<div class="form-group row">
+											      	<label for="inputPassword" class="col-sm-2 col-form-label">Kondisi</label>
+											      	<div class="col-sm-10">
+											      		<select id="inputState" class="form-control">
+											        	<option selected>Choose...</option>
+											        	<option>...</option>
+											      	</select>
+											    
+											      	</div>
+											      	</div>
+											    <div class="form-group row">
+												    <div class="col-sm-2">Sifat Barang</div>
+												    <div class="col-sm-10">
+												      	<div class="form-check">
+												        	<input class="form-check-input" type="checkbox" id="gridCheck1">
+												        	<label class="form-check-label" for="gridCheck1">
+												          		Bahaya
+												        	</label>
+												      	</div>
+												      	<div class="form-check">
+												        	<input class="form-check-input" type="checkbox" id="gridCheck1">
+												        	<label class="form-check-label" for="gridCheck1">
+												          		Mengganggu
+												        	</label>
+												      	</div>
+												      	<div class="form-check">
+												        	<input class="form-check-input" type="checkbox" id="gridCheck1">
+												        	<label class="form-check-label" for="gridCheck1">
+												          		Bahaya Non Label
+												        	</label>
+												      	</div>
+												    </div>
+												</div>
+												<div class="form-group row">
+													<div class="form-group row">
+														<div class="col-sm-10">
+															<button type="button" class="btn btn-success">Insert</button>
+															<button type="button" id="hidediv" class="btn btn-danger">Cancel</button>
+														</div>
+													</div>
+												</div>
+											</form>
+									</div>
+
+
+								</div>
+   							</div>
+
+					          	<table id="listmaster" class="table table-striped table-bordered" style="width:100%">
+							        <thead>
+							            <tr>
+							                <th>No</th>
+							                <th>Nama Barang</th>
+							                <th>Jenis Barang</th>
+							                <th>Group</th>
+							                <th>Satuan</th>
+							                <th>Pilih</th>
+							            </tr>
+							        </thead>
+							        <tbody>
+							            <tr>
+							                <td>1</td>
+							                <td>Biji Timah</td>
+							                <td>Barang Galian</td>
+							                <td>Muatan Curah</td>
+							                <td>Ton</td>
+							                <td><button class="showdiv">Show div</button></td>
+							            </tr>
+							        </tbody>
+							   	</table>
+					        </div>
+
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        </div>
+					    </div>
+					</div>
+  
+
+
+
+
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

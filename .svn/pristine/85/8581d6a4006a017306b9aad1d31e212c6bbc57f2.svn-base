@@ -1,0 +1,61 @@
+<?php 
+	class print_invoice extends CI_Controller
+	{
+		
+		public function __construct()
+		{
+			parent::__construct();
+			$this->load->helper('url');
+			$this->load->helper('form');
+			$this->load->library('form_validation');
+			$this->load->library('upload');
+			$this->load->model('user_model');
+			$this->load->model('container_model');
+			$this->load->library("Nusoap_lib");
+			$this->load->library("sendcurl_lib");
+			$this->load->library('table');
+			$this->load->library('breadcrumbs');
+			$this->load->helper('MY_language_helper');
+			$this->load->library('session');
+			$this->load->model('auth_model','auth_model');
+			
+			require_once(APPPATH.'libraries/mime_type_lib.php');
+	        require_once(APPPATH.'libraries/htmLawed.php');
+		}
+
+		public function common_loader($data,$views) 
+		{
+			$this->load->view('templates/header', $data);
+			$this->load->view('templates/top_bar', $data);
+			$this->load->view('templates/menu_side', $data);
+			$this->load->view('templates/top-1-breadcrumb', $data);
+			$this->load->view('templates/top-2-title-nosearch', $data);
+			$this->load->view($views, $data);
+			$this->load->view('templates/footer', $data);
+		}
+
+		public function redirect()
+		{
+			if (!$this->session->userdata('uname_phd'))
+			{
+				redirect(ROOT.'main', 'refresh');
+			}
+		}
+
+
+		public function index()
+		{
+			$this->redirect();
+
+			$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+			$this->breadcrumbs->push("print_invoice", '/');
+			$this->breadcrumbs->unshift('Home', '/');
+			$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+			$data['title']= "Invoice";
+
+			$this->common_loader($data,'eservice/billing_management/print_invoice.php');
+		}
+	}
+ ?>

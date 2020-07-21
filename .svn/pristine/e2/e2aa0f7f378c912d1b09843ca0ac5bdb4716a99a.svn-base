@@ -1,0 +1,2202 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+DEBUG - 2016-09-26 09:16:17 --> Config Class Initialized
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+DEBUG - 2016-09-26 09:16:17 --> Config Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Config Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Config Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:16:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:16:17 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:16:17 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:16:17 --> URI Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> URI Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> URI Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> URI Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Router Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Router Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Router Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Router Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Output Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Output Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Output Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Output Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Security Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Security Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Security Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Security Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Input Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Input Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> Input Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:16:17 --> Input Class Initialized
+DEBUG - 2016-09-26 09:16:17 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:16:17 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:16:17 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:16:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:16:17 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:16:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:16:17 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:16:17 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:16:17 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:16:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:16:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:16:18 --> Language Class Initialized
+DEBUG - 2016-09-26 09:16:18 --> Language Class Initialized
+DEBUG - 2016-09-26 09:16:18 --> Language Class Initialized
+DEBUG - 2016-09-26 09:16:18 --> Language Class Initialized
+DEBUG - 2016-09-26 09:16:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:16:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:16:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:16:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:16:19 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:16:19 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:16:19 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Session Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Session Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Session Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Session Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:16:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:16:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:16:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:16:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:16:20 --> >>> Is the session current?
+DEBUG - 2016-09-26 09:16:20 --> >>> Is the session current?
+DEBUG - 2016-09-26 09:16:20 --> >>> Is the session current?
+DEBUG - 2016-09-26 09:16:20 --> >>> sess_destroy
+DEBUG - 2016-09-26 09:16:20 --> >>> sess_destroy
+DEBUG - 2016-09-26 09:16:20 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 09:16:20 --> >>> sess_destroy
+DEBUG - 2016-09-26 09:16:20 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 09:16:20 --> >>> Is the session current?
+DEBUG - 2016-09-26 09:16:20 --> Session routines successfully run
+DEBUG - 2016-09-26 09:16:20 --> Session routines successfully run
+DEBUG - 2016-09-26 09:16:20 --> >>> sess_destroy
+DEBUG - 2016-09-26 09:16:20 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 09:16:20 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 09:16:20 --> Session routines successfully run
+DEBUG - 2016-09-26 09:16:20 --> Session routines successfully run
+DEBUG - 2016-09-26 09:16:21 --> Model Class Initialized
+DEBUG - 2016-09-26 09:16:21 --> Model Class Initialized
+DEBUG - 2016-09-26 09:16:21 --> Model Class Initialized
+DEBUG - 2016-09-26 09:16:21 --> Model Class Initialized
+DEBUG - 2016-09-26 09:16:22 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:16:22 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:16:22 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:22 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:16:23 --> Table Class Initialized
+DEBUG - 2016-09-26 09:16:23 --> Table Class Initialized
+DEBUG - 2016-09-26 09:16:23 --> Table Class Initialized
+DEBUG - 2016-09-26 09:16:23 --> Table Class Initialized
+DEBUG - 2016-09-26 09:16:24 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:16:24 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:16:24 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:16:24 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:16:24 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:16:24 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:16:24 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:16:24 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:16:24 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:16:24 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:16:24 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:16:24 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:16:27 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:16:27 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:16:27 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:16:27 --> Helper loaded: file_helper
+ERROR - 2016-09-26 09:16:27 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:16:27 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:16:27 --> Unable to connect to the database
+ERROR - 2016-09-26 09:16:27 --> Unable to connect to the database
+ERROR - 2016-09-26 09:16:27 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:16:27 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:16:27 --> Unable to connect to the database
+ERROR - 2016-09-26 09:16:27 --> Unable to connect to the database
+DEBUG - 2016-09-26 09:16:28 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:16:28 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:16:28 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:16:28 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:17:12 --> Config Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Config Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:17:12 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:17:12 --> URI Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> URI Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Router Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Router Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Output Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Output Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Security Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Security Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Input Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Input Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:17:12 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:17:12 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:17:12 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:17:12 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:17:12 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:17:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:17:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:17:12 --> Language Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Language Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:17:12 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Session Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Session Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:17:12 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> >>> Session update
+DEBUG - 2016-09-26 09:17:12 --> >>> Session update
+DEBUG - 2016-09-26 09:17:12 --> Session routines successfully run
+DEBUG - 2016-09-26 09:17:12 --> Session routines successfully run
+DEBUG - 2016-09-26 09:17:12 --> Model Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Model Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:17:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:17:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:17:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:17:12 --> Table Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Table Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:17:12 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:17:12 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:17:12 --> Helper loaded: file_helper
+ERROR - 2016-09-26 09:17:12 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:17:12 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:17:12 --> Unable to connect to the database
+ERROR - 2016-09-26 09:17:12 --> Unable to connect to the database
+DEBUG - 2016-09-26 09:17:12 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:17:12 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:18:14 --> Config Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Config Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:18:14 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> URI Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:18:14 --> URI Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Router Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Router Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Output Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Output Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Security Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Security Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Input Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Input Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:18:14 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:18:14 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:18:14 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:18:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:18:14 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:18:14 --> Language Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:18:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:18:14 --> Language Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:18:14 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Session Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Session Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:18:14 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> >>> Session update
+DEBUG - 2016-09-26 09:18:14 --> >>> Session update
+DEBUG - 2016-09-26 09:18:14 --> Session routines successfully run
+DEBUG - 2016-09-26 09:18:14 --> Session routines successfully run
+DEBUG - 2016-09-26 09:18:14 --> Model Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Model Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:18:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:18:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:18:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:18:14 --> Table Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Table Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:18:14 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:18:14 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:18:14 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:18:14 --> Helper loaded: file_helper
+ERROR - 2016-09-26 09:18:14 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:18:14 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:18:14 --> Unable to connect to the database
+ERROR - 2016-09-26 09:18:14 --> Unable to connect to the database
+DEBUG - 2016-09-26 09:18:14 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:18:14 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:19:16 --> Config Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Config Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:19:16 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> URI Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:19:16 --> Router Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Output Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> URI Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Router Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Security Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Output Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Input Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:19:16 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:19:16 --> Security Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:19:16 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:19:16 --> Language Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Input Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:19:16 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:19:16 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:19:16 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:19:16 --> Language Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:19:16 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:19:16 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:19:16 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Session Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:19:16 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Session Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> >>> Session update
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:19:16 --> Session routines successfully run
+DEBUG - 2016-09-26 09:19:16 --> Model Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> >>> Session update
+DEBUG - 2016-09-26 09:19:16 --> Session routines successfully run
+DEBUG - 2016-09-26 09:19:16 --> Model Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:19:16 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:19:16 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:19:16 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:19:16 --> Table Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:19:16 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:19:16 --> Table Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:19:16 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:19:16 --> Helper loaded: file_helper
+ERROR - 2016-09-26 09:19:16 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:19:16 --> Unable to connect to the database
+ERROR - 2016-09-26 09:19:16 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+DEBUG - 2016-09-26 09:19:16 --> Language file loaded: language/english/db_lang.php
+ERROR - 2016-09-26 09:19:16 --> Unable to connect to the database
+DEBUG - 2016-09-26 09:19:16 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:20:18 --> Config Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Config Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:20:18 --> URI Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:20:18 --> URI Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Router Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Router Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Output Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Security Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Output Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Input Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:20:18 --> Security Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:20:18 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:20:18 --> Input Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:20:18 --> Language Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:20:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:20:18 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:20:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:20:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Language Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:20:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:20:18 --> Session Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:20:18 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> >>> Session update
+DEBUG - 2016-09-26 09:20:18 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Session routines successfully run
+DEBUG - 2016-09-26 09:20:18 --> Session Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Model Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:20:18 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> >>> Session update
+DEBUG - 2016-09-26 09:20:18 --> Session routines successfully run
+DEBUG - 2016-09-26 09:20:18 --> Model Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:20:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:20:18 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:20:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:20:18 --> Table Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:20:18 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:20:18 --> Table Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:20:18 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:20:18 --> Helper loaded: file_helper
+ERROR - 2016-09-26 09:20:18 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:20:18 --> Unable to connect to the database
+DEBUG - 2016-09-26 09:20:18 --> Language file loaded: language/english/db_lang.php
+ERROR - 2016-09-26 09:20:18 --> Severity: Warning  --> oci_connect() [<a href='function.oci-connect'>function.oci-connect</a>]: ORA-12560: TNS:protocol adapter error C:\xampp\htdocs\ibis_qa\system\database\drivers\oci8\oci8_driver.php 80
+ERROR - 2016-09-26 09:20:18 --> Unable to connect to the database
+DEBUG - 2016-09-26 09:20:18 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2016-09-26 09:21:20 --> Config Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Config Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Hooks Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:21:20 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 09:21:20 --> URI Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Router Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> URI Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Router Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Output Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Security Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Output Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Security Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Input Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:21:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:21:20 --> Input Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:21:20 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:21:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:21:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 09:21:20 --> Language Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> CRSF cookie Set
+DEBUG - 2016-09-26 09:21:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 09:21:20 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Language Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:21:20 --> Loader Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Controller Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 09:21:20 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 09:21:20 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Session Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:21:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Upload Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> >>> Session update
+DEBUG - 2016-09-26 09:21:20 --> Session Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 09:21:20 --> Session routines successfully run
+DEBUG - 2016-09-26 09:21:20 --> Model Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> >>> Session update
+DEBUG - 2016-09-26 09:21:20 --> Session routines successfully run
+DEBUG - 2016-09-26 09:21:20 --> Model Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:21:20 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:21:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:21:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 09:21:20 --> Table Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Table Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:21:20 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 09:21:20 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:21:20 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 09:21:20 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:27:01 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:01 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:01 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:01 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:01 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:01 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:01 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:01 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:01 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> >>> Session update
+DEBUG - 2016-09-26 10:27:01 --> >>> Session update
+DEBUG - 2016-09-26 10:27:01 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:01 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:01 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:01 --> Table Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:27:01 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:27:01 --> Table Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:27:01 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:27:01 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:27:03 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:03 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:03 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:03 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:03 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:27:03 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:03 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:03 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> >>> Session update
+DEBUG - 2016-09-26 10:27:03 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:03 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:03 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:03 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:03 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:27:03 --> >>> sess_destroy
+DEBUG - 2016-09-26 10:27:04 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:04 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:04 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:04 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:04 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:04 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:04 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:04 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> A session cookie was not found.
+DEBUG - 2016-09-26 10:27:04 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 10:27:04 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:04 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:04 --> Table Class Initialized
+DEBUG - 2016-09-26 10:27:04 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:27:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:04 --> >>> ---mainpage---
+DEBUG - 2016-09-26 10:27:04 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:27:06 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:06 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:06 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:06 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:06 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:06 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:06 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:06 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:27:06 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:06 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:06 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:06 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:06 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:06 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> A session cookie was not found.
+DEBUG - 2016-09-26 10:27:06 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 10:27:06 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:06 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:06 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:06 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> A session cookie was not found.
+DEBUG - 2016-09-26 10:27:06 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 10:27:06 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:06 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:06 --> A session cookie was not found.
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:27:06 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 10:27:06 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> >>> sess_destroy
+DEBUG - 2016-09-26 10:27:06 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:06 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:06 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:06 --> Table Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:27:06 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:27:06 --> Table Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:27:06 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:27:06 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:27:06 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:27:07 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:07 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:07 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:07 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:07 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:07 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:07 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:07 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> A session cookie was not found.
+DEBUG - 2016-09-26 10:27:07 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 10:27:07 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:07 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:07 --> Table Class Initialized
+DEBUG - 2016-09-26 10:27:07 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:27:07 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:07 --> >>> ---mainpage---
+DEBUG - 2016-09-26 10:27:08 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:27:08 --> Config Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:27:08 --> URI Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Router Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Output Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Security Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Input Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:08 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:27:08 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:27:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:27:08 --> Language Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:27:08 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:27:08 --> Session Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:27:08 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> >>> Session update
+DEBUG - 2016-09-26 10:27:08 --> Session routines successfully run
+DEBUG - 2016-09-26 10:27:08 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:27:08 --> Model Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:27:08 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:27:08 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:27:08 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-09-26 10:27:08 --> 5e9cb84fb73f689d798e1a70ac4c202c++main_index++ 
+ERROR - 2016-09-26 10:27:09 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-09-26 10:27:09 --> >>> saveCaptcha
+DEBUG - 2016-09-26 10:27:09 --> Helper loaded: file_helper
+ERROR - 2016-09-26 10:27:09 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-09-26 10:27:09 --> >>> isUserLogin: 5e9cb84fb73f689d798e1a70ac4c202c
+DEBUG - 2016-09-26 10:27:09 --> >>> row: 0
+DEBUG - 2016-09-26 10:27:09 --> >>> Go to Homepage
+DEBUG - 2016-09-26 10:27:09 --> File loaded: application/views/homepage/index.php
+DEBUG - 2016-09-26 10:27:09 --> Final output sent to browser
+DEBUG - 2016-09-26 10:27:09 --> Total execution time: 0.5606
+DEBUG - 2016-09-26 10:32:20 --> Config Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:32:20 --> URI Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Router Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Output Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Security Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Input Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:32:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:32:20 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:32:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:32:20 --> Language Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:32:20 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:32:20 --> Session Class Initialized
+DEBUG - 2016-09-26 10:32:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:32:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:32:21 --> >>> Session update
+DEBUG - 2016-09-26 10:32:21 --> Session routines successfully run
+DEBUG - 2016-09-26 10:32:21 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:32:21 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:32:21 --> Model Class Initialized
+DEBUG - 2016-09-26 10:32:21 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:32:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:32:21 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:32:21 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-09-26 10:32:21 --> 5e9cb84fb73f689d798e1a70ac4c202c++main_index++ 
+ERROR - 2016-09-26 10:32:21 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-09-26 10:32:21 --> >>> saveCaptcha
+DEBUG - 2016-09-26 10:32:21 --> Helper loaded: file_helper
+ERROR - 2016-09-26 10:32:21 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-09-26 10:32:21 --> >>> isUserLogin: 5e9cb84fb73f689d798e1a70ac4c202c
+DEBUG - 2016-09-26 10:32:21 --> >>> row: 0
+DEBUG - 2016-09-26 10:32:21 --> >>> Go to Homepage
+DEBUG - 2016-09-26 10:32:21 --> File loaded: application/views/homepage/index.php
+DEBUG - 2016-09-26 10:32:21 --> Final output sent to browser
+DEBUG - 2016-09-26 10:32:21 --> Total execution time: 0.5159
+DEBUG - 2016-09-26 10:39:18 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:18 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:18 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:39:18 --> CSRF token verified
+DEBUG - 2016-09-26 10:39:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:39:18 --> Language Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:39:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:39:18 --> Session Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:39:18 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> >>> Session update
+DEBUG - 2016-09-26 10:39:18 --> Session routines successfully run
+DEBUG - 2016-09-26 10:39:18 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:39:18 --> Model Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:18 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:39:18 --> ----------------------------main.php/do_log------------------------------------
+DEBUG - 2016-09-26 10:39:18 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2016-09-26 10:39:18 --> >>> isMatchCaptcha
+DEBUG - 2016-09-26 10:39:18 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:39:18 --> << check_user: ganda
+DEBUG - 2016-09-26 10:39:18 --> >>> isUserActive
+DEBUG - 2016-09-26 10:39:18 --> << ganda has been actived, will destroy!
+DEBUG - 2016-09-26 10:39:18 --> >>> kick_account
+DEBUG - 2016-09-26 10:39:18 --> >>> kicked ganda
+DEBUG - 2016-09-26 10:39:18 --> << previos session user ganda destroyed!
+DEBUG - 2016-09-26 10:39:18 --> >>> LOCK_ACCOUNT
+DEBUG - 2016-09-26 10:39:18 --> < User ganda is active!
+DEBUG - 2016-09-26 10:39:18 --> >>> delete_count_account
+INFO  - 2016-09-26 10:39:18 --> < Succes login!
+ERROR - 2016-09-26 10:39:18 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ibis_qa\application\controllers\main.php:166) C:\xampp\htdocs\ibis_qa\system\core\Output.php 392
+ERROR - 2016-09-26 10:39:18 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ibis_qa\application\controllers\main.php:166) C:\xampp\htdocs\ibis_qa\system\core\Output.php 392
+DEBUG - 2016-09-26 10:39:18 --> Final output sent to browser
+DEBUG - 2016-09-26 10:39:18 --> Total execution time: 0.5447
+DEBUG - 2016-09-26 10:39:18 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:18 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:18 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:19 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:19 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:39:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:39:19 --> Language Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:39:19 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:39:19 --> Session Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:39:19 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> >>> Session update
+DEBUG - 2016-09-26 10:39:19 --> Session routines successfully run
+DEBUG - 2016-09-26 10:39:19 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:39:19 --> Model Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:39:19 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-09-26 10:39:19 --> 5e9cb84fb73f689d798e1a70ac4c202c++main_index++ GandaP
+ERROR - 2016-09-26 10:39:19 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-09-26 10:39:19 --> >>> saveCaptcha
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: file_helper
+ERROR - 2016-09-26 10:39:19 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-09-26 10:39:19 --> >>> isUserLogin: 5e9cb84fb73f689d798e1a70ac4c202c
+DEBUG - 2016-09-26 10:39:19 --> >>> row: 1
+DEBUG - 2016-09-26 10:39:19 --> >>> Go to Mainpage
+DEBUG - 2016-09-26 10:39:19 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:19 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:19 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:19 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:39:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:39:19 --> Language Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:39:19 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Session Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:39:19 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> >>> Session update
+DEBUG - 2016-09-26 10:39:19 --> Session routines successfully run
+DEBUG - 2016-09-26 10:39:19 --> Model Class Initialized
+DEBUG - 2016-09-26 10:39:19 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:39:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:20 --> Table Class Initialized
+DEBUG - 2016-09-26 10:39:20 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:39:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:20 --> >>> 1---mainpage---
+DEBUG - 2016-09-26 10:39:20 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:39:20 --> >>> 07
+DEBUG - 2016-09-26 10:39:20 --> File loaded: application/views/templates/header.php
+DEBUG - 2016-09-26 10:39:20 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2016-09-26 10:39:20 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2016-09-26 10:39:20 --> ----------------------------main.php------------------------------------
+DEBUG - 2016-09-26 10:39:20 --> File loaded: application/views/pages/main.php
+DEBUG - 2016-09-26 10:39:20 --> File loaded: application/views/templates/footer.php
+DEBUG - 2016-09-26 10:39:20 --> Final output sent to browser
+DEBUG - 2016-09-26 10:39:20 --> Total execution time: 0.7111
+DEBUG - 2016-09-26 10:39:21 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:21 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:21 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:21 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:21 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:39:21 --> CSRF token verified
+DEBUG - 2016-09-26 10:39:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:39:21 --> Language Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:39:21 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:39:21 --> Helper loaded: my_options_helper
+DEBUG - 2016-09-26 10:39:21 --> Helper loaded: cookie_helper
+DEBUG - 2016-09-26 10:39:21 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Session Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:39:21 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> >>> Session update
+DEBUG - 2016-09-26 10:39:21 --> Session routines successfully run
+DEBUG - 2016-09-26 10:39:21 --> Table Class Initialized
+DEBUG - 2016-09-26 10:39:21 --> Model Class Initialized
+DEBUG - 2016-09-26 10:39:22 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:39:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:22 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:39:22 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:39:22 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:39:22 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:39:22 --> Final output sent to browser
+DEBUG - 2016-09-26 10:39:22 --> Total execution time: 0.5068
+DEBUG - 2016-09-26 10:39:31 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:31 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:31 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:31 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:41 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:41 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:41 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:41 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:51 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:51 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:51 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:51 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:57 --> Config Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:39:57 --> URI Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Router Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Output Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Security Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Input Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:39:57 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:39:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:39:57 --> Language Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:39:57 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:39:58 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:39:58 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Session Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:39:58 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> >>> Session update
+DEBUG - 2016-09-26 10:39:58 --> Session routines successfully run
+DEBUG - 2016-09-26 10:39:58 --> Model Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:58 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:58 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:39:58 --> Table Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:39:58 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:39:58 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:39:58 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:39:58 --> File loaded: application/views/templates/header.php
+DEBUG - 2016-09-26 10:39:58 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2016-09-26 10:39:58 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2016-09-26 10:39:58 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2016-09-26 10:39:58 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2016-09-26 10:39:58 --> File loaded: application/views/pages/container/inbound_outbound.php
+DEBUG - 2016-09-26 10:39:58 --> File loaded: application/views/templates/footer.php
+DEBUG - 2016-09-26 10:39:58 --> Final output sent to browser
+DEBUG - 2016-09-26 10:39:58 --> Total execution time: 0.7158
+DEBUG - 2016-09-26 10:40:00 --> Config Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:40:00 --> URI Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Router Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Output Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Security Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Input Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:40:00 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:40:00 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:40:00 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:40:00 --> CSRF token verified
+DEBUG - 2016-09-26 10:40:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:40:00 --> Language Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:40:00 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:40:00 --> Helper loaded: my_options_helper
+DEBUG - 2016-09-26 10:40:00 --> Helper loaded: cookie_helper
+DEBUG - 2016-09-26 10:40:00 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Session Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:40:00 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> >>> Session update
+DEBUG - 2016-09-26 10:40:00 --> Session routines successfully run
+DEBUG - 2016-09-26 10:40:00 --> Table Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Model Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:40:00 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:40:00 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:40:00 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:40:00 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:40:00 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:40:00 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:40:00 --> Final output sent to browser
+DEBUG - 2016-09-26 10:40:00 --> Total execution time: 0.4607
+DEBUG - 2016-09-26 10:40:09 --> Config Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:40:09 --> URI Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Router Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Output Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Security Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Input Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:40:09 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:40:09 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:40:09 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:40:09 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:40:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:40:09 --> Language Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:40:09 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:40:09 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Session Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:40:09 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> >>> Session update
+DEBUG - 2016-09-26 10:40:09 --> Session routines successfully run
+DEBUG - 2016-09-26 10:40:09 --> Model Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:40:09 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:40:09 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:40:09 --> Table Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:40:09 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:40:09 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:40:09 --> Helper loaded: file_helper
+ERROR - 2016-09-26 10:40:10 --> Severity: Notice  --> Undefined index: term C:\xampp\htdocs\ibis_qa\application\controllers\container_receiving.php 245
+ERROR - 2016-09-26 10:40:10 --> Severity: Notice  --> Undefined index: port C:\xampp\htdocs\ibis_qa\application\controllers\container_receiving.php 246
+ERROR - 2016-09-26 10:40:10 --> >>>>>1>>>
+ERROR - 2016-09-26 10:40:10 --> >>>>>2>>>
+ERROR - 2016-09-26 10:40:10 --> >>>>>3>>>
+ERROR - 2016-09-26 10:40:10 --> >>>>>5>>>
+DEBUG - 2016-09-26 10:40:25 --> Table class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:40:25 --> File loaded: application/views/pages/container/search_vessel_modal.php
+DEBUG - 2016-09-26 10:40:25 --> Final output sent to browser
+DEBUG - 2016-09-26 10:40:25 --> Total execution time: 16.3904
+DEBUG - 2016-09-26 10:41:02 --> Config Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:41:02 --> URI Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Router Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Output Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Security Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Input Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:41:02 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:41:02 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:41:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:41:02 --> Language Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:41:02 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:41:02 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Session Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:41:02 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> >>> Session update
+DEBUG - 2016-09-26 10:41:02 --> Session routines successfully run
+DEBUG - 2016-09-26 10:41:02 --> Model Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:41:02 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:41:02 --> Table Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:41:02 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:41:02 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:41:02 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:41:02 --> Final output sent to browser
+DEBUG - 2016-09-26 10:41:02 --> Total execution time: 0.6065
+DEBUG - 2016-09-26 10:42:04 --> Config Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:42:04 --> URI Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Router Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Output Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Security Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Input Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:42:04 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:42:04 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:42:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:42:04 --> Language Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:42:04 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:42:04 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Session Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:42:04 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> >>> Session update
+DEBUG - 2016-09-26 10:42:04 --> Session routines successfully run
+DEBUG - 2016-09-26 10:42:04 --> Model Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:42:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:42:04 --> Table Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:42:04 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:42:04 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:42:04 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:42:04 --> Final output sent to browser
+DEBUG - 2016-09-26 10:42:04 --> Total execution time: 0.6372
+DEBUG - 2016-09-26 10:43:06 --> Config Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:43:06 --> URI Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Router Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Output Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Security Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Input Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:43:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:43:06 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:43:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:43:06 --> Language Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:43:06 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:43:06 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Session Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:43:06 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> >>> Session update
+DEBUG - 2016-09-26 10:43:06 --> Session routines successfully run
+DEBUG - 2016-09-26 10:43:06 --> Model Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:43:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:43:06 --> Table Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:43:06 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:43:06 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:43:06 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:43:06 --> Final output sent to browser
+DEBUG - 2016-09-26 10:43:06 --> Total execution time: 0.5660
+DEBUG - 2016-09-26 10:44:08 --> Config Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:44:08 --> URI Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Router Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Output Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Security Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Input Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:44:08 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:44:08 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:44:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:44:08 --> Language Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:44:08 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:44:08 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Session Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:44:08 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> >>> Session update
+DEBUG - 2016-09-26 10:44:08 --> Session routines successfully run
+DEBUG - 2016-09-26 10:44:08 --> Model Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:44:08 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:44:08 --> Table Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:44:08 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:44:08 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:44:08 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:44:08 --> Final output sent to browser
+DEBUG - 2016-09-26 10:44:08 --> Total execution time: 0.7089
+DEBUG - 2016-09-26 10:45:10 --> Config Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:45:10 --> URI Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Router Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Output Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Security Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Input Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:45:10 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:45:10 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:45:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:45:10 --> Language Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:45:10 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:45:10 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Session Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:45:10 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> >>> Session update
+DEBUG - 2016-09-26 10:45:10 --> Session routines successfully run
+DEBUG - 2016-09-26 10:45:10 --> Model Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:45:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:45:10 --> Table Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:45:10 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:45:10 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:45:10 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:45:10 --> Final output sent to browser
+DEBUG - 2016-09-26 10:45:10 --> Total execution time: 0.7566
+DEBUG - 2016-09-26 10:46:12 --> Config Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:46:12 --> URI Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Router Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Output Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Security Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Input Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:46:12 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:46:12 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:46:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:46:12 --> Language Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:46:12 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:46:12 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Session Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:46:12 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> >>> Session update
+DEBUG - 2016-09-26 10:46:12 --> Session routines successfully run
+DEBUG - 2016-09-26 10:46:12 --> Model Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:46:12 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:46:12 --> Table Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:46:12 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:46:12 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:46:12 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:46:14 --> Final output sent to browser
+DEBUG - 2016-09-26 10:46:14 --> Total execution time: 2.5084
+DEBUG - 2016-09-26 10:47:14 --> Config Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:47:14 --> URI Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Router Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Output Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Security Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Input Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:47:14 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:47:14 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:47:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:47:14 --> Language Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:47:14 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:47:14 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Session Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:47:14 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> >>> Session update
+DEBUG - 2016-09-26 10:47:14 --> Session routines successfully run
+DEBUG - 2016-09-26 10:47:14 --> Model Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:47:14 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:47:14 --> Table Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:47:14 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:47:14 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:47:14 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:47:14 --> Final output sent to browser
+DEBUG - 2016-09-26 10:47:14 --> Total execution time: 0.6773
+DEBUG - 2016-09-26 10:48:16 --> Config Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:48:16 --> URI Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Router Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Output Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Security Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Input Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:48:16 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:48:16 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:48:16 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:48:16 --> Language Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:48:16 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:48:16 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Session Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:48:16 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> >>> Session update
+DEBUG - 2016-09-26 10:48:16 --> Session routines successfully run
+DEBUG - 2016-09-26 10:48:16 --> Model Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:48:16 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:48:16 --> Table Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:48:16 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:48:16 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:48:16 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:48:16 --> Final output sent to browser
+DEBUG - 2016-09-26 10:48:16 --> Total execution time: 0.6227
+DEBUG - 2016-09-26 10:49:18 --> Config Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:49:18 --> URI Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Router Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Output Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Security Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Input Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:49:18 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:49:18 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:49:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:49:18 --> Language Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:49:18 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:49:18 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Session Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:49:18 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> >>> Session update
+DEBUG - 2016-09-26 10:49:18 --> Session routines successfully run
+DEBUG - 2016-09-26 10:49:18 --> Model Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:49:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:49:18 --> Table Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:49:18 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:49:18 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:49:18 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:49:18 --> Final output sent to browser
+DEBUG - 2016-09-26 10:49:18 --> Total execution time: 0.6419
+DEBUG - 2016-09-26 10:50:20 --> Config Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:50:20 --> URI Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Router Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Output Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Security Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Input Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:50:20 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:50:20 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:50:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:50:20 --> Language Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:50:20 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:50:20 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Session Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:50:20 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> >>> Session update
+DEBUG - 2016-09-26 10:50:20 --> Session routines successfully run
+DEBUG - 2016-09-26 10:50:20 --> Model Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:50:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:50:20 --> Table Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:50:20 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:50:20 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:50:20 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:50:21 --> Final output sent to browser
+DEBUG - 2016-09-26 10:50:21 --> Total execution time: 1.3419
+DEBUG - 2016-09-26 10:51:22 --> Config Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:51:22 --> URI Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Router Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Output Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Security Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Input Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:51:22 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:51:22 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:51:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:51:22 --> Language Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:51:22 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:51:22 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Session Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:51:22 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> >>> Session update
+DEBUG - 2016-09-26 10:51:22 --> Session routines successfully run
+DEBUG - 2016-09-26 10:51:22 --> Model Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:51:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:51:22 --> Table Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:51:22 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:51:22 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:51:22 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:51:22 --> Final output sent to browser
+DEBUG - 2016-09-26 10:51:22 --> Total execution time: 0.6617
+DEBUG - 2016-09-26 10:52:24 --> Config Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:52:24 --> URI Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Router Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Output Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Security Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Input Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:52:24 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:52:24 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:52:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:52:24 --> Language Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:52:24 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:52:24 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Session Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:52:24 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> >>> Session update
+DEBUG - 2016-09-26 10:52:24 --> Session routines successfully run
+DEBUG - 2016-09-26 10:52:24 --> Model Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:52:24 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:52:24 --> Table Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:52:24 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:52:24 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:52:24 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:52:24 --> Final output sent to browser
+DEBUG - 2016-09-26 10:52:24 --> Total execution time: 0.6373
+DEBUG - 2016-09-26 10:53:26 --> Config Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:53:26 --> URI Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Router Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Output Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Security Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Input Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:53:26 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:53:26 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:53:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:53:26 --> Language Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:53:26 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:53:26 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Session Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:53:26 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> >>> Session update
+DEBUG - 2016-09-26 10:53:26 --> Session routines successfully run
+DEBUG - 2016-09-26 10:53:26 --> Model Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:53:26 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:53:26 --> Table Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:53:26 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:53:26 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:53:26 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:54:06 --> Config Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:54:06 --> URI Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Router Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Output Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Security Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Input Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:06 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:06 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:54:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:54:06 --> Language Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:54:06 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:54:06 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Session Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:54:06 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> >>> Session update
+DEBUG - 2016-09-26 10:54:06 --> Session routines successfully run
+DEBUG - 2016-09-26 10:54:06 --> Model Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:06 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:06 --> Table Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:54:06 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:54:06 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:54:06 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:54:07 --> Final output sent to browser
+DEBUG - 2016-09-26 10:54:07 --> Total execution time: 41.2564
+DEBUG - 2016-09-26 10:54:07 --> File loaded: application/views/templates/header.php
+DEBUG - 2016-09-26 10:54:07 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2016-09-26 10:54:07 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2016-09-26 10:54:07 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2016-09-26 10:54:07 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2016-09-26 10:54:07 --> File loaded: application/views/pages/container/inbound_outbound.php
+DEBUG - 2016-09-26 10:54:07 --> File loaded: application/views/templates/footer.php
+DEBUG - 2016-09-26 10:54:07 --> Final output sent to browser
+DEBUG - 2016-09-26 10:54:07 --> Total execution time: 1.3489
+DEBUG - 2016-09-26 10:54:10 --> Config Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:54:10 --> URI Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Router Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Output Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Security Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Input Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:10 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:10 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:10 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:54:10 --> CSRF token verified
+DEBUG - 2016-09-26 10:54:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:54:10 --> Language Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:54:10 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:54:10 --> Helper loaded: my_options_helper
+DEBUG - 2016-09-26 10:54:10 --> Helper loaded: cookie_helper
+DEBUG - 2016-09-26 10:54:10 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Session Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:54:10 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> >>> Session update
+DEBUG - 2016-09-26 10:54:10 --> Session routines successfully run
+DEBUG - 2016-09-26 10:54:10 --> Table Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Model Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:10 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:54:10 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:54:10 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:54:10 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:54:10 --> Final output sent to browser
+DEBUG - 2016-09-26 10:54:10 --> Total execution time: 0.6868
+DEBUG - 2016-09-26 10:54:22 --> Config Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:54:22 --> URI Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Router Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Output Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Security Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Input Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:22 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:22 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:54:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:54:22 --> Language Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:54:22 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:54:22 --> Session Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:54:22 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> >>> Session update
+DEBUG - 2016-09-26 10:54:22 --> Session routines successfully run
+DEBUG - 2016-09-26 10:54:22 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:54:22 --> Model Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:54:22 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:22 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:54:22 --> >>> sess_destroy
+DEBUG - 2016-09-26 10:54:23 --> < ganda logout
+DEBUG - 2016-09-26 10:54:23 --> >>> kick_account
+DEBUG - 2016-09-26 10:54:23 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:54:23 --> >>> kicked ganda
+DEBUG - 2016-09-26 10:54:23 --> < ganda unlocked!
+DEBUG - 2016-09-26 10:54:23 --> Config Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:54:23 --> URI Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Router Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Output Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Security Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Input Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:23 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:23 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:54:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:54:23 --> Language Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:54:23 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:54:23 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Session Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:54:23 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> A session cookie was not found.
+DEBUG - 2016-09-26 10:54:23 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-26 10:54:23 --> Session routines successfully run
+DEBUG - 2016-09-26 10:54:23 --> Model Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:23 --> Table Class Initialized
+DEBUG - 2016-09-26 10:54:23 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:54:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:23 --> >>> ---mainpage---
+DEBUG - 2016-09-26 10:54:23 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:54:24 --> Config Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:54:24 --> URI Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Router Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Output Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Security Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Input Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:24 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:54:24 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:54:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:54:24 --> Language Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:54:24 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:54:24 --> Session Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:54:24 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> >>> Session update
+DEBUG - 2016-09-26 10:54:24 --> Session routines successfully run
+DEBUG - 2016-09-26 10:54:24 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:54:24 --> Model Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:54:24 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:54:24 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:54:24 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-09-26 10:54:24 --> a324bc4665b51e6f6023a6322ec3e424++main_index++ 
+ERROR - 2016-09-26 10:54:24 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-09-26 10:54:25 --> >>> saveCaptcha
+DEBUG - 2016-09-26 10:54:25 --> Helper loaded: file_helper
+ERROR - 2016-09-26 10:54:25 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-09-26 10:54:25 --> >>> isUserLogin: a324bc4665b51e6f6023a6322ec3e424
+DEBUG - 2016-09-26 10:54:25 --> >>> row: 0
+DEBUG - 2016-09-26 10:54:25 --> >>> Go to Homepage
+DEBUG - 2016-09-26 10:54:25 --> File loaded: application/views/homepage/index.php
+DEBUG - 2016-09-26 10:54:25 --> Final output sent to browser
+DEBUG - 2016-09-26 10:54:25 --> Total execution time: 0.8965
+DEBUG - 2016-09-26 10:57:57 --> Config Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:57:57 --> URI Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Router Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Output Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Security Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Input Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:57 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:57 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:57:57 --> CSRF token verified
+DEBUG - 2016-09-26 10:57:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:57:57 --> Language Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:57:57 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:57:57 --> Session Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:57:57 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> >>> Session update
+DEBUG - 2016-09-26 10:57:57 --> Session routines successfully run
+DEBUG - 2016-09-26 10:57:57 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:57:57 --> Model Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:57:57 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:57:57 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:57:57 --> ----------------------------main.php/do_log------------------------------------
+DEBUG - 2016-09-26 10:57:57 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2016-09-26 10:57:57 --> >>> isMatchCaptcha
+DEBUG - 2016-09-26 10:57:57 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:57:57 --> << check_user: endang
+DEBUG - 2016-09-26 10:57:57 --> >>> isUserActive
+DEBUG - 2016-09-26 10:57:57 --> << endang has been actived, will destroy!
+DEBUG - 2016-09-26 10:57:57 --> >>> kick_account
+DEBUG - 2016-09-26 10:57:58 --> >>> kicked endang
+DEBUG - 2016-09-26 10:57:58 --> << previos session user endang destroyed!
+DEBUG - 2016-09-26 10:57:58 --> >>> LOCK_ACCOUNT
+DEBUG - 2016-09-26 10:57:58 --> < User endang is active!
+DEBUG - 2016-09-26 10:57:58 --> >>> delete_count_account
+INFO  - 2016-09-26 10:57:58 --> < Succes login!
+ERROR - 2016-09-26 10:57:58 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ibis_qa\application\controllers\main.php:166) C:\xampp\htdocs\ibis_qa\system\core\Output.php 392
+ERROR - 2016-09-26 10:57:58 --> Severity: Warning  --> Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\ibis_qa\application\controllers\main.php:166) C:\xampp\htdocs\ibis_qa\system\core\Output.php 392
+DEBUG - 2016-09-26 10:57:58 --> Final output sent to browser
+DEBUG - 2016-09-26 10:57:58 --> Total execution time: 0.8202
+DEBUG - 2016-09-26 10:57:58 --> Config Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:57:58 --> URI Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Router Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Output Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Security Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Input Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:58 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:58 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:57:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:57:58 --> Language Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-26 10:57:58 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:57:58 --> Session Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:57:58 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> >>> Session update
+DEBUG - 2016-09-26 10:57:58 --> Session routines successfully run
+DEBUG - 2016-09-26 10:57:58 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:57:58 --> Model Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:57:58 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:57:58 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-26 10:57:58 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-09-26 10:57:58 --> a324bc4665b51e6f6023a6322ec3e424++main_index++ Endang Fiansyah
+ERROR - 2016-09-26 10:57:58 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-09-26 10:57:58 --> >>> saveCaptcha
+DEBUG - 2016-09-26 10:57:58 --> Helper loaded: file_helper
+ERROR - 2016-09-26 10:57:58 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-09-26 10:57:58 --> >>> isUserLogin: a324bc4665b51e6f6023a6322ec3e424
+DEBUG - 2016-09-26 10:57:58 --> >>> row: 1
+DEBUG - 2016-09-26 10:57:58 --> >>> Go to Mainpage
+DEBUG - 2016-09-26 10:57:59 --> Config Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:57:59 --> URI Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Router Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Output Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Security Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Input Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:59 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:57:59 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:57:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:57:59 --> Language Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:57:59 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:57:59 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Session Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:57:59 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> >>> Session update
+DEBUG - 2016-09-26 10:57:59 --> Session routines successfully run
+DEBUG - 2016-09-26 10:57:59 --> Model Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:57:59 --> Table Class Initialized
+DEBUG - 2016-09-26 10:57:59 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:57:59 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:57:59 --> >>> 1---mainpage---
+DEBUG - 2016-09-26 10:57:59 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:57:59 --> >>> 07
+DEBUG - 2016-09-26 10:57:59 --> File loaded: application/views/templates/header.php
+DEBUG - 2016-09-26 10:57:59 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2016-09-26 10:57:59 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2016-09-26 10:57:59 --> ----------------------------main.php------------------------------------
+DEBUG - 2016-09-26 10:57:59 --> File loaded: application/views/pages/main.php
+DEBUG - 2016-09-26 10:57:59 --> File loaded: application/views/templates/footer.php
+DEBUG - 2016-09-26 10:57:59 --> Final output sent to browser
+DEBUG - 2016-09-26 10:57:59 --> Total execution time: 0.6768
+DEBUG - 2016-09-26 10:58:00 --> Config Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:58:00 --> URI Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> Router Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> Output Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> Security Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> Input Class Initialized
+DEBUG - 2016-09-26 10:58:00 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:00 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:00 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:00 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:58:01 --> CSRF token verified
+DEBUG - 2016-09-26 10:58:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:58:01 --> Language Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:58:01 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:58:01 --> Helper loaded: my_options_helper
+DEBUG - 2016-09-26 10:58:01 --> Helper loaded: cookie_helper
+DEBUG - 2016-09-26 10:58:01 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Session Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:58:01 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> >>> Session update
+DEBUG - 2016-09-26 10:58:01 --> Session routines successfully run
+DEBUG - 2016-09-26 10:58:01 --> Table Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Model Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:01 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:01 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:58:01 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:58:01 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:58:01 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:58:01 --> Final output sent to browser
+DEBUG - 2016-09-26 10:58:01 --> Total execution time: 0.5625
+DEBUG - 2016-09-26 10:58:04 --> Config Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:58:04 --> URI Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Router Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Output Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Security Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Input Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:04 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:04 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:58:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:58:04 --> Language Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:58:04 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:58:04 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Session Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:58:04 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> >>> Session update
+DEBUG - 2016-09-26 10:58:04 --> Session routines successfully run
+DEBUG - 2016-09-26 10:58:04 --> Model Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:04 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:04 --> Table Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:58:04 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:58:04 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:58:04 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:58:05 --> File loaded: application/views/templates/header.php
+DEBUG - 2016-09-26 10:58:05 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2016-09-26 10:58:05 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2016-09-26 10:58:05 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2016-09-26 10:58:05 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2016-09-26 10:58:05 --> File loaded: application/views/pages/container/inbound_outbound.php
+DEBUG - 2016-09-26 10:58:05 --> File loaded: application/views/templates/footer.php
+DEBUG - 2016-09-26 10:58:05 --> Final output sent to browser
+DEBUG - 2016-09-26 10:58:05 --> Total execution time: 0.9116
+DEBUG - 2016-09-26 10:58:07 --> Config Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:58:07 --> URI Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Router Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Output Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Security Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Input Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:07 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:07 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:07 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:58:07 --> CSRF token verified
+DEBUG - 2016-09-26 10:58:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:58:07 --> Language Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:58:07 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:58:07 --> Helper loaded: my_options_helper
+DEBUG - 2016-09-26 10:58:07 --> Helper loaded: cookie_helper
+DEBUG - 2016-09-26 10:58:07 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Session Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:58:07 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> >>> Session update
+DEBUG - 2016-09-26 10:58:07 --> Session routines successfully run
+DEBUG - 2016-09-26 10:58:07 --> Table Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Model Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:07 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:07 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:07 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:58:07 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:58:07 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:58:07 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:58:07 --> Final output sent to browser
+DEBUG - 2016-09-26 10:58:07 --> Total execution time: 0.5780
+DEBUG - 2016-09-26 10:58:48 --> Config Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:58:48 --> URI Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Router Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Output Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Security Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Input Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:48 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:48 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:58:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:58:48 --> Language Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:58:48 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:58:48 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Upload Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Session Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:58:48 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> >>> Session update
+DEBUG - 2016-09-26 10:58:48 --> Session routines successfully run
+DEBUG - 2016-09-26 10:58:48 --> Model Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:48 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:48 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:48 --> Table Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:58:48 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:58:48 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:58:48 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:58:48 --> File loaded: application/views/templates/header.php
+DEBUG - 2016-09-26 10:58:48 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2016-09-26 10:58:49 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2016-09-26 10:58:49 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2016-09-26 10:58:49 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2016-09-26 10:58:49 --> File loaded: application/views/pages/container/inbound_outbound.php
+DEBUG - 2016-09-26 10:58:49 --> File loaded: application/views/templates/footer.php
+DEBUG - 2016-09-26 10:58:49 --> Final output sent to browser
+DEBUG - 2016-09-26 10:58:49 --> Total execution time: 0.7266
+DEBUG - 2016-09-26 10:58:50 --> Config Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Hooks Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Utf8 Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> UTF-8 Support Enabled
+DEBUG - 2016-09-26 10:58:50 --> URI Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Router Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Output Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Security Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Input Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:50 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:50 --> XSS Filtering completed
+DEBUG - 2016-09-26 10:58:50 --> CRSF cookie Set
+DEBUG - 2016-09-26 10:58:50 --> CSRF token verified
+DEBUG - 2016-09-26 10:58:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-26 10:58:50 --> Language Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Loader Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Controller Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Helper loaded: url_helper
+DEBUG - 2016-09-26 10:58:50 --> Helper loaded: form_helper
+DEBUG - 2016-09-26 10:58:50 --> Helper loaded: my_options_helper
+DEBUG - 2016-09-26 10:58:50 --> Helper loaded: cookie_helper
+DEBUG - 2016-09-26 10:58:50 --> Form Validation Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Session Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> Helper loaded: string_helper
+DEBUG - 2016-09-26 10:58:50 --> Encrypt Class Initialized
+DEBUG - 2016-09-26 10:58:50 --> >>> Session update
+DEBUG - 2016-09-26 10:58:51 --> Session routines successfully run
+DEBUG - 2016-09-26 10:58:51 --> Table Class Initialized
+DEBUG - 2016-09-26 10:58:51 --> Model Class Initialized
+DEBUG - 2016-09-26 10:58:51 --> Database Driver Class Initialized
+DEBUG - 2016-09-26 10:58:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-26 10:58:51 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2016-09-26 10:58:51 --> Breadcrumbs Class Initialized
+DEBUG - 2016-09-26 10:58:51 --> Helper loaded: my_language_helper
+DEBUG - 2016-09-26 10:58:51 --> Helper loaded: file_helper
+DEBUG - 2016-09-26 10:58:51 --> Final output sent to browser
+DEBUG - 2016-09-26 10:58:51 --> Total execution time: 0.5566

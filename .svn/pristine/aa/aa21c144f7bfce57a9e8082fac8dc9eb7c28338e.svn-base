@@ -1,0 +1,1818 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+DEBUG - 2019-01-14 04:17:20 --> Config Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Hooks Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 04:17:20 --> URI Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Router Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Output Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Security Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Input Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> CRSF cookie Set
+DEBUG - 2019-01-14 04:17:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 04:17:20 --> Language Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Loader Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Controller Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 04:17:20 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 04:17:20 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 04:17:20 --> Upload Class Initialized
+DEBUG - 2019-01-14 04:17:21 --> Model Class Initialized
+DEBUG - 2019-01-14 04:17:21 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 04:17:21 --> Session Class Initialized
+DEBUG - 2019-01-14 04:17:21 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 04:17:21 --> A session cookie was not found.
+DEBUG - 2019-01-14 04:17:21 --> >>> session doesn't exist, create a new one
+DEBUG - 2019-01-14 04:17:21 --> Session routines successfully run
+DEBUG - 2019-01-14 04:17:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 04:17:21 --> Table Class Initialized
+DEBUG - 2019-01-14 04:17:21 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 04:17:21 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 04:17:21 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 04:17:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 04:17:21 --> Database Driver Class Initialized
+ERROR - 2019-01-14 04:17:21 --> >>>>>>>>>>>>>>>>>>>>> masuk new main approval :
+DEBUG - 2019-01-14 04:17:21 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 04:17:21 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 04:17:21 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 04:17:22 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 04:17:22 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2019-01-14 04:17:22 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2019-01-14 04:17:22 --> File loaded: application/views/pages/container/rbm.php
+DEBUG - 2019-01-14 04:17:22 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 04:17:22 --> Final output sent to browser
+DEBUG - 2019-01-14 04:17:22 --> Total execution time: 2.3365
+DEBUG - 2019-01-14 05:37:33 --> Config Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:37:33 --> URI Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Router Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> No URI present. Default controller set.
+DEBUG - 2019-01-14 05:37:33 --> Output Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Security Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Input Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:37:33 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:37:33 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:37:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:37:33 --> Language Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2019-01-14 05:37:33 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:37:33 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:37:33 --> Model Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Session Class Initialized
+DEBUG - 2019-01-14 05:37:33 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:37:33 --> >>> Session update
+DEBUG - 2019-01-14 05:37:33 --> Session routines successfully run
+DEBUG - 2019-01-14 05:37:33 --> Helper loaded: captcha_helper
+DEBUG - 2019-01-14 05:37:33 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2019-01-14 05:37:33 --> aeb3efb83f1d712b29b0852c9660692d++main_index++ 
+ERROR - 2019-01-14 05:37:34 --> Severity: Warning  --> unlink(D:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied D:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2019-01-14 05:37:34 --> >>> saveCaptcha
+DEBUG - 2019-01-14 05:37:34 --> >>> isUserLogin: aeb3efb83f1d712b29b0852c9660692d
+DEBUG - 2019-01-14 05:37:34 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:37:34 --> >>> row: 0
+DEBUG - 2019-01-14 05:37:34 --> >>> Go to Homepage
+DEBUG - 2019-01-14 05:37:34 --> File loaded: application/views/homepage/index.php
+DEBUG - 2019-01-14 05:37:34 --> Final output sent to browser
+DEBUG - 2019-01-14 05:37:34 --> Total execution time: 1.0664
+DEBUG - 2019-01-14 05:39:45 --> Config Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:39:45 --> URI Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Router Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Output Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Security Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Input Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:45 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:39:45 --> CSRF token verified
+DEBUG - 2019-01-14 05:39:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:39:45 --> Language Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2019-01-14 05:39:45 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:39:45 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:39:45 --> Model Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Session Class Initialized
+DEBUG - 2019-01-14 05:39:45 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:39:45 --> >>> Session update
+DEBUG - 2019-01-14 05:39:45 --> Session routines successfully run
+DEBUG - 2019-01-14 05:39:45 --> Helper loaded: captcha_helper
+DEBUG - 2019-01-14 05:39:45 --> ----------------------------main.php/do_log------------------------------------
+DEBUG - 2019-01-14 05:39:45 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2019-01-14 05:39:45 --> >>> isMatchCaptcha
+DEBUG - 2019-01-14 05:39:45 --> << check_user: dewiwening
+DEBUG - 2019-01-14 05:39:45 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:39:46 --> >>> isUserActive
+DEBUG - 2019-01-14 05:39:46 --> << dewiwening has been actived, will destroy!
+DEBUG - 2019-01-14 05:39:46 --> >>> kick_account
+DEBUG - 2019-01-14 05:39:46 --> >>> kicked dewiwening
+DEBUG - 2019-01-14 05:39:46 --> << previos session user dewiwening destroyed!
+DEBUG - 2019-01-14 05:39:46 --> >>> LOCK_ACCOUNT
+DEBUG - 2019-01-14 05:39:46 --> < User dewiwening is active!
+DEBUG - 2019-01-14 05:39:46 --> >>> delete_count_account
+INFO  - 2019-01-14 05:39:46 --> < Succes login!
+DEBUG - 2019-01-14 05:39:46 --> Final output sent to browser
+DEBUG - 2019-01-14 05:39:46 --> Total execution time: 1.1546
+DEBUG - 2019-01-14 05:39:47 --> Config Class Initialized
+DEBUG - 2019-01-14 05:39:47 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:39:47 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:39:47 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:39:47 --> URI Class Initialized
+DEBUG - 2019-01-14 05:39:47 --> Router Class Initialized
+DEBUG - 2019-01-14 05:39:47 --> No URI present. Default controller set.
+DEBUG - 2019-01-14 05:39:47 --> Output Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Security Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Input Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:48 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:39:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:39:48 --> Language Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2019-01-14 05:39:48 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:39:48 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:39:48 --> Model Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Session Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:39:48 --> >>> Session update
+DEBUG - 2019-01-14 05:39:48 --> Session routines successfully run
+DEBUG - 2019-01-14 05:39:48 --> Helper loaded: captcha_helper
+DEBUG - 2019-01-14 05:39:48 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2019-01-14 05:39:48 --> aeb3efb83f1d712b29b0852c9660692d++main_index++ wening
+ERROR - 2019-01-14 05:39:48 --> Severity: Warning  --> unlink(D:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied D:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2019-01-14 05:39:48 --> >>> saveCaptcha
+DEBUG - 2019-01-14 05:39:48 --> >>> isUserLogin: aeb3efb83f1d712b29b0852c9660692d
+DEBUG - 2019-01-14 05:39:48 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:39:48 --> >>> row: 1
+DEBUG - 2019-01-14 05:39:48 --> >>> Go to Mainpage
+DEBUG - 2019-01-14 05:39:48 --> Config Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:39:48 --> URI Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Router Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Output Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Security Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> Input Class Initialized
+DEBUG - 2019-01-14 05:39:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:48 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:39:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:39:48 --> Language Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:39:49 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:39:49 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Session Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:39:49 --> >>> Session update
+DEBUG - 2019-01-14 05:39:49 --> Session routines successfully run
+DEBUG - 2019-01-14 05:39:49 --> Model Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:49 --> Table Class Initialized
+DEBUG - 2019-01-14 05:39:49 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 05:39:49 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:49 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:39:49 --> >>> 1---mainpage---
+DEBUG - 2019-01-14 05:39:49 --> >>> 07
+DEBUG - 2019-01-14 05:39:50 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 05:39:50 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 05:39:50 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 05:39:50 --> ----------------------------main.php------------------------------------
+DEBUG - 2019-01-14 05:39:50 --> File loaded: application/views/pages/main.php
+DEBUG - 2019-01-14 05:39:50 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 05:39:50 --> Final output sent to browser
+DEBUG - 2019-01-14 05:39:50 --> Total execution time: 1.4826
+DEBUG - 2019-01-14 05:39:50 --> Config Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:39:50 --> URI Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Router Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Output Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Security Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Input Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:50 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:50 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:50 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:50 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:39:50 --> CSRF token verified
+DEBUG - 2019-01-14 05:39:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:39:50 --> Language Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:39:50 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:39:50 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 05:39:50 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 05:39:50 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Table Class Initialized
+DEBUG - 2019-01-14 05:39:50 --> Model Class Initialized
+DEBUG - 2019-01-14 05:39:51 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:51 --> Session Class Initialized
+DEBUG - 2019-01-14 05:39:51 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:39:51 --> >>> Session update
+DEBUG - 2019-01-14 05:39:51 --> Session routines successfully run
+DEBUG - 2019-01-14 05:39:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:51 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 05:39:51 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 05:39:51 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 05:39:51 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:51 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:51 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:39:51 --> Final output sent to browser
+DEBUG - 2019-01-14 05:39:51 --> Total execution time: 0.8602
+DEBUG - 2019-01-14 05:39:56 --> Config Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:39:56 --> URI Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Router Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> No URI present. Default controller set.
+DEBUG - 2019-01-14 05:39:56 --> Output Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Security Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Input Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:56 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:56 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:56 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:39:56 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:39:56 --> Language Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2019-01-14 05:39:56 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:39:56 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:39:56 --> Model Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Session Class Initialized
+DEBUG - 2019-01-14 05:39:56 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:39:56 --> >>> Session update
+DEBUG - 2019-01-14 05:39:56 --> Session routines successfully run
+DEBUG - 2019-01-14 05:39:56 --> Helper loaded: captcha_helper
+DEBUG - 2019-01-14 05:39:56 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2019-01-14 05:39:56 --> aeb3efb83f1d712b29b0852c9660692d++main_index++ wening
+ERROR - 2019-01-14 05:39:57 --> Severity: Warning  --> unlink(D:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied D:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2019-01-14 05:39:57 --> >>> saveCaptcha
+DEBUG - 2019-01-14 05:39:57 --> >>> isUserLogin: aeb3efb83f1d712b29b0852c9660692d
+DEBUG - 2019-01-14 05:39:57 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:39:57 --> >>> row: 1
+DEBUG - 2019-01-14 05:39:57 --> >>> Go to Mainpage
+DEBUG - 2019-01-14 05:39:57 --> Config Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:39:57 --> URI Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Router Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Output Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Security Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Input Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:57 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:57 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:57 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:39:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:39:57 --> Language Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:39:57 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:39:57 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Session Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:39:57 --> >>> Session update
+DEBUG - 2019-01-14 05:39:57 --> Session routines successfully run
+DEBUG - 2019-01-14 05:39:57 --> Model Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:57 --> Table Class Initialized
+DEBUG - 2019-01-14 05:39:57 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 05:39:57 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:57 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:39:58 --> >>> 1---mainpage---
+DEBUG - 2019-01-14 05:39:58 --> >>> 07
+DEBUG - 2019-01-14 05:39:58 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 05:39:58 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 05:39:58 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 05:39:58 --> ----------------------------main.php------------------------------------
+DEBUG - 2019-01-14 05:39:58 --> File loaded: application/views/pages/main.php
+DEBUG - 2019-01-14 05:39:58 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 05:39:58 --> Final output sent to browser
+DEBUG - 2019-01-14 05:39:58 --> Total execution time: 1.1335
+DEBUG - 2019-01-14 05:39:58 --> Config Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:39:58 --> URI Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Router Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Output Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Security Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Input Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:39:58 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:39:58 --> CSRF token verified
+DEBUG - 2019-01-14 05:39:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:39:58 --> Language Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:39:58 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:39:58 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 05:39:58 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 05:39:58 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Table Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Model Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Session Class Initialized
+DEBUG - 2019-01-14 05:39:58 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:39:58 --> >>> Session update
+DEBUG - 2019-01-14 05:39:58 --> Session routines successfully run
+DEBUG - 2019-01-14 05:39:59 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:59 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:59 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:59 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 05:39:59 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 05:39:59 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 05:39:59 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:39:59 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:39:59 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:39:59 --> Final output sent to browser
+DEBUG - 2019-01-14 05:39:59 --> Total execution time: 0.7197
+DEBUG - 2019-01-14 05:40:08 --> Config Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:40:08 --> URI Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> Router Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> Output Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> Security Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> Input Class Initialized
+DEBUG - 2019-01-14 05:40:08 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:08 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:08 --> XSS Filtering completed
+ERROR - 2019-01-14 05:40:08 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:40:18 --> Config Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:40:18 --> URI Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> Router Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> Output Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> Security Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> Input Class Initialized
+DEBUG - 2019-01-14 05:40:18 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:18 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:18 --> XSS Filtering completed
+ERROR - 2019-01-14 05:40:18 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:40:28 --> Config Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:40:28 --> URI Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> Router Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> Output Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> Security Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> Input Class Initialized
+DEBUG - 2019-01-14 05:40:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:28 --> XSS Filtering completed
+ERROR - 2019-01-14 05:40:28 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:40:38 --> Config Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:40:38 --> URI Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> Router Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> Output Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> Security Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> Input Class Initialized
+DEBUG - 2019-01-14 05:40:38 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:38 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:38 --> XSS Filtering completed
+ERROR - 2019-01-14 05:40:38 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:40:48 --> Config Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:40:48 --> URI Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> Router Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> Output Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> Security Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> Input Class Initialized
+DEBUG - 2019-01-14 05:40:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:48 --> XSS Filtering completed
+ERROR - 2019-01-14 05:40:48 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:40:58 --> Config Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:40:58 --> URI Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> Router Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> Output Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> Security Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> Input Class Initialized
+DEBUG - 2019-01-14 05:40:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:40:58 --> XSS Filtering completed
+ERROR - 2019-01-14 05:40:58 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:41:08 --> Config Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:41:08 --> URI Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> Router Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> Output Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> Security Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> Input Class Initialized
+DEBUG - 2019-01-14 05:41:08 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:08 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:08 --> XSS Filtering completed
+ERROR - 2019-01-14 05:41:08 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:41:18 --> Config Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:41:18 --> URI Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> Router Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> Output Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> Security Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> Input Class Initialized
+DEBUG - 2019-01-14 05:41:18 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:18 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:18 --> XSS Filtering completed
+ERROR - 2019-01-14 05:41:18 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:41:28 --> Config Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:41:28 --> URI Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> Router Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> Output Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> Security Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> Input Class Initialized
+DEBUG - 2019-01-14 05:41:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:28 --> XSS Filtering completed
+ERROR - 2019-01-14 05:41:28 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:41:38 --> Config Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:41:38 --> URI Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> Router Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> Output Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> Security Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> Input Class Initialized
+DEBUG - 2019-01-14 05:41:38 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:38 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:38 --> XSS Filtering completed
+ERROR - 2019-01-14 05:41:38 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:41:48 --> Config Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:41:48 --> URI Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> Router Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> Output Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> Security Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> Input Class Initialized
+DEBUG - 2019-01-14 05:41:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:48 --> XSS Filtering completed
+ERROR - 2019-01-14 05:41:48 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:41:58 --> Config Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:41:58 --> URI Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> Router Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> Output Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> Security Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> Input Class Initialized
+DEBUG - 2019-01-14 05:41:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:58 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:41:58 --> XSS Filtering completed
+ERROR - 2019-01-14 05:41:58 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:42:08 --> Config Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:42:08 --> URI Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> Router Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> Output Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> Security Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> Input Class Initialized
+DEBUG - 2019-01-14 05:42:08 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:08 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:08 --> XSS Filtering completed
+ERROR - 2019-01-14 05:42:08 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:42:18 --> Config Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:42:18 --> URI Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> Router Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> Output Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> Security Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> Input Class Initialized
+DEBUG - 2019-01-14 05:42:18 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:18 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:18 --> XSS Filtering completed
+ERROR - 2019-01-14 05:42:18 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:42:28 --> Config Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:42:28 --> URI Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> Router Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> Output Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> Security Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> Input Class Initialized
+DEBUG - 2019-01-14 05:42:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:28 --> XSS Filtering completed
+ERROR - 2019-01-14 05:42:28 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:42:38 --> Config Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:42:38 --> URI Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> Router Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> Output Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> Security Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> Input Class Initialized
+DEBUG - 2019-01-14 05:42:38 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:38 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:38 --> XSS Filtering completed
+ERROR - 2019-01-14 05:42:38 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:42:48 --> Config Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:42:48 --> URI Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> Router Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> Output Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> Security Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> Input Class Initialized
+DEBUG - 2019-01-14 05:42:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:48 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:48 --> XSS Filtering completed
+ERROR - 2019-01-14 05:42:48 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:42:59 --> Config Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:42:59 --> URI Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> Router Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> Output Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> Security Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> Input Class Initialized
+DEBUG - 2019-01-14 05:42:59 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:59 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:42:59 --> XSS Filtering completed
+ERROR - 2019-01-14 05:42:59 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:43:09 --> Config Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:43:09 --> URI Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> Router Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> Output Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> Security Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> Input Class Initialized
+DEBUG - 2019-01-14 05:43:09 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:09 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:09 --> XSS Filtering completed
+ERROR - 2019-01-14 05:43:09 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:43:19 --> Config Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:43:19 --> URI Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> Router Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> Output Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> Security Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> Input Class Initialized
+DEBUG - 2019-01-14 05:43:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:19 --> XSS Filtering completed
+ERROR - 2019-01-14 05:43:19 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:43:29 --> Config Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:43:29 --> URI Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> Router Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> Output Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> Security Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> Input Class Initialized
+DEBUG - 2019-01-14 05:43:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:29 --> XSS Filtering completed
+ERROR - 2019-01-14 05:43:29 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:43:39 --> Config Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:43:39 --> URI Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> Router Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> Output Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> Security Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> Input Class Initialized
+DEBUG - 2019-01-14 05:43:39 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:39 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:39 --> XSS Filtering completed
+ERROR - 2019-01-14 05:43:39 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:43:49 --> Config Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:43:49 --> URI Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> Router Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> Output Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> Security Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> Input Class Initialized
+DEBUG - 2019-01-14 05:43:49 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:49 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:49 --> XSS Filtering completed
+ERROR - 2019-01-14 05:43:49 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:43:59 --> Config Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:43:59 --> URI Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> Router Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> Output Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> Security Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> Input Class Initialized
+DEBUG - 2019-01-14 05:43:59 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:59 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:43:59 --> XSS Filtering completed
+ERROR - 2019-01-14 05:43:59 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:44:09 --> Config Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:44:09 --> URI Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> Router Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> Output Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> Security Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> Input Class Initialized
+DEBUG - 2019-01-14 05:44:09 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:09 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:09 --> XSS Filtering completed
+ERROR - 2019-01-14 05:44:09 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:44:19 --> Config Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:44:19 --> URI Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> Router Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> Output Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> Security Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> Input Class Initialized
+DEBUG - 2019-01-14 05:44:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:19 --> XSS Filtering completed
+ERROR - 2019-01-14 05:44:19 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:44:29 --> Config Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:44:29 --> URI Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> Router Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> Output Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> Security Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> Input Class Initialized
+DEBUG - 2019-01-14 05:44:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:29 --> XSS Filtering completed
+ERROR - 2019-01-14 05:44:29 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:44:39 --> Config Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:44:39 --> URI Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> Router Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> Output Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> Security Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> Input Class Initialized
+DEBUG - 2019-01-14 05:44:39 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:39 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:39 --> XSS Filtering completed
+ERROR - 2019-01-14 05:44:39 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:44:49 --> Config Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:44:49 --> URI Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> Router Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> Output Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> Security Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> Input Class Initialized
+DEBUG - 2019-01-14 05:44:49 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:49 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:49 --> XSS Filtering completed
+ERROR - 2019-01-14 05:44:49 --> General: <p>The action you have requested is not allowed.</p>
+DEBUG - 2019-01-14 05:44:56 --> Config Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:44:56 --> URI Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Router Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Output Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Security Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Input Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:56 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:56 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:44:56 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:44:56 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:44:56 --> Language Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:44:56 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:44:56 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Upload Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Model Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Session Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:44:56 --> >>> Session update
+DEBUG - 2019-01-14 05:44:56 --> Session routines successfully run
+DEBUG - 2019-01-14 05:44:56 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:44:56 --> Table Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 05:44:56 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 05:44:56 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 05:44:56 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:44:56 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:44:57 --> Final output sent to browser
+DEBUG - 2019-01-14 05:44:57 --> Total execution time: 0.4092
+DEBUG - 2019-01-14 05:45:09 --> Config Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:45:09 --> URI Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> Router Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> Output Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> Security Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> Input Class Initialized
+DEBUG - 2019-01-14 05:45:09 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:45:09 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:45:10 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:45:10 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:45:10 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:45:10 --> CSRF token verified
+DEBUG - 2019-01-14 05:45:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:45:10 --> Language Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:45:10 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:45:10 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 05:45:10 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 05:45:10 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Table Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Model Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Session Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:45:10 --> >>> Session update
+DEBUG - 2019-01-14 05:45:10 --> Session routines successfully run
+DEBUG - 2019-01-14 05:45:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:45:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:45:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:45:10 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 05:45:10 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 05:45:10 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:45:10 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:45:10 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 05:45:10 --> Final output sent to browser
+DEBUG - 2019-01-14 05:45:10 --> Total execution time: 0.8458
+DEBUG - 2019-01-14 05:45:15 --> Config Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Hooks Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 05:45:15 --> URI Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Router Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Output Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Security Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Input Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:45:15 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:45:15 --> XSS Filtering completed
+DEBUG - 2019-01-14 05:45:15 --> CRSF cookie Set
+DEBUG - 2019-01-14 05:45:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 05:45:15 --> Language Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Loader Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Controller Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 05:45:15 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 05:45:15 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Upload Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Model Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Session Class Initialized
+DEBUG - 2019-01-14 05:45:15 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 05:45:15 --> >>> Session update
+DEBUG - 2019-01-14 05:45:15 --> Session routines successfully run
+DEBUG - 2019-01-14 05:45:15 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:45:16 --> Table Class Initialized
+DEBUG - 2019-01-14 05:45:16 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 05:45:16 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 05:45:16 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 05:45:16 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 05:45:16 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 05:45:16 --> Final output sent to browser
+DEBUG - 2019-01-14 05:45:16 --> Total execution time: 0.4042
+DEBUG - 2019-01-14 06:59:17 --> Config Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Hooks Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 06:59:17 --> URI Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Router Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Output Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Security Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Input Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:17 --> CRSF cookie Set
+DEBUG - 2019-01-14 06:59:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 06:59:17 --> Language Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Loader Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Controller Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 06:59:17 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 06:59:17 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Upload Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Model Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Session Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 06:59:17 --> >>> Session update
+DEBUG - 2019-01-14 06:59:17 --> Session routines successfully run
+DEBUG - 2019-01-14 06:59:17 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:17 --> Table Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 06:59:17 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 06:59:17 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 06:59:17 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:17 --> Database Driver Class Initialized
+ERROR - 2019-01-14 06:59:17 --> >>>>>>>>>>>>>>>>>>>>> masuk new main approval :
+DEBUG - 2019-01-14 06:59:17 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 06:59:17 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 06:59:17 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 06:59:18 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 06:59:18 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2019-01-14 06:59:18 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2019-01-14 06:59:18 --> File loaded: application/views/pages/container/rejection_list_rbm.php
+DEBUG - 2019-01-14 06:59:18 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 06:59:18 --> Final output sent to browser
+DEBUG - 2019-01-14 06:59:18 --> Total execution time: 1.1996
+DEBUG - 2019-01-14 06:59:18 --> Config Class Initialized
+DEBUG - 2019-01-14 06:59:18 --> Hooks Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 06:59:19 --> Config Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Hooks Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> URI Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Router Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 06:59:19 --> Output Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> URI Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Security Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Router Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Input Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:19 --> Output Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:19 --> Security Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:19 --> Input Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:19 --> CRSF cookie Set
+DEBUG - 2019-01-14 06:59:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:19 --> CSRF token verified
+DEBUG - 2019-01-14 06:59:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:19 --> CRSF cookie Set
+DEBUG - 2019-01-14 06:59:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 06:59:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 06:59:19 --> Language Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Language Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Loader Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Controller Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Loader Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Controller Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 06:59:19 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Upload Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Model Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Table Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Model Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Session Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 06:59:19 --> Session Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> >>> Session update
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 06:59:19 --> Session routines successfully run
+DEBUG - 2019-01-14 06:59:19 --> >>> Session update
+DEBUG - 2019-01-14 06:59:19 --> Session routines successfully run
+DEBUG - 2019-01-14 06:59:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:19 --> Table Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:19 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 06:59:19 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 06:59:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:19 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 06:59:19 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: my_language_helper
+ERROR - 2019-01-14 06:59:19 --> 404 Page Not Found --> rbm/favicon.png
+DEBUG - 2019-01-14 06:59:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:19 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:19 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 06:59:19 --> Final output sent to browser
+DEBUG - 2019-01-14 06:59:19 --> Total execution time: 0.9856
+DEBUG - 2019-01-14 06:59:42 --> Config Class Initialized
+DEBUG - 2019-01-14 06:59:42 --> Hooks Class Initialized
+DEBUG - 2019-01-14 06:59:42 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 06:59:42 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 06:59:42 --> URI Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Router Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Output Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Security Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Input Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:43 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:43 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:43 --> CRSF cookie Set
+DEBUG - 2019-01-14 06:59:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 06:59:43 --> Language Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Loader Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Controller Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 06:59:43 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 06:59:43 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Upload Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Model Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Session Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 06:59:43 --> >>> Session update
+DEBUG - 2019-01-14 06:59:43 --> Session routines successfully run
+DEBUG - 2019-01-14 06:59:43 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:43 --> Table Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 06:59:43 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 06:59:43 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 06:59:43 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:43 --> Database Driver Class Initialized
+ERROR - 2019-01-14 06:59:43 --> >>>>>>>>>>>>>>>>>>>>> masuk new main approval :
+DEBUG - 2019-01-14 06:59:43 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 06:59:43 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 06:59:43 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 06:59:43 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 06:59:43 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2019-01-14 06:59:43 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2019-01-14 06:59:44 --> File loaded: application/views/pages/container/rejection_list_rbm.php
+DEBUG - 2019-01-14 06:59:44 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 06:59:44 --> Final output sent to browser
+DEBUG - 2019-01-14 06:59:44 --> Total execution time: 1.1798
+DEBUG - 2019-01-14 06:59:44 --> Config Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Hooks Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 06:59:44 --> URI Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Router Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Output Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Security Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Input Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:44 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:44 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:44 --> XSS Filtering completed
+DEBUG - 2019-01-14 06:59:44 --> CRSF cookie Set
+DEBUG - 2019-01-14 06:59:44 --> CSRF token verified
+DEBUG - 2019-01-14 06:59:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 06:59:44 --> Language Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Loader Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Controller Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 06:59:44 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 06:59:44 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 06:59:44 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 06:59:44 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Table Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Model Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Session Class Initialized
+DEBUG - 2019-01-14 06:59:44 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 06:59:44 --> >>> Session update
+DEBUG - 2019-01-14 06:59:44 --> Session routines successfully run
+DEBUG - 2019-01-14 06:59:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:45 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 06:59:45 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 06:59:45 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 06:59:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 06:59:45 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 06:59:45 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 06:59:45 --> Final output sent to browser
+DEBUG - 2019-01-14 06:59:45 --> Total execution time: 0.9911
+DEBUG - 2019-01-14 07:07:02 --> Config Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Hooks Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 07:07:02 --> URI Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Router Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Output Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Security Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Input Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:02 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:02 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:02 --> CRSF cookie Set
+DEBUG - 2019-01-14 07:07:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 07:07:02 --> Language Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Loader Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Controller Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 07:07:02 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 07:07:02 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Upload Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Model Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Session Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 07:07:02 --> >>> Session update
+DEBUG - 2019-01-14 07:07:02 --> Session routines successfully run
+DEBUG - 2019-01-14 07:07:02 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:02 --> Table Class Initialized
+DEBUG - 2019-01-14 07:07:02 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 07:07:02 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 07:07:03 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 07:07:03 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:03 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:03 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 07:07:03 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 07:07:03 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 07:07:03 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 07:07:03 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2019-01-14 07:07:03 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2019-01-14 07:07:04 --> File loaded: application/views/pages/container/approval_cancel.php
+DEBUG - 2019-01-14 07:07:04 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 07:07:04 --> Final output sent to browser
+DEBUG - 2019-01-14 07:07:04 --> Total execution time: 1.8322
+DEBUG - 2019-01-14 07:07:04 --> Config Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Config Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Hooks Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Hooks Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 07:07:04 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 07:07:04 --> Config Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Hooks Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> URI Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> URI Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Router Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Router Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 07:07:04 --> Output Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Output Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> URI Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Security Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Security Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Router Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Input Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Input Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> Output Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> Security Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> Input Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> CRSF cookie Set
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> CRSF cookie Set
+DEBUG - 2019-01-14 07:07:04 --> CSRF token verified
+DEBUG - 2019-01-14 07:07:04 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:04 --> CSRF token verified
+DEBUG - 2019-01-14 07:07:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 07:07:04 --> CRSF cookie Set
+DEBUG - 2019-01-14 07:07:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 07:07:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 07:07:04 --> Language Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Language Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Language Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Loader Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Controller Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Loader Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Loader Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Controller Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Controller Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 07:07:04 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Upload Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Upload Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Model Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Model Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Table Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Model Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Session Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Session Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 07:07:04 --> Session Class Initialized
+DEBUG - 2019-01-14 07:07:04 --> >>> Session update
+DEBUG - 2019-01-14 07:07:04 --> >>> Session update
+DEBUG - 2019-01-14 07:07:04 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 07:07:04 --> Session routines successfully run
+DEBUG - 2019-01-14 07:07:04 --> Session routines successfully run
+DEBUG - 2019-01-14 07:07:04 --> >>> Session update
+DEBUG - 2019-01-14 07:07:05 --> Session routines successfully run
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Table Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Table Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 07:07:05 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 07:07:05 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 07:07:05 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 07:07:05 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 07:07:05 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 07:07:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 07:07:05 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 07:07:05 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 07:07:05 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 07:07:05 --> Final output sent to browser
+DEBUG - 2019-01-14 07:07:05 --> Total execution time: 1.0311
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+ERROR - 2019-01-14 07:07:05 --> Severity: Notice  --> Undefined variable: label_span D:\xampp\htdocs\ibis_qa\application\controllers\approval_request.php 555
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+ERROR - 2019-01-14 07:07:05 --> Severity: Notice  --> Undefined variable: label_span D:\xampp\htdocs\ibis_qa\application\controllers\approval_request.php 555
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:05 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> XSS Filtering completed
+DEBUG - 2019-01-14 07:07:06 --> File loaded: application/views/pages/container/new_approval_request_grid.php
+DEBUG - 2019-01-14 07:07:06 --> Final output sent to browser
+DEBUG - 2019-01-14 07:07:06 --> Total execution time: 1.8598
+DEBUG - 2019-01-14 08:57:55 --> Config Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Hooks Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 08:57:55 --> URI Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Router Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> No URI present. Default controller set.
+DEBUG - 2019-01-14 08:57:55 --> Output Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Security Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Input Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:57:55 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:57:55 --> CRSF cookie Set
+DEBUG - 2019-01-14 08:57:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 08:57:55 --> Language Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2019-01-14 08:57:55 --> Loader Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Controller Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 08:57:55 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 08:57:55 --> Model Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Session Class Initialized
+DEBUG - 2019-01-14 08:57:55 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 08:57:55 --> >>> Is the session current?
+DEBUG - 2019-01-14 08:57:55 --> >>> sess_destroy
+DEBUG - 2019-01-14 08:57:55 --> >>> session doesn't exist, create a new one
+DEBUG - 2019-01-14 08:57:55 --> Session routines successfully run
+DEBUG - 2019-01-14 08:57:55 --> Helper loaded: captcha_helper
+DEBUG - 2019-01-14 08:57:55 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2019-01-14 08:57:55 --> ffce90c26bc4feb32ab5330838bc26ca++main_index++ 
+ERROR - 2019-01-14 08:57:55 --> Severity: Warning  --> unlink(D:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied D:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2019-01-14 08:57:55 --> >>> saveCaptcha
+DEBUG - 2019-01-14 08:57:55 --> >>> isUserLogin: ffce90c26bc4feb32ab5330838bc26ca
+DEBUG - 2019-01-14 08:57:55 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 08:57:55 --> >>> row: 0
+DEBUG - 2019-01-14 08:57:55 --> >>> Go to Homepage
+DEBUG - 2019-01-14 08:57:55 --> File loaded: application/views/homepage/index.php
+DEBUG - 2019-01-14 08:57:55 --> Final output sent to browser
+DEBUG - 2019-01-14 08:57:55 --> Total execution time: 0.8640
+DEBUG - 2019-01-14 08:58:14 --> Config Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Hooks Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 08:58:14 --> URI Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Router Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Output Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Security Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Input Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:14 --> CRSF cookie Set
+DEBUG - 2019-01-14 08:58:14 --> CSRF token verified
+DEBUG - 2019-01-14 08:58:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 08:58:14 --> Language Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2019-01-14 08:58:14 --> Loader Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Controller Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 08:58:14 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 08:58:14 --> Model Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Session Class Initialized
+DEBUG - 2019-01-14 08:58:14 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 08:58:14 --> >>> Session update
+DEBUG - 2019-01-14 08:58:14 --> Session routines successfully run
+DEBUG - 2019-01-14 08:58:14 --> Helper loaded: captcha_helper
+DEBUG - 2019-01-14 08:58:14 --> ----------------------------main.php/do_log------------------------------------
+DEBUG - 2019-01-14 08:58:14 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2019-01-14 08:58:14 --> >>> isMatchCaptcha
+DEBUG - 2019-01-14 08:58:14 --> << check_user: dewiwening
+DEBUG - 2019-01-14 08:58:14 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 08:58:14 --> >>> isUserActive
+DEBUG - 2019-01-14 08:58:14 --> << dewiwening has been actived, will destroy!
+DEBUG - 2019-01-14 08:58:15 --> >>> kick_account
+DEBUG - 2019-01-14 08:58:15 --> >>> kicked dewiwening
+DEBUG - 2019-01-14 08:58:15 --> << previos session user dewiwening destroyed!
+DEBUG - 2019-01-14 08:58:15 --> >>> LOCK_ACCOUNT
+DEBUG - 2019-01-14 08:58:15 --> < User dewiwening is active!
+DEBUG - 2019-01-14 08:58:15 --> >>> delete_count_account
+INFO  - 2019-01-14 08:58:15 --> < Succes login!
+DEBUG - 2019-01-14 08:58:15 --> Final output sent to browser
+DEBUG - 2019-01-14 08:58:15 --> Total execution time: 1.0732
+DEBUG - 2019-01-14 08:58:17 --> Config Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Hooks Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 08:58:17 --> URI Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Router Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> No URI present. Default controller set.
+DEBUG - 2019-01-14 08:58:17 --> Output Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Security Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Input Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:17 --> CRSF cookie Set
+DEBUG - 2019-01-14 08:58:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 08:58:17 --> Language Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2019-01-14 08:58:17 --> Loader Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Controller Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 08:58:17 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 08:58:17 --> Model Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Session Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 08:58:17 --> >>> Session update
+DEBUG - 2019-01-14 08:58:17 --> Session routines successfully run
+DEBUG - 2019-01-14 08:58:17 --> Helper loaded: captcha_helper
+DEBUG - 2019-01-14 08:58:17 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2019-01-14 08:58:17 --> ffce90c26bc4feb32ab5330838bc26ca++main_index++ wening
+ERROR - 2019-01-14 08:58:17 --> Severity: Warning  --> unlink(D:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied D:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2019-01-14 08:58:17 --> >>> saveCaptcha
+DEBUG - 2019-01-14 08:58:17 --> >>> isUserLogin: ffce90c26bc4feb32ab5330838bc26ca
+DEBUG - 2019-01-14 08:58:17 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 08:58:17 --> >>> row: 1
+DEBUG - 2019-01-14 08:58:17 --> >>> Go to Mainpage
+DEBUG - 2019-01-14 08:58:17 --> Config Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Hooks Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 08:58:17 --> URI Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Router Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Output Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Security Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> Input Class Initialized
+DEBUG - 2019-01-14 08:58:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:17 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:17 --> CRSF cookie Set
+DEBUG - 2019-01-14 08:58:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 08:58:18 --> Language Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Loader Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Controller Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 08:58:18 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 08:58:18 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Session Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 08:58:18 --> >>> Session update
+DEBUG - 2019-01-14 08:58:18 --> Session routines successfully run
+DEBUG - 2019-01-14 08:58:18 --> Model Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:18 --> Table Class Initialized
+DEBUG - 2019-01-14 08:58:18 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 08:58:18 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:18 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 08:58:18 --> >>> 1---mainpage---
+DEBUG - 2019-01-14 08:58:18 --> >>> 07
+DEBUG - 2019-01-14 08:58:18 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 08:58:18 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 08:58:18 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 08:58:18 --> ----------------------------main.php------------------------------------
+DEBUG - 2019-01-14 08:58:18 --> File loaded: application/views/pages/main.php
+DEBUG - 2019-01-14 08:58:18 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 08:58:19 --> Final output sent to browser
+DEBUG - 2019-01-14 08:58:19 --> Total execution time: 1.1451
+DEBUG - 2019-01-14 08:58:19 --> Config Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Hooks Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 08:58:19 --> URI Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Router Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Output Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Security Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Input Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:19 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:19 --> CRSF cookie Set
+DEBUG - 2019-01-14 08:58:19 --> CSRF token verified
+DEBUG - 2019-01-14 08:58:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 08:58:19 --> Language Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Loader Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Controller Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 08:58:19 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 08:58:19 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 08:58:19 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 08:58:19 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Table Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Model Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Session Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 08:58:19 --> >>> Session update
+DEBUG - 2019-01-14 08:58:19 --> Session routines successfully run
+DEBUG - 2019-01-14 08:58:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:19 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 08:58:19 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 08:58:19 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:19 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:58:19 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 08:58:20 --> Final output sent to browser
+DEBUG - 2019-01-14 08:58:20 --> Total execution time: 0.7525
+DEBUG - 2019-01-14 08:58:23 --> Config Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Hooks Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 08:58:23 --> URI Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Router Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Output Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Security Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Input Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:23 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:23 --> XSS Filtering completed
+DEBUG - 2019-01-14 08:58:23 --> CRSF cookie Set
+DEBUG - 2019-01-14 08:58:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 08:58:23 --> Language Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Loader Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Controller Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 08:58:23 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 08:58:23 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Upload Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Model Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Session Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 08:58:23 --> >>> Session update
+DEBUG - 2019-01-14 08:58:23 --> Session routines successfully run
+DEBUG - 2019-01-14 08:58:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:23 --> Table Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 08:58:23 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 08:58:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 08:58:23 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 08:58:23 --> Helper loaded: file_helper
+ERROR - 2019-01-14 08:58:24 --> >>>>>>>>>>>>>>>>>>>>> masuk new main approval :
+DEBUG - 2019-01-14 08:58:24 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 08:58:24 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 08:58:24 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 08:58:24 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2019-01-14 08:58:24 --> File loaded: application/views/templates/top-2-title-nosearch.php
+ERROR - 2019-01-14 08:58:24 --> General: <p>Unable to load the requested file: pages/container/apprejectlist.php</p>
+DEBUG - 2019-01-14 09:00:20 --> Config Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> Hooks Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 09:00:20 --> URI Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> Router Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> Output Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> Security Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> Input Class Initialized
+DEBUG - 2019-01-14 09:00:20 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:20 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:20 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:20 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:20 --> CRSF cookie Set
+DEBUG - 2019-01-14 09:00:20 --> CSRF token verified
+DEBUG - 2019-01-14 09:00:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 09:00:21 --> Language Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Loader Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Controller Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 09:00:21 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 09:00:21 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 09:00:21 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 09:00:21 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Table Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Model Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Session Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 09:00:21 --> >>> Session update
+DEBUG - 2019-01-14 09:00:21 --> Session routines successfully run
+DEBUG - 2019-01-14 09:00:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:21 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 09:00:21 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 09:00:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:21 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:21 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 09:00:21 --> Final output sent to browser
+DEBUG - 2019-01-14 09:00:21 --> Total execution time: 1.1498
+DEBUG - 2019-01-14 09:00:22 --> Config Class Initialized
+DEBUG - 2019-01-14 09:00:22 --> Hooks Class Initialized
+DEBUG - 2019-01-14 09:00:22 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 09:00:22 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 09:00:22 --> URI Class Initialized
+DEBUG - 2019-01-14 09:00:22 --> Router Class Initialized
+DEBUG - 2019-01-14 09:00:22 --> Output Class Initialized
+DEBUG - 2019-01-14 09:00:22 --> Security Class Initialized
+DEBUG - 2019-01-14 09:00:22 --> Input Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:23 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:23 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:23 --> CRSF cookie Set
+DEBUG - 2019-01-14 09:00:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 09:00:23 --> Language Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Loader Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Controller Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 09:00:23 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 09:00:23 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Session Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 09:00:23 --> >>> Session update
+DEBUG - 2019-01-14 09:00:23 --> Session routines successfully run
+DEBUG - 2019-01-14 09:00:23 --> Model Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:23 --> Table Class Initialized
+DEBUG - 2019-01-14 09:00:23 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 09:00:23 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:23 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 09:00:23 --> >>> 1---mainpage---
+DEBUG - 2019-01-14 09:00:23 --> >>> 07
+DEBUG - 2019-01-14 09:00:23 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 09:00:23 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 09:00:24 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 09:00:24 --> ----------------------------main.php------------------------------------
+DEBUG - 2019-01-14 09:00:24 --> File loaded: application/views/pages/main.php
+DEBUG - 2019-01-14 09:00:24 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 09:00:24 --> Final output sent to browser
+DEBUG - 2019-01-14 09:00:24 --> Total execution time: 1.2037
+DEBUG - 2019-01-14 09:00:24 --> Config Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Hooks Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 09:00:24 --> URI Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Router Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Output Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Security Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Input Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:24 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:24 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:24 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:24 --> CRSF cookie Set
+DEBUG - 2019-01-14 09:00:24 --> CSRF token verified
+DEBUG - 2019-01-14 09:00:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 09:00:24 --> Language Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Loader Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Controller Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 09:00:24 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 09:00:24 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 09:00:24 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 09:00:24 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Table Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Model Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Session Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 09:00:24 --> >>> Session update
+DEBUG - 2019-01-14 09:00:24 --> Session routines successfully run
+DEBUG - 2019-01-14 09:00:24 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:24 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:24 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:24 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 09:00:24 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 09:00:24 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:24 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:24 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 09:00:25 --> Final output sent to browser
+DEBUG - 2019-01-14 09:00:25 --> Total execution time: 0.8047
+DEBUG - 2019-01-14 09:00:28 --> Config Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Hooks Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 09:00:28 --> URI Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Router Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Output Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Security Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Input Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:28 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:28 --> CRSF cookie Set
+DEBUG - 2019-01-14 09:00:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 09:00:28 --> Language Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Loader Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Controller Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 09:00:28 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 09:00:28 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Upload Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Model Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Session Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 09:00:28 --> >>> Session update
+DEBUG - 2019-01-14 09:00:28 --> Session routines successfully run
+DEBUG - 2019-01-14 09:00:28 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:28 --> Table Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 09:00:28 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 09:00:28 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:28 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:28 --> Helper loaded: file_helper
+ERROR - 2019-01-14 09:00:28 --> >>>>>>>>>>>>>>>>>>>>> masuk new main approval :
+DEBUG - 2019-01-14 09:00:28 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 09:00:28 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 09:00:28 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 09:00:29 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2019-01-14 09:00:29 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2019-01-14 09:00:29 --> File loaded: application/views/pages/container/apprejectlist.php
+DEBUG - 2019-01-14 09:00:29 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 09:00:29 --> Final output sent to browser
+DEBUG - 2019-01-14 09:00:29 --> Total execution time: 0.9970
+DEBUG - 2019-01-14 09:00:29 --> Config Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Hooks Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 09:00:29 --> URI Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Router Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Output Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Security Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Input Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:29 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:00:29 --> CRSF cookie Set
+DEBUG - 2019-01-14 09:00:29 --> CSRF token verified
+DEBUG - 2019-01-14 09:00:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 09:00:29 --> Language Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Loader Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Controller Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 09:00:29 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 09:00:29 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 09:00:29 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 09:00:29 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Table Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Model Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Session Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 09:00:29 --> >>> Session update
+DEBUG - 2019-01-14 09:00:29 --> Session routines successfully run
+DEBUG - 2019-01-14 09:00:29 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:29 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:29 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:29 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 09:00:29 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 09:00:29 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:00:29 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:00:29 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 09:00:30 --> Final output sent to browser
+DEBUG - 2019-01-14 09:00:30 --> Total execution time: 0.8049
+DEBUG - 2019-01-14 09:19:20 --> Config Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Hooks Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 09:19:20 --> URI Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Router Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Output Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Security Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Input Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:19:20 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:19:20 --> CRSF cookie Set
+DEBUG - 2019-01-14 09:19:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 09:19:20 --> Language Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Loader Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Controller Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 09:19:20 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 09:19:20 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Upload Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Model Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Session Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 09:19:20 --> >>> Session update
+DEBUG - 2019-01-14 09:19:20 --> Session routines successfully run
+DEBUG - 2019-01-14 09:19:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:19:20 --> Table Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 09:19:20 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 09:19:20 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:19:20 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:19:20 --> Helper loaded: file_helper
+ERROR - 2019-01-14 09:19:21 --> >>>>>>>>>>>>>>>>>>>>> masuk new main approval :
+DEBUG - 2019-01-14 09:19:21 --> File loaded: application/views/templates/header.php
+DEBUG - 2019-01-14 09:19:21 --> File loaded: application/views/templates/top_bar.php
+DEBUG - 2019-01-14 09:19:21 --> File loaded: application/views/templates/menu_side.php
+DEBUG - 2019-01-14 09:19:21 --> File loaded: application/views/templates/top-1-breadcrumb.php
+DEBUG - 2019-01-14 09:19:21 --> File loaded: application/views/templates/top-2-title-nosearch.php
+DEBUG - 2019-01-14 09:19:21 --> File loaded: application/views/pages/container/apprejectlist.php
+DEBUG - 2019-01-14 09:19:21 --> File loaded: application/views/templates/footer.php
+DEBUG - 2019-01-14 09:19:21 --> Final output sent to browser
+DEBUG - 2019-01-14 09:19:21 --> Total execution time: 0.7828
+DEBUG - 2019-01-14 09:19:21 --> Config Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Hooks Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Utf8 Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> UTF-8 Support Enabled
+DEBUG - 2019-01-14 09:19:21 --> URI Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Router Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Output Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Security Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Input Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:19:21 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:19:21 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:19:21 --> XSS Filtering completed
+DEBUG - 2019-01-14 09:19:21 --> CRSF cookie Set
+DEBUG - 2019-01-14 09:19:21 --> CSRF token verified
+DEBUG - 2019-01-14 09:19:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2019-01-14 09:19:21 --> Language Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Loader Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Controller Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Helper loaded: url_helper
+DEBUG - 2019-01-14 09:19:21 --> Helper loaded: form_helper
+DEBUG - 2019-01-14 09:19:21 --> Helper loaded: my_options_helper
+DEBUG - 2019-01-14 09:19:21 --> Helper loaded: cookie_helper
+DEBUG - 2019-01-14 09:19:21 --> Form Validation Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Table Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Model Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Session Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Helper loaded: string_helper
+DEBUG - 2019-01-14 09:19:21 --> >>> Session update
+DEBUG - 2019-01-14 09:19:21 --> Session routines successfully run
+DEBUG - 2019-01-14 09:19:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:19:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:19:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:19:21 --> Config file loaded: application/config/breadcrumbs.php
+DEBUG - 2019-01-14 09:19:21 --> Breadcrumbs Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Helper loaded: my_language_helper
+DEBUG - 2019-01-14 09:19:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2019-01-14 09:19:21 --> Database Driver Class Initialized
+DEBUG - 2019-01-14 09:19:21 --> Helper loaded: file_helper
+DEBUG - 2019-01-14 09:19:22 --> Final output sent to browser
+DEBUG - 2019-01-14 09:19:22 --> Total execution time: 0.7949

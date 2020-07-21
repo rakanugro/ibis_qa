@@ -1,0 +1,390 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+//session_start();
+class request_bm extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->library('upload');
+		$this->load->library('session');
+		$this->load->model('user_model');
+		$this->load->model('booking_model');
+		$this->load->model('master_model');
+		$this->load->model('container_model');
+		$this->load->library("nusoap_lib");
+		$this->load->library("sendcurl_lib");
+		$this->load->library("table");
+		$this->load->library('commonlib');
+		$this->load->library('ciqrcode');
+		$this->load->helper('MY_language_helper');
+		$this->load->library('MX_Encryption');
+
+		$this->load->library('breadcrumbs');
+		require_once(APPPATH.'libraries/mime_type_lib.php');
+		require_once(APPPATH.'libraries/htmLawed.php');
+	}
+
+
+	public function redirect()
+	{
+		if (!$this->session->userdata('uname_phd'))
+		{
+			redirect(ROOT.'main', 'refresh');
+		}
+	}
+
+
+	public function common_loader($data, $views)
+	{
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/top_bar', $data);
+		$this->load->view('templates/menu_side', $data);
+		$this->load->view('templates/top-1-breadcrumb', $data);
+		$this->load->view('templates/top-2-title-nosearch', $data);
+		$this->load->view($views, $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+
+	public function index() 
+	{
+		$this->redirect();
+		//print_r($this->session);die();
+
+		$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+		$this->breadcrumbs->push("Delivery Booking", '/');
+		$this->breadcrumbs->unshift('Home', '/');
+		$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+		$data['title']= "Delivery Booking";
+
+		$this->common_loader($data,'eservice/booking/request_bm');
+		
+	}
+
+	public function getListBookingDisload()
+	{
+		$xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+			   <soapenv:Header/>
+			   <soapenv:Body>
+			      <ipc:getListBookingDisload>
+			         <getListBookingDisloadInterfaceRequest>
+			            <esbHeader>
+			               <!--Optional:-->
+			               <internalId>?</internalId>
+			               <!--Optional:-->
+			               <externalId>?</externalId>
+			               <!--Optional:-->
+			               <timestamp>?</timestamp>
+			               <!--Optional:-->
+			               <responseTimestamp>?</responseTimestamp>
+			               <!--Optional:-->
+			               <responseCode>?</responseCode>
+			               <!--Optional:-->
+			               <responseMessage>?</responseMessage>
+			            </esbHeader>
+			            <esbBody>
+			               <booking_type>disload</booking_type>
+			            </esbBody>
+			            <start>0</start>
+			            <limit>25</limit>
+			            <page>1</page>
+			         </getListBookingDisloadInterfaceRequest>
+			      </ipc:getListBookingDisload>
+			   </soapenv:Body>
+			</soapenv:Envelope>';
+
+		$wsdl = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";
+
+		$params = array(
+				'login' => 'npk_billing',
+				'password' => 'npk_billing',
+				'trace' => 0,
+				'exceptions' => 0,
+				'location' => 'http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling?WSDL',
+				'uri' => 'http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling?WSDL'
+			);
+
+		$result = $this->sendcurl_lib->SendCurl($xml, $wsdl, 'getListBookingDisload', 'npk_billing', 'npk_billing');
+		if(!$result){
+			echo $result;
+		}else{
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param= $response["soapenv:Envelope"]["_c"]["soapenv:Body"]["_c"]["ser-root:getListBookingDisloadResponse"]["_c"]["getListBookingDisloadInterfaceResponse"]["_c"]["esbBody"]["_c"]["results"];
+			$aa = json_encode($out_param);
+			echo $aa;
+
+		}
+	}
+
+	public function create_bm() {
+
+		$this->redirect();
+
+		//$data['terminal'] = $this->user_model->get_terminalList($this->session->userdata('sub_group_phd'));
+		$data['terminal'] = $this->booking_model->getListTerminal();
+		$data['shipping_agent'] = $this->booking_model->agentShippingList();
+		$data['pbm'] = $this->booking_model->pbmList();
+		$data['packaging']= $this->booking_model->getpackaging();
+		$data['comodity']= '';
+		$data['unit']= '';
+		$data['size']= $this->booking_model->getsize();
+		$data['condition']= $this->booking_model->getcondition();
+		$data['booking_type']= $this->booking_model->getbookingType();
+
+		
+		$data['max_size'] = $this->commonlib->file_upload_max_size_mb();
+
+		$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+		
+
+		$this->breadcrumbs->push("Delivery Booking", '/container/main_delivery');
+		$this->breadcrumbs->push("Create New Booking", '/');
+		$this->breadcrumbs->unshift('Home', '/');
+		$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+		$data['title']= "Create New Request Bongkar Muat";
+		$this->common_loader($data,'eservice/booking/create_rbm');
+	}
+
+	public function get_tes(){
+		$data_id = $this->booking_model->getpackaging();
+		echo json_encode($data_id);
+	}
+	
+	public function getcomodity(){
+		$id = $this->input->get('packagingId');
+		$data_id = $this->booking_model->getcomodity($id);
+		echo json_encode($data_id);
+	}
+
+	public function getunit()
+	{
+		$packagingId = $this->input->get('packagingId');
+		$comodityId	= $this->input->get('comodityId');
+		$data_id = $this->booking_model->getunit($packagingId, $comodityId);
+		echo json_encode($data_id);
+	}
+
+	public function auto_no_peb(){
+		$tgl_peb = $this->security->xss_clean(htmlentities(strtoupper($_GET["tgl_peb"])));
+		$no_peb  =$this->security->xss_clean(htmlentities(strtoupper($_GET["no_peb"])));
+		$npwp    =$this->security->xss_clean(htmlentities(strtoupper($_GET["npwp"])));
+		
+		$xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+			   <soapenv:Header/>
+			   <soapenv:Body>
+			      <ipc:searchPEB>
+			         <searchPEBRequest>
+			            <esbHeader>
+			               <!--Optional:-->
+			               <internalId>?</internalId>
+			               <!--Optional:-->
+			               <externalId>?</externalId>
+			               <!--Optional:-->
+			               <timestamp>?</timestamp>
+			               <!--Optional:-->
+			               <responseTimestamp>?</responseTimestamp>
+			               <!--Optional:-->
+			               <responseCode>?</responseCode>
+			               <!--Optional:-->
+			               <responseMessage>?</responseMessage>
+			            </esbHeader>
+			            <esbBody>
+			               <username>PLDB</username>
+			               <password>PLDB12345</password>
+			               <noPEB>'.$no_peb.'</noPEB>
+			               <tglPEB>'.$tgl_peb.'</tglPEB>
+			               <npwp>'.$npwp.'</npwp>
+			            </esbBody>
+			         </searchPEBRequest>
+			      </ipc:searchPEB>
+			   </soapenv:Body>
+			</soapenv:Envelope>';
+
+			/*<noPEB>010976</noPEB>
+			   <tglPEB>30072019</tglPEB>
+			   <npwp>018696153055000</npwp>
+			*/
+		$wsdl = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";
+
+		$result = $this->sendcurl_lib->SendCurl($xml, $wsdl, 'searchPEB', 'npk_billing', 'npk_billing');
+		if(!$result){
+			echo $result;
+		}else{
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param= $response["soapenv:Envelope"]["_c"]["soapenv:Body"]["_c"]["ser-root:searchPEBResponse"]["_c"]["searchPEBInterfaceResponse"]["_c"]["esbBody"]["_c"]["npe"]["_c"];
+
+			$result = $out_param['header']['_c']['noNpe']['_v'];
+
+			echo $result;
+		}
+	}
+
+	public function auto_vessel(){
+		if (!$this->session->userdata('uname_phd'))
+		{
+			redirect(ROOT.'main', 'refresh');
+		}
+
+		$vessel			= $this->security->xss_clean(htmlentities(strtoupper($_GET["vessel"])));
+		$port			= $this->security->xss_clean(htmlentities($_GET["port"]));
+		$stack = array();
+
+		$xml='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+				   <soapenv:Header/>
+				   <soapenv:Body>
+				      <ipc:trackingVessel>
+				         <trackingVesselInterfaceRequest>
+				            <esbHeader>
+				               <!--Optional:-->
+				               <internalId>?</internalId>
+				               <!--Optional:-->
+				               <externalId>?</externalId>
+				               <!--Optional:-->
+				               <timestamp>?</timestamp>
+				               <!--Optional:-->
+				               <responseTimestamp>?</responseTimestamp>
+				               <!--Optional:-->
+				               <responseCode>?</responseCode>
+				               <!--Optional:-->
+				               <responseMessage>?</responseMessage>
+				            </esbHeader>
+				            <esbBody>
+				               <ibisTerminalCode>'.$port.'</ibisTerminalCode>
+				               <vesselName>'.$vessel.'</vesselName>
+				            </esbBody>
+				         </trackingVesselInterfaceRequest>
+				      </ipc:trackingVessel>
+				   </soapenv:Body>
+				</soapenv:Envelope>';
+
+		$wsdl = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";
+
+		$result = $this->sendcurl_lib->SendCurl($xml, $wsdl, 'trackingVessel', 'npk_billing', 'npk_billing');
+
+		if(!$result){
+			echo $result;
+			die;
+			
+		}else{
+
+			$response = $this->xml2array->xml2ary($result['response']);
+			$response = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:trackingVesselResponse']['_c']['trackingVesselInterfaceResponse']['_c']['esbBody']['_c']['results'];
+			$aa = json_encode($response);
+			echo $aa;
+		}
+		
+	}
+
+	public function edit_bm(){
+
+		if (!$this->session->userdata('uname_phd'))
+		{
+			redirect(ROOT.'main', 'refresh');
+		}
+
+
+		$data['terminal'] = $this->master_model->get_terminal();
+
+		$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+		//$this->breadcrumbs->push("Receiving Booking", 'container_receiving/main_receiving');
+		$this->breadcrumbs->push("Edit Receiving Booking", '/');
+		$this->breadcrumbs->unshift('Home', '/');
+		$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+		$data['title']= "Edit Request Bongkar Muat";
+
+		$this->common_loader($data,'eservice/booking/edit_bm');
+	}
+
+
+	public function search_rbm($search=""){
+        		
+		$search = isset($_POST['search']) ? htmLawed($_POST['search']) : "";
+		
+		$xml = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+		   <soapenv:Header/>
+		   <soapenv:Body>
+		      <ipc:getListBookingDisload>
+		         <getListBookingDisloadInterfaceRequest>
+		            <esbHeader>
+		               <!--Optional:-->
+		               <internalId>?</internalId>
+		               <!--Optional:-->
+		               <externalId>?</externalId>
+		               <!--Optional:-->
+		               <timestamp>?</timestamp>
+		               <!--Optional:-->
+		               <responseTimestamp>?</responseTimestamp>
+		               <!--Optional:-->
+		               <responseCode>?</responseCode>
+		               <!--Optional:-->
+		               <responseMessage>?</responseMessage>
+		            </esbHeader>
+		            <esbBody>
+		               <booking_type>'.$_POST['booking_type'].'</booking_type>
+		               <booking_number>'.$search.'</booking_number>
+		            </esbBody>
+		            <start>0</start>
+		            <limit>25</limit>
+		            <page>1</page>
+		         </getListBookingDisloadInterfaceRequest>
+		      </ipc:getListBookingDisload>
+		   </soapenv:Body>
+		</soapenv:Envelope>';
+
+			$wsdl = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";
+
+			$result = $this->sendcurl_lib->SendCurl($xml, $wsdl, 'getListBookingDisload', 'npk_billing', 'npk_billing');
+			if(!$result){
+				echo $result;
+			}
+			else
+			{
+
+				$response = $this->xml2array->xml2ary($result['response']);
+				$out_param = $response["soapenv:Envelope"]["_c"]["soapenv:Body"]["_c"]["ser-root:getListBookingDisloadResponse"]["_c"]["getListBookingDisloadInterfaceResponse"]["_c"]["esbBody"]["_c"]["results"];
+
+				$results = array();
+
+				if(is_array($out_param)) {
+					for($i=0;$i<count($out_param);$i++) {
+						if($out_param['_a']['xsi:nil'] == true) {
+							
+						} else {
+							$row = array(
+							   'h_id' => isset($out_param[$i]['_c']['h_id']['_v']) ? $out_param[$i]['_c']['h_id']['_v'] : $out_param['_c']['h_id']['_v'],
+		                       'h_no' => isset($out_param[$i]['_c']['h_no']['_v']) ? $out_param[$i]['_c']['h_no']['_v'] : $out_param['_c']['h_no']['_v'],
+		                       'h_date' => isset($out_param[$i]['_c']['h_date']['_v']) ? $out_param[$i]['_c']['h_date']['_v'] : $out_param['_c']['h_date']['_v'],
+		                       'operation_name' => isset($out_param[$i]['_c']['operation_name']['_v']) ? $out_param[$i]['_c']['operation_name']['_v'] : $out_param['_c']['operation_name']['_v'],
+		                       'customer_name' => isset($out_param[$i]['_c']['customer_name']['_v']) ? $out_param[$i]['_c']['customer_name']['_v'] : $out_param['_c']['customer_name']['_v'],
+		                       'branch_name' => isset($out_param[$i]['_c']['branch_name']['_v']) ? $out_param[$i]['_c']['branch_name']['_v'] : $out_param['_c']['branch_name']['_v'],
+		                       'terminal_name' => isset($out_param[$i]['_c']['terminal_name']['_v']) ? $out_param[$i]['_c']['terminal_name']['_v'] : $out_param['_c']['terminal_name']['_v'],
+		                       'pbm_name' => isset($out_param[$i]['_c']['pbm_name']['_v']) ? $out_param[$i]['_c']['pbm_name']['_v'] : $out_param['_c']['pbm_name']['_v'],
+		                       'shipping_agent_name' => isset($out_param[$i]['_c']['shipping_agent_name']['_v']) ? $out_param[$i]['_c']['shipping_agent_name']['_v'] : $out_param['_c']['shipping_agent_name']['_v'],
+		                       'actual_departure' => isset($out_param[$i]['_c']['actual_departure']['_v']) ? $out_param[$i]['_c']['actual_departure']['_v'] : $out_param['_c']['actual_departure']['_v'],
+		                       'actual_arrived' => isset($out_param[$i]['_c']['actual_arrived']['_v']) ? $out_param[$i]['_c']['actual_arrived']['_v'] : $out_param['_c']['actual_arrived']['_v'],
+		                       'status_text' => isset($out_param[$i]['_c']['status_text']['_v']) ? $out_param[$i]['_c']['status_text']['_v'] : $out_param['_c']['status_text']['_v']
+
+							);
+							array_push($results, $row);
+						}
+					}
+				}
+				
+
+				$aa = json_encode((array) $results);
+
+				echo $aa;
+			}
+	}
+
+
+}
+	

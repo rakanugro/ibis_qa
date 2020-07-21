@@ -1,0 +1,166 @@
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+
+<style type="text/css">
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+#component_type {
+	float: left;
+}
+#component_reefer {
+	float: left;
+	margin-left: 10px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+</style>
+
+
+<div class="row">
+<div class="col-lg-12 ">
+<div class="main-box">
+	<header class="main-box-header clearfix">
+		<h2>Create Booking Lumpsump</h2>
+	</header>
+	<div class="main-box-body clearfix">
+		 <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="booking_number">Booking Number</label>
+		      <input type="text" class="form-control" id="booking_number" readonly="">
+		    </div>
+
+		   <div class='form-group col-md-6'>
+		      <label for="booking_date">Request Date</label>
+		      <div class='input-group date'>
+	              <input type='booking_date' class="form-control" readonly=""/>
+	              <span class="input-group-addon">
+	                 <span class="glyphicon glyphicon-calendar"></span>
+	              </span>
+              </div>
+            </div>
+		 </div>
+
+		 <div class="form-row">
+		 	<div class="form-group col-md-6">	
+		      	<label for="contact_number">Contact Number</label>
+				<div class="input-group input-file" name="Fichier1">
+		    		<input type="text" class="form-control" id="contact_number" placeholder='booking_contact...' />
+					<span class="input-group-btn">
+		        		<button class="btn btn-primary btn-choose" type="button" data-toggle="modal" data-target="#ModalVessel">Search</button>
+		    		</span>
+				</div>
+			</div>
+
+		    <div class="form-group col-md-6">
+		      <label for="booking_company">Company Name</label>
+		      <input type="text" class="form-control" id="company_name" readonly="">
+		    </div>
+		 </div>
+
+		 <div class="form-row">
+	     	<div class='form-group col-md-6'>
+		      <label for="no_bl">No BL</label>
+		      <input type="text" class="form-control" id="no_bl">
+            </div>
+
+            <div class='form-group col-md-6'>
+		      <label for="tipe_penumpukan">Tipe Penumpukan</label>
+		       <select id="tipe_penumpukan" class="form-control">
+		        <option selected="">-- Pilih --</option>
+		       </select>
+            </div>
+		 </div>
+
+		 <div class='form-group col-md-6'>
+		      <label for="booking_date">Tanggal Pelaksanaan</label>
+		      <div class='input-group date'>
+	              <input type='booking_date' class="form-control" />
+	              <span class="input-group-addon">
+	                 <span class="glyphicon glyphicon-calendar"></span>
+	              </span>
+              </div>
+            </div>
+		 </div>
+
+	    <div class="modal-footer">
+			<button class="btn btn-success btn-choose" type="button">Save</button>
+			<button class="btn btn-warning btn-choose" type="button" onclick="history.back()">Cancel</button>
+	    </div>
+			
+  </div>
+ </div>
+</div>
+</div>
+
+				 
+				
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#example').DataTable();
+	    $('#example1').DataTable();
+	    $('#example2').DataTable();
+	});
+
+	$("#plh").click(function(){
+	   $('#demo').show();
+	}); 
+
+	$("#cancel").click(function(){
+	   $('#demo').hide();
+	}); 
+</script>
+
+<div class="row" id="container_data" name="container_data"></div>
+<div id="detailreq"></div>
+<div id="modalplaceholder"></div>
+
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/bootstrap-timepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

@@ -1,0 +1,86 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+DEBUG - 2016-09-27 14:51:21 --> Config Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Hooks Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Utf8 Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> UTF-8 Support Enabled
+DEBUG - 2016-09-27 14:51:21 --> URI Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Router Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> No URI present. Default controller set.
+DEBUG - 2016-09-27 14:51:21 --> Output Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Security Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Input Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> XSS Filtering completed
+DEBUG - 2016-09-27 14:51:21 --> CRSF cookie Set
+DEBUG - 2016-09-27 14:51:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-27 14:51:21 --> Language Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-27 14:51:21 --> Loader Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Controller Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Helper loaded: form_helper
+DEBUG - 2016-09-27 14:51:21 --> Session Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Helper loaded: string_helper
+DEBUG - 2016-09-27 14:51:21 --> Encrypt Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> A session cookie was not found.
+DEBUG - 2016-09-27 14:51:21 --> >>> session doesn't exist, create a new one
+DEBUG - 2016-09-27 14:51:21 --> Session routines successfully run
+DEBUG - 2016-09-27 14:51:21 --> Form Validation Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Helper loaded: url_helper
+DEBUG - 2016-09-27 14:51:21 --> Model Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Database Driver Class Initialized
+DEBUG - 2016-09-27 14:51:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-27 14:51:21 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-27 14:51:21 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-09-27 14:51:21 --> 2a142fe367e6756aa38b11987f4a5e4f++main_index++ 
+ERROR - 2016-09-27 14:51:21 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-09-27 14:51:21 --> >>> saveCaptcha
+DEBUG - 2016-09-27 14:51:21 --> Helper loaded: file_helper
+ERROR - 2016-09-27 14:51:21 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-09-27 14:51:21 --> >>> isUserLogin: 2a142fe367e6756aa38b11987f4a5e4f
+DEBUG - 2016-09-27 14:51:22 --> >>> row: 0
+DEBUG - 2016-09-27 14:51:22 --> >>> Go to Homepage
+DEBUG - 2016-09-27 14:51:22 --> File loaded: application/views/homepage/index.php
+DEBUG - 2016-09-27 14:51:22 --> Final output sent to browser
+DEBUG - 2016-09-27 14:51:22 --> Total execution time: 0.8015
+DEBUG - 2016-09-27 14:55:49 --> Config Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Hooks Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Utf8 Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> UTF-8 Support Enabled
+DEBUG - 2016-09-27 14:55:49 --> URI Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Router Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> No URI present. Default controller set.
+DEBUG - 2016-09-27 14:55:49 --> Output Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Security Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Input Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> XSS Filtering completed
+DEBUG - 2016-09-27 14:55:49 --> XSS Filtering completed
+DEBUG - 2016-09-27 14:55:49 --> CRSF cookie Set
+DEBUG - 2016-09-27 14:55:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2016-09-27 14:55:49 --> Language Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> ----------------------------main.php/__construct------------------------------------
+DEBUG - 2016-09-27 14:55:49 --> Loader Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Controller Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Helper loaded: form_helper
+DEBUG - 2016-09-27 14:55:49 --> Session Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Helper loaded: string_helper
+DEBUG - 2016-09-27 14:55:49 --> Encrypt Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> >>> Session update
+DEBUG - 2016-09-27 14:55:49 --> Session routines successfully run
+DEBUG - 2016-09-27 14:55:49 --> Form Validation Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Helper loaded: url_helper
+DEBUG - 2016-09-27 14:55:49 --> Model Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Database Driver Class Initialized
+DEBUG - 2016-09-27 14:55:49 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2016-09-27 14:55:49 --> Helper loaded: captcha_helper
+DEBUG - 2016-09-27 14:55:49 --> ----------------------------main.php/index------------------------------------
+DEBUG - 2016-09-27 14:55:49 --> 2a142fe367e6756aa38b11987f4a5e4f++main_index++ 
+ERROR - 2016-09-27 14:55:49 --> Severity: Warning  --> unlink(C:/xampp/htdocs/ibis_qa/captcha/font) [<a href='function.unlink'>function.unlink</a>]: Permission denied C:\xampp\htdocs\ibis_qa\system\helpers\captcha_helper.php 101
+DEBUG - 2016-09-27 14:55:49 --> >>> saveCaptcha
+DEBUG - 2016-09-27 14:55:49 --> Helper loaded: file_helper
+ERROR - 2016-09-27 14:55:49 --> Severity: Notice  --> Undefined variable: username C:\xampp\htdocs\ibis_qa\application\controllers\main.php 63
+DEBUG - 2016-09-27 14:55:49 --> >>> isUserLogin: 2a142fe367e6756aa38b11987f4a5e4f
+DEBUG - 2016-09-27 14:55:49 --> >>> row: 0
+DEBUG - 2016-09-27 14:55:49 --> >>> Go to Homepage
+DEBUG - 2016-09-27 14:55:49 --> File loaded: application/views/homepage/index.php
+DEBUG - 2016-09-27 14:55:49 --> Final output sent to browser
+DEBUG - 2016-09-27 14:55:49 --> Total execution time: 0.3732

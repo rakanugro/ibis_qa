@@ -1,0 +1,655 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+//session_start();
+class request_delivery extends CI_Controller {
+
+	public function __construct(){
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->library('upload');
+		$this->load->library('session');
+		$this->load->model('user_model');
+		$this->load->model('master_model');
+		$this->load->model('container_model');
+		$this->load->library("nusoap_lib");
+		$this->load->library("sendcurl_lib");
+		$this->load->library("table");
+		$this->load->library('commonlib');
+		$this->load->library('ciqrcode');
+		$this->load->helper('MY_language_helper');
+		$this->load->library('MX_Encryption');
+		$this->load->library('xml2array');
+
+		$this->load->library('breadcrumbs');
+		require_once(APPPATH.'libraries/mime_type_lib.php');
+		require_once(APPPATH.'libraries/htmLawed.php');
+
+		//if(!$this->user_model->check_user_access($this->session->userdata('group_phd'), $this->uri->segment(1), $this->uri->segment(2))) show_error(YOU_DONT_HAVE_ACCESS);
+
+		if(!$this->user_model->check_user_access($this->session->userdata('group_phd'), $this->uri->segment(1), $this->uri->segment(2)))
+			redirect(ROOT.'mainpage', 'refresh');
+	}
+
+	public function common_loader($data,$views) {
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/top_bar', $data);
+		$this->load->view('templates/menu_side', $data);
+		$this->load->view('templates/top-1-breadcrumb', $data);
+		$this->load->view('templates/top-2-title-nosearch', $data);
+		$this->load->view($views, $data);
+		$this->load->view('templates/footer', $data);
+	}
+
+	public function redirect(){
+		if (!$this->session->userdata('uname_phd'))
+		{
+			redirect(ROOT.'main', 'refresh');
+		}
+	}
+
+	public function index(){
+
+		$this->redirect();
+		$customer_id=$this->session->userdata('customerid_phd');
+		$submitter_customer_id=$this->session->userdata('customeridppjk_phd');//diubah ke submitter-case ppjk
+
+		$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+		$this->breadcrumbs->push("Delivery Booking", '/');
+		$this->breadcrumbs->unshift('Home', '/');
+		$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+		$data['title']= "Delivery Booking";
+
+		$this->common_loader($data,'eservice/booking/request_delivery');
+	}
+	
+	public function getListBookingDelivery()
+	{
+		$xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+		<soapenv:Header/>
+		<soapenv:Body>
+			 <ipc:getListBookingDelivery>
+					<getListBookingDeliveryInterfaceRequest>
+						 <esbHeader>
+								<!--Optional:-->
+								<internalId>?</internalId>
+								<!--Optional:-->
+								<externalId>?</externalId>
+								<!--Optional:-->
+								<timestamp>?</timestamp>
+								<!--Optional:-->
+								<responseTimestamp>?</responseTimestamp>
+								<!--Optional:-->
+								<responseCode>?</responseCode>
+								<!--Optional:-->
+								<responseMessage>?</responseMessage>
+						 </esbHeader>
+						 <esbBody>
+								<booking_type>delivery</booking_type>
+						 </esbBody>
+						 <start>?</start>
+						 <limit>?</limit>
+						 <page>?</page>
+					</getListBookingDeliveryInterfaceRequest>
+			 </ipc:getListBookingDelivery>
+		</soapenv:Body>
+ </soapenv:Envelope>';
+
+		$wsdl = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";
+
+		$params = array(
+				'login' => 'npk_billing',
+				'password' => 'npk_billing',
+				'trace' => 0,
+				'exceptions' => 0,
+				'location' => 'http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling?WSDL',
+				'uri' => 'http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling?WSDL'
+			);
+
+		$result = $this->nusoap_lib->SendCurl($xml, $wsdl, 'getListBookingDelivery', 'npk_billing', 'npk_billing');
+		if(!$result){
+			echo $result;
+		}else{
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param= $response["soapenv:Envelope"]["_c"]["soapenv:Body"]["_c"]["ser-root:getListBookingDeliveryResponse"]["_c"]["getListBookingDeliveryInterfaceResponse"]["_c"]["esbBody"]["_c"]["results"];
+			$aa = json_encode($out_param);
+			echo $aa;
+
+		}
+	}
+
+	public function search_main_delivery(){
+		//echo "hahaha";
+		//die();
+		$this->redirect();
+		$customer_id=$this->session->userdata('customerid_phd');
+		$submitter_customer_id=$this->session->userdata('customeridppjk_phd');
+		$group_id = $this->session->userdata('group_phd');
+
+		$page=isset($_POST['page']) ? htmLawed($_POST['page']) : 1;
+		$limit=isset($_POST['limit']) ? htmLawed($_POST['limit']) : 10;
+		$search=isset($_POST['search']) ? htmLawed($_POST['search']) : 10;
+		//create table
+		$result=$this->container_model->getNumberReqAndSourceDeliveryBySearch('2X000175','2X000175',$search);
+		//create table
+		$this->table->set_heading(
+		  "<th width='30px'>NO</th>",
+		  "<th width='100px'>BOOKING NUMBER</th>",
+		  "<th width='100px'>BOOKING DATE</th>",
+		  "<th width='100px'>PELABUHAN/TERM.</th>",
+		  "<th width='100px'>VESSEL - VOYAGE</th>",
+		  "<th width='100px'>VIA</th>",
+		  "<th width='100px'>NO BL</th>",
+		  "<th width='100px'>QTY</th>",
+		  "<th width='100px'>DATE IN</th>",
+		  "<th width='100px'>DATE OUT</th>",
+		  "<th width='100px'>STATUS</th>",
+		  "<th width='50px'>VIEW</th>",
+		  "<th width='50px'>EDIT</th>"
+		 );
+
+		//no error
+		// port code : IDJKT, IDPNK //bisa diisi kosong untuk ambil semua port
+		// terminal code :  T3I,T3D,T2D,T1D //bisa diisi kosong untuk ambil semua terminal
+		//$customer_id=$this->session->userdata('customerid_phd');
+		/* $in_data="	<root>
+			<sc_type>1</sc_type>
+			<sc_code>123456</sc_code>
+			<data>
+				<customer_id>$customer_id</customer_id>
+			</data>
+		</root>"; */
+
+/* 		if(!$this->nusoap_lib->call_wsdl(REQUEST_DELIVERY_CONTAINER,"getRequestDeliveryHeaderCompressed",array("in_data" => "$in_data"),$result))
+		{
+			echo $result;
+			die;
+		}
+		else
+		{
+			$obj = json_decode($result);
+
+			if(isset($obj->data->request))
+			{ */
+
+				$i=1;
+				foreach($result as $row)
+				{
+					$label_span='<span class="label label-default">N/A</span>';
+					$view_link='<a  class=\'btn btn-primary\' onclick=\'clickDialog1("'.$row['REQUEST_ID'].'");\'><i class=\'fa fa-eye\'></i></a>';
+					//$view_link='<a  class=\'btn btn-primary\'  href="'.ROOT."/container/view_delivery/".$obj->data->request[$i]->id_req.'"><i class=\'fa fa-eye\'></i></a>';
+					$edit_link='<span class="label label-default">N/A</span>';
+					$cancel_link='<span class="label label-default">N/A</span>';
+					$confirm_link='<span class="label label-default">N/A</span>';
+					if($row['STATUS_REQ']=="N"){
+						$label_span='<span class="label label-info">Draft</span>';
+						//$view_link='<a  class=\'btn btn-primary\'  href="'.ROOT."/container/view_delivery/".$obj->data->request[$i]->id_req.'"><i class=\'fa fa-eye\'></i></a>';
+						$edit_link='<a  class=\'btn btn-primary\'  href="'.ROOT."container/edit_delivery/".$row['REQUEST_ID'].'"><i class=\'fa fa-pencil\'></i></a>';
+						$cancel_link='<a  class=\'btn btn-primary\'  href="'.ROOT."container/cancel_delivery/".$row['REQUEST_ID'].'"><i class=\'fa fa-trash-o\'></i></a>';
+						$confirm_link='<a  class=\'btn btn-primary\' onclick=\'clickConfirm("'.$row['REQUEST_ID'].'");\'><i class=\'fa fa-save\'></i></a>';
+					} else if($row['STATUS_REQ']=="S"){
+						$label_span='<span class="label label-success">Approved</span> <span class="label label-warning">Not Paid</span>';
+						//$view_link='<a  class=\'btn btn-primary\'  href="'.ROOT."/container/view_delivery/".$obj->data->request[$i]->id_req.'"><i class=\'fa fa-eye\'></i></a>';
+					} else if($row['STATUS_REQ']=="P" || $row['STATUS_REQ']=="T"){
+						$label_span='<span class="label label-success">Paid</span>';
+						//$view_link='<a  class=\'btn btn-primary\'  href="'.ROOT."/container/view_delivery/".$obj->data->request[$i]->id_req.'"><i class=\'fa fa-eye\'></i></a>';
+					}
+					else if($row['STATUS_REQ'] == 'W'){
+						$label_span='<span class="label label-warning">Waiting Approve</span>';
+					}
+					else if($row['STATUS_REQ'] == 'R'){
+						$label_span='<span class="label label-danger" title="'.$row['REJECT_NOTES'].'">Rejected</span>';
+						$edit_link='<a  class=\'btn btn-primary\'  href="'.ROOT."container/edit_delivery/".$row['REQUEST_ID'].'"><i class=\'fa fa-pencil\'></i></a>';
+						$cancel_link='<a  class=\'btn btn-primary\'  href="'.ROOT."container/cancel_delivery/".$row['REQUEST_ID'].'"><i class=\'fa fa-trash-o\'></i></a>';
+						$confirm_link='<a  class=\'btn btn-primary\' onclick=\'clickConfirm("'.$row['REQUEST_ID'].'");\'><i class=\'fa fa-save\'></i></a>';
+					}
+					else {
+						$label_span='<span class="label label-default">N/A</span>';
+					}
+
+					if ($row['CONT_QTY'] == 'DB DOWN'){
+						$view_link = $edit_link = $confirm_link = "DB DOWN";
+					}
+
+					if ($row['DEL_VIA'] == 'LAP')
+					{
+						$del_via = 'YARD';
+					}
+					else if ($row['DEL_VIA'] == 'TL')
+					{
+						$del_via = 'TL';
+					}
+					else
+					{
+						$del_via = '';
+					}
+
+					$this->table->add_row(
+						$i++,
+						$row['REQUEST_ID'],
+						$row['REQUEST_DATE'],
+						$row['TERMINAL_NAME']."/".$row['PORT'],
+						$row['VESVOY'],
+						$del_via,
+						$row[''],
+						$row['CONT_QTY'],
+						$row['ADDITIONAL_DATE'],
+						$row[''],
+						$label_span,
+						$view_link,
+						$edit_link
+					);
+				}
+		/* 	} else {
+				echo "<span style='color:red'>" .$obj->rcmsg. "</span>";
+			}
+		} */
+
+		$this->load->view('eservice/booking/search_main_delivery', $data);;
+	}
+
+	public function view_request($a)
+	{
+		$data['no_request']=$a;
+		$datahead=$this->container_model->getNumberReqAndSource($a);
+		$data['rowdata']=$datahead;
+
+		if($datahead['MODUL']=='RECEIVING')
+		{
+			$wsdl = REQUEST_RECEIVING_CONTAINER;
+			$modul = "getListContainer";
+		}
+		else if($datahead['MODUL']=='DELIVERY')
+		{
+			$wsdl = REQUEST_DELIVERY_CONTAINER;
+			$modul = "getListContainer";
+		}
+		else if($datahead['MODUL']=='PERPANJANGAN DELIVERY')
+		{
+			$wsdl = REQUEST_PERPANJANGAN_DELIVERY;
+			$modul = "getListContainerDelivery";
+		}
+		else if (($datahead['MODUL']=='CALBG') OR ($datahead['MODUL']=='CALAG') OR ($datahead['MODUL']=='CALDG'))
+		{
+			$wsdl = REQUEST_BATALMUAT;
+			$modul = "getListContainerBM";
+		}
+
+        $stack = array();
+		$reqNoBiller=$datahead['BILLER_REQUEST_ID'];
+
+        $in_data = "<root>
+			<sc_type>1</sc_type>
+			<sc_code>123456</sc_code>
+			<data>
+				<norequest>$reqNoBiller</norequest>
+				<port_code>".$datahead['PORT_ID']."</port_code>
+				<terminal_code>".$datahead['TERMINAL_ID']."</terminal_code>
+			</data>
+		</root>";
+
+		if(!$this->nusoap_lib->call_wsdl($wsdl,"$modul",array("in_data" => "$in_data"),$result))
+		{
+			echo $result;
+			die;
+		}
+		else
+		{
+			// echo $result;die;
+			$obj = json_decode($result);
+
+			if($obj->data->listcont)
+			{
+				for($i=0;$i<count($obj->data->listcont);$i++)
+				{
+					$temp;
+					$temp['NO_CONTAINER']=$obj->data->listcont[$i]->no_container;
+					$temp['SIZE_CONT']=$obj->data->listcont[$i]->size_cont;
+					$temp['TYPE_CONT']=$obj->data->listcont[$i]->type_cont;
+					$temp['STATUS_CONT']=$obj->data->listcont[$i]->status_cont;
+					$temp['HZ']=$obj->data->listcont[$i]->hz;
+					$temp['KD_COMODITY']=$obj->data->listcont[$i]->kd_comodity;
+					$temp['ID_CONT']=$obj->data->listcont[$i]->id_cont;
+					$temp['ISO_CODE']=$obj->data->listcont[$i]->iso_code;
+					$temp['HEIGHT']=$obj->data->listcont[$i]->height;
+					$temp['CARRIER']=$obj->data->listcont[$i]->carrier;
+					$temp['OG']=$obj->data->listcont[$i]->og;
+					$temp['PLUG_IN']=$obj->data->listcont[$i]->plug_in;
+					$temp['PLUG_OUT']=$obj->data->listcont[$i]->plug_out;
+					$temp['PLUG_OUT_EXT']=$obj->data->listcont[$i]->plug_out_ext;
+					$temp['JML_SHIFT']=$obj->data->listcont[$i]->jml_shift;
+					$POD=$obj->data->listcont[$i]->pod;
+					$FPOD=$obj->data->listcont[$i]->fpod;
+					$start_shift=$obj->data->listcont[$i]->start_shift;
+					$end_shift=$obj->data->listcont[$i]->end_shift;
+					$shift_reefer=$obj->data->listcont[$i]->shift_rfr;
+					$temp['NO_BOOKING_SHIP']=$obj->data->listcont[$i]->no_booking_ship;
+					$tl=$obj->data->listcont[$i]->tl_flag;
+					$call_sign=$obj->data->listcont[$i]->call_sign;
+					$stpr=$obj->data->listcont[$i]->start_period;
+					$enpr=$obj->data->listcont[$i]->end_period;
+					$expr=$obj->data->listcont[$i]->ext_period;
+					array_push($stack, $temp);
+				}
+			}
+		}
+
+
+		$data['TL_FLAG']=$tl;
+		$data['CALL_SIGN']=$call_sign;
+		$data['POD']=$POD;
+		$data['FPOD']=$FPOD;
+		$data['START_SHIFT']=$start_shift;
+		$data['END_SHIFT']=$end_shift;
+		$data['SHIFT_REEFER']=$shift_reefer;
+		$data['START_PERIOD']=$stpr;
+		$data['END_PERIOD']=$enpr;
+		$data['EXT_PERIOD']=$expr;
+		$data['row_detail']=$stack;
+		$data['row_history']=$this->container_model->getRequestHistory($a);
+		$this->load->view('eservice/booking/approval_request_viewreq',$data);
+	}
+
+	public function confirm_request() {
+		$this->redirect();
+
+		$req=htmLawed($_POST['REQUEST']);
+
+		$status_req = $this->container_model->getStatusRequest($req);
+		
+		if($status_req =="W")
+		{
+			echo "Failed, Request Already Confirm";
+			die();
+		}
+		else if($status_req =="S")
+		{
+			echo "Failed, Request Already Approve";
+			die();			
+		}
+		else if($status_req =="P")
+		{
+			echo "Failed, Request Already Paid";
+			die();			
+		}
+		
+		$reqNoBiller = $this->container_model->getNumberRequestBiller($req);
+		$kodeModul = $this->container_model->getKodeModul($req);
+		$detail = $this->container_model->getDetailBilling($req);
+
+		switch($kodeModul)
+		{
+			case "PTKM00"://receiving
+				$wsdl = REQUEST_RECEIVING_CONTAINER;
+			break;
+			case "PTKM01"://delivery
+				$wsdl = REQUEST_DELIVERY_CONTAINER;
+			break;
+			case "PTKM07"://delivery perpanjangan
+				$wsdl = REQUEST_PERPANJANGAN_DELIVERY;
+			break;
+			case "PTKM08"://batal muat
+				$wsdl = REQUEST_BATALMUAT;
+			break;
+			default:
+				$wsdl = "not defined modul";
+			break;
+		}
+
+		$in_data="<root>
+			<sc_type>1</sc_type>
+			<sc_code>123456</sc_code>
+			<data>
+				<biller_request_id>$reqNoBiller</biller_request_id>
+				<port_code>".$detail['PORT_ID']."</port_code>
+				<terminal_code>".$detail['TERMINAL_ID']."</terminal_code>
+			</data>
+		</root>";
+
+		if(!$this->nusoap_lib->call_wsdl($wsdl,"getCountContainer",array("in_data" => "$in_data"),$result))
+		{
+			echo $result;
+			die;
+		}
+		else
+		{
+			$obj = json_decode($result);
+			if($obj->rc!="S")
+			{
+				echo $obj->rcmsg;
+				die;
+			}
+		}
+
+		$is_shipping = $this->master_model->cek_shippingline();
+		if($is_shipping == 'Y' && $detail['TERMINAL_ID']<>'T3I' && $detail['TERMINAL_ID']<>'PNJI' && $detail['TERMINAL_ID']<>'DJBD' && $detail['TERMINAL_ID']<>'DJBI' && $detail['TERMINAL_ID']<>'TLBD' && $detail['TERMINAL_ID']<>'TLBI' && $detail['TERMINAL_ID']<>'PLMI' && $detail['TERMINAL_ID']<>'PLMD' && $detail['TERMINAL_ID']<>'PNKD' && $detail['TERMINAL_ID']<>'PNKI'){
+				$this->container_model->confirmRequest($req,$this->session->userdata('uname_phd'));
+				switch($kodeModul)
+				{
+					case "PTKM00"://receiving
+						$in_data="<root>
+										<sc_type>1</sc_type>
+										<sc_code>123456</sc_code>
+										<data>
+												<detail>
+														<request_no>$reqNoBiller</request_no>
+														<port_code>".$detail['PORT_ID']."</port_code>
+														<terminal_code>".$detail['TERMINAL_ID']."</terminal_code>
+														<user_id>".$this->session->userdata('uname_phd')."</user_id>
+												</detail>
+										</data>
+								</root>";
+
+						if(!$this->nusoap_lib->call_wsdl(REQUEST_RECEIVING_CONTAINER,"submitRequestReceiving",array("in_data" => "$in_data"),$result))
+						{
+								echo $result;
+								exit;
+						}
+						else
+						{	
+							
+								$rwresult = json_decode($result);
+								if($rwresult->rc == 'S'){
+										echo "Success";
+								}
+								else{
+										echo "Failed, ".$rwresult->rcmsg;
+								}
+								die();
+						}
+					break;
+					case "PTKM01"://delivery
+						//$wsdl = REQUEST_DELIVERY_CONTAINER;
+						$in_data="	<root>
+								<sc_type>1</sc_type>
+								<sc_code>123456</sc_code>
+								<data>
+									<no_request>$reqNoBiller</no_request>
+									<port_code>".$detail['PORT_ID']."</port_code>
+									<terminal_code>".$detail['TERMINAL_ID']."</terminal_code>
+									<user_id>".$this->session->userdata('uname_phd')."</user_id>
+								</data>
+							</root>";
+
+							if(!$this->nusoap_lib->call_wsdl(REQUEST_DELIVERY_CONTAINER,"saveRequestDelivery",array("in_data" => "$in_data"),$result))
+							{
+									echo $result;
+									exit;
+							}
+							else
+							{
+									//echo $result;die;
+									$rwresult = json_decode($result);
+									if($rwresult->rc == 'S'){
+											echo "Success";
+									}
+									else{
+											echo "Failed, ".$rwresult->rcmsg;
+									}
+									die();
+							}
+
+					break;
+					case "PTKM07"://delivery perpanjangan
+						//$wsdl = REQUEST_PERPANJANGAN_DELIVERY;
+						$in_data="	<root>
+							<sc_type>1</sc_type>
+							<sc_code>123456</sc_code>
+							<data>
+								<no_request>$reqNoBiller</no_request>
+								<port_code>".$detail['PORT_ID']."</port_code>
+								<terminal_code>".$detail['TERMINAL_ID']."</terminal_code>
+								<user_id>".$this->session->userdata('uname_phd')."</user_id>
+							</data>
+						</root>";
+
+						if(!$this->nusoap_lib->call_wsdl(REQUEST_PERPANJANGAN_DELIVERY,"submitRequestDeliveryPerp",array("in_data" => "$in_data"),$result))
+						{
+								echo $result;
+								exit;
+						}
+						else
+						{
+								$rwresult = json_decode($result);
+								if($rwresult->rc == 'S'){
+										echo "Success";
+								}
+								else{
+										echo "Failed, ".$rwresult->rcmsg;
+								}
+								die();
+						}
+					break;
+					case "PTKM08"://batal muat
+							//$wsdl = REQUEST_BATALMUAT;
+							$in_data="<root>
+								<sc_type>1</sc_type>
+								<sc_code>123456</sc_code>
+								<data>
+									<no_request>$reqNoBiller</no_request>
+									<port_code>".$detail['PORT_ID']."</port_code>
+									<terminal_code>".$detail['TERMINAL_ID']."</terminal_code>
+									<user_id>".$this->session->userdata('uname_phd')."</user_id>
+								</data>
+							</root>";
+
+							//print_r($in_data);die;
+							if(!$this->nusoap_lib->call_wsdl(REQUEST_BATALMUAT,"saveRequestBatalMuat",array("in_data" => "$in_data"),$result))
+							{
+									echo $result;
+									die;
+							}
+							else
+							{
+									$rwresult = json_decode($result);
+									if($rwresult->rc == 'S'){
+											echo "Success";
+									}
+									else{
+											echo "Failed, ".$rwresult->rcmsg;
+									}
+									die();
+							}
+					break;
+					default:
+						$wsdl = "not defined modul";
+					break;
+				}
+			}  	else {
+					echo $this->container_model->confirmRequest($req,$this->session->userdata('uname_phd'));
+				}
+	}
+
+	public function create_request_delivery() {
+		
+		$this->redirect();
+
+		$data['npwp'] = $this->session->userdata['npwp_phd'];	
+		$data['terminal'] = $this->getListTerminal();
+		// print_r($data['terminal']);die;
+		$data['max_size'] = $this->commonlib->file_upload_max_size_mb();
+		$data['menu_list']=$this->user_model->get_menuList($this->session->userdata('group_phd'));
+
+		$this->breadcrumbs->push("Delivery Booking", '/container/main_delivery');
+		$this->breadcrumbs->push("Create New Booking", '/');
+		$this->breadcrumbs->unshift('Home', '/');
+		$data['breadcrumbs'] = $this->breadcrumbs->show();
+
+		$data['title']= "Create New Booking";
+
+		$this->common_loader($data,'eservice/booking/create_request_delivery');
+	}
+
+	public function getListTerminal() {
+		$xml ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ipc="http://ddcappipcesb.indonesiaport.co.id/ipc.npk.billing.provider.wsdl:npkBilling">
+		<soapenv:Header/>
+		<soapenv:Body>
+		   <ipc:terminalList>
+			  <terminalListInterfaceRequest>
+				 <esbHeader>
+					<!--Optional:-->
+					<internalId>?</internalId>
+					<!--Optional:-->
+					<externalId>?</externalId>
+					<!--Optional:-->
+					<timestamp>?</timestamp>
+					<!--Optional:-->
+					<responseTimestamp>?</responseTimestamp>
+					<!--Optional:-->
+					<responseCode>?</responseCode>
+					<!--Optional:-->
+					<responseMessage>?</responseMessage>
+				 </esbHeader>
+				 <esbBody>
+					<terminalName>BANTEN</terminalName>
+				 </esbBody>
+				 <start>?</start>
+				 <limit>?</limit>
+				 <page>?</page>
+			  </terminalListInterfaceRequest>
+		   </ipc:terminalList>
+		</soapenv:Body>
+	 </soapenv:Envelope>';
+
+		$wsdl = "http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling/ipc_npk_billing_provider_wsdl_npkBilling_Port";
+
+		$params = array(
+				'login' => 'npk_billing',
+				'password' => 'npk_billing',
+				'trace' => 0,
+				'exceptions' => 0,
+				'location' => 'http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling?WSDL',
+				'uri' => 'http://10.88.48.57:5555/ws/ipc.eService.provider.soap:npkBilling?WSDL'
+			);
+
+		$result = $this->sendcurl_lib->SendCurl($xml, $wsdl, 'terminalList', 'npk_billing', 'npk_billing');
+				
+		$tampArray = array();
+
+		if(!$result){
+			echo $result;
+		}else{
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param= $response["soapenv:Envelope"]["_c"]["soapenv:Body"]["_c"]["ser-root:terminalListResponse"]["_c"]["terminalListInterfaceResponse"]["_c"]["esbBody"]["_c"]["results"];
+			// print_r($out_param);die;
+			for ($i=0; $i < count($out_param); $i++) { 
+				
+				$arrPatition = array();
+				array_push($arrPatition, 
+							$out_param[$i]['_c']['terminalId']['_v'],
+							$out_param[$i]['_c']['idPort']['_v'], 							 
+							$out_param[$i]['_c']['terminalPort']['_v'], 
+							$out_param[$i]['_c']['terminalName']['_v']);
+				array_push($tampArray, $arrPatition);
+							
+			}
+			// print_r($tampArray);die;
+			// $throw = json_encode($tampArray);
+			return $tampArray;
+		}
+	}
+
+	
+}

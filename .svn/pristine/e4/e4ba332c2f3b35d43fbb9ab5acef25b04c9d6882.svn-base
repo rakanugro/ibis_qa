@@ -1,0 +1,202 @@
+
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+
+
+<style type="text/css">
+
+.upload_info {
+    font-size: small;
+    font-style: italic;
+    float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+</script>
+							
+							<div class="row">
+							<div class="col-lg-12">
+								<div class="main-box">
+									<div class="main-box clearfix">
+										<header class="main-box-header clearfix">
+											<h2 class="pull-left">Search Request</h2>
+										</header>
+										<div class="main-box-body clearfix">
+										<div class="form-group example-twitter-oss">
+											<label for="exampleAutocomplete">BOOKING NUMBER</label>
+											<input type="text" class="form-control" id="bookimg_number" name="bookimg_number" value="" placeholder=""/>
+										</div>	
+										<div class="form-group example-twitter-oss">
+											<label for="exampleAutocomplete">KEGIATAN</label>
+											<input type="text" class="form-control" id="kegiatan" name="kegiatan" value="" placeholder=""/>
+										</div>										
+										<div class="form-group example-twitter-oss">
+											<input type="button" onclick="load_table()" value="Search" id="search_reqs" name="search_reqs" class="btn btn-danger"/>
+											<input type="button" value="reset" id="reset" name="reset" class="btn btn-primary" value="Reset"/>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+							<div class="row" id="tabledata">
+								<div class="col-lg-12">
+									<div class="main-box clearfix">
+										<div class="modal-body">
+								          	<table id="example" class="table table-striped table-bordered" style="width:100%">
+										        <thead>
+										            <tr>
+										                <th>No</th>
+										                <th>ID</th>
+										                <th>NO PROFORMA</th>
+										                <th>PROFROMA DATE</th>
+										                <th>BOOKING TYPE </th>
+										                <th>BOOKING NUMBER</th>
+										                <th>BOOKING DATE</th>
+										                <th>TRADE TYPE</th>
+										                <th>COMMODITY</th>
+										                <th>PACKAGING</th>
+										                <th>VESSEL</th>
+										                <th>QUANTITY</th>
+										                <th>SUB TOTAL</th>
+										                <th>UPER</th>
+										                <th>TOTAL</th>
+										                <th>ACTION</th>
+										            </tr>
+										        </thead>
+										        <tbody>
+										            <tr>
+										            	<td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td></td>
+										                <td>
+										                	<a class="btn btn-danger" id="btn_vproforma"><i class="fa fa-eye"></i></a>
+									                		<a class="btn btn-danger" href=""><i class="fa fa-print"></i></a>
+										                </td>
+										            </tr>
+										        </tbody>
+										   	</table>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal fade" id="modal_vproforma" role="dialog">
+							    <div class="modal-dialog">
+							      	<div class="modal-content">
+							        	<div class="modal-header">
+							          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+							          		<h4 class="modal-title">View Proforma</h4>
+							        	</div>
+							        	<div class="modal-body clearfix">
+							          		<div class="form-group col-xs-6">
+												<label for="exampleTooltip">ID</label>
+												<input name="id" id="id" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">NO PROFORMA</label>
+												<input name="no_proforma" id="no_proforma" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">PROFROMA DATE</label>
+												<input name="proforma_date" id="proforma_date" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">BOOKING TYPE</label>
+												<input name="booking_type" id="booking_type" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">BOOKING NUMBER</label>
+												<input name="booking_number" id="booking_number" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">BOOKING DATE</label>
+												<input name="booking_date" id="booking_date" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">TRADE TYPE</label>
+												<input name="trade_type" id="trade_type" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">COMMODITY</label>
+												<input name="comodity" id="comodity" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">PACKAGING</label>
+												<input name="packaging" id="packaging" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">VESSEL</label>
+												<input name="vessel" id="vessel" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">QUANTITY</label>
+												<input name="quantity" id="quantity" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">SUB TOTAL</label>
+												<input name="subtotal" id="subtotal" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">UPER</label>
+												<input name="uper" id="uper" type="text" class="form-control">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleTooltip">TOTAL</label>
+												<input name="total" id="total" type="text" class="form-control">
+											</div>
+							        	</div>
+							        	<div class="modal-footer">
+							          		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							        	</div>
+							      	</div>
+							    </div>
+							</div>
+  
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+});
+
+$(document).ready(function(){
+  $("#btn_vproforma").click(function(){
+    $("#modal_vproforma").modal();
+  });
+});
+</script>
+
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

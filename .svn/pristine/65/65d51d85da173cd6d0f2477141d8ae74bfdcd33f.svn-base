@@ -1,0 +1,253 @@
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+
+<style type="text/css">
+.upload_info {
+	font-size: small;
+	font-style: italic;
+	float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+<script >
+	
+	$(function() {
+		$("#container_data").attr('class', 'row  ');
+		$("#container_excel").attr('class', 'row  hidden');
+		$("#detail_container").attr('class', 'row  hidden');
+    });
+</script>
+
+
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>TCA DATA</h2>
+								</header>
+
+									<div class="main-box-body clearfix">
+										<div class="form-group">
+											<label>Terminal</label>
+											<select id="port" name="port" class="form-control" onchange="cekTipeYd()">
+												<option> -- Please Choose Terminal -- </option>
+												<option value="201">Banten</option>
+												</select>
+										</div>
+										<div class="form-group example-twitter-oss">
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ID Customer</label>
+												<input type="text" class="form-control" id="customer_id" name="customer_id" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Customer Name</label>
+												<input type="text" class="form-control" id="customer_name" name="customer_name" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Entry No Request / BL</label>
+												<input type="text" class="form-control" id="no_request" name="no_request" placeholder="" size="20">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">VESSEL</label>
+												<input type="text" class="form-control" id="vessel" name="vessel" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">VOYAGE</label>
+												<input type="text" class="form-control" id="voyage" name="voyage" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">PKG NAME</label>
+												<input type="text" class="form-control" id="pkg_name" name="pkg_name" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">QTY</label>
+												<input type="text" class="form-control" id="qty" name="qty" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">TON</label>
+												<input type="text" class="form-control" id="ton" name="ton" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">NO BL</label>
+												<input type="text" class="form-control" id="bl_number" name="bl_number" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">BL DATE</label>
+												<input type="text" class="form-control" id="bl_date" name="bl_date" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">HS CODE</label>
+												<input type="text" class="form-control" id="hs_code" name="hs_code" size="8">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Service Type</label>
+												<input type="text" class="form-control" id="service_type" name="service_type" size="8" >
+											</div>
+											<input type="hidden" id="voyage_in" name="voyage_in">
+											<input type="hidden" id="voyage_out" name="voyage_out">
+											<input type="hidden" id="id_vvd" name="id_vvd">
+											<input type="hidden" id="id_servicetype" name="id_servicetype">
+											<input type="hidden" id="ei" name="ei">
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="modalplaceholder"></div>
+					<div id="container_data" name="container_data" class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>TCA Data</h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="form-inline" role="form">
+										<div class="form-group">
+											<label for="exampleTooltip">TRUCK ID / TRUCK NUMBER</label>
+											<input id="tid" name="tid" type="text" class="form-control" data-toggle="tooltip" data-placement="bottom">
+													
+											<input id="truck_number" name="truck_number" type="text" class="form-control" placeholder="Type" data-toggle="tooltip" data-placement="bottom" title="Type" size="8" readOnly>
+											<input id="id_truck" name="id_truck" type="hidden" class="form-control" placeholder="Type" data-toggle="tooltip" data-placement="bottom" title="Type" size="8" readOnly>
+											<input id="truck_company" name="truck_company" type="text" class="form-control" placeholder="truck company" data-toggle="tooltip" data-placement="bottom" title="Size" size="30" readOnly>
+													
+											<input id="rfid_code" name="rfid_code" type="hidden" class="form-control" placeholder="truck company" data-toggle="tooltip" data-placement="bottom" title="Size" size="8" readOnly>
+										</div>
+									<div>
+									<button  class="btn btn-success">Add</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="detail_container" name="detail_container" class="roq">
+						<div class="col-lg-12">
+							<div class="main-box clearfix">
+								<header class="main-box-header clearfix">
+									<h2 class="pull-left">Truck Association List</h2>
+								</header>
+
+								<div class="main-box-body clearfix">
+									<div class="table-responsive">
+										<table class="table table-striped table-hover" id="table1">
+											<thead>
+												<tr>
+												 	<th width='50px'>NO REQUEST</th>
+												 	<th width='50px'>TCA TRUCK ID</th>
+												  	<th width='50px'>TCA TRUCK NUMBER</th>
+												  	<th width='50px'>TCA TRUCK COMPANY</th>
+												  	<th width='50px'>PROXIMITY</th>
+												  	<th width='50px'>DELETE</th>
+												</tr>	
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+									<button type="submit" onclick="window.open('<?=ROOT.'eservice/tca/main_tca'?>','_self');" class="btn btn-success">Next</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+<script>
+
+$(document).ready(function() {
+	$( "#tid" ).autocomplete({
+		minLength: 3,
+		source: function(request, response) {
+			$.getJSON("<?=ROOT?>eservice/tca/getTid",{ term: $( "#tid" ).val()}, response);
+			},
+		focus: function( event, ui )
+		{
+			$( "#tid" ).val( ui.item._c.tid._v);
+			return false;
+		},
+		select: function( event, ui )
+		{
+		    
+			$("#tid").val( ui.item._c.tid._v);
+			$("#truck_number" ).val( ui.item._c.truckNumber._v);
+			$("#truck_company" ).val( ui.item._c.companyName._v);
+			return false;
+		}
+	}).data( "uiAutocomplete" )._renderItem = function( ul, item )
+	{
+		console.log(item);
+		return $( "<li></li>" )
+		.data( "item.autocomplete", item )
+		.append( "<a align='center'>" + item._c.tid._v + "<br>" +item._c.truckNumber._v+" - " +item._c.companyName._v+"</a>")
+		.appendTo( ul );
+
+	};
+});
+
+
+  	function create_tca()
+	{ 
+		var vessel 			= $("#vessel").val();
+		var voyage_in 		= $("#voyage_in").val();
+		var voyage_out 		= $("#voyage_out").val();
+		var no_request 		= $("#no_request").val();
+		var customer_name	= $("#customer_name").val();
+		var customer_id		= $("#customer_id").val();
+		var pkg_name 		= $("#pkg_name").val();
+		var qty 			= $("#qty").val();
+		var ton				= $("#ton").val();
+		var bl_number 		= $("#bl_number").val();
+		var bl_date 		= $("#bl_date").val();
+		var ei 				= $("#ei").val();
+		var hs_code 		= $("#hs_code").val();
+		var id_servicetype 	= $("#id_servicetype").val();
+		var service_type 	= $("#service_type").val();
+		var id_vvd 			= $("#id_vvd").val();
+		var terminal 		= $("#port").val();
+		var truck_id 		= $("#tid").val();
+		var truck_number 	= $("#truck_number").val();
+		var tca_company 	= $("#truck_company").val();
+		var rfid_code 		= $("#rfid_code").val();
+		var id_truck 		= $("#truck_id").val();
+
+		$.get("<?=ROOT?>eservice/tca/create_request_tca?",{vessel : vessel, voyage_in: voyage_in, voyage_out:voyage_out, no_request:no_request, customer_name:customer_name, customer_id:customer_id, pkg_name:pkg_name, qty:qty, ton:ton, bl_number:bl_number, bl_date:bl_date, ei:ei, hs_code:hs_code, id_servicetype:id_servicetype, service_type:service_type, id_vvd:id_vvd, terminal:terminal, truck_id:truck_id, truck_number:truck_number, tca_company:tca_company, rfid_code:rfid_code, id_truck:id_truck}, function(data) {
+			
+			$.unblockUI();
+			if(data == 'FAILED') {
+				alert('Masih terdapat kesalahan input, silakan periksa kembali inputan anda.');
+				return false;
+			}
+			else
+			{
+				alert("Simpan request berhasil");
+				$("#container_data").attr('class', 'row');
+				$("#container_excel").attr('class', 'row');
+				$("#detail_container").attr('class', 'row');
+			}
+			$(':button').removeAttr('disabled');
+		});
+	}
+
+	
+
+ </script>
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />
