@@ -1,0 +1,1012 @@
+<script src="<?=CUBE_?>js/jquery.nanoscroller.min.js"></script>
+<script src="<?=CUBE_?>js/modernizr.custom.js"></script>
+<script src="<?=CUBE_?>js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="<?=CUBE_?>js/classie.js"></script>
+<script src="<?=CUBE_?>js/notificationFx.js"></script>
+<script src="<?=CUBE_;?>js/ipc/addressloading.js"></script>
+<script src="<?=CUBE_;?>js/ipc/validation.js"></script>
+<script src="<?=CUBE_?>js/hogan.js"></script>
+<script src="<?=CUBE_?>js/typeahead.min.js"></script>
+<script src="<?=CUBE_?>js/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-growl.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-bar.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-attached.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-other.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/libs/ns-style-theme.css"/>
+<link rel="stylesheet" type="text/css" href="<?=CUBE_?>css/bootstrap/searchbt.css"/>
+
+<style type="text/css">
+.upload_info {
+	font-size: small;
+	font-style: italic;
+	float: right;
+}
+.hidden_content {
+	display: none;
+}
+</style>
+
+<script>
+	$(document).ready(function() {
+				$('#kendaraan_type').on('change', function(){
+			var jenis_kend = $(this).val();
+			//var terminal = ( $(this).val().split('-') )[1];
+			//alert (jenis_kend);
+			if (jenis_kend == 'KP'){
+				$('#customer_name').attr('disabled','disabled');
+			}  else {
+				$("#customer_name").removeAttr('disabled');
+			}
+		});
+		
+			$('#tgl').datepicker({
+		format: 'dd-mm-yyyy'
+	});
+		
+		//sql injection protection
+		$(":input").keyup(function(event) {
+			// $(this).val($(this).val().replace(/[@\*\-#=,;:'"()\[\]/\\]/gi, ''));
+			$(this).val($(this).val().replace(/[\*\-#=,;:'"()?%~`$^&+{}|<>\[\]/\\]/gi, ''));
+		});
+		
+				$( "#customer_name" ).autocomplete({
+				minLength: 5,
+				source: function(request, response) {
+					$.getJSON("<?=ROOT?>autocomplete/getCustomerList?",{  term: $( "#customer_name" ).val(),
+																				  port: $('#port').val()
+																				 }, response);
+					},
+				focus: function( event, ui )
+				{
+					$( "#customer_name" ).val( ui.item.NAME);
+					return false;
+				},
+				select: function( event, ui )
+				{
+					$( "#customer_name" ).val( ui.item.NAME);
+					$( "#customer_address" ).val( ui.item.ADDRESS);
+					$( "#customer_npwp" ).val( ui.item.NPWP);
+					$( "#customer_id" ).val( ui.item.CUSTOMER_ID);
+					return false;
+				}
+			}).data( "uiAutocomplete" )._renderItem = function( ul, item )
+			{
+				return $( "<li></li>" )
+				.data( "item.autocomplete", item )
+				.append( "<a align='center'><p class='repo-language'>" + item.NAME + "</p><p class='repo-name'>" +item.ADDRESS+"</p></a>")
+				.appendTo( ul );
+		};
+		
+		
+	});
+
+function submitheader()
+{
+	var terminal = $("#port").val();
+	var customer_id=$( "#customer_id" ).val();
+	var customer_name=$( "#customer_name" ).val();
+	var customer_address=$( "#customer_address" ).val();
+	var truck_number=$( "#truck_number" ).val();
+	var truck_id=$( "#truck_id" ).val();
+	var rfid_code=$( "#rfid_code" ).val();
+	var kend_type=$( "#kendaraan_type" ).val();
+	var tgl=$( "#tgl" ).val();
+	
+
+	if( terminal=='')
+	{
+		alert('Terminal tidak boleh kosong');
+		return false;
+	}
+
+	if( truck_number=='')
+	{
+		alert('Truck Number tidak boleh kosong');
+		return false;
+	}
+
+	if (truck_id=='')
+	{
+		alert('Truck ID tidak boleh kosong');
+		return false;
+	}
+
+	if(rfid_code=='')
+	{
+		alert('RFID Code tidak boleh kosong');
+		return false;
+	}
+	
+	if(tgl=='')
+	{
+		alert('Tanggal tidak boleh kosong');
+		return false;
+	}
+
+	var url="<?=ROOT?>om/truck/update_register_id";
+	$.blockUI();
+	$.post(url,{TERMINAL:terminal,CUSTOMER_ID:customer_id,CUSTOMER_NAME:customer_name,CUSTOMER_ADDRESS:customer_address,TRUCK_NUMBER:truck_number,TRUCK_ID:truck_id,RFID_CODE:rfid_code,KEND_TYPE:kend_type,TANGGAL:tgl,'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'},
+
+	function(data) {
+		//alert(data);
+		$.unblockUI();
+		if(data == 'salah') {
+			alert('Masih terdapat kesalahan input, silakan periksa kembali inputan anda.');
+			return false;
+		}
+
+		$(':button').attr('disabled','disabled');
+
+		var obj = jQuery.parseJSON( data );
+
+		if(obj.rc=="F") {
+			alert("Request Gagal. Hubungi sistem administrator: "+obj.rcmsg);
+			$(':button').removeAttr('disabled');
+		}
+		else if(obj.data.info==null) {
+			alert("Request Gagal. Hubungi sistem administrator: "+obj.rcmsg);
+			$(':button').removeAttr('disabled');
+		}
+		else
+		{
+			var row_data = obj.data.info;
+			var explode = row_data.split(',');
+			var v_msg = explode[0];
+			var v_req = explode[1];
+
+			if(v_msg!="OK")
+			{
+				alert(v_req);
+			}
+			else
+			{
+				submitFileOK(v_req);
+				if (port != "IDJKT-T009D") {
+					submitFileSPPB(v_req);
+					submitFileSPCUSTOM(v_req);
+				}
+				document.getElementById('submit_header').style.display = "none";
+				alert("Simpan request berhasil");
+				
+				window.location = "<?=ROOT?>om/truck/create_truck_registration";
+
+				// show the notification
+				notification.show();
+			}
+			$(':button').removeAttr('disabled');
+		}
+	});
+}
+
+function submitFileDO(reqNo)
+{
+	var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/do_upload";
+
+	var formData = new FormData($('.myForm1')[0]);
+	$.ajax({
+			url: formUrl,
+			type: 'POST',
+			data: formData,
+			mimeType: "multipart/form-data",
+			contentType: true,
+			cache: false,
+			processData: false,
+			success: function(data, textStatus, jqXHR){
+				//alert('success');
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				alert(data);
+			}
+	});
+
+
+
+}
+
+
+function submitFileOK(reqNo)
+{
+	var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/do_upload";
+	var formData = new FormData($('.myForm1')[0]);
+
+	$.ajax({
+			url: formUrl,
+			type: 'POST',
+			data: formData,
+			mimeType: "multipart/form-data",
+			contentType: false,
+			cache: false,
+			processData: false,
+			success: function(data, textSatus, jqXHR){
+				//alert('success');
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				alert(data);
+			}
+	});
+}
+
+
+function submitFileSPPB(reqNo)
+{
+	var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/sppb_upload";
+	var formData = new FormData($('.myForm2')[0]);
+
+	$.ajax({
+			url: formUrl,
+			type: 'POST',
+			data: formData,
+			mimeType: "multipart/form-data",
+			contentType: false,
+			cache: false,
+			processData: false,
+			success: function(data, textSatus, jqXHR){
+				//alert('success');
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				alert(data);
+			}
+	});
+}
+
+function submitFileSPCUSTOM(reqNo)
+{
+	var formUrl = "<?=ROOT?>container/upload_doc/"+reqNo+"/sp_custom_upload";
+	var formData = new FormData($('.myForm3')[0]);
+
+	$.ajax({
+			url: formUrl,
+			type: 'POST',
+			data: formData,
+			mimeType: "multipart/form-data",
+			contentType: false,
+			cache: false,
+			processData: false,
+			success: function(data, textSatus, jqXHR){
+				//alert('success');
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				alert(data);
+			}
+	});
+}
+
+function add_cont(){
+	var terminal = $("#port").val();
+	var vessel=$( "#vessel_autocomplete" ).val();
+	var id_vsb_voyage=$( "#id_vsb_voyage" ).val();
+	var vessel_code=$( "#vessel_code" ).val();
+	var call_sign=$( "#call_sign" ).val();
+	var voyage_in=$( "#voyage_in" ).val();
+	var voyage_out=$( "#voyage_out" ).val();
+	var no_container = $("#no_container").val();
+	var no_request = $("#no_request").val();
+	var type_container = $("#type_container").val();
+	var size_container = $("#size_container").val();
+	var status_container = $("#status_container").val();
+	var height_cont = $("#height_cont").val();
+	var id_cont = $("#id_cont").val();
+	var hz = $("#hz").val();
+	var imo_class = $("#imo_class").val();
+	var un_number = $("#un_number").val();
+	var iso_code = $("#iso_code").val();
+	var temp = $("#temp").val();
+	var weight = $("#weight").val();
+	var carrier = $("#carrier").val();
+	var oog = $("#oog").val();
+	var over_left = $("#over_left").val();
+	var over_right = $("#over_right").val();
+	var over_front = $("#over_front").val();
+	var over_rear = $("#over_rear").val();
+	var over_height = $("#over_height").val();
+	var delivery_date=$( "#delivery_date" ).val();
+	var date_discharge = $( "#date_discharge" ).val();
+	var delivery_type=$( "#delivery_type" ).val();
+	var pod = $( "#pod" ).val();
+	var pol=$( "#pol" ).val();
+	var comodity=$("#comodity").val();
+	var plo=$("#plo").val();
+	var pli=$("#pli").val();
+	var gatein_date=$("#gatein_date").val();
+	
+	if(type_container==''){
+			alert('Pilih kontainer!');
+			return false;
+	}
+	else if ((type_container!=='RFR') && (plo !== undefined) && (plo !== null) && (plo !== '') && (terminal=='IDJKT-T3I' || terminal=='IDJKT-T009D')){
+		alert('Tanggal Plug Out Hanya Diisi Untuk Container Reefer!');
+		return false;	
+	}
+	else if ((type_container!=='RFR') && (plo !== undefined) && (plo !== null) && (plo !== '') && ((terminal!=='IDJKT-T3I') || (terminal!=='IDJKT-T009D'))){
+		alert('Container Reefer Domestik Tidak Perlu Mengisi Plug Out!');
+		return false;
+	}
+	else if (((type_container=='RFR') && (plo=='') && (terminal=='IDJKT-T3I')) || ((type_container=='RFR') && (terminal=='IDJKT-T3I'))){
+		if (plo==''){
+			alert('Container Reefer, Tanggal Plug Out Tidak Boleh Kosong!');
+			return false;
+		} 
+		else{
+			var plox = plo.split(" ");//dateTime[0] = date, dateTime[1] = time
+			var plix = pli.split(" ");//dateTime[0] = date, dateTime[1] = time
+			var plix_date = plix[0].split("-");
+			var plix_time = plix[1].split(":");
+			var plix_fin = new Date(plix_date[2], (plix_date[1]-1), plix_date[0], plix_time[0], plix_time[1], 0, 0);
+			//-----------------------------------------
+			var plox_date = plox[0].split("-");
+			var plox_time = plox[1].split(":");
+			var plox_fin = new Date(plox_date[2], (plox_date[1]-1), plox_date[0], plox_time[0], plox_time[1], 0, 0);	
+
+			if (plix_fin >= plox_fin){
+				alert('Tanggal Plug Out Harus Lebih Besar Dari Tanggal Plug In!');
+				return false;
+			}			
+		}
+		//-----------------------------
+		//----------------------------
+	} 
+	else if (((type_container=='RFR') && (plo=='') && (terminal=='IDJKT-T009D')) || ((type_container=='RFR') && (terminal=='IDJKT-T009D'))){
+		if (pli !== '' && plo==''){
+			alert('Container Reefer, Tanggal Plug Out Tidak Boleh Kosong!');
+			alert (pli);
+			return false;		
+		} 
+		else if((pli !== '') && (plo !== '')){
+			
+			var plix = pli.split(" ");//dateTime[0] = date, dateTime[1] = time
+			var plox = plo.split(" ");//dateTime[0] = date, dateTime[1] = time
+			var plix_date = plix[0].split("-");
+			var plix_time = plix[1].split(":");
+			var plix_fin = new Date(plix_date[2], (plix_date[1]-1), plix_date[0], plix_time[0], plix_time[1], 0, 0);
+			//-----------------------------------------
+			var plox_date = plox[0].split("-");
+			var plox_time = plox[1].split(":");
+			var plox_fin = new Date(plox_date[2], (plox_date[1]-1), plox_date[0], plox_time[0], plox_time[1], 0, 0);	
+				
+			if (plix_fin >= plox_fin){
+				alert('Tanggal Plug Out Harus Lebih Besar Dari Tanggal Plug In!');
+				return false;
+			}			
+		}
+	}
+	
+	$(':button').attr('disabled','disabled');
+	var url="<?=ROOT?>container/add_detail_delivery";
+	$.blockUI();
+	$.post(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',ID_REQ:no_request,TERMINAL:terminal,ID_VSB_VOYAGE:id_vsb_voyage,VESSEL:vessel,VESSEL_CODE:vessel_code,CALL_SIGN:call_sign,VOYAGE_IN:voyage_in,VOYAGE_OUT:voyage_out,NO_CONTAINER:no_container,SIZE_CONT:size_container,TYPE_CONT:type_container,STATUS_CONT:status_container,HEIGHT_CONT:height_cont,ID_CONT:id_cont,HZ:hz, IMO_CLASS:imo_class, UN_NUMBER:un_number, ISO_CODE:iso_code, TEMP:temp, WEIGHT:weight, CARRIER:carrier, OOG:oog, OVER_LEFT:over_left, OVER_RIGHT: over_right, OVER_FRONT:over_front, OVER_REAR:over_rear, OVER_HEIGHT:over_height,DELIVERY_DATE:delivery_date,DATE_DISCHARGE:date_discharge, DELIVERY_TYPE : delivery_type, POD : pod, POL : pol,PLUG_IN : pli, PLUG_OUT:plo, GATEIN_DATE : gatein_date},
+	function(data) {
+		$.unblockUI();
+			var row_data = data;
+			var explode = row_data.split(',');
+			var v_msg = explode[0];
+			var v_req = explode[1];
+			if (v_msg!='OK')
+			{
+				alert('Request gagal : '+v_req);
+			}
+			else
+			{
+				$("#no_container").val("");
+				$("#type_container" ).val("");
+				$("#size_container" ).val("");
+				$("#status_container" ).val("");
+				$("#height_cont" ).val("");
+				$("#id_cont" ).val("");
+				$("#hz" ).val("");
+				$("#imo_class" ).val("");
+				$("#un_number" ).val("");
+				$("#iso_code" ).val("");
+				$("#temp" ).val("");
+				$("#weight" ).val("");
+				$("#carrier" ).val("");
+				$("#oog" ).val("");
+				$("#over_left" ).val("");
+				$("#over_right" ).val("");
+				$("#over_front" ).val("");
+				$("#over_rear" ).val("");
+				$("#over_height").val("");
+				$("#pli").val("");
+				$("#plo").val("");
+
+				var url = "<?=ROOT?>container/get_detail_delivery/add/"+no_request+"/"+terminal;
+				$("#detail_container").load(url);
+
+				var notification = new NotificationFx({
+					message : '<p>Tambah Container Sukses</p>',
+					layout : 'growl',
+					effect : 'jelly',
+					type : 'success' // notice, warning, error or success
+
+				});
+
+				// show the notification
+				notification.show();
+			}
+			$(':button').removeAttr('disabled');
+	});
+}
+
+//save_req tidak digunakan
+function save_req(){
+	var url="<?=ROOT?>container/save_request_delivery";
+	var terminal = $("#terminal").val();
+	var no_request = $("#no_request").val();
+	$.post(url,{NO_REQUEST:no_request, TERMINAL:terminal,'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'},
+		function(data){
+			var row_data = data;
+			var explode = row_data.split(',');
+			var v_msg = explode[0];
+			var v_req = explode[1];
+			if (v_msg!='OK')
+			{
+				alert('Save gagal : '+v_msg);
+				return false;
+			}
+			else
+			{
+				alert(v_msg);
+				window.location = "<?=ROOT?>container/main_delivery";
+			}
+		});
+}
+
+function delete_container(no_container){
+	var terminal = $("#port").val();
+	var no_request = $("#no_request").val();
+	var vessel_code=$( "#vessel_code" ).val();
+	var voyage=$( "#voyage" ).val();
+
+	var url="<?=ROOT?>container/del_cont_req_delivery";
+	$.post(url,{NO_CONTAINER:no_container, NO_REQUEST:no_request, TERMINAL:terminal, VESSEL_CODE:vessel_code, VOYAGE:voyage,'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'},
+		function(data){
+			var row_data = data;
+			var explode = row_data.split(',');
+			var v_msg = explode[0];
+			var v_req = explode[1];
+			if (v_msg!='OK')
+			{
+				alert('Delete gagal : '+v_msg+'.'+v_req);
+			}
+			else
+			{
+				$("#detail_container").load("<?=ROOT?>container/get_detail_delivery/add/"+no_request+"/"+terminal);
+				alert(v_msg+'.'+no_container+" deleted");
+			}
+		});
+	$('a').removeAttr('disabled');
+}
+
+$(document).ready(function() {
+
+	var sPdfType = ['application/pdf',
+						'application/x-download',
+						'application/force-download'
+					]; //mime type application/pdf saja yang diperbolehkan, selainnya muncul pesan kesalahan
+
+	$("#container_data").attr('class', 'row hidden');
+	$("#container_excel").attr('class', 'row hidden');
+
+	$('#port').on('change', function(){
+		var terminal = $(this).val().slice(-1);
+		console.log(terminal);
+		if (terminal == 'I'){
+			$('#international_content').removeClass('hidden_content');
+		} else {
+			$('#international_content').addClass('hidden_content');
+		}
+		
+
+	});
+//=================++++++++++++++=========
+//http://localhost/ibis_qa/index.php/container/auto_vessel_delivery?&term=SINAR+&port=IDJKT-T2D
+
+
+//==============++++++++++++
+	//======================================= autocomplete vessel==========================================//
+	/*$( "#vessel_autocomplete" ).autocomplete({
+		minLength: 3,
+		source: function(request, response) {
+			$.getJSON("<?=ROOT?>container/auto_vessel_delivery?",{term:$( "#vessel_autocomplete" ).val(), port: $("#port").val()}, response);
+			},
+		focus: function( event, ui )
+		{
+			//alert(ui.item.VESSEL);
+			$( "#vessel_autocomplete" ).val( ui.item.VESSEL);
+			return false;
+		},
+		select: function( event, ui )
+		{
+
+			$( "#vessel_autocomplete" ).val( ui.item.VESSEL);
+			$( "#voyage_in" ).val( ui.item.VOYAGE_IN);
+			$( "#voyage_out" ).val( ui.item.VOYAGE_OUT);
+			$( "#voyage" ).val( ui.item.VOYAGE);
+			$( "#id_vsb_voyage" ).val( ui.item.ID_VSB_VOYAGE);
+			$( "#vessel_code" ).val( ui.item.VESSEL_CODE);
+			$( "#call_sign" ).val( ui.item.CALL_SIGN);
+			$( "#date_discharge" ).val( ui.item.DATE_DISCHARGE);
+			return false;
+		}
+	}).data( "uiAutocomplete" )._renderItem = function( ul, item )
+	{
+		return $( "<li></li>" )
+		.data( "item.autocomplete", item )
+		.append( "<a align='center'>" + item.VESSEL + "<br>Voyage in " +item.VOYAGE_IN+" - Voyage out " +item.VOYAGE_OUT+"</a>")
+		.appendTo( ul );
+
+	};*/
+//======================================= autocomplete vessel==========================================//
+
+//======================================= autocomplete container==========================================//
+	$( "#no_container" ).autocomplete({
+		minLength: 11,
+		source: function(request, response) {
+			$.getJSON("<?=ROOT?>container/auto_container_delivery?",{ term: $( "#no_container" ).val(), vessel_code: $("#vessel_code").val(), voyage_in: $("#voyage_in").val(), voyage_out: $("#voyage_out").val(),port: $("#port").val(),del_type : $("#delivery_type").val(),no_booking : $("#nobook").val(),vessel: $("#vessel_autocomplete").val()}, response);
+
+			},
+		focus: function( event, ui )
+		{
+			$( "#no_container" ).val( ui.item.NO_CONTAINER);
+			return false;
+		},
+		select: function( event, ui )
+		{
+
+			$("#no_container").val( ui.item.NO_CONTAINER);
+			$("#type_container" ).val( ui.item.TYPE_CONT);
+			$("#size_container" ).val( ui.item.SIZE_CONT);
+			$("#status_container" ).val( ui.item.STATUS_CONT);
+			$("#height_cont" ).val( ui.item.HEIGHT_CONT);
+			$("#id_cont" ).val( ui.item.ID_CONT);
+			$("#hz" ).val( ui.item.HZ);
+			$("#imo_class" ).val( ui.item.IMO_CLASS);
+			$("#un_number" ).val( ui.item.UN_NUMBER);
+			$("#iso_code" ).val( ui.item.ISO_CODE);
+			$("#temp" ).val( ui.item.TEMP);
+			$("#weight" ).val( ui.item.WEIGHT);
+			$("#carrier" ).val( ui.item.CARRIER);
+			$("#oog" ).val( ui.item.OOG);
+			$("#over_left" ).val( ui.item.OVER_LEFT);
+			$("#over_right" ).val( ui.item.OVER_RIGHT);
+			$("#over_front" ).val( ui.item.OVER_FRONT);
+			$("#over_rear" ).val( ui.item.OVER_REAR);
+			$("#over_height").val( ui.item.OVER_HEIGHT);
+			$("#pod" ).val( ui.item.POD);
+			$("#pol" ).val( ui.item.POL);
+			$("#comodity").val( ui.item.COMODITY);
+			$("#pli").val( ui.item.PLUG_IN);
+			$("#gatein_date").val( ui.item.GATEIN_DATE);
+			return false;
+		}
+	}).data( "uiAutocomplete" )._renderItem = function( ul, item )
+	{
+		return $( "<li></li>" )
+		.data( "item.autocomplete", item )
+		.append( "<a align='center'>" + item.NO_CONTAINER + "<br>" +item.TYPE_CONT+" - " +item.SIZE_CONT+" - " +item.STATUS_CONT+"</a>")
+		.appendTo( ul );
+
+	};
+
+//======================================= autocomplete container==========================================//
+
+	$('#delivery_date').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+
+	//$('#delivery_date').bind("onSelect",function(a,b){alert("ivan ganteng");});
+
+	$('#do_date').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+
+
+
+	$('#sp_custom_date').datepicker({
+		format: 'dd-mm-yyyy'
+	});
+	$('#plo').datetimepicker({
+		format: 'd-m-Y H:i'
+	});
+
+	//validasi saat do upload
+	$('#do_upload').change(function() {
+		var namafile,panjangfile;
+		namafile=document.getElementById('do_upload').value;
+		panjangfile=namafile.length;
+
+		if(panjangfile>255){
+			alert('panjang file tidak boleh lebih dari 255');
+			document.getElementById('do_upload').value="";
+		}
+
+		var sDoType = ['application/pdf',
+						'application/x-download',
+						'application/force-download'
+					]; //mime type application/pdf saja yang diperbolehkan, selainnya muncul pesan kesalahan
+		var files = document.getElementById('do_upload').files[0].type;
+
+		if (sPdfType.indexOf(files) > -1) {
+			console.log('File valid'); //In the array!
+		} else {
+			alert('Mime type file: '+files+ '.\nFile tidak valid.'); //Not in the array
+			document.getElementById('do_upload').value="";
+			return false;
+		}
+	});
+
+	//validasi saat sppb upload
+	$('#sppb_upload').change(function() {
+		var files = document.getElementById('sppb_upload').files[0].type;
+
+		var namafile2,panjangfile2;
+		namafile2=document.getElementById('sppb_upload').value;
+		panjangfile2=namafile2.length;
+
+		if(panjangfile2>255){
+			alert('panjang file tidak boleh lebih dari 255');
+			document.getElementById('sppb_upload').value="";
+		}
+
+		if (sPdfType.indexOf(files) > -1) {
+			console.log('File valid'); //In the array!
+		} else {
+			alert('Mime type file: '+files+ '.\nFile tidak valid.'); //Not in the array
+			document.getElementById('sppb_upload').value="";
+			return false;
+		}
+	});
+
+	//validasi saat sp custom upload
+	$('#sp_custom_upload').change(function() {
+		var files = document.getElementById('sp_custom_upload').files[0].type;
+
+		var namafile3,panjangfile3;
+		namafile3=document.getElementById('sp_custom_upload').value;
+		panjangfile3=namafile3.length;
+
+		if(panjangfile3>255){
+			alert('panjang file tidak boleh lebih dari 255');
+			document.getElementById('sp_custom_upload').value="";
+		}
+
+		if (sPdfType.indexOf(files) > -1) {
+			console.log('File valid'); //In the array!
+		} else {
+			alert('Mime type file: '+files+ '.\nFile tidak valid.'); //Not in the array
+			document.getElementById('sp_custom_upload').value="";
+			return false;
+		}
+	});
+
+	//validasi saat upload file excel
+	$('#userfile').change(function() {
+		var files = document.getElementById('userfile').files[0].type;
+		var sUserFile = ['application/vnd.ms-excel',
+							'application/msexcel',
+							'application/x-msexcel',
+							'application/xls',
+							'application/x-xls',
+							'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+						]; //mime type application/excel saja yang diperbolehkan, selainnya muncul pesan kesalahan
+		if (sUserFile.indexOf(files) > -1) {
+			console.log('File valid'); //In the array!
+		} else {
+			alert('Mime type file: '+files+ '.\nFile tidak valid.'); //Not in the array
+			return false;
+		}
+	});
+});
+
+function cekTipeYd()
+{
+	var termn=$('#port').val();
+	//alert('tes');
+	if(termn=='IDJKT-T3I' || termn=='IDJKT-L2D' || termn=='IDJKT-L2I'){
+		$("#delivery_type").val('LAP');
+		$('#delivery_type').attr('disabled',true);
+	} else if (termn=='IDJKT-T009D')
+	{
+		if ($("#delivery_type").val() == "TL"){
+			$('#delivery_type').attr('disabled',false);
+					$("#delivery_type").val("");
+				}
+				$("#delivery_type option[value='TL']").prop('disabled',true);
+	} else
+	{
+		$('#delivery_type').attr('disabled',false);
+		$("#delivery_type option[value='TL']").prop('disabled',false);
+	}
+	
+	if(termn=='IDJKT-L2D' || termn=='IDJKT-L2I'){
+		$('.custom-hidden').hide();
+	}
+}
+</script>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="main-box">
+								<header class="main-box-header clearfix">
+									<h2>Truck ID Registration</h2>
+								</header>
+									<div class="main-box-body clearfix">
+										<div class="form-group">
+												<label>Terminal</label>
+												<select id="port" name="port" class="form-control" onchange="cekTipeYd()" readonly>
+												<option value="<?=$request_data[0]['ID_TERMINAL']?>"><?=$request_data[0]['TERMINAL_NAME']?></option>
+												</select>
+										</div>
+										<div class="form-group">
+												<label>Tipe Kendaraan</label>
+												<select id="kendaraan_type" name="kendaraan_type" class="form-control"readonly>
+													<?if(!isset($request_data[0]['KENDARAAN_TYPE'])||$request_data[0]['KENDARAAN_TYPE']=="KU" ){?></option>
+														<option value="KU" selected>Kendaraan Umum</option>
+
+													<?} else { ?>
+
+														<option value="KP" selected>Kendaraan Pribadi</option>
+													<?}?>
+												</select>
+										</div>
+										<div class="form-group example-twitter-oss">
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">ID Customer</label>
+												<input type="text" class="form-control" id="customer_id" name="customer_id" size="8" value="<?=$request_data[0]['REGISTRANT_ID']?>" readonly >
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Customer Name</label>
+												<input type="text" class="form-control" id="customer_name" name="customer_name" title="Masukkan data customer" size="8" value="<?=$request_data[0]['COMPANY_NAME']?>" readonly>
+												
+												<input type="hidden" id="customer_address" name="customer_address" value="<?=$request_data[0]['COMPANY_ADDRESS']?>" readonly >
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Truck Number</label>
+												<input type="text" class="form-control" id="truck_number" name="truck_number" title="Masukkan truck number" size="8" value="<?=$request_data[0]['TRUCK_NUMBER']?>" readonly>
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Truck ID</label>
+												<input type="text" class="form-control" id="truck_id" name="etd" placeholder="truck_id" title="Masukkan truck id" size="8" value="<?=$request_data[0]['TID']?>">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">Tanggal Berlaku</label>
+												<input type="text" class="form-control" id="tgl" name="tgl" placeholder="Tanggal Berlaku" title="Masukkan truck id" size="8" value="<?=$request_data[0]['EXPIRED_DATE']?>">
+											</div>
+											<div class="form-group col-xs-6">
+												<label for="exampleAutocomplete">RFID Code</label>
+												<input type="text" class="form-control" id="rfid_code" name="rfid_code" placeholder="rfid-code" title="Masukkan No RFID Kartu" size="10" value="<?=$request_data[0]['PROXIMITY']?>">
+											</div>
+										</div>
+										<button id="submit_header" onclick="submitheader()" class="btn btn-success">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+		<script>
+		function load_table()
+			{
+				$.blockUI();
+				var url = "<?=ROOT?>om/truck/search_main_truck";
+				var limit = $("#pagelimit").val();
+				var search_input = $("#search_input").val();
+				$("#tabledata").load(url,{'<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>',
+											search:search_input,
+											page:1,limit:limit},function() {
+										  $.unblockUI();
+										});
+			}
+			var table2 = $('#table-request').dataTable({
+				'info': false,
+				'sDom': 'lTfr<"clearfix">tip',
+				'columnDefs': [
+					{ type: 'date-dd-mmm-yyyy', targets: 2 },
+					{ type: 'date-dd-mmm-yyyy', targets: 6 }
+				],
+				'oTableTools': {
+					'aButtons': [
+						{
+							'sExtends':    'collection',
+							'sButtonText': '<i class="fa fa-cloud-download"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down"></i>',
+							'aButtons':    [ 'csv', 'xls', 'pdf', 'copy', 'print' ]
+						}
+					]
+				},
+				"lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+			});
+							
+		</script>
+	<script>
+
+  function search_vessel(){
+      var vesselname = $("#vessel_autocomplete").val();
+      var port       = $('#port').val();
+      //var url = "<?=ROOT?>autocomplete/getVesselList";
+      if(vesselname == ''){
+          $("#vessel_autocomplete").focus();
+          alert('Mohon diisi kolomnya');
+      }
+      else{
+        $.get("<?=ROOT?>container/auto_vessel_delivery?",{term : vesselname, port: port}, function(data){
+              $('#modalplaceholder').html(data).children().modal('show');
+          });
+      }
+
+  }
+
+  function complete($vessel,$voyin,$voyout,$voyage,$id_vsb_voyage,$vessel_code,$call_sign,$date_discharge,$etd,$eta,$nobook){
+      $( "#vessel_autocomplete" ).val($vessel);
+			$( "#voyage_in" ).val($voyin);
+			$( "#voyage_out" ).val($voyout);
+			$( "#voyage" ).val($voyage);
+			$( "#id_vsb_voyage" ).val($id_vsb_voyage);
+			$( "#vessel_code" ).val($vessel_code);
+			$( "#call_sign" ).val($call_sign);
+			$( "#date_discharge" ).val($date_discharge);
+			$( "#etd" ).val($etd);
+			$( "#eta" ).val($eta);
+			$( "#nobook" ).val($nobook);
+
+      $('#modalplaceholder').attr('display','none');
+  }
+
+	$(function() {
+		$("#container_data").attr('class', 'row hidden');
+		$("#container_excel").attr('class', 'row hidden');
+
+    /*    $( "#vessel_autocomplete" ).autocomplete({
+			minLength: 5,
+			source: function(request, response) {
+				$.getJSON("<?=ROOT?>autocomplete/getVesselList?",{  term: $( "#vessel_autocomplete" ).val(),
+																			  port: $('#port').val()
+																			 }, response);
+				},
+			focus: function( event, ui )
+			{
+				$( "#vessel_autocomplete" ).val( ui.item.VESSEL);
+				return false;
+			},
+			select: function( event, ui )
+			{
+				$( "#vessel_autocomplete" ).val( ui.item.VESSEL);
+				$( "#voyage_in" ).val( ui.item.VOYAGE_IN);
+				$( "#voyage_out" ).val( ui.item.VOYAGE_OUT);
+				$( "#eta" ).val( ui.item.ETA);
+				$( "#etd" ).val( ui.item.ETD);
+				$( "#end_shift" ).val( ui.item.ETD);
+				$( "#ukk" ).val( ui.item.UKK);
+				$( "#vessel_code" ).val( ui.item.VESSEL_CODE);
+				$( "#call_sign" ).val( ui.item.CALL_SIGN);
+				$( "#voyage" ).val( ui.item.VOYAGE);
+
+				return false;
+			}
+		}).data( "uiAutocomplete" )._renderItem = function( ul, item )
+		{
+			return $( "<li></li>" )
+			.data( "item.autocomplete", item )
+			.append( "<a align='center'><p class='repo-language'>" + item.VESSEL + "</p><p class='repo-name'>Voyage in " +item.VOYAGE_IN+"- Voyage out "+item.VOYAGE_OUT+"</p></a>")
+			.appendTo( ul );
+    };*/
+
+
+
+      /*  $( "#pod_autocomplete" ).autocomplete({
+        minLength: 5,
+        source: function(request, response) {
+            $.getJSON("<?=ROOT?>container_receiving/auto_pod?",{  term: $( "#pod_autocomplete" ).val(),
+                                                                          vessel: $("#vessel_autocomplete").val(),
+                                                                          voyin: $("#voyage_in").val(),
+                                                                          voyout: $("#voyage_out").val(),
+                                                                          port: $('#port').val()
+                                                                         }, response);
+            },
+        focus: function( event, ui )
+        {
+            $( "#pod_autocomplete" ).val( ui.item.NM_PELABUHAN);
+            return false;
+        },
+        select: function( event, ui )
+        {
+            $( "#pod_autocomplete" ).val( ui.item.NM_PELABUHAN);
+            $( "#idpod" ).val( ui.item.ID_PELABUHAN);
+            $( "#fpod_autocomplete" ).val( ui.item.NM_PELABUHAN);
+            $( "#idfpod" ).val( ui.item.ID_PELABUHAN);
+
+            return false;
+        }
+        }).data( "uiAutocomplete" )._renderItem = function( ul, item )
+        {
+        return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( "<a align='center'>" + item.NM_PELABUHAN + "<br>" +item.ID_PELABUHAN+"</a>")
+        .appendTo( ul );
+
+        };
+
+        $( "#fpod_autocomplete" ).autocomplete({
+        minLength: 5,
+        source: function(request, response) {
+            $.getJSON("<?=ROOT?>container_receiving/auto_pod?",{  term: $( "#fpod_autocomplete" ).val(),
+                                                                          vessel: $("#vessel_autocomplete").val(),
+                                                                          voyin: $("#voyage_in").val(),
+                                                                          voyout: $("#voyage_out").val(),
+                                                                          port: $('#port').val()
+                                                                         }, response);
+            },
+        focus: function( event, ui )
+        {
+            $( "#fod_autocomplete" ).val( ui.item.NM_PELABUHAN);
+            return false;
+        },
+        select: function( event, ui )
+        {
+            $( "#fpod_autocomplete" ).val( ui.item.NM_PELABUHAN);
+            $( "#idfpod" ).val( ui.item.ID_PELABUHAN);
+
+            return false;
+        }
+        }).data( "uiAutocomplete" )._renderItem = function( ul, item )
+        {
+        return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( "<a align='center'>" + item.NM_PELABUHAN + "<br>" +item.ID_PELABUHAN+"</a>")
+        .appendTo( ul );
+
+      };*/
+
+        /*$( "#container_operator" ).autocomplete({
+        minLength: 3,
+        source: function(request, response) {
+            $.getJSON("<?=ROOT?>/container_receiving/auto_carrier?",{  term: $( "#container_operator" ).val(),
+                                                                          vessel: $("#vessel_autocomplete").val(),
+                                                                          port: $('#port').val()
+                                                                         }, response);
+            },
+        focus: function( event, ui )
+        {
+            $( "#container_operator" ).val( ui.item.CODE);
+            return false;
+        },
+        select: function( event, ui )
+        {
+            $( "#container_operator" ).val( ui.item.CODE);
+
+            return false;
+        }
+        }).data( "uiAutocomplete" )._renderItem = function( ul, item )
+        {
+        return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( "<a align='center'>" + item.CODE + "<br>" +item.LINE_OPERATOR+"</a>")
+        .appendTo( ul );
+
+        };*/
+    });
+
+	//datepicker
+	var picker = $('#start_shift').datepicker({
+		format: 'dd-mm-yyyy 00:00',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+	
+	var picker = $('#peb_dt').datepicker({
+		format: 'dd-mm-yyyy',
+		startDate: new Date(),
+		todayBtn: true,
+		todayHighlight: true
+	});
+	//.val(moment().format("D-M-YYYY 00:00"));
+
+	</script>
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/jquery.datetimepicker.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CUBE_?>css/libs/select2.css" type="text/css" />

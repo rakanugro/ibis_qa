@@ -1,0 +1,310 @@
+populatePRS,SELECT prha.requisition_header_id pr_id, prha.segment1 pr_number,
+             prha.creation_date pr_date, prha.authorization_status,
+             prha.preparer_id, prha.org_id
+        FROM po_requisition_headers_all prha
+       WHERE org_id = '83'
+         AND TRUNC (prha.creation_date) <= '19-Jan-2015'
+         AND prha.authorization_status = 'APPROVED'
+         AND EXISTS (
+                SELECT 'lines can be put on a PO'
+                  FROM po_requisition_lines_all prl
+                 WHERE prl.requisition_header_id = prha.requisition_header_id
+                   AND prl.line_location_id IS NULL
+                   AND NVL (prl.at_sourcing_flag, 'N') = 'N'
+                   AND NVL (prl.cancel_flag, 'N') = 'N'
+                   AND NVL (prl.closed_code, 'OPEN') != 'FINALLY CLOSED'
+                   AND NVL (prl.modified_by_agent_flag, 'N') = 'N'
+                   AND prl.source_type_code = 'VENDOR')
+         AND NOT EXISTS (SELECT 1
+                           FROM xpi2.xpi2_po_pr_eproc_log a
+                          WHERE prha.requisition_header_id = a.req_header_id);<br><br>INSERT INTO tbl_pr_header
+                (req_header_id, no_pr, tgl_pr,
+                 preparer_id, org_id, status_read
+                )
+					VALUES ('31104', '8484', '19-JAN-15', '22334', '83', 0
+                );<br><br>SELECT prla.requisition_header_id, msib.segment1 item_number, item_id,
+             prla.item_description, unit_meas_lookup_code uom, plt.line_type,
+             prla.requisition_line_id line_id, line_num, distribution_num,
+             distribution_id, req_line_quantity quantity, prla.unit_price,
+             destination_organization_id, deliver_to_location_id,
+             destination_type_code, destination_subinventory, currency_code,
+             rate_type, rate, rate_date, prda.recoverable_tax,
+             prda.nonrecoverable_tax
+        FROM po_requisition_lines_all prla,
+             po_req_distributions_all prda,
+             po_line_types plt,
+             mtl_system_items_b msib
+       WHERE destination_type_code = 'INVENTORY'
+         AND prla.requisition_line_id = prda.requisition_line_id
+         AND prla.line_type_id = plt.line_type_id
+         AND prla.item_id = msib.inventory_item_id
+         AND prla.destination_organization_id = msib.organization_id
+         AND prla.requisition_header_id = '31104';<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '05.100.105016',
+                 '4487', 'PIPAHITAMSCHEDULE 40DIAM 2,5"',
+                 'Each', 'Goods',
+                 '67092', '1',
+                 '1',
+                 '66313', '100',
+                 '750000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '7500000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '05.200.952181',
+                 '272264', 'Baterai Charger ICOM ICM 88 BC152',
+                 'BUAH', 'Goods',
+                 '67093', '2',
+                 '1',
+                 '66314', '5',
+                 '800000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '400000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '05.100.143060',
+                 '4245', 'POMPATANGANK3',
+                 'Each', 'Goods',
+                 '67094', '3',
+                 '1',
+                 '66315', '2',
+                 '400000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '80000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '06.524.346010',
+                 '31222', 'COVER',
+                 'Each', 'Goods',
+                 '67095', '4',
+                 '1',
+                 '66316', '3',
+                 '100000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '30000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '06.111.139010',
+                 '30416', 'SOLT STATER',
+                 'Each', 'Goods',
+                 '67096', '5',
+                 '1',
+                 '66317', '1',
+                 '5500000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '550000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '06.611.601680',
+                 '155259', 'CINCIN 1 3/4',
+                 'BUAH', 'Goods',
+                 '67097', '6',
+                 '1',
+                 '66318', '10',
+                 '150000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '150000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '06.611.601676',
+                 '155255', 'TWIST LOCK 12 TON',
+                 'BUAH', 'Goods',
+                 '67098', '7',
+                 '1',
+                 '66319', '5',
+                 '300000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '150000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '06.611.601991',
+                 '288262', 'Tangga Penyeberangan untuk akses dari darat menuju tongkang',
+                 'BUAH', 'Goods',
+                 '67099', '8',
+                 '1',
+                 '66320', '1',
+                 '400000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '40000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31104', '06.111.201210',
+                 '30753', 'BEARING',
+                 'Each', 'Goods',
+                 '67100', '9',
+                 '1',
+                 '66321', '1',
+                 '300000', '758',
+                 '146',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '30000',
+                 '0'
+                );<br><br>      SELECT prla.requisition_header_id, msib.segment1 item_number, item_id,
+             prla.item_description, unit_meas_lookup_code uom, plt.line_type,
+             prla.requisition_line_id line_id, line_num, distribution_num,
+             distribution_id, req_line_quantity quantity, prla.unit_price,
+             destination_organization_id, deliver_to_location_id,
+             destination_type_code, currency_code, rate_type, rate, rate_date,
+             prda.recoverable_tax, prda.nonrecoverable_tax
+        FROM po_requisition_lines_all prla,
+             po_req_distributions_all prda,
+             po_line_types plt,
+             mtl_system_items_b msib
+       WHERE destination_type_code = 'EXPENSE'
+         AND prla.requisition_line_id = prda.requisition_line_id
+         AND prla.line_type_id = plt.line_type_id
+         AND prla.item_id = msib.inventory_item_id
+         AND prla.destination_organization_id = msib.organization_id
+         AND prla.requisition_header_id = '31104';<br><br>Duplicate/Error PR Number:8411<br>Duplicate/Error PR Number:8412<br>Duplicate/Error PR Number:8479<br>Duplicate/Error PR Number:8455<br>Duplicate/Error PR Number:8464<br>Duplicate/Error PR Number:8462<br>Duplicate/Error PR Number:8475<br>Duplicate/Error PR Number:8482<br>Success Transfer PR Number:8484<br>Duplicate/Error PR Number:8463<br>Duplicate/Error PR Number:8448<br>Duplicate/Error PR Number:8450<br>Duplicate/Error PR Number:8476<br>SUCCESS;

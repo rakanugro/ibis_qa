@@ -1,0 +1,1 @@
+sendEmailAuto{"sc_type":1,"sc_code":123456,"rc":"S","rcmsg":"SUCCESS","data":{"data":"Success;gakmasuk;from:;to:"}};end

@@ -1,0 +1,211 @@
+<?php
+class deliverycontainer_model extends CI_Model
+{
+
+	public function __construct()
+	{
+		$this->load->database();
+		$this->load->library('session');
+	}
+
+	public function getList()
+	{
+		$arrData = '{
+			"join": [
+				{
+					"table": "TM_REFF",
+					"field2": "TM_REFF.REFF_ID",
+					"field1": "TX_HDR_DEL.DEL_STATUS"
+				}
+			],
+			"where": [
+				[
+					"TM_REFF.REFF_TR_ID",
+					"=",
+					"10"
+				],
+				[
+					"TX_HDR_DEL.DEL_CUST_ID",
+					"=",
+					"' . $this->session->userdata('customerid_phd') . '"
+				],
+				[
+					"TX_HDR_DEL.DEL_NOTA",
+					"=",
+					"2"
+				],
+				[
+					"APP_ID",
+					"=",
+					"2"
+				]
+			],
+			"whereIn": [],
+			"whereIn2": [],
+			"whereNotIn": [],
+			"range": [],
+			"select": [],
+			"orderby": [
+				"TX_HDR_DEL.DEL_ID",
+				"DESC"
+			],
+			"changeKey": [
+				"",
+				""
+			],
+			"action": "join",
+			"db": "omuster",
+			"table": "TX_HDR_DEL",
+			"query": "",
+			"field": "",
+			"page": 1,
+			"start": 0,
+			"limit": 25
+		}';
+
+		$xml = $this->esb_npks->esb_api($arrData, NPK_XML, 'indexService', 'indexServiceInterfaceRequest');
+
+		$result = $this->sendcurl_lib->SendCurl($xml, NPK_WSDL, 'indexService', 'npk_billing', 'npk_billing');
+		if (!$result) {
+			echo $result;
+			die;
+		} else {
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:indexServiceResponse']['_c']['indexServiceInterfaceResponse']['_c']['esbBody']['_c']['response']['_v'];
+			echo json_encode($out_param);
+		}
+	}
+
+	public function save_del($data)
+	{
+		$xml = $this->esb_npks->esb_api($data, NPK_XML, 'storeService', 'storeServiceInterfaceRequest');
+
+		$result = $this->sendcurl_lib->SendCurl($xml, NPK_WSDL, 'indexService', 'npk_billing', 'npk_billing');
+		if (!$result) {
+			return $result;
+			die;
+		} else {
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:storeServiceResponse']['_c']['storeServiceInterfaceResponse']['_c']['esbBody']['_c']['response']['_v'];
+			$header = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:storeServiceResponse']['_c']['storeServiceInterfaceResponse']['_c']['esbHeader']['_c']['responseCode']['_v'];
+			$data = array(
+				"success" => $header,
+				"data" => $out_param
+			);
+			return json_encode($data);
+		}
+	}
+
+	public function update_del($id)
+	{
+		$arrData = '{
+			"action": "viewHeaderDetail",
+			"data": [
+				"HEADER",
+				"DETAIL",
+				"FILE"
+			],
+			"HEADER": {
+				"DB": "omuster",
+				"TABLE": "TX_HDR_DEL",
+				"PK": [
+					"DEL_ID",
+					"' . $id . '"
+				]
+			},
+			"DETAIL": {
+				"DB": "omuster",
+				"TABLE": "TX_DTL_DEL",
+				"FK": [
+					"DEL_HDR_ID",
+					"del_id"
+				]
+			},
+			"FILE": {
+				"DB": "omuster",
+				"TABLE": "TX_DOCUMENT",
+				"FK": [
+					"REQ_NO",
+					"del_no"
+				]
+			}
+		}';
+
+		$xml = $this->esb_npks->esb_api($arrData, NPK_XML, 'indexService', 'indexServiceInterfaceRequest');
+
+		$result = $this->sendcurl_lib->SendCurl($xml, NPK_WSDL, 'indexService', 'npk_billing', 'npk_billing');
+		if (!$result) {
+			return $result;
+			die;
+		} else {
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:indexServiceResponse']['_c']['indexServiceInterfaceResponse']['_c']['esbBody']['_c']['response']['_v'];
+			return $out_param;
+		}
+	}
+
+	public function send($id, $branch_id, $branch_code)
+	{
+		$arrData = '{
+			"action": "sendRequestPLG",
+			"nota_id": "2",
+			"id": "' . $id . '",
+			"service_branch_id" : "' . $branch_id . '",
+			"service_branch_code" : "' . $branch_code . '"
+		}';
+
+		$xml = $this->esb_npks->esb_api($arrData, NPK_XML, 'storeService', 'storeServiceInterfaceRequest');
+
+		$result = $this->sendcurl_lib->SendCurl($xml, NPK_WSDL, 'indexService', 'npk_billing', 'npk_billing');
+		if (!$result) {
+			return $result;
+			die;
+		} else {
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:storeServiceResponse']['_c']['storeServiceInterfaceResponse']['_c']['esbBody']['_c']['response']['_v'];
+			$header = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:storeServiceResponse']['_c']['storeServiceInterfaceResponse']['_c']['esbHeader']['_c']['responseCode']['_v'];
+			$data = array(
+				"success" => $header,
+				"data" => $out_param
+			);
+			return $data;
+		}
+	}
+
+	public function getDocType()
+	{
+		$arrData = '{
+			"query": "",
+			"orderby": [],
+			"where": [
+				[
+					"reff_tr_id",
+					"=",
+					"9"
+				]
+			],
+			"action": "index",
+			"db": "omuster",
+			"table": "TM_REFF",
+			"limit": 0,
+			"page": 1,
+			"start": 0
+		}';
+
+		$xml = $this->esb_npks->esb_api($arrData, NPK_XML, 'indexService', 'indexServiceInterfaceRequest');
+
+		$result = $this->sendcurl_lib->SendCurl($xml, NPK_WSDL, 'indexService', 'npk_billing', 'npk_billing');
+		if (!$result) {
+			echo $result;
+			die;
+		} else {
+			$response = $this->xml2array->xml2ary($result['response']);
+			$out_param = $response['soapenv:Envelope']['_c']['soapenv:Body']['_c']['ser-root:indexServiceResponse']['_c']['indexServiceInterfaceResponse']['_c']['esbBody']['_c']['response']['_v'];
+			//echo json_encode($out_param);
+
+			$json = (array) json_decode($out_param);
+
+			return $json['result'];
+		}
+	}
+}

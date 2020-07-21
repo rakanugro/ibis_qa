@@ -1,0 +1,366 @@
+populatePRS,SELECT prha.requisition_header_id pr_id, prha.segment1 pr_number,
+             prha.creation_date pr_date, prha.authorization_status,
+             prha.preparer_id, prha.org_id
+        FROM po_requisition_headers_all prha
+       WHERE org_id = '82'
+         AND TRUNC (prha.creation_date) <= '19-Jan-2015'
+         AND prha.authorization_status = 'APPROVED'
+         AND EXISTS (
+                SELECT 'lines can be put on a PO'
+                  FROM po_requisition_lines_all prl
+                 WHERE prl.requisition_header_id = prha.requisition_header_id
+                   AND prl.line_location_id IS NULL
+                   AND NVL (prl.at_sourcing_flag, 'N') = 'N'
+                   AND NVL (prl.cancel_flag, 'N') = 'N'
+                   AND NVL (prl.closed_code, 'OPEN') != 'FINALLY CLOSED'
+                   AND NVL (prl.modified_by_agent_flag, 'N') = 'N'
+                   AND prl.source_type_code = 'VENDOR')
+         AND NOT EXISTS (SELECT 1
+                           FROM xpi2.xpi2_po_pr_eproc_log a
+                          WHERE prha.requisition_header_id = a.req_header_id);<br><br>INSERT INTO tbl_pr_header
+                (req_header_id, no_pr, tgl_pr,
+                 preparer_id, org_id, status_read
+                )
+					VALUES ('31103', '950', '19-JAN-15', '22334', '82', 0
+                );<br><br>SELECT prla.requisition_header_id, msib.segment1 item_number, item_id,
+             prla.item_description, unit_meas_lookup_code uom, plt.line_type,
+             prla.requisition_line_id line_id, line_num, distribution_num,
+             distribution_id, req_line_quantity quantity, prla.unit_price,
+             destination_organization_id, deliver_to_location_id,
+             destination_type_code, destination_subinventory, currency_code,
+             rate_type, rate, rate_date, prda.recoverable_tax,
+             prda.nonrecoverable_tax
+        FROM po_requisition_lines_all prla,
+             po_req_distributions_all prda,
+             po_line_types plt,
+             mtl_system_items_b msib
+       WHERE destination_type_code = 'INVENTORY'
+         AND prla.requisition_line_id = prda.requisition_line_id
+         AND prla.line_type_id = plt.line_type_id
+         AND prla.item_id = msib.inventory_item_id
+         AND prla.destination_organization_id = msib.organization_id
+         AND prla.requisition_header_id = '31103';<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '02.000.000009',
+                 '46314', 'OLIE MEDITRAN SAE 40',
+                 'Liter', 'Goods',
+                 '67076', '1',
+                 '1',
+                 '66302', '1',
+                 '3427600', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '342760',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '03.000.000023',
+                 '34610', 'MUG STAINLESS MERK GLOBAL',
+                 'BUAH', 'Goods',
+                 '67077', '2',
+                 '1',
+                 '66303', '2',
+                 '50000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '10000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '03.999.001163',
+                 '122246', 'Cable Rells Tromeln 25H 05VV-F3 1,0mm',
+                 'Each', 'Goods',
+                 '67078', '3',
+                 '1',
+                 '66304', '1',
+                 '150000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '15000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.100.301010',
+                 '3155', 'SEPATU DINAS PRIA',
+                 'Pair', 'Goods',
+                 '67084', '9',
+                 '1',
+                 '66305', '10',
+                 '180000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '180000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.100.911010',
+                 '3025', 'LIFE JACKET',
+                 'Each', 'Goods',
+                 '67085', '10',
+                 '1',
+                 '66306', '10',
+                 '400000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '400000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.900.101101',
+                 '147247', 'PAKAIAN DINAS PANDU',
+                 'Each', 'Goods',
+                 '67086', '11',
+                 '1',
+                 '66307', '10',
+                 '150000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '150000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.900.101112',
+                 '147258', 'DASI',
+                 'Each', 'Goods',
+                 '67087', '12',
+                 '1',
+                 '66308', '10',
+                 '35000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '35000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.900.101105',
+                 '147251', 'SENTER LENGKAP 2 BATERAI',
+                 'Each', 'Goods',
+                 '67088', '13',
+                 '1',
+                 '66309', '10',
+                 '70000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '70000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.900.101167',
+                 '176246', 'Sepatu Olahraga',
+                 'Each', 'Goods',
+                 '67089', '14',
+                 '1',
+                 '66310', '10',
+                 '450000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '450000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.900.101230',
+                 '227247', 'PAKAIAN BATIK',
+                 'BUAH', 'Goods',
+                 '67090', '15',
+                 '1',
+                 '66311', '10',
+                 '150000', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '150000',
+                 '0'
+                );<br><br>    INSERT INTO tbl_pr_material
+                (mtr_pr_id, mtr_kd,
+                 mtr_item_id, mtr_deskripsi,
+                 mtr_satuan, mtr_line_type,
+                 mtr_line_id, mtr_line_num,
+                 mtr_distribution_num,
+                 mtr_distribution_id_pr, mtr_jumlah,
+                 mtr_hps, dest_org_code,
+                 deliver_to_location_id,
+                 destination_type_code,
+                 dest_subinventory, currency_code,
+                 rate_type, rate,
+                 rate_date, recoverable_tax,
+                 nonrecoverable_tax
+                )
+         VALUES ('31103', '04.100.505030',
+                 '2951', 'PAPAN NAMA KUNINGAN',
+                 'Each', 'Goods',
+                 '67091', '16',
+                 '1',
+                 '66312', '10',
+                 '49500', '757',
+                 '145',
+                 'INVENTORY',
+                 '', '',
+                 '', '',
+                 '19-JAN-15', '49500',
+                 '0'
+                );<br><br>      SELECT prla.requisition_header_id, msib.segment1 item_number, item_id,
+             prla.item_description, unit_meas_lookup_code uom, plt.line_type,
+             prla.requisition_line_id line_id, line_num, distribution_num,
+             distribution_id, req_line_quantity quantity, prla.unit_price,
+             destination_organization_id, deliver_to_location_id,
+             destination_type_code, currency_code, rate_type, rate, rate_date,
+             prda.recoverable_tax, prda.nonrecoverable_tax
+        FROM po_requisition_lines_all prla,
+             po_req_distributions_all prda,
+             po_line_types plt,
+             mtl_system_items_b msib
+       WHERE destination_type_code = 'EXPENSE'
+         AND prla.requisition_line_id = prda.requisition_line_id
+         AND prla.line_type_id = plt.line_type_id
+         AND prla.item_id = msib.inventory_item_id
+         AND prla.destination_organization_id = msib.organization_id
+         AND prla.requisition_header_id = '31103';<br><br>Duplicate/Error PR Number:22<br>Duplicate/Error PR Number:32<br>Duplicate/Error PR Number:42<br>Duplicate/Error PR Number:43<br>Duplicate/Error PR Number:44<br>Duplicate/Error PR Number:45<br>Duplicate/Error PR Number:46<br>Duplicate/Error PR Number:47<br>Duplicate/Error PR Number:48<br>Duplicate/Error PR Number:49<br>Duplicate/Error PR Number:50<br>Duplicate/Error PR Number:51<br>Duplicate/Error PR Number:52<br>Duplicate/Error PR Number:53<br>Duplicate/Error PR Number:54<br>Duplicate/Error PR Number:56<br>Duplicate/Error PR Number:57<br>Duplicate/Error PR Number:58<br>Duplicate/Error PR Number:59<br>Duplicate/Error PR Number:60<br>Duplicate/Error PR Number:61<br>Duplicate/Error PR Number:62<br>Duplicate/Error PR Number:63<br>Duplicate/Error PR Number:64<br>Duplicate/Error PR Number:40<br>Duplicate/Error PR Number:35<br>Duplicate/Error PR Number:17<br>Duplicate/Error PR Number:20<br>Duplicate/Error PR Number:21<br>Duplicate/Error PR Number:25<br>Duplicate/Error PR Number:37<br>Duplicate/Error PR Number:4<br>Duplicate/Error PR Number:9<br>Duplicate/Error PR Number:14<br>Duplicate/Error PR Number:23<br>Duplicate/Error PR Number:114<br>Duplicate/Error PR Number:106<br>Duplicate/Error PR Number:104<br>Duplicate/Error PR Number:129<br>Duplicate/Error PR Number:156<br>Duplicate/Error PR Number:157<br>Duplicate/Error PR Number:159<br>Duplicate/Error PR Number:160<br>Duplicate/Error PR Number:161<br>Duplicate/Error PR Number:173<br>Duplicate/Error PR Number:185<br>Duplicate/Error PR Number:181<br>Duplicate/Error PR Number:208<br>Duplicate/Error PR Number:214<br>Duplicate/Error PR Number:216<br>Duplicate/Error PR Number:217<br>Duplicate/Error PR Number:209<br>Duplicate/Error PR Number:236<br>Duplicate/Error PR Number:235<br>Duplicate/Error PR Number:271<br>Duplicate/Error PR Number:283<br>Duplicate/Error PR Number:281<br>Duplicate/Error PR Number:337<br>Duplicate/Error PR Number:336<br>Duplicate/Error PR Number:353<br>Duplicate/Error PR Number:387<br>Duplicate/Error PR Number:394<br>Duplicate/Error PR Number:391<br>Duplicate/Error PR Number:430<br>Duplicate/Error PR Number:438<br>Duplicate/Error PR Number:439<br>Duplicate/Error PR Number:456<br>Duplicate/Error PR Number:471<br>Duplicate/Error PR Number:487<br>Duplicate/Error PR Number:488<br>Duplicate/Error PR Number:497<br>Duplicate/Error PR Number:490<br>Duplicate/Error PR Number:526<br>Duplicate/Error PR Number:546<br>Duplicate/Error PR Number:547<br>Duplicate/Error PR Number:545<br>Duplicate/Error PR Number:557<br>Duplicate/Error PR Number:578<br>Duplicate/Error PR Number:596<br>Duplicate/Error PR Number:625<br>Duplicate/Error PR Number:633<br>Duplicate/Error PR Number:632<br>Duplicate/Error PR Number:627<br>Duplicate/Error PR Number:679<br>Duplicate/Error PR Number:680<br>Duplicate/Error PR Number:681<br>Duplicate/Error PR Number:691<br>Duplicate/Error PR Number:717<br>Duplicate/Error PR Number:714<br>Duplicate/Error PR Number:715<br>Duplicate/Error PR Number:734<br>Duplicate/Error PR Number:728<br>Duplicate/Error PR Number:762<br>Duplicate/Error PR Number:763<br>Duplicate/Error PR Number:756<br>Duplicate/Error PR Number:771<br>Duplicate/Error PR Number:775<br>Duplicate/Error PR Number:824<br>Duplicate/Error PR Number:823<br>Duplicate/Error PR Number:807<br>Duplicate/Error PR Number:828<br>Duplicate/Error PR Number:811<br>Duplicate/Error PR Number:821<br>Duplicate/Error PR Number:833<br>Duplicate/Error PR Number:844<br>Duplicate/Error PR Number:841<br>Duplicate/Error PR Number:848<br>Duplicate/Error PR Number:867<br>Duplicate/Error PR Number:871<br>Duplicate/Error PR Number:883<br>Duplicate/Error PR Number:891<br>Duplicate/Error PR Number:898<br>Duplicate/Error PR Number:900<br>Duplicate/Error PR Number:906<br>Duplicate/Error PR Number:902<br>Duplicate/Error PR Number:911<br>Duplicate/Error PR Number:909<br>Duplicate/Error PR Number:947<br>Duplicate/Error PR Number:948<br>Duplicate/Error PR Number:935<br>Duplicate/Error PR Number:945<br>Duplicate/Error PR Number:938<br>Success Transfer PR Number:950<br>SUCCESS;
